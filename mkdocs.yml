@@ -1,0 +1,43 @@
+site_name: Nick's Docs
+theme:
+  name: material
+  logo: 'https://nicklyss.com/wp-content/uploads/2020/04/logo4.png'
+  favicon: 'https://nicklyss.com/wp-content/uploads/2020/04/logo4.png'
+plugins:
+  - search
+markdown_extensions:
+  - codehilite:
+      guess_lang: false
+  - pymdownx.inlinehilite:
+  - pymdownx.superfences:
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.tilde
+nav:
+  - Home : index.md
+  - 'Nick''s Portfolio':
+    - Main Portfolio : portfolio.md
+    - 'Google Chrome User Guide':
+      - What is Google Chrome? : chrome.md
+      - Google Chrome Install : chromeinstall.md
+      - Google Chrome Media : chromemedia.md
+      - Glossary : glossary.md
+  - 'Programming Notes':
+    - 'C':
+      - C Basics : c.md
+      - Arrays : c-arrays.md
+      - Functions : c-functions.md
+      - Command Line Arguments : c-cl-arguments.md
+      - Variables and Scope : c-variable-scope.md
+  - About : about.md

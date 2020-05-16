@@ -1,0 +1,1168 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="https://nicklyss.com/wp-content/uploads/2020/04/logo4.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.3">
+    
+    
+      
+        <title>C Basics - Nick's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.62d34fff.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c-basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Nick's Docs" class="md-header-nav__button md-logo" aria-label="Nick's Docs">
+      
+  <img src="https://nicklyss.com/wp-content/uploads/2020/04/logo4.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Nick's Docs
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              C Basics
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Nick's Docs" class="md-nav__button md-logo" aria-label="Nick's Docs">
+      
+  <img src="https://nicklyss.com/wp-content/uploads/2020/04/logo4.png" alt="logo">
+
+    </a>
+    Nick's Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Nick's Portfolio
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Nick's Portfolio" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Nick's Portfolio
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../portfolio/" title="Main Portfolio" class="md-nav__link">
+      Main Portfolio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Google Chrome User Guide
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Google Chrome User Guide" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Google Chrome User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chrome/" title="What is Google Chrome?" class="md-nav__link">
+      What is Google Chrome?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chromeinstall/" title="Google Chrome Install" class="md-nav__link">
+      Google Chrome Install
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chromemedia/" title="Google Chrome Media" class="md-nav__link">
+      Google Chrome Media
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Programming Notes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Programming Notes" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Programming Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      C
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="C" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        C
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        C Basics
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="C Basics" class="md-nav__link md-nav__link--active">
+      C Basics
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-data-types" class="md-nav__link">
+    Basic Data Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-variable" class="md-nav__link">
+    Creating a Variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-variable" class="md-nav__link">
+    Using a Variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-statements" class="md-nav__link">
+    Conditional Statements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    Loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-code" class="md-nav__link">
+    First Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hello-name" class="md-nav__link">
+    Hello, *name*!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mario-problem-set" class="md-nav__link">
+    Mario Problem Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cash-problem-set" class="md-nav__link">
+    Cash Problem Set
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c-arrays/" title="Arrays" class="md-nav__link">
+      Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c-functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c-cl-arguments/" title="Command Line Arguments" class="md-nav__link">
+      Command Line Arguments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c-variable-scope/" title="Variables and Scope" class="md-nav__link">
+      Variables and Scope
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-data-types" class="md-nav__link">
+    Basic Data Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-variable" class="md-nav__link">
+    Creating a Variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-variable" class="md-nav__link">
+    Using a Variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-statements" class="md-nav__link">
+    Conditional Statements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    Loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-code" class="md-nav__link">
+    First Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hello-name" class="md-nav__link">
+    Hello, *name*!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mario-problem-set" class="md-nav__link">
+    Mario Problem Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cash-problem-set" class="md-nav__link">
+    Cash Problem Set
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="c-basics">C Basics</h1>
+<h2 id="basic-data-types">Basic Data Types</h2>
+<ul>
+<li><strong><code class="highlight"><span class="kt">int</span></code></strong> – used for variables that store integers (numbers).  </li>
+<li><strong><code class="highlight"><span class="kt">char</span></code></strong> – used for variables that will store single characters. These us single quotes (Ex. 'A').   </li>
+<li><strong><code class="highlight"><span class="kt">float</span></code></strong> – used for variables that will store floating point-values (real numbers) (numbers with decimal point) (32 bits).  </li>
+<li><strong><code class="highlight"><span class="kt">double</span></code></strong> – like <code class="highlight"><span class="kt">float</span></code> but are double precision (64 bits).  </li>
+<li><strong><code class="highlight"><span class="kt">void</span></code></strong> – not a data type – is a type. Void return type does not return a value and does not take arguments.  printf is a void function because it returns nothing, just shows a result.  </li>
+<li><strong><code class="highlight"><span class="kt">bool</span></code></strong> – used for variables that will store a Boolean value (<code>true</code> or <code>false</code>).  </li>
+<li><strong><code class="highlight"><span class="n">string</span></code></strong> – used for variables that will store a series of characters (words, sentences, paragraphs).  These use double quotes (Ex. "Hi!").  </li>
+</ul>
+<h2 id="creating-a-variable">Creating a Variable</h2>
+<p>To create a variable, you need to simply specify the data type of the variable and give it a name.  </p>
+<p>&emsp;&emsp;<code class="highlight"><span class="kt">int</span> <span class="n">number</span><span class="p">;</span></code> -&gt; number is the name of the integer.<br />
+&emsp;&emsp;<code class="highlight"><span class="kt">char</span> <span class="n">letter</span><span class="p">;</span></code> -&gt; letter is the name of the character.  </p>
+<p>To create multiple variables of the same type, you specify the variable type once and then list as many variables as needed (separated by a comma).  </p>
+<p>&emsp;&emsp;<code class="highlight"><span class="kt">int</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">;</span></code>  </p>
+<h2 id="using-a-variable">Using a Variable</h2>
+<p>After a variable has been declared, it is no longer necessary to specify that variable’s type.  </p>
+<p>&emsp;&emsp;<code class="highlight"><span class="kt">int</span> <span class="n">number</span><span class="p">;</span></code> // declaration<br />
+&emsp;&emsp;<code class="highlight"><span class="n">number</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span></code> // assignment<br />
+&emsp;&emsp;<code class="highlight"><span class="kt">char</span> <span class="n">letter</span><span class="p">;</span></code> // declaration<br />
+&emsp;&emsp;<code class="highlight"><span class="n">letter</span> <span class="o">=</span> <span class="sc">&#39;H&#39;</span></code> // assignment  </p>
+<h2 id="operators">Operators</h2>
+<p>In order to manipulate and work with variables and values in C, operators must be used.  </p>
+<p><strong>Arithmetic Operators</strong>  </p>
+<p>In C we can add (<code class="highlight"><span class="o">+</span></code>), subtract (<code class="highlight"><span class="o">-</span></code>), multiply (<code class="highlight"><span class="o">*</span></code>) and divide (<code class="highlight"><span class="o">/</span></code>) numbers.<br />
+&emsp;&emsp;<code class="highlight"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span></code><br />
+&emsp;&emsp;<code class="highlight"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span></code>  </p>
+<p>We also have the modulus operator (<code class="highlight"><span class="o">%</span></code>), which gives us the remainder when the number on the left of the operator is divided by the number on the right.  </p>
+<p>&emsp;&emsp;<code class="highlight"><span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">13</span> <span class="o">%</span> <span class="mi">4</span></code> // m is now 1 because after division there was a remainder of 1 (13/4=3 with one left over).  </p>
+<p>There is also a shorthand way to apply an arithmetic operator to a single variable.  </p>
+<p>&emsp;&emsp;<code class="highlight"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span></code> is the same as <code class="highlight"><span class="n">x</span> <span class="o">*=</span> <span class="mi">5</span><span class="p">;</span></code>  </p>
+<p>Incrementing or decrementing a variable by 1 is very simple:  </p>
+<p>&emsp;&emsp;<code class="highlight"><span class="n">x</span><span class="o">++</span><span class="p">;</span></code> or <code class="highlight"><span class="n">x</span><span class="o">--</span><span class="p">;</span></code>  </p>
+<p><strong>Boolean Expressions</strong></p>
+<p>Boolean expressions are used in C for comparing values.  </p>
+<p>All Boolean expressions evaluate to one of two possible values - <code class="highlight"><span class="nb">true</span></code> or <code class="highlight"><span class="nb">false</span><span class="p">.</span></code>  </p>
+<p>Boolean expression results can be used to decide which branch in a <em>conditional</em> (if true/if false fork) to take, or determine whether a <em>loop</em> should continue to run.  </p>
+<p>Sometimes when working with Boolean expressions we will use the variables of type <code class="highlight"><span class="kt">bool</span></code>, but we don’t have to.  </p>
+<p>In C, every nonzero value is equivalent to <code class="highlight"><span class="nb">true</span></code>, and zero is <code class="highlight"><span class="nb">false</span></code>.  </p>
+<p>There are two main types of Boolean expressions: <em>logical operators</em> and <em>relational operators.</em>  </p>
+<p><strong>Logical Operators</strong>  </p>
+<p>Logical <strong>AND (&amp;&amp;)</strong> is true if and only if both operands are true, otherwise false.</p>
+<table>
+<thead>
+<tr>
+<th>X</th>
+<th>Y</th>
+<th>(X &amp;&amp; Y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Logical <strong>OR (||)</strong> is true if and only if at least one operand is true, otherwise false.  </p>
+<table>
+<thead>
+<tr>
+<th>X</th>
+<th>Y</th>
+<th>(X || Y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Logical <strong>NOT (!)</strong> inverts the value of its operand.  </p>
+<table>
+<thead>
+<tr>
+<th>X</th>
+<th>!X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Relational Operators</strong><br />
+These behave as you would expect them to, and appear syntactically similar to how you may recall them from elementary arithmetic.  </p>
+<p>&emsp;&emsp;Less than (x &lt; y)<br />
+&emsp;&emsp;Less than or equal to (x &lt;= y)<br />
+&emsp;&emsp;Greater than (x &gt; y)<br />
+&emsp;&emsp;Greater than or equal to (x &gt;= y)  </p>
+<p>C can also test two variables for equality and inequality.  </p>
+<p>&emsp;&emsp;Equality (x == y)<br />
+&emsp;&emsp;Inequality (x != y)  </p>
+<p>Be careful with equality!  It is a common mistake to use the assignment operator (=) when you intend to use the equality operator (==).  </p>
+<h2 id="conditional-statements">Conditional Statements</h2>
+<p>Conditional expressions allow your programs to make decisions and take different forks in the road, depending on the values of variables or user input.  </p>
+<p>C Provides a few different ways to implement conditional expressions (also known as branches) in your programs.  </p>
+<p><strong><code class="highlight"><span class="k">if</span> <span class="p">(</span><span class="n">boolean</span><span class="o">-</span><span class="n">expression</span><span class="p">){}</span></code></strong>  </p>
+<p>If the boolean-expression evaluates to <code class="highlight"><span class="nb">true</span></code>, all lines of code between the {} will execute in order from top-to-bottom.<br />
+If the boolean-expression evaluates to <code class="highlight"><span class="nb">false</span></code>, those lines of code will not execute.  </p>
+<p><strong><code class="highlight"><span class="k">if</span> <span class="p">(</span><span class="n">boolean</span><span class="o">-</span><span class="n">expression</span><span class="p">){}</span> <span class="k">else</span><span class="p">{}</span></code></strong>  </p>
+<p>If the boolean-expression evaluates to <code class="highlight"><span class="nb">true</span></code>, all lines of code between the {} will execute in order from top-to-bottom.<br />
+If the boolean-expression evaluates to <code class="highlight"><span class="nb">false</span></code>, all lines of code between the second set of {} will execute in order from top-to-bottom.  </p>
+<p>It is possible in C to have an <code class="highlight"><span class="k">if</span><span class="o">-</span><span class="k">else</span> <span class="k">if</span><span class="o">-</span><span class="k">else</span></code> chain.  </p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">boolean</span><span class="o">-</span><span class="n">expr1</span><span class="p">){</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">boolean</span><span class="o">-</span><span class="n">expr2</span><span class="p">){</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">boolean</span><span class="o">-</span><span class="n">expr3</span><span class="p">){</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Note: The final <code class="highlight"><span class="k">else</span></code> will only link to the final <code class="highlight"><span class="k">if</span></code>.  </p>
+<p><strong><code class="highlight"><span class="k">switch</span></code></strong><br />
+C’s <code class="highlight"><span class="k">switch</span><span class="p">()</span></code> statement is a conditional statement that permits enumeration of discrete cases, instead of relying on Boolean expressions.  </p>
+<p>It is important to break between each case, or you will “fall through” each case (unless that is intended)</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">GetInt</span><span class="p">();</span>
+<span class="k">switch</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+            <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">One</span><span class="o">!</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>  
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+            <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">Two</span><span class="o">!</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+            <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">Three</span><span class="o">!</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>  
+            <span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">Sorry</span><span class="o">!</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h2 id="loops">Loops</h2>
+<p>Loops allow your program to execute lines of code repeatedly, saving you from needing to copy/paste or otherwise repeat lines of code.  </p>
+<p><strong>Infinite Loop</strong><br />
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+The lines of code between the {} will execute repeatedly from top to bottom, until and unless we break out of it (as with a <code>break;</code> statement) or otherwise kill the program.  </p>
+<p><strong>While Loop</strong>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="n">boolean</span><span class="o">-</span><span class="n">expr</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>If the boolean-expr evaluates to <code class="highlight"><span class="nb">true</span></code>, all lines of code between the {} will execute repeatedly, in order from top-to-bottom, until boolean-expr evaluates to <code class="highlight"><span class="nb">false</span></code>.  </p>
+<p>Use when you want a loop to repeat an unknown number of times, and possibly not at all.  </p>
+<p><strong>Do While Loop</strong><br />
+<div class="highlight"><pre><span></span><code><span class="k">do</span>
+<span class="p">{</span>
+<span class="p">}</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">boolean</span><span class="o">-</span><span class="n">expr</span><span class="p">);</span>
+</code></pre></div></p>
+<p>This loop will execute all lines of code between {} once, and then, if the boolean-expr evaluates to <code class="highlight"><span class="nb">true</span></code>, will go back and repeat that process until the boolean-expr evaluates to <code class="highlight"><span class="nb">false</span></code>.  </p>
+<p>Use when you want a loop to repeat an unknown number of times, but at least once.  </p>
+<p><strong>For Loop</strong><br />
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span> 
+</code></pre></div></p>
+<p>Syntactically unattractive, but <code class="highlight"><span class="k">for</span></code> loops are used to repeat the body of a loop a specified number of times (in the above example - 10 times).  </p>
+<p>The process undertaken in a for loop is:  </p>
+<ul>
+<li>The counter variable(s) (here, i) is set.  </li>
+<li>The Boolean expression is checked.  <ul>
+<li>If it evaluates to <code class="highlight"><span class="nb">true</span></code>, the body of the loop executes.  </li>
+<li>If it evaluates to <code class="highlight"><span class="nb">false</span></code>, the body of the loop does not execute.  </li>
+</ul>
+</li>
+<li>The counter variable is incremented, and then the Boolean Expression is checked again, etc.  </li>
+</ul>
+<p>Use for when you want a loop to repeat a discrete number of times, though you may not know the number at the moment the program is compiled.  </p>
+<h2 id="first-code">First Code</h2>
+<p><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>  
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+<span class="p">}</span> 
+</code></pre></div>
+<strong>Source code -&gt; compiler -&gt; machine code</strong></p>
+<p><code>clang hello.c</code> (clang is the c language compiler) 
+This compiles the hello world source code.</p>
+<p><code>./a.out</code> (a.out is the compiled machine code from the hello world source code).</p>
+<p>To rename a.out simply put a <code>-o *filename*</code> before the file that needs to be compiled (Ex. <code>clang -o hello hello.c</code>).</p>
+<p>To see a list of files in a directory – type <code>ls</code>
+Files with * means it is executable (has been compiled).</p>
+<p>To remove a file in a directory – type <code>rm *filename*</code></p>
+<h2 id="hello-name"><code>Hello, *name*!</code></h2>
+<p>Now lets create a "Hello World"-like program that allows input from the user.  </p>
+<p>We will now include a string prompt that asks the user for their name.  </p>
+<p><code class="highlight"><span class="n">string</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="err">“</span><span class="n">What</span><span class="err">’</span><span class="n">s</span> <span class="n">your</span> <span class="n">name</span><span class="o">?</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">);</span></code>
+(answer is the variable in the string).</p>
+<p><code class="highlight"><span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">Hello</span><span class="p">,</span> <span class="o">%</span><span class="n">s</span><span class="err">\</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span></code></p>
+<p><code class="highlight"><span class="o">%</span><span class="n">s</span></code> is a placeholder for a string which is defined by the comma and string name.
+A string is a sequence (variable) of zero or more characters in double quotes (“”);
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;cs50.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="s">&quot;What’s your name?</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, %s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="mario-problem-set">Mario Problem Set</h2>
+<p>Toward the end of World 1-1 in Super Mario Bros, Mario must ascend a right-alighned pyramid of blocks.  We are going to recreate this in C (Using #'s instead of blocks), but allow the user to choose the block height while setting limits.  </p>
+<p>If a user inputs a height of <code>4</code>, this is how the program should work:  </p>
+<p><div class="highlight"><pre><span></span><code>   <span class="cp">#</span>
+  <span class="cp">##</span>
+ <span class="cp">###</span>
+<span class="cp">####</span>
+</code></pre></div>
+To begin, we need to import some libraries:<br />
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;cs50.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt; </span><span class="cp"></span>
+</code></pre></div>
+Before writing the code, we should look at the loop type we want to use.  The best option in this case would be a <code class="highlight"><span class="k">do</span> <span class="k">while</span></code> loop, like the code that follows:<br />
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>  
+<span class="k">do</span>
+<span class="p">{</span>  
+    <span class="n">n</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">&quot;Positive Number: &quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+The code above will continue to prompt the user for a number until it is positive.  </p>
+<p>For our Mario blocks, we will make the options only positive integers ranging from 1 to 8.  </p>
+<p>Using a <code class="highlight"><span class="k">do</span> <span class="k">while</span></code> loop we will begin with a prompt for user input:  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span> 
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">get</span> <span class="kt">int</span><span class="p">(</span><span class="s">&quot;Height (1-8): &quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Next, we will need to add a <code class="highlight"><span class="k">for</span></code> loop.  </p>
+<p>We will add the following:  </p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;#</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Making this right aligned is a more difficult task.  Looking at the problem as a box with rows and columns helps.  Imagine that the 8X8 grid prints the following. (Note that we start counting at 0)  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>#</td>
+</tr>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>#</td>
+<td>#</td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+</tr>
+<tr>
+<td>7</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+</tr>
+</tbody>
+</table>
+<p>We will rename <code class="highlight"><span class="kt">int</span> <span class="n">i</span></code> from earlier to <code class="highlight"><span class="kt">int</span> <span class="n">rows</span></code> and create <code class="highlight"><span class="kt">int</span> <span class="n">columns</span></code> to be the columns.  (These can be named whatever you want).  </p>
+<p>From here we can create the following code to create the right-aligned blocks.  </p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cs50.h&gt;  </span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">&quot;Height (1-8): &quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// user input 1-8</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">);</span> 
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">rows</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">rows</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">rows</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">columns</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">columns</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">columns</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">rows</span> <span class="o">+</span> <span class="n">columns</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="k">else</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;#&quot;</span><span class="p">);</span>  
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span> 
+</code></pre></div>
+
+<h2 id="cash-problem-set">Cash Problem Set</h2>
+<p>When a cashier gives change to a customer they give the biggest denomination they can and go until they must use a less valuable denomination.  For example, if someone is owed $0.47, they will be given 1 quarter (.25), 2 dimes (2 * .10), and 2 pennies (2 * .01).  For this problem set we will create a program that asks how much change is owed and then prints out the fewest number of coins that can be used.  </p>
+<p>The easiest way to do this, which requires some copy/pasting, is to create a <code class="highlight"><span class="k">while</span></code> loop for the different denominations.  It should also be noted that we must use a <code class="highlight"><span class="kt">float</span></code> instead of a <code class="highlight"><span class="kt">int</span></code>, as we have previously, because money will not always be a whole number.  </p>
+<p>The code works as the following:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;  </span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cs50.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;  </span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span> 
+    <span class="n">loat</span> <span class="n">dollars</span><span class="p">;</span>
+
+    <span class="k">do</span>
+    <span class="p">{</span>
+        <span class="n">dollars</span> <span class="o">=</span> <span class="n">get_float</span><span class="p">(</span><span class="s">&quot;How much change is owed?</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span> 
+    <span class="k">while</span> <span class="p">(</span><span class="n">dollars</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">cents</span> <span class="o">=</span> <span class="n">round</span><span class="p">(</span><span class="n">dollars</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>  
+    <span class="kt">int</span> <span class="n">coins</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">cents</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cents</span> <span class="o">-=</span> <span class="mi">25</span><span class="p">;</span>
+        <span class="n">coins</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> 
+    <span class="k">while</span> <span class="p">(</span><span class="n">cents</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cents</span> <span class="o">-=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="n">coins</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>  
+    <span class="k">while</span> <span class="p">(</span><span class="n">cents</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cents</span> <span class="o">-=</span> <span class="mi">5</span><span class="p">;</span>  
+        <span class="n">coins</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">cents</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cents</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">coins</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">coins</span><span class="p">);</span>
+<span class="p">}</span>  
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../glossary/" title="Glossary" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Glossary
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../c-arrays/" title="Arrays" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Arrays
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.f81b9e8b.min.js"></script>
+      <script src="../assets/javascripts/bundle.23546af0.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
