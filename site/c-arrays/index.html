@@ -415,6 +415,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#caesars-cipher" class="md-nav__link">
+    Caesar's Cipher
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -454,6 +461,18 @@
   <li class="md-nav__item">
     <a href="../c-variable-scope/" title="Variables and Scope" class="md-nav__link">
       Variables and Scope
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c-algorithms/" title="Algorithms" class="md-nav__link">
+      Algorithms
     </a>
   </li>
 
@@ -536,6 +555,13 @@
         <li class="md-nav__item">
   <a href="#reading-levels-program" class="md-nav__link">
     Reading Levels Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caesars-cipher" class="md-nav__link">
+    Caesar's Cipher
   </a>
   
 </li>
@@ -836,6 +862,142 @@ Grade 11
         <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Grade 16+</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
+
+<h2 id="caesars-cipher">Caesar's Cipher</h2>
+<p>We will now create a program that will take text and run it through Caesar's encryption method.  Supposedly, Caesar (yes, that Caesar) used to “encrypt” (i.e., conceal in a reversible way) confidential messages by shifting each letter therein by some number of places. For instance, he might write A as B, B as C, C as D, …, and, wrapping around alphabetically, Z as A. And so, to say HELLO to someone, Caesar might write IFMMP. Upon receiving such messages from Caesar, recipients would have to “decrypt” them by shifting letters in the opposite direction by the same number of places.  </p>
+<p>The secrecy of this “cryptosystem” relied on only Caesar and the recipients knowing a secret, the number of places by which Caesar had shifted his letters (e.g., 1). Not particularly secure by modern standards, but, hey, if you’re perhaps the first in the world to do it, pretty secure!  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unencrypted text is generally called <em>plaintext</em>. Encrypted text is generally called <em>ciphertext</em>. And the secret used is called a <em>key</em>.  </p>
+</div>
+<p>To be clear, then, here’s how encrypting <code>HELLO</code> with a key of 1 yields <code>IFMMP</code>:  </p>
+<table>
+<thead>
+<tr>
+<th>plaintext</th>
+<th>H</th>
+<th>E</th>
+<th>L</th>
+<th>L</th>
+<th>O</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ key</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>= ciphertext</td>
+<td>I</td>
+<td>F</td>
+<td>M</td>
+<td>M</td>
+<td>P</td>
+</tr>
+</tbody>
+</table>
+<p>More formally, Caesar’s algorithm (i.e., cipher) encrypts messages by “rotating” each letter by <em>k</em> positions. More formally, if <em>p</em> is some plaintext (i.e., an unencrypted message), p<sub>i</sub> is the i<sup>th</sup> character in <em>p</em>, and <em>k</em> is a secret key (i.e., a non-negative integer), then each letter, c<sub>i</sub>, in the ciphertext, <em>c</em>, is computed as:
+<p style="font-size:20px">c<sub>i</sub> = (p<sub>i</sub> + k) % 26</p>  </p>
+<p>wherein <code>% 26</code> here means “remainder when dividing by 26.” This formula perhaps makes the cipher seem more complicated than it is, but it’s really just a concise way of expressing the algorithm precisely. Indeed, for the sake of discussion, think of A (or a) as 0, B (or b) as 1, …, H (or h) as 7, I (or i) as 8, …, and Z (or z) as 25. Suppose that Caesar just wants to say Hi to someone confidentially using, this time, a key, <em>k</em>, of 3. And so his plaintext, <em>p</em>, is Hi, in which case his plaintext’s first character, p<sub>0</sub>, is H (aka 7), and his plaintext’s second character, p<sub>1</sub>, is i (aka 8). His ciphertext’s first character, c<sub>0</sub>, is thus K, and his ciphertext’s second character, c<sub>1</sub>, is thus L. Can you see why?  </p>
+<p>Here are a few examples of how the program might work. For example, if the user inputs a key of <code>1</code> and a plaintext of <code>HELLO</code>:  </p>
+<div class="highlight"><pre><span></span><code>$ ./caesar 1
+plaintext:  HELLO
+ciphertext: IFMMP
+</code></pre></div>
+
+<p>Here’s how the program might work if the user provides a key of <code>13</code> and a plaintext of <code>hello, world</code>:  </p>
+<div class="highlight"><pre><span></span><code>$ ./caesar 13
+plaintext:  hello, world
+ciphertext: uryyb, jbeyq
+</code></pre></div>
+
+<p><strong>Now let's get coding!</strong>  </p>
+<p>We need our program to do the following:  </p>
+<ul>
+<li>Get Key (the amount to shift the text by)  </li>
+<li>Get plaintext  </li>
+<li>Encipher  </li>
+<li>Print ciphertext  </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will preserve case for letters (Keep capital letters capital, and lowercase lowercase).  We will also wrap the alphabet (If we go beyond the boundaries of the alphabet, it will just start over).  </p>
+</div>
+<p>Let's walkthrough each piece of the program.  </p>
+<p><strong>Get the Key</strong>  </p>
+<p>We will be taking the key as a <a href="../c-cl-arguments/">command line argument</a>:  </p>
+<div class="highlight"><pre><span></span><code>$ ./caesar 3
+</code></pre></div>
+
+<p>Remember that in C our main function can take arguments using the following:  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">string</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="c1">// code here</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Getting the Key</strong>  </p>
+<ul>
+<li>Ensure single command-line argument (print error message if command-line argument is out of bounds)  </li>
+<li>Make sure argument contains only digit characters  </li>
+<li>Convert argument to an integer  </li>
+</ul>
+<p>We will also need to convert the <code>string</code> from the command line argument into a number using the <code>atoi</code> function, declared in <code>&lt;stdlib.h&gt;</code>.  </p>
+<p><strong>Getting the Plaintext</strong>  </p>
+<p>We will simply use the <code>get_string</code> function to get user input for the plaintext.  </p>
+<p><strong>Encipher the Plaintext</strong>  </p>
+<p>If it's alphabetic, shift the plaintext character by key, preserving the case.  </p>
+<p>If it's not alphabetic, leave the character as-is.  </p>
+<p>We can use the following functions to help us identify character type: <code>isalpha</code>, <code>isupper</code>, and <code>islower</code>.  These functions will return a boolean value (<code>true</code> or <code>false</code>).  </p>
+<p>Here is the correct program:  </p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cs50.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ctype.h&gt;</span><span class="cp"></span>
+
+<span class="kt">bool</span> <span class="nf">check_key</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">string</span> <span class="n">argv</span><span class="p">[])</span> <span class="c1">//argc takes in the number of arguments and argv creates an array for the arguments themselves.</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">2</span> <span class="o">||</span> <span class="o">!</span><span class="n">check_key</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="c1">// checking if the number of arguments is not 2 and if the key is valid</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Usage: ./caesar key&quot;</span><span class="p">);</span> <span class="c1">// if the input is not valid, it will print an error message with the correct way to enter</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// converts from ASCII to integer</span>
+
+    <span class="n">string</span> <span class="n">plaintext</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="s">&quot;plaintext: &quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;ciphertext: &quot;</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">plaintext</span><span class="p">);</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">plaintext</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isalpha</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">char</span> <span class="n">m</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">islower</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">c</span> <span class="o">-</span> <span class="n">m</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="n">m</span><span class="p">);</span> <span class="c1">// inputs the plaintext into Caesar&#39;s cipher</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span> <span class="c1">// if the character is not alphabetic, it will print it as is</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">check_key</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">)</span> <span class="c1">// this string checks to see if the key is valid</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isdigit</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="c1">// if its not a digit, return false</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
                 
               
               
@@ -902,6 +1064,10 @@ Grade 11
           }, typeof search !== "undefined" && search)
         })
       </script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

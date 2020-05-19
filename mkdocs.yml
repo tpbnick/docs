@@ -5,7 +5,11 @@ theme:
   favicon: 'https://nicklyss.com/wp-content/uploads/2020/04/logo4.png'
 plugins:
   - search
+extra_javascript:
+  - javascripts/extra.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
 markdown_extensions:
+  - pymdownx.arithmatex
   - codehilite:
       guess_lang: false
   - pymdownx.inlinehilite:
@@ -40,4 +44,5 @@ nav:
       - Functions : c-functions.md
       - Command Line Arguments : c-cl-arguments.md
       - Variables and Scope : c-variable-scope.md
+      - Algorithms : c-algorithms.md
   - About : about.md

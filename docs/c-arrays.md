@@ -257,3 +257,138 @@ int main(void)
         printf("Grade 16+\n");
 }
 ```
+
+## Caesar's Cipher 
+
+We will now create a program that will take text and run it through Caesar's encryption method.  Supposedly, Caesar (yes, that Caesar) used to “encrypt” (i.e., conceal in a reversible way) confidential messages by shifting each letter therein by some number of places. For instance, he might write A as B, B as C, C as D, …, and, wrapping around alphabetically, Z as A. And so, to say HELLO to someone, Caesar might write IFMMP. Upon receiving such messages from Caesar, recipients would have to “decrypt” them by shifting letters in the opposite direction by the same number of places.  
+
+The secrecy of this “cryptosystem” relied on only Caesar and the recipients knowing a secret, the number of places by which Caesar had shifted his letters (e.g., 1). Not particularly secure by modern standards, but, hey, if you’re perhaps the first in the world to do it, pretty secure!  
+
+!!! note 
+    Unencrypted text is generally called *plaintext*. Encrypted text is generally called *ciphertext*. And the secret used is called a *key*.  
+
+To be clear, then, here’s how encrypting `HELLO` with a key of 1 yields `IFMMP`:  
+
+| plaintext    | H | E | L | L | O |
+|--------------|---|---|---|---|---|
+| + key        | 1 | 1 | 1 | 1 | 1 |
+| = ciphertext | I | F | M | M | P |  
+
+More formally, Caesar’s algorithm (i.e., cipher) encrypts messages by “rotating” each letter by *k* positions. More formally, if *p* is some plaintext (i.e., an unencrypted message), p<sub>i</sub> is the i<sup>th</sup> character in *p*, and *k* is a secret key (i.e., a non-negative integer), then each letter, c<sub>i</sub>, in the ciphertext, *c*, is computed as:
+<p style="font-size:20px">c<sub>i</sub> = (p<sub>i</sub> + k) % 26</p>  
+
+wherein `% 26` here means “remainder when dividing by 26.” This formula perhaps makes the cipher seem more complicated than it is, but it’s really just a concise way of expressing the algorithm precisely. Indeed, for the sake of discussion, think of A (or a) as 0, B (or b) as 1, …, H (or h) as 7, I (or i) as 8, …, and Z (or z) as 25. Suppose that Caesar just wants to say Hi to someone confidentially using, this time, a key, *k*, of 3. And so his plaintext, *p*, is Hi, in which case his plaintext’s first character, p<sub>0</sub>, is H (aka 7), and his plaintext’s second character, p<sub>1</sub>, is i (aka 8). His ciphertext’s first character, c<sub>0</sub>, is thus K, and his ciphertext’s second character, c<sub>1</sub>, is thus L. Can you see why?  
+
+Here are a few examples of how the program might work. For example, if the user inputs a key of `1` and a plaintext of `HELLO`:  
+
+```
+$ ./caesar 1
+plaintext:  HELLO
+ciphertext: IFMMP
+```  
+
+Here’s how the program might work if the user provides a key of `13` and a plaintext of `hello, world`:  
+
+```
+$ ./caesar 13
+plaintext:  hello, world
+ciphertext: uryyb, jbeyq
+```  
+
+**Now let's get coding!**  
+
+We need our program to do the following:  
+
+* Get Key (the amount to shift the text by)  
+* Get plaintext  
+* Encipher  
+* Print ciphertext  
+
+!!! note 
+    We will preserve case for letters (Keep capital letters capital, and lowercase lowercase).  We will also wrap the alphabet (If we go beyond the boundaries of the alphabet, it will just start over).  
+
+Let's walkthrough each piece of the program.  
+
+**Get the Key**  
+
+We will be taking the key as a [command line argument](c-cl-arguments.md):  
+
+```
+$ ./caesar 3
+```  
+
+Remember that in C our main function can take arguments using the following:  
+
+``` c
+int main(int argc, string argv[])
+{
+    // code here
+}
+```  
+
+**Getting the Key**  
+
+* Ensure single command-line argument (print error message if command-line argument is out of bounds)  
+* Make sure argument contains only digit characters  
+* Convert argument to an integer  
+
+We will also need to convert the `string` from the command line argument into a number using the `atoi` function, declared in `<stdlib.h>`.  
+
+**Getting the Plaintext**  
+
+We will simply use the `get_string` function to get user input for the plaintext.  
+
+**Encipher the Plaintext**  
+
+If it's alphabetic, shift the plaintext character by key, preserving the case.  
+
+If it's not alphabetic, leave the character as-is.  
+
+We can use the following functions to help us identify character type: `isalpha`, `isupper`, and `islower`.  These functions will return a boolean value (`true` or `false`).  
+
+Here is the correct program:  
+
+``` c
+#include <stdio.h>
+#include <cs50.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+bool check_key(string s);
+
+int main(int argc, string argv[]) //argc takes in the number of arguments and argv creates an array for the arguments themselves.
+{
+    if (argc != 2 || !check_key(argv[1])) // checking if the number of arguments is not 2 and if the key is valid
+    {
+        printf("Usage: ./caesar key"); // if the input is not valid, it will print an error message with the correct way to enter
+        return 1;
+    }
+    int key = atoi(argv[1]); // converts from ASCII to integer
+
+    string plaintext = get_string("plaintext: ");
+    printf("ciphertext: ");
+    for (int i = 0, len = strlen(plaintext); i < len; i++)
+    {
+        char c = plaintext[i];
+        if (isalpha(c))
+        {
+            char m = 'A';
+            if (islower(c))
+                m = 'a';
+            printf("%c", (c - m + key) % 26 + m); // inputs the plaintext into Caesar's cipher
+        }
+        else
+            printf("%c", c); // if the character is not alphabetic, it will print it as is
+    }
+    printf("\n");
+}
+
+bool check_key(string s) // this string checks to see if the key is valid
+{
+    for (int i = 0, len = strlen(s); i < len; i++)
+        if (!isdigit(s[i])) // if its not a digit, return false
+            return false;
+    return true;
+}
+```  
