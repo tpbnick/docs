@@ -1,7 +1,5 @@
 # Algorithms
 
-An **algorithm** is step-by-step set of instructions for completing a task.  
-
 ## Searching  
 
 In computer science, a search algorithm is any algorithm which solves the search problem, namely, to retrieve information stored within some data structure, or calculates in the search space of a problem domain, either with discrete or continuous values.  
@@ -13,24 +11,17 @@ For now, we are going to go over two different types of searches:
 
 For the following examples, we are going to be using a row of lockers with numbers inside (an array) and we will look through them to find something, while returning a boolean (`true` or `false`) as a result.
 
-A **linear search** is where we move in a line (usually start to end or end to start).  The idea of the algorithm is to iterate across the array from left to right, searching for a specified element.  
-
-**Worst-case scenario**: We have to look through the entire array of *n* elements, either because the target element is the last element of the array or doesn't exist in the array at all.  
-
-**Best-case scenario**: The target element is the first element of the array, and so we can stop looking immediately after we start.  
+A **linear search** is where we move in a line (usually start to end or end to start).  
 
 Now lets look through the lockers to find one with the number 50 inside.  Some pseudocode for linear search could be written as:  
+
 ```
 For i from 0 to n–1  // from start (0) to end (n-1)
     If i'th element is 50
         Return true  // if the i'th element is 50 - return true
 Return false // if not 50, return false
 ```
-A **binary search** is where we start in the middle and move left or right, depending on what we're looking for.  "Divide & Conquer".  In order to leverage the power of binary search, our array **must be sorted**, else we cannot make assumptions about the array's content.  
-
-**Worst-case scenario**: We have to divide a list of *n* elements in half repeatedly to find the target element, either because the target element will be found at the end of the last division or doesn't exist in the array at all.  
-
-**Best-case scenario**: The target element is at the midpoint of the full array, and so we can stop looking immediately after we start.  
+A **binary search** is where we start in the middle and move left or right, depending on what we're looking for.  
 
 Some pseudocode for binary search could be written as:  
 
@@ -213,8 +204,6 @@ The process of Sorting can be explained as a technique of rearranging the elemen
 
 ## Bubble Sort
 
-In bubble stort, the idea of the algorithm is to move higher valued elements generally towards the right and lower value elements generally towards the left.  
-
 Let's take 8 random numbers (`6`, `3`, `8`, `5`, `2`, `7`, `4`, `1`) and try to sort them in C.  
 
 First, we can look at the first two numbers and swap them so they are in order:  
@@ -249,7 +238,7 @@ Our list isn’t sorted yet, but we’re slightly closer to the solution because
 
 We repeat this with another pass through the list, over and over, until it is sorted correctly.  
 
-The pseudocode for this might look like:  
+This algorithm is called **bubble sort**, where large values “bubble” to the right. The pseudocode for this might look like:  
 
 ```
 Repeat n–1 times
@@ -263,10 +252,6 @@ Repeat n–1 times
 
 We have *n* – 2 steps for the inner loop, and *n* – 1 loops, so we get *n*<sup>2</sup> – 3*n* + 2 steps total. But the largest factor, or dominant term, is *n*<sup>2</sup>, as *n* gets larger and larger, so we can say that bubble sort is *O*(*n*<sup>2</sup>).  
 
-**Worst-case scenario**: The array is in rever order; we have to "bubble" each of the *n* elements all the way across the array, and since we can only fully bubble one element into position per pass, we must do this *n* times.  
-
-**Best-case scenario**: The array is already perfectly sorted, and we make no swaps on the first pass.  
-
 We’ve seen running times like the following, and so even though binary search is much faster than linear search, it might not be worth the one–time cost of sorting the list first, unless we do lots of searches over time:  
 
 * O(*n*<sup>2</sup>) (bubble sort)
@@ -278,8 +263,6 @@ We’ve seen running times like the following, and so even though binary search 
 And Ω for bubble sort is still *n*<sup>2</sup>, since we still check each pair of elements for *n* – 1 passes.  
 
 ## Selection Sort  
-
-In selection sort, the idea of the algorithm is to find the smallest unsorted element and add it to the end of the sorted list.  This basically builds a sorted list, one element at a time.  
 
 We can take another approach with the same set of numbers:  
 
@@ -303,7 +286,7 @@ Now we know at least the first element of our list is in the right place, so we 
 
 We can repeat this over and over, until we have a sorted list.  
 
-The pseudocode for this might look like:  
+This algorithm is called **selection sort**, and we might write pseudocode like this:  
 
 ```
 For i from 0 to n–1
@@ -311,11 +294,7 @@ For i from 0 to n–1
     Swap smallest item with i'th item
 ```  
 
-With big *O* notation, we still have running time of *O*(*n*<sup>2</sup>), since we were looking at roughly all *n* elements to find the smallest, and making *n* passes to sort all the elements.  
-
-**Worst-case scenario**: We have to iterate over each of the *n* elements of the array (to find the smallest unsorted element) and we must repeat this process *n* times, since only one element gets sorted on each pass.  
-
-**Best-case scenario**: Exactly the same! There's no way to gurantee this array is sorted until we go through this process for all the elements.  
+With big *O* notation, we still have running time of *O*(*n*<sup>2</sup>), since we were looking at roughly all *n* elements to find the smallest, and making *n* passes to sort all the elements.
 
 So it turns out that selection sort is fundamentally about the same as bubble sort in running time:  
 
@@ -337,27 +316,11 @@ Repeat until no swaps
 
 Now, we only need to look at each element once, so the best case is now Ω(*n*):  
 
-* Ω(n<sup>2</sup>) (selection sort)
-* Ω(*n* log *n*)
-* Ω(*n*) (bubble sort)
-* Ω(log *n*)
+* Ω(n2) (selection sort)
+* Ω(n log n)
+* Ω(n) (bubble sort)
+* Ω(log n)
 * Ω(1) (linear search, binary search)  
-
-## Insertion Sort  
-
-In insertion sort, the idea of the algorithm is to build your sorted array in place, shifting elements out of the way if necessary to make room as you go.  This is different to bubble sort and selection sort, where we slide actually slide elements out of the way while sorting.  
-
-In pseudo code:  
-```
-Call the first element of the array "sorted".
-Repeat until all elements are sorted:
-    Look at the next unsorted element.  Insert into the "sorted" portion by shifting the requisite number of elements.  
-```
-**Worst-case scenario**: The array is in reverse order; we have to shift each of the *n* elements *n* positions each time we make an insertion.  
-
-**Best-case scenario**: The array is already perfectly sorted, and we simply keep moving the line between "unsorted" and "sorted" as we examine each element.  
-
-Insertion sort can be seen as: O(*n*<sup>2</sup>) and Ω(*n*).  
 
 We can use a visualization tool, found [here](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html), with animations for how the elements move within arrays for both bubble sort and insertion sort.
 
@@ -400,71 +363,7 @@ This seems like a cyclical process that will never end, but we’re actually div
 
 **Recursion** occurs when a function or algorithm refers to itself (references its own name in the code), as in the new pseudocode above.  
 
-Let's try to visualize this with simple code.  
-
-The factorial function (*n*!) is defined over all positive integers.  *n*! equals all of the positive integers less than or equal to *n*, multiplied together.  Thinking in terms programming, we'll define the mathematical function *n*! as `fact(n)`.  
-
-```
-fact(1) = 1
-fact(2) = 2 * 1
-fact(3) = 3 * 2 * 1
-fact(4) = 4 * 3 * 2 * 1
-...
-```
-This can also be seen as:  
-
-```
-fact(1) = 1
-fact(2) = 2 * fact(1)
-fact(3) = 3 * fact(2)
-fact(4) = 4 * fact(3)
-...
-```
-This can be seen as `fact(n) = n * fact(n-1)`.  
-
-This forms the basis for a **recusive definition** of the factorial function.  
-
-Every recursive function has two cases that could apply, given any input:  
-
- * The *base case*, which when triggered will terminate the recursive process.
- * The *recursive case*, which is where the recursion will actually occur.  
-
-We can see this in the following code:  
-
-```c
-//recursive version
-int fact(int n)
-{
-    if (n == 1) // base case
-    {
-        return 1;
-    }
-
-    else // recursive case
-    {
-        return n * fact(n - 1);
-    }
-}
-``` 
-
-In general, but not always, recursive functions replace loops in non-recursive functions:  
-
-Below is the iterative version of the same code above (notice how much simpler the recursive version is).
-```c
-//iterative version
-int fact2(int n)
-{
-    int product = 1;
-    while w(n > 0)
-    {
-        product *= n;
-        n--;
-    }
-    return product;
-}
-```
-
-In week 1, we [implemented a “pyramid” of blocks in the following shape](https://docs.nicklyss.com/c/#mario-problem-set):  
+In week 1, too, we [implemented a “pyramid” of blocks in the following shape](https://docs.nicklyss.com/c/#mario-problem-set):  
 
 ```
 #
@@ -550,16 +449,14 @@ void draw(int h)
 
 ## Merge Sort  
 
-In merge sort, the idea of the algorithm is to sort smaller arrays and then combine those arrays together (merge them) in sorted order.   
-
 We can take the idea of recusion to sorting, with another algorithm called merge sort. The pseudocode might look like:  
 
 ```
 If only one item
   Return
 Else
-    Sort left half of items (assuming n > 1)
-    Sort right half of items (assuming n > 1)
+    Sort left half of items
+    Sort right half of items
     Merge sorted halves
 ``` 
 
@@ -613,10 +510,6 @@ It took a lot of steps, but it actually took fewer steps than the other algorith
 
 Since our algorithm divided the problem in half each time, its running time is logarithmic with O(log n). And after we sorted each half (or half of a half), we needed to merge together all the elements, with n steps since we had to look at each element once.  
 
-**Worst-case scenario**: We have to split *n* elements up and then recombine them, effectively doubling the sorted subarrays as we build them.  (Combining sorted 1-element arrays into 2-element arrays, combining soorted 2-element arrays into 4-element arrays...) - *O*(*n* log *n*). 
-
-**Best-case scenario**: The array is already perfectly sorted.  But we still have to split and recombine it back together with this algorithm. - Ω(*n* log *n*).  
-
 So our total running time is *O*(*n* log *n*):  
 
 * O(*n*<sup>2</sup>) (bubble sort, selection sort)
@@ -625,232 +518,8 @@ So our total running time is *O*(*n* log *n*):
 * O(log *n*) (binary search)
 * O(1)  
 
-To see this in real time, watch [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) to see multiple sorting algorithms running at the same time.  
+To see this in real time, watch this video to see multiple sorting algorithms running at the same time:  
 
-## Algorithms Summary  
-
-| Algorithm Name | Basic Concept                                                                                                                                       | O               | Ω               |
-|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-----------------|
-| Selection Sort | Find the **smallest** unsorted element in an array and swap it with the **first** unsorted element of that array.                                   | *n*<sup>2</sup> | *n*<sup>2</sup> |
-| Bubble Sort    | Swap **adjacent pairs** of elements if they are out of order, effectively "bubbling" larger elements to the right and smaller ones to the left.     | *n*<sup>2</sup> | n               |
-| Insertion Sort | Proceed through the array from left-to-right, **shifting** elements as necessary to insert each element into its correct place.                     | *n*<sup>2</sup> | n               |
-| Merge Sort     | **Split** the full array into subarrays, then **merge** those subarrays back together in the correct order.                                         | *n* log *n*     | *n* log *n*     |
-| Linear Search  | **Iterate** across the array from left-to-right, trying to find the target element.                                                                 | *n*             | 1               |
-| Binary Search  | Given a **sorted** array, **divide and conquer** by systematically eliminating half of the remaining elements in the search for the target element. | log *n*         | 1               |  
-
-## Plurality Problem
-
-Now let's take our new knowledge of algorithms and create a program that runs a plurality election that will yield the following output:  
-
-```
-$ ./plurality Alice Bob Charlie
-Number of voters: 4
-Vote: Alice
-Vote: Bob
-Vote: Charlie
-Vote: Alice
-Alice
-```
-
-**Background**  
-
-Elections come in all shapes and sizes. In the UK, the Prime Minister is officially appointed by the monarch, who generally chooses the leader of the political party that wins the most seats in the House of Commons. The United States uses a multi-step Electoral College process where citizens vote on how each state should allocate Electors who then elect the President.  
-
-Perhaps the simplest way to hold an election, though, is via a method commonly known as the “plurality vote” (also known as “first-past-the-post” or “winner take all”). In the plurality vote, every voter gets to vote for one candidate. At the end of the election, whichever candidate has the greatest number of votes is declared the winner of the election.  
-
-**Getting Started** 
-
-We are going to take the following code and complete the `vote` and `print_winner` functions:  
-
-```c
-#include <cs50.h>
-#include <stdio.h>
-#include <string.h>
-
-// Max number of candidates
-#define MAX 9
-
-// Candidates have name and vote count
-typedef struct
-{
-    string name;
-    int votes;
-}
-candidate;
-
-// Array of candidates
-candidate candidates[MAX];
-
-// Number of candidates
-int candidate_count;
-
-// Function prototypes
-bool vote(string name);
-void print_winner(void);
-
-int main(int argc, string argv[])
-{
-    // Check for invalid usage
-    if (argc < 2)
-    {
-        printf("Usage: plurality [candidate ...]\n");
-        return 1;
-    }
-
-    // Populate array of candidates
-    candidate_count = argc - 1;
-    if (candidate_count > MAX)
-    {
-        printf("Maximum number of candidates is %i\n", MAX);
-        return 2;
-    }
-    for (int i = 0; i < candidate_count; i++)
-    {
-        candidates[i].name = argv[i + 1];
-        candidates[i].votes = 0;
-    }
-
-    int voter_count = get_int("Number of voters: ");
-
-    // Loop over all voters
-    for (int i = 0; i < voter_count; i++)
-    {
-        string name = get_string("Vote: ");
-
-        // Check for invalid vote
-        if (!vote(name))
-        {
-            printf("Invalid vote.\n");
-        }
-    }
-
-    // Display winner of election
-    print_winner();
-}
-
-// Update vote totals given a new vote
-bool vote(string name)
-{
-    // TODO
-    return false;
-}
-
-// Print the winner (or winners) of the election
-void print_winner(void)
-{
-    // TODO
-    return;
-}
-```  
-
-We can make up the following code for the `vote` and `print_winner` functions that solves the problem:  
-
-```c
-#include <cs50.h>
-#include <stdio.h>
-#include <string.h>
-
-// Max number of candidates
-#define MAX 9
-
-// Candidates have name and vote count
-typedef struct
-{
-    string name;
-    int votes;
-}
-candidate;
-
-// Array of candidates
-candidate candidates[MAX];
-
-// Number of candidates
-int candidate_count;
-
-// Function prototypes
-bool vote(string name);
-void print_winner(void);
-
-int main(int argc, string argv[])
-{
-    // Check for invalid usage
-    if (argc < 2)
-    {
-        printf("Usage: plurality [candidate ...]\n");
-        return 1;
-    }
-
-    // Populate array of candidates
-    candidate_count = argc - 1;
-    if (candidate_count > MAX)
-    {
-        printf("Maximum number of candidates is %i\n", MAX);
-        return 2;
-    }
-    for (int i = 0; i < candidate_count; i++)
-    {
-        candidates[i].name = argv[i + 1];
-        candidates[i].votes = 0;
-    }
-
-    int voter_count = get_int("Number of voters: ");
-
-    // Loop over all voters
-    for (int i = 0; i < voter_count; i++)
-    {
-        string name = get_string("Vote: ");
-
-        // Check for invalid vote
-        if (!vote(name))
-        {
-            printf("Invalid vote.\n");
-        }
-    }
-
-    // Display winner of election
-    print_winner();
-}
-
-int get_index(string name)
-{
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (strcmp(name, candidates[i].name) == 0)
-        return i;
-    }   
-    return -1;
-}
-
-// Update vote totals given a new vote
-bool vote(string name)
-{
-    int candidate_index = get_index(name); // gets the index for name user inputs
-    if (candidate_index != -1)
-    {
-        candidates[candidate_index].votes++; // increments vote count for each candidate
-        return true;
-    }
-    return false;
-}
-
-int get_max(void)
-{
-    int max_votes = candidates[0].votes;
-    for (int i = 1; i < candidate_count; i++)
-        if (candidates[i].votes > max_votes)
-            max_votes = candidates[i].votes;
-            
-    return max_votes;
-}
-
-// Print the winner (or winners) of the election
-void print_winner(void)
-{
-    int max_votes = get_max(); // see who has the most voites
-    for (int i = 0; i < candidate_count; i++) // prints name of candidate with most votes
-    {
-        if (candidates[i].votes == max_votes)
-            printf("%s\n", candidates[i].name);
-    }
-}
-```
+<iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=ZZuD6iUe3Pc">
+</iframe> 

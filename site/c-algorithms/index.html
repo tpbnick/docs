@@ -478,13 +478,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#insertion-sort" class="md-nav__link">
-    Insertion Sort
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#recursion" class="md-nav__link">
     Recursion
   </a>
@@ -494,20 +487,6 @@
         <li class="md-nav__item">
   <a href="#merge-sort" class="md-nav__link">
     Merge Sort
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithms-summary" class="md-nav__link">
-    Algorithms Summary
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plurality-problem" class="md-nav__link">
-    Plurality Problem
   </a>
   
 </li>
@@ -616,13 +595,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#insertion-sort" class="md-nav__link">
-    Insertion Sort
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#recursion" class="md-nav__link">
     Recursion
   </a>
@@ -632,20 +604,6 @@
         <li class="md-nav__item">
   <a href="#merge-sort" class="md-nav__link">
     Merge Sort
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithms-summary" class="md-nav__link">
-    Algorithms Summary
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plurality-problem" class="md-nav__link">
-    Plurality Problem
   </a>
   
 </li>
@@ -667,7 +625,6 @@
                 
                 
                 <h1 id="algorithms">Algorithms</h1>
-<p>An <strong>algorithm</strong> is step-by-step set of instructions for completing a task.  </p>
 <h2 id="searching">Searching</h2>
 <p>In computer science, a search algorithm is any algorithm which solves the search problem, namely, to retrieve information stored within some data structure, or calculates in the search space of a problem domain, either with discrete or continuous values.  </p>
 <p>For now, we are going to go over two different types of searches:  </p>
@@ -676,18 +633,14 @@
 <li><strong>Binary Search</strong>  </li>
 </ol>
 <p>For the following examples, we are going to be using a row of lockers with numbers inside (an array) and we will look through them to find something, while returning a boolean (<code>true</code> or <code>false</code>) as a result.</p>
-<p>A <strong>linear search</strong> is where we move in a line (usually start to end or end to start).  The idea of the algorithm is to iterate across the array from left to right, searching for a specified element.  </p>
-<p><strong>Worst-case scenario</strong>: We have to look through the entire array of <em>n</em> elements, either because the target element is the last element of the array or doesn't exist in the array at all.  </p>
-<p><strong>Best-case scenario</strong>: The target element is the first element of the array, and so we can stop looking immediately after we start.  </p>
-<p>Now lets look through the lockers to find one with the number 50 inside.  Some pseudocode for linear search could be written as:<br />
-<div class="highlight"><pre><span></span><code>For i from 0 to n–1  // from start (0) to end (n-1)
+<p>A <strong>linear search</strong> is where we move in a line (usually start to end or end to start).  </p>
+<p>Now lets look through the lockers to find one with the number 50 inside.  Some pseudocode for linear search could be written as:  </p>
+<p><div class="highlight"><pre><span></span><code>For i from 0 to n–1  // from start (0) to end (n-1)
     If i&#39;th element is 50
         Return true  // if the i&#39;th element is 50 - return true
 Return false // if not 50, return false
 </code></pre></div>
-A <strong>binary search</strong> is where we start in the middle and move left or right, depending on what we're looking for.  "Divide &amp; Conquer".  In order to leverage the power of binary search, our array <strong>must be sorted</strong>, else we cannot make assumptions about the array's content.  </p>
-<p><strong>Worst-case scenario</strong>: We have to divide a list of <em>n</em> elements in half repeatedly to find the target element, either because the target element will be found at the end of the last division or doesn't exist in the array at all.  </p>
-<p><strong>Best-case scenario</strong>: The target element is at the midpoint of the full array, and so we can stop looking immediately after we start.  </p>
+A <strong>binary search</strong> is where we start in the middle and move left or right, depending on what we're looking for.  </p>
 <p>Some pseudocode for binary search could be written as:  </p>
 <div class="highlight"><pre><span></span><code>If no items
     Return false
@@ -839,7 +792,6 @@ We can think of structs as containers, inside of which are multiple other data t
 <h2 id="sorting">Sorting</h2>
 <p>The process of Sorting can be explained as a technique of rearranging the elements in any particular order, which can be set ready for further processing by the program logic. In C, there are multiple sorting algorithms available, which can be incorporated inside the code.  </p>
 <h2 id="bubble-sort">Bubble Sort</h2>
-<p>In bubble stort, the idea of the algorithm is to move higher valued elements generally towards the right and lower value elements generally towards the left.  </p>
 <p>Let's take 8 random numbers (<code>6</code>, <code>3</code>, <code>8</code>, <code>5</code>, <code>2</code>, <code>7</code>, <code>4</code>, <code>1</code>) and try to sort them in C.  </p>
 <p>First, we can look at the first two numbers and swap them so they are in order:  </p>
 <table>
@@ -1015,7 +967,7 @@ The next pair, <code>8</code> and <code>5</code>, need to be swapped: </p>
 </table>
 <p>Our list isn’t sorted yet, but we’re slightly closer to the solution because the biggest value, <code>8</code>, has been shifted all the way to the right.  </p>
 <p>We repeat this with another pass through the list, over and over, until it is sorted correctly.  </p>
-<p>The pseudocode for this might look like:  </p>
+<p>This algorithm is called <strong>bubble sort</strong>, where large values “bubble” to the right. The pseudocode for this might look like:  </p>
 <div class="highlight"><pre><span></span><code>Repeat n–1 times
     For i from 0 to n–2
         If i&#39;th and i+1&#39;th elements out of order
@@ -1027,8 +979,6 @@ The next pair, <code>8</code> and <code>5</code>, need to be swapped: </p>
 <li>And we can stop after we’ve made <em>n</em> – 1 passes, since we know the largest <em>n</em>–1 elements will have bubbled to the right.  </li>
 </ul>
 <p>We have <em>n</em> – 2 steps for the inner loop, and <em>n</em> – 1 loops, so we get <em>n</em><sup>2</sup> – 3<em>n</em> + 2 steps total. But the largest factor, or dominant term, is <em>n</em><sup>2</sup>, as <em>n</em> gets larger and larger, so we can say that bubble sort is <em>O</em>(<em>n</em><sup>2</sup>).  </p>
-<p><strong>Worst-case scenario</strong>: The array is in rever order; we have to "bubble" each of the <em>n</em> elements all the way across the array, and since we can only fully bubble one element into position per pass, we must do this <em>n</em> times.  </p>
-<p><strong>Best-case scenario</strong>: The array is already perfectly sorted, and we make no swaps on the first pass.  </p>
 <p>We’ve seen running times like the following, and so even though binary search is much faster than linear search, it might not be worth the one–time cost of sorting the list first, unless we do lots of searches over time:  </p>
 <ul>
 <li>O(<em>n</em><sup>2</sup>) (bubble sort)</li>
@@ -1039,7 +989,6 @@ The next pair, <code>8</code> and <code>5</code>, need to be swapped: </p>
 </ul>
 <p>And Ω for bubble sort is still <em>n</em><sup>2</sup>, since we still check each pair of elements for <em>n</em> – 1 passes.  </p>
 <h2 id="selection-sort">Selection Sort</h2>
-<p>In selection sort, the idea of the algorithm is to find the smallest unsorted element and add it to the end of the sorted list.  This basically builds a sorted list, one element at a time.  </p>
 <p>We can take another approach with the same set of numbers:  </p>
 <div class="highlight"><pre><span></span><code>6 3 8 5 2 7 4 1
 </code></pre></div>
@@ -1119,15 +1068,13 @@ The next pair, <code>8</code> and <code>5</code>, need to be swapped: </p>
 </tbody>
 </table>
 <p>We can repeat this over and over, until we have a sorted list.  </p>
-<p>The pseudocode for this might look like:  </p>
+<p>This algorithm is called <strong>selection sort</strong>, and we might write pseudocode like this:  </p>
 <div class="highlight"><pre><span></span><code>For i from 0 to n–1
     Find smallest item between i&#39;th item and last item
     Swap smallest item with i&#39;th item
 </code></pre></div>
 
-<p>With big <em>O</em> notation, we still have running time of <em>O</em>(<em>n</em><sup>2</sup>), since we were looking at roughly all <em>n</em> elements to find the smallest, and making <em>n</em> passes to sort all the elements.  </p>
-<p><strong>Worst-case scenario</strong>: We have to iterate over each of the <em>n</em> elements of the array (to find the smallest unsorted element) and we must repeat this process <em>n</em> times, since only one element gets sorted on each pass.  </p>
-<p><strong>Best-case scenario</strong>: Exactly the same! There's no way to gurantee this array is sorted until we go through this process for all the elements.  </p>
+<p>With big <em>O</em> notation, we still have running time of <em>O</em>(<em>n</em><sup>2</sup>), since we were looking at roughly all <em>n</em> elements to find the smallest, and making <em>n</em> passes to sort all the elements.</p>
 <p>So it turns out that selection sort is fundamentally about the same as bubble sort in running time:  </p>
 <ul>
 <li>O(<em>n</em><sup>2</sup>) (bubble sort, selection sort)</li>
@@ -1145,22 +1092,12 @@ The next pair, <code>8</code> and <code>5</code>, need to be swapped: </p>
 </code></pre></div></p>
 <p>Now, we only need to look at each element once, so the best case is now Ω(<em>n</em>):  </p>
 <ul>
-<li>Ω(n<sup>2</sup>) (selection sort)</li>
-<li>Ω(<em>n</em> log <em>n</em>)</li>
-<li>Ω(<em>n</em>) (bubble sort)</li>
-<li>Ω(log <em>n</em>)</li>
+<li>Ω(n2) (selection sort)</li>
+<li>Ω(n log n)</li>
+<li>Ω(n) (bubble sort)</li>
+<li>Ω(log n)</li>
 <li>Ω(1) (linear search, binary search)  </li>
 </ul>
-<h2 id="insertion-sort">Insertion Sort</h2>
-<p>In insertion sort, the idea of the algorithm is to build your sorted array in place, shifting elements out of the way if necessary to make room as you go.  This is different to bubble sort and selection sort, where we slide actually slide elements out of the way while sorting.  </p>
-<p>In pseudo code:<br />
-<div class="highlight"><pre><span></span><code>Call the first element of the array &quot;sorted&quot;.
-Repeat until all elements are sorted:
-    Look at the next unsorted element.  Insert into the &quot;sorted&quot; portion by shifting the requisite number of elements.  
-</code></pre></div>
-<strong>Worst-case scenario</strong>: The array is in reverse order; we have to shift each of the <em>n</em> elements <em>n</em> positions each time we make an insertion.  </p>
-<p><strong>Best-case scenario</strong>: The array is already perfectly sorted, and we simply keep moving the line between "unsorted" and "sorted" as we examine each element.  </p>
-<p>Insertion sort can be seen as: O(<em>n</em><sup>2</sup>) and Ω(<em>n</em>).  </p>
 <p>We can use a visualization tool, found <a href="https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html">here</a>, with animations for how the elements move within arrays for both bubble sort and insertion sort.</p>
 <h2 id="recursion">Recursion</h2>
 <p>Recall that in week 0, we had pseudocode for finding a name in a phone book, where we had lines telling us to “go back” and repeat some steps:  </p>
@@ -1194,59 +1131,7 @@ We could instead just repeat our entire algorithm on the half of the book we hav
 
 <p>This seems like a cyclical process that will never end, but we’re actually dividing the problem in half each time, and stopping once there’s no more book left.  </p>
 <p><strong>Recursion</strong> occurs when a function or algorithm refers to itself (references its own name in the code), as in the new pseudocode above.  </p>
-<p>Let's try to visualize this with simple code.  </p>
-<p>The factorial function (<em>n</em>!) is defined over all positive integers.  <em>n</em>! equals all of the positive integers less than or equal to <em>n</em>, multiplied together.  Thinking in terms programming, we'll define the mathematical function <em>n</em>! as <code>fact(n)</code>.  </p>
-<p><div class="highlight"><pre><span></span><code>fact(1) = 1
-fact(2) = 2 * 1
-fact(3) = 3 * 2 * 1
-fact(4) = 4 * 3 * 2 * 1
-...
-</code></pre></div>
-This can also be seen as:  </p>
-<p><div class="highlight"><pre><span></span><code>fact(1) = 1
-fact(2) = 2 * fact(1)
-fact(3) = 3 * fact(2)
-fact(4) = 4 * fact(3)
-...
-</code></pre></div>
-This can be seen as <code>fact(n) = n * fact(n-1)</code>.  </p>
-<p>This forms the basis for a <strong>recusive definition</strong> of the factorial function.  </p>
-<p>Every recursive function has two cases that could apply, given any input:  </p>
-<ul>
-<li>The <em>base case</em>, which when triggered will terminate the recursive process.</li>
-<li>The <em>recursive case</em>, which is where the recursion will actually occur.  </li>
-</ul>
-<p>We can see this in the following code:  </p>
-<div class="highlight"><pre><span></span><code><span class="c1">//recursive version</span>
-<span class="kt">int</span> <span class="nf">fact</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// base case</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">else</span> <span class="c1">// recursive case</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>In general, but not always, recursive functions replace loops in non-recursive functions:  </p>
-<p>Below is the iterative version of the same code above (notice how much simpler the recursive version is).
-<div class="highlight"><pre><span></span><code><span class="c1">//iterative version</span>
-<span class="kt">int</span> <span class="nf">fact2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">product</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">while</span> <span class="n">w</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">product</span> <span class="o">*=</span> <span class="n">n</span><span class="p">;</span>
-        <span class="n">n</span><span class="o">--</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">product</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></p>
-<p>In week 1, we <a href="https://docs.nicklyss.com/c/#mario-problem-set">implemented a “pyramid” of blocks in the following shape</a>:  </p>
+<p>In week 1, too, we <a href="https://docs.nicklyss.com/c/#mario-problem-set">implemented a “pyramid” of blocks in the following shape</a>:  </p>
 <div class="highlight"><pre><span></span><code>#
 ##
 ###
@@ -1329,13 +1214,12 @@ This can be seen as <code>fact(n) = n * fact(n-1)</code>.  </p>
 </li>
 </ul>
 <h2 id="merge-sort">Merge Sort</h2>
-<p>In merge sort, the idea of the algorithm is to sort smaller arrays and then combine those arrays together (merge them) in sorted order.   </p>
 <p>We can take the idea of recusion to sorting, with another algorithm called merge sort. The pseudocode might look like:  </p>
 <div class="highlight"><pre><span></span><code>If only one item
   Return
 Else
-    Sort left half of items (assuming n &gt; 1)
-    Sort right half of items (assuming n &gt; 1)
+    Sort left half of items
+    Sort right half of items
     Merge sorted halves
 </code></pre></div>
 
@@ -1548,8 +1432,6 @@ Else
 <p>And finally, we can merge both halves of the whole list, following the same steps as before. Notice that we don’t need to check all the elements of each half to find the smallest, since we know that each half is already sorted. Instead, we just take the smallest element of the two at the start of each half.  </p>
 <p>It took a lot of steps, but it actually took fewer steps than the other algorithms we’ve seen so far. We broke our list in half each time, until we were “sorting” eight lists with one element each.  </p>
 <p>Since our algorithm divided the problem in half each time, its running time is logarithmic with O(log n). And after we sorted each half (or half of a half), we needed to merge together all the elements, with n steps since we had to look at each element once.  </p>
-<p><strong>Worst-case scenario</strong>: We have to split <em>n</em> elements up and then recombine them, effectively doubling the sorted subarrays as we build them.  (Combining sorted 1-element arrays into 2-element arrays, combining soorted 2-element arrays into 4-element arrays...) - <em>O</em>(<em>n</em> log <em>n</em>). </p>
-<p><strong>Best-case scenario</strong>: The array is already perfectly sorted.  But we still have to split and recombine it back together with this algorithm. - Ω(<em>n</em> log <em>n</em>).  </p>
 <p>So our total running time is <em>O</em>(<em>n</em> log <em>n</em>):  </p>
 <ul>
 <li>O(<em>n</em><sup>2</sup>) (bubble sort, selection sort)</li>
@@ -1558,261 +1440,10 @@ Else
 <li>O(log <em>n</em>) (binary search)</li>
 <li>O(1)  </li>
 </ul>
-<p>To see this in real time, watch <a href="https://www.youtube.com/watch?v=ZZuD6iUe3Pc">this video</a> to see multiple sorting algorithms running at the same time.  </p>
-<h2 id="algorithms-summary">Algorithms Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Algorithm Name</th>
-<th>Basic Concept</th>
-<th>O</th>
-<th>Ω</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Selection Sort</td>
-<td>Find the <strong>smallest</strong> unsorted element in an array and swap it with the <strong>first</strong> unsorted element of that array.</td>
-<td><em>n</em><sup>2</sup></td>
-<td><em>n</em><sup>2</sup></td>
-</tr>
-<tr>
-<td>Bubble Sort</td>
-<td>Swap <strong>adjacent pairs</strong> of elements if they are out of order, effectively "bubbling" larger elements to the right and smaller ones to the left.</td>
-<td><em>n</em><sup>2</sup></td>
-<td>n</td>
-</tr>
-<tr>
-<td>Insertion Sort</td>
-<td>Proceed through the array from left-to-right, <strong>shifting</strong> elements as necessary to insert each element into its correct place.</td>
-<td><em>n</em><sup>2</sup></td>
-<td>n</td>
-</tr>
-<tr>
-<td>Merge Sort</td>
-<td><strong>Split</strong> the full array into subarrays, then <strong>merge</strong> those subarrays back together in the correct order.</td>
-<td><em>n</em> log <em>n</em></td>
-<td><em>n</em> log <em>n</em></td>
-</tr>
-<tr>
-<td>Linear Search</td>
-<td><strong>Iterate</strong> across the array from left-to-right, trying to find the target element.</td>
-<td><em>n</em></td>
-<td>1</td>
-</tr>
-<tr>
-<td>Binary Search</td>
-<td>Given a <strong>sorted</strong> array, <strong>divide and conquer</strong> by systematically eliminating half of the remaining elements in the search for the target element.</td>
-<td>log <em>n</em></td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-<h2 id="plurality-problem">Plurality Problem</h2>
-<p>Now let's take our new knowledge of algorithms and create a program that runs a plurality election that will yield the following output:  </p>
-<div class="highlight"><pre><span></span><code>$ ./plurality Alice Bob Charlie
-Number of voters: 4
-Vote: Alice
-Vote: Bob
-Vote: Charlie
-Vote: Alice
-Alice
-</code></pre></div>
-
-<p><strong>Background</strong>  </p>
-<p>Elections come in all shapes and sizes. In the UK, the Prime Minister is officially appointed by the monarch, who generally chooses the leader of the political party that wins the most seats in the House of Commons. The United States uses a multi-step Electoral College process where citizens vote on how each state should allocate Electors who then elect the President.  </p>
-<p>Perhaps the simplest way to hold an election, though, is via a method commonly known as the “plurality vote” (also known as “first-past-the-post” or “winner take all”). In the plurality vote, every voter gets to vote for one candidate. At the end of the election, whichever candidate has the greatest number of votes is declared the winner of the election.  </p>
-<p><strong>Getting Started</strong> </p>
-<p>We are going to take the following code and complete the <code>vote</code> and <code>print_winner</code> functions:  </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;cs50.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
-
-<span class="c1">// Max number of candidates</span>
-<span class="cp">#define MAX 9</span>
-
-<span class="c1">// Candidates have name and vote count</span>
-<span class="k">typedef</span> <span class="k">struct</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">votes</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">candidate</span><span class="p">;</span>
-
-<span class="c1">// Array of candidates</span>
-<span class="n">candidate</span> <span class="n">candidates</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span>
-
-<span class="c1">// Number of candidates</span>
-<span class="kt">int</span> <span class="n">candidate_count</span><span class="p">;</span>
-
-<span class="c1">// Function prototypes</span>
-<span class="kt">bool</span> <span class="nf">vote</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">print_winner</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">string</span> <span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="c1">// Check for invalid usage</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Usage: plurality [candidate ...]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Populate array of candidates</span>
-    <span class="n">candidate_count</span> <span class="o">=</span> <span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">candidate_count</span> <span class="o">&gt;</span> <span class="n">MAX</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Maximum number of candidates is %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">MAX</span><span class="p">);</span>
-        <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">voter_count</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">&quot;Number of voters: &quot;</span><span class="p">);</span>
-
-    <span class="c1">// Loop over all voters</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">voter_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="s">&quot;Vote: &quot;</span><span class="p">);</span>
-
-        <span class="c1">// Check for invalid vote</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vote</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Invalid vote.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Display winner of election</span>
-    <span class="n">print_winner</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// Update vote totals given a new vote</span>
-<span class="kt">bool</span> <span class="nf">vote</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// TODO</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Print the winner (or winners) of the election</span>
-<span class="kt">void</span> <span class="nf">print_winner</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// TODO</span>
-    <span class="k">return</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>We can make up the following code for the <code>vote</code> and <code>print_winner</code> functions that solves the problem:  </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;cs50.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
-
-<span class="c1">// Max number of candidates</span>
-<span class="cp">#define MAX 9</span>
-
-<span class="c1">// Candidates have name and vote count</span>
-<span class="k">typedef</span> <span class="k">struct</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">votes</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">candidate</span><span class="p">;</span>
-
-<span class="c1">// Array of candidates</span>
-<span class="n">candidate</span> <span class="n">candidates</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span>
-
-<span class="c1">// Number of candidates</span>
-<span class="kt">int</span> <span class="n">candidate_count</span><span class="p">;</span>
-
-<span class="c1">// Function prototypes</span>
-<span class="kt">bool</span> <span class="nf">vote</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">print_winner</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">string</span> <span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="c1">// Check for invalid usage</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Usage: plurality [candidate ...]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Populate array of candidates</span>
-    <span class="n">candidate_count</span> <span class="o">=</span> <span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">candidate_count</span> <span class="o">&gt;</span> <span class="n">MAX</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Maximum number of candidates is %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">MAX</span><span class="p">);</span>
-        <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">voter_count</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">&quot;Number of voters: &quot;</span><span class="p">);</span>
-
-    <span class="c1">// Loop over all voters</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">voter_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="s">&quot;Vote: &quot;</span><span class="p">);</span>
-
-        <span class="c1">// Check for invalid vote</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vote</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Invalid vote.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Display winner of election</span>
-    <span class="n">print_winner</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">get_index</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
-    <span class="p">}</span>   
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Update vote totals given a new vote</span>
-<span class="kt">bool</span> <span class="nf">vote</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">candidate_index</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="c1">// gets the index for name user inputs</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">candidate_index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">candidate_index</span><span class="p">].</span><span class="n">votes</span><span class="o">++</span><span class="p">;</span> <span class="c1">// increments vote count for each candidate</span>
-        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">get_max</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">max_votes</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">votes</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span> <span class="o">&gt;</span> <span class="n">max_votes</span><span class="p">)</span>
-            <span class="n">max_votes</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="n">max_votes</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Print the winner (or winners) of the election</span>
-<span class="kt">void</span> <span class="nf">print_winner</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">max_votes</span> <span class="o">=</span> <span class="n">get_max</span><span class="p">();</span> <span class="c1">// see who has the most voites</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">// prints name of candidate with most votes</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span> <span class="o">==</span> <span class="n">max_votes</span><span class="p">)</span>
-            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>To see this in real time, watch this video to see multiple sorting algorithms running at the same time:  </p>
+<iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=ZZuD6iUe3Pc">
+</iframe>
                 
               
               
