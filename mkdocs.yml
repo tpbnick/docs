@@ -44,5 +44,7 @@ nav:
       - Functions : c-functions.md
       - Command Line Arguments : c-cl-arguments.md
       - Variables and Scope : c-variable-scope.md
-      - Algorithms : c-algorithms.md
+      - 'Algorithms':
+        - Algorithm Overview : c-algorithms.md
+        - Algorithm Problems : c-algorithms-problems.md
   - About : about.md
