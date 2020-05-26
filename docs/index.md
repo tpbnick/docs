@@ -19,6 +19,7 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [Command Line Arguments](c-cl-arguments.md)
     - [Variables and Scope](c-variable-scope.md)
     - [Algorithms](c-algorithms.md)
+    - [Memory](c-memory.md)
 
 ??? abstract "C++"
 	- Coming Soon!
