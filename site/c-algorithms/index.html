@@ -19,11 +19,17 @@
       
     
     
+    
       <link rel="stylesheet" href="../assets/stylesheets/main.62d34fff.min.css">
       
       
     
+    <link rel="stylesheet" href="../css/lightgallery.min.css">
+
     
+    
+    <script src="../js/lightgallery.min.js"></script>
+
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -1720,6 +1726,7 @@ Else
       
     </div>
     
+    
       <script src="../assets/javascripts/vendor.f81b9e8b.min.js"></script>
       <script src="../assets/javascripts/bundle.23546af0.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
@@ -1738,5 +1745,12 @@ Else
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
+    <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+       lightGallery(elements[i]);
+    }
+    </script>
+
   </body>
 </html>
