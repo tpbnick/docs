@@ -15,7 +15,7 @@
     
     
       
-        <title>Algorithms - Nick's Docs</title>
+        <title>Algorithm Overview - Nick's Docs</title>
       
     
     
@@ -75,7 +75,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Algorithms
+              Algorithm Overview
             
           </span>
         </div>
@@ -395,6 +395,33 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-6" type="checkbox" id="nav-3-1-6" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-6">
+      Algorithms
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Algorithms" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Algorithms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -403,14 +430,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Algorithms
+        Algorithm Overview
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="Algorithms" class="md-nav__link md-nav__link--active">
-      Algorithms
+    <a href="./" title="Algorithm Overview" class="md-nav__link md-nav__link--active">
+      Algorithm Overview
     </a>
     
       
@@ -506,8 +533,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#plurality-problem" class="md-nav__link">
-    Plurality Problem
+  <a href="#algorithm-problems" class="md-nav__link">
+    Algorithm Problems
   </a>
   
 </li>
@@ -516,6 +543,35 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c-algorithms-problems/" title="Algorithm Problems" class="md-nav__link">
+      Algorithm Problems
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c-memory/" title="Memory" class="md-nav__link">
+      Memory
+    </a>
   </li>
 
         
@@ -644,8 +700,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#plurality-problem" class="md-nav__link">
-    Plurality Problem
+  <a href="#algorithm-problems" class="md-nav__link">
+    Algorithm Problems
   </a>
   
 </li>
@@ -1608,211 +1664,8 @@ Else
 </tr>
 </tbody>
 </table>
-<h2 id="plurality-problem">Plurality Problem</h2>
-<p>Now let's take our new knowledge of algorithms and create a program that runs a plurality election that will yield the following output:  </p>
-<div class="highlight"><pre><span></span><code>$ ./plurality Alice Bob Charlie
-Number of voters: 4
-Vote: Alice
-Vote: Bob
-Vote: Charlie
-Vote: Alice
-Alice
-</code></pre></div>
-
-<p><strong>Background</strong>  </p>
-<p>Elections come in all shapes and sizes. In the UK, the Prime Minister is officially appointed by the monarch, who generally chooses the leader of the political party that wins the most seats in the House of Commons. The United States uses a multi-step Electoral College process where citizens vote on how each state should allocate Electors who then elect the President.  </p>
-<p>Perhaps the simplest way to hold an election, though, is via a method commonly known as the “plurality vote” (also known as “first-past-the-post” or “winner take all”). In the plurality vote, every voter gets to vote for one candidate. At the end of the election, whichever candidate has the greatest number of votes is declared the winner of the election.  </p>
-<p><strong>Getting Started</strong> </p>
-<p>We are going to take the following code and complete the <code>vote</code> and <code>print_winner</code> functions:  </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;cs50.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
-
-<span class="c1">// Max number of candidates</span>
-<span class="cp">#define MAX 9</span>
-
-<span class="c1">// Candidates have name and vote count</span>
-<span class="k">typedef</span> <span class="k">struct</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">votes</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">candidate</span><span class="p">;</span>
-
-<span class="c1">// Array of candidates</span>
-<span class="n">candidate</span> <span class="n">candidates</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span>
-
-<span class="c1">// Number of candidates</span>
-<span class="kt">int</span> <span class="n">candidate_count</span><span class="p">;</span>
-
-<span class="c1">// Function prototypes</span>
-<span class="kt">bool</span> <span class="nf">vote</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">print_winner</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">string</span> <span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="c1">// Check for invalid usage</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Usage: plurality [candidate ...]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Populate array of candidates</span>
-    <span class="n">candidate_count</span> <span class="o">=</span> <span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">candidate_count</span> <span class="o">&gt;</span> <span class="n">MAX</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Maximum number of candidates is %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">MAX</span><span class="p">);</span>
-        <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">voter_count</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">&quot;Number of voters: &quot;</span><span class="p">);</span>
-
-    <span class="c1">// Loop over all voters</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">voter_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="s">&quot;Vote: &quot;</span><span class="p">);</span>
-
-        <span class="c1">// Check for invalid vote</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vote</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Invalid vote.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Display winner of election</span>
-    <span class="n">print_winner</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="c1">// Update vote totals given a new vote</span>
-<span class="kt">bool</span> <span class="nf">vote</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// TODO</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Print the winner (or winners) of the election</span>
-<span class="kt">void</span> <span class="nf">print_winner</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// TODO</span>
-    <span class="k">return</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>We can make up the following code for the <code>vote</code> and <code>print_winner</code> functions that solves the problem:  </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;cs50.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
-
-<span class="c1">// Max number of candidates</span>
-<span class="cp">#define MAX 9</span>
-
-<span class="c1">// Candidates have name and vote count</span>
-<span class="k">typedef</span> <span class="k">struct</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">votes</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">candidate</span><span class="p">;</span>
-
-<span class="c1">// Array of candidates</span>
-<span class="n">candidate</span> <span class="n">candidates</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span>
-
-<span class="c1">// Number of candidates</span>
-<span class="kt">int</span> <span class="n">candidate_count</span><span class="p">;</span>
-
-<span class="c1">// Function prototypes</span>
-<span class="kt">bool</span> <span class="nf">vote</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">print_winner</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">string</span> <span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="c1">// Check for invalid usage</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Usage: plurality [candidate ...]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Populate array of candidates</span>
-    <span class="n">candidate_count</span> <span class="o">=</span> <span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">candidate_count</span> <span class="o">&gt;</span> <span class="n">MAX</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Maximum number of candidates is %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">MAX</span><span class="p">);</span>
-        <span class="k">return</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">voter_count</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="s">&quot;Number of voters: &quot;</span><span class="p">);</span>
-
-    <span class="c1">// Loop over all voters</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">voter_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="n">get_string</span><span class="p">(</span><span class="s">&quot;Vote: &quot;</span><span class="p">);</span>
-
-        <span class="c1">// Check for invalid vote</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vote</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-        <span class="p">{</span>
-            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Invalid vote.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="c1">// Display winner of election</span>
-    <span class="n">print_winner</span><span class="p">();</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">get_index</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
-    <span class="p">}</span>   
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Update vote totals given a new vote</span>
-<span class="kt">bool</span> <span class="nf">vote</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">candidate_index</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="c1">// gets the index for name user inputs</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">candidate_index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">candidates</span><span class="p">[</span><span class="n">candidate_index</span><span class="p">].</span><span class="n">votes</span><span class="o">++</span><span class="p">;</span> <span class="c1">// increments vote count for each candidate</span>
-        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">get_max</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">max_votes</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">votes</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span> <span class="o">&gt;</span> <span class="n">max_votes</span><span class="p">)</span>
-            <span class="n">max_votes</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="n">max_votes</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Print the winner (or winners) of the election</span>
-<span class="kt">void</span> <span class="nf">print_winner</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">max_votes</span> <span class="o">=</span> <span class="n">get_max</span><span class="p">();</span> <span class="c1">// see who has the most voites</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">candidate_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">// prints name of candidate with most votes</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">votes</span> <span class="o">==</span> <span class="n">max_votes</span><span class="p">)</span>
-            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">candidates</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<h2 id="algorithm-problems">Algorithm Problems</h2>
+<p>To see the problem sets for the covered algorithms, please click <a href="../c-algorithms-problems/">here</a>.</p>
                 
               
               
@@ -1846,13 +1699,13 @@ Alice
           </a>
         
         
-          <a href="../about/" title="About" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../c-algorithms-problems/" title="Algorithm Problems" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                About
+                Algorithm Problems
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
