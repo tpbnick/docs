@@ -104,13 +104,13 @@ Here, we use int `*p` to declare a variable, `p`, that has the type of `*`, a po
 
 In our computer’s memory, the variables might look like this (each square representing a byte of memory):  
 
-![memory](https://cs50.harvard.edu/x/2020/notes/4/p.png)
+![memory](https://nicklyss.com/wp-content/uploads/2020/05/memory.png)
 
 We have a pointer, `p`, with the address of some variable.  
 
 We can abstract away the actual value of the addresses now, since they’ll be different as we declare variables in our programs, and simply think of `p` as “pointing at” some value:
 
-![pointing](https://cs50.harvard.edu/x/2020/notes/4/pointing.png)
+![pointing](https://nicklyss.com/wp-content/uploads/2020/05/pointing.png)
 
 An easier way to look at this is if we have a mailbox labeled "123", with the number "50" inside it.  The mailbox would be `int n`, since it stores an integer. We might have another mailbox with the address “456”, inside of which is the value “123”, which is the address of our other mailbox. This would be `int *p`, since it’s a pointer to an integer.  
 A **pointer**, then, is a data item whose  
@@ -125,11 +125,11 @@ The simplest pointer available to us in C is the NULL pointer.  As you might exp
 
 Let's use a variable `string s` for a name like `EMMA` for an example.  We should be able to access each character in `EMMA` with `s[0] - s[4]`:  
 
-![array](https://cs50.harvard.edu/x/2020/notes/4/s_array.png)  
+![array](https://nicklyss.com/wp-content/uploads/2020/05/s_array.png)  
 
 It actually turns out that each character is stored in memory at a byte with some address, and `s` is actually just a pointer with the address of the first character:  
 
-![pointer](https://cs50.harvard.edu/x/2020/notes/4/s_pointer.png)
+![pointer](https://nicklyss.com/wp-content/uploads/2020/05/s_pointer.png)
 
 Because `s` is just a pointer to the beginning, only the `\0` indicates the end of the string.  
 
@@ -341,7 +341,7 @@ This does not work because the `swap` function successfully swaps `int a` and `i
 
 Within our computer’s memory, the different types of data that need to be stored for our program are organized into different sections:  
 
-![memory layout](https://cs50.harvard.edu/x/2020/notes/4/memory_layout.png) 
+![memory layout](https://nicklyss.com/wp-content/uploads/2020/05/memory_layout.png) 
 
 * The ** *machine code* ** section is our compiled program’s binary code. When we run our program, that code is loaded into the “top” of memory.
 
@@ -350,12 +350,12 @@ Within our computer’s memory, the different types of data that need to be stor
 * The ** *heap* ** section is an empty area where `malloc` can get free memory from, for our program to use.
 
 *  The ** *stack* ** section is used by functions in our program as they are called. For example, our `main` function is at the very bottom of the stack, and has the local variables `x` and `y`. The `swap` function, when it’s called, has its own frame, or slice, of memory that’s on top of `main`’s, with the local variables `a`, `b`, and `tmp`:  
-![stack](https://cs50.harvard.edu/x/2020/notes/4/stack.png)  
+![stack](https://nicklyss.com/wp-content/uploads/2020/05/stack.png)  
 
 * Once the function `swap` returns, the memory it was using is freed for the next function call, and we lose anything we did, other than the return values, and our program goes back to the function that called `swap`.  
 
 * So by passing in the addresses of `x` and `y` from `main` to `swap`, we can actually change the values of `x` and `y`:  
-![pointers](https://cs50.harvard.edu/x/2020/notes/4/pointers.png)  
+![pointers](https://nicklyss.com/wp-content/uploads/2020/05/pointers.png)  
 
 By passing in the address of `x` and `y`, our `swap` function from above can actually work:  
 

@@ -12,6 +12,7 @@ markdown_extensions:
   - pymdownx.arithmatex
   - codehilite:
       guess_lang: false
+      linenums: true
   - pymdownx.inlinehilite:
   - pymdownx.superfences:
   - admonition
@@ -47,5 +48,7 @@ nav:
       - 'Algorithms':
         - Algorithm Overview : c-algorithms.md
         - Algorithm Problems : c-algorithms-problems.md
-      - Memory : c-memory.md
+      - 'Memory' : 
+        - Memory Overview: c-memory.md
+        - Memory Problems: c-memory-problems.md
   - About : about.md

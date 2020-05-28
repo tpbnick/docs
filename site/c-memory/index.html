@@ -15,7 +15,7 @@
     
     
       
-        <title>Memory - Nick's Docs</title>
+        <title>Memory Overview - Nick's Docs</title>
       
     
     
@@ -81,7 +81,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Memory
+              Memory Overview
             
           </span>
         </div>
@@ -455,6 +455,33 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-7" type="checkbox" id="nav-3-1-7" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-7">
+      Memory
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Memory" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Memory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -463,14 +490,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Memory
+        Memory Overview
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="Memory" class="md-nav__link md-nav__link--active">
-      Memory
+    <a href="./" title="Memory Overview" class="md-nav__link md-nav__link--active">
+      Memory Overview
     </a>
     
       
@@ -555,6 +582,23 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../c-memory-problems/" title="Memory Problems" class="md-nav__link">
+      Memory Problems
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -811,10 +855,10 @@ We also have to use the <code>*</code> operator (in an unfortunately confusing w
 
 <p>Here, we use int <code>*p</code> to declare a variable, <code>p</code>, that has the type of <code>*</code>, a pointer, to a value of type <code>int</code>, an integer. Then, we can print its value (something like <code>0x12345678</code>), or print the value at its location with <code>printf("%i\n", *p);</code>.</p>
 <p>In our computer’s memory, the variables might look like this (each square representing a byte of memory):  </p>
-<p><img alt="memory" src="https://cs50.harvard.edu/x/2020/notes/4/p.png" /></p>
+<p><img alt="memory" src="https://nicklyss.com/wp-content/uploads/2020/05/memory.png" /></p>
 <p>We have a pointer, <code>p</code>, with the address of some variable.  </p>
 <p>We can abstract away the actual value of the addresses now, since they’ll be different as we declare variables in our programs, and simply think of <code>p</code> as “pointing at” some value:</p>
-<p><img alt="pointing" src="https://cs50.harvard.edu/x/2020/notes/4/pointing.png" /></p>
+<p><img alt="pointing" src="https://nicklyss.com/wp-content/uploads/2020/05/pointing.png" /></p>
 <p>An easier way to look at this is if we have a mailbox labeled "123", with the number "50" inside it.  The mailbox would be <code>int n</code>, since it stores an integer. We might have another mailbox with the address “456”, inside of which is the value “123”, which is the address of our other mailbox. This would be <code>int *p</code>, since it’s a pointer to an integer.<br />
 A <strong>pointer</strong>, then, is a data item whose  </p>
 <ul>
@@ -828,9 +872,9 @@ A <strong>pointer</strong>, then, is a data item whose  </p>
 <p>The simplest pointer available to us in C is the NULL pointer.  As you might expect, this pointer points to nothing (a fact which can actually come in handy).  When you create a pointer and you don't set its value immediately, you should <strong>always</strong> set the value of the pointer to NULL.     </p>
 <h2 id="string">string</h2>
 <p>Let's use a variable <code>string s</code> for a name like <code>EMMA</code> for an example.  We should be able to access each character in <code>EMMA</code> with <code>s[0] - s[4]</code>:  </p>
-<p><img alt="array" src="https://cs50.harvard.edu/x/2020/notes/4/s_array.png" />  </p>
+<p><img alt="array" src="https://nicklyss.com/wp-content/uploads/2020/05/s_array.png" />  </p>
 <p>It actually turns out that each character is stored in memory at a byte with some address, and <code>s</code> is actually just a pointer with the address of the first character:  </p>
-<p><img alt="pointer" src="https://cs50.harvard.edu/x/2020/notes/4/s_pointer.png" /></p>
+<p><img alt="pointer" src="https://nicklyss.com/wp-content/uploads/2020/05/s_pointer.png" /></p>
 <p>Because <code>s</code> is just a pointer to the beginning, only the <code>\0</code> indicates the end of the string.  </p>
 <p>In fact, the CS50 Library defines a <code>string</code> with <code>typedef char *string</code>, which just says that we want to name a new type, <code>string</code>, as a <code>char *</code>, or a pointer to a character.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
@@ -1023,7 +1067,7 @@ If we run the above program we will see that it will give us the result "Differe
 This does not work because the <code>swap</code> function successfully swaps <code>int a</code> and <code>int b</code>, but these are simply copies of <code>int x</code> and <code>int y</code>.  When <code>x</code> and <code>y</code> are printed, the copies used by the <code>swap</code> funciton do not alter the actual <code>x</code> and <code>y</code> integers in the <code>main</code> function.  </p>
 <h2 id="memory-layout">Memory Layout</h2>
 <p>Within our computer’s memory, the different types of data that need to be stored for our program are organized into different sections:  </p>
-<p><img alt="memory layout" src="https://cs50.harvard.edu/x/2020/notes/4/memory_layout.png" /> </p>
+<p><img alt="memory layout" src="https://nicklyss.com/wp-content/uploads/2020/05/memory_layout.png" /> </p>
 <ul>
 <li>
 <p>The <strong> <em>machine code</em> </strong> section is our compiled program’s binary code. When we run our program, that code is loaded into the “top” of memory.</p>
@@ -1036,14 +1080,14 @@ This does not work because the <code>swap</code> function successfully swaps <co
 </li>
 <li>
 <p>The <strong> <em>stack</em> </strong> section is used by functions in our program as they are called. For example, our <code>main</code> function is at the very bottom of the stack, and has the local variables <code>x</code> and <code>y</code>. The <code>swap</code> function, when it’s called, has its own frame, or slice, of memory that’s on top of <code>main</code>’s, with the local variables <code>a</code>, <code>b</code>, and <code>tmp</code>:<br />
-<img alt="stack" src="https://cs50.harvard.edu/x/2020/notes/4/stack.png" />  </p>
+<img alt="stack" src="https://nicklyss.com/wp-content/uploads/2020/05/stack.png" />  </p>
 </li>
 <li>
 <p>Once the function <code>swap</code> returns, the memory it was using is freed for the next function call, and we lose anything we did, other than the return values, and our program goes back to the function that called <code>swap</code>.  </p>
 </li>
 <li>
 <p>So by passing in the addresses of <code>x</code> and <code>y</code> from <code>main</code> to <code>swap</code>, we can actually change the values of <code>x</code> and <code>y</code>:<br />
-<img alt="pointers" src="https://cs50.harvard.edu/x/2020/notes/4/pointers.png" />  </p>
+<img alt="pointers" src="https://nicklyss.com/wp-content/uploads/2020/05/pointers.png" />  </p>
 </li>
 </ul>
 <p>By passing in the address of <code>x</code> and <code>y</code>, our <code>swap</code> function from above can actually work:  </p>
@@ -1247,13 +1291,13 @@ This does not work because the <code>swap</code> function successfully swaps <co
           </a>
         
         
-          <a href="../about/" title="About" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../c-memory-problems/" title="Memory Problems" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                About
+                Memory Problems
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
