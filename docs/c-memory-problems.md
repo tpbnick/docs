@@ -545,3 +545,229 @@ Let's look at `helpers.c` and add some code:
                 image[i][j] = blur_image[i][j];
     }
     ```  
+
+## Recover  
+
+Implement a program that recovers JPEGs from a forensic image, per the below.  
+
+```
+$ ./recover card.raw
+```  
+
+### **Background**  
+
+Sometimes, after taking an image, we may delete them by accident. Thankfully, in the computer world, “deleted” tends not to mean “deleted” so much as “forgotten.” Even though the camera insists that the card is now blank, we’re pretty sure that’s not quite true.  
+
+Even though JPEGs are more complicated than BMPs, JPEGs have “signatures,” patterns of bytes that can distinguish them from other file formats. Specifically, the first three bytes of JPEGs are:  
+
+```
+0xff 0xd8 0xff
+```  
+
+from first byte to third byte, left to right. The fourth byte, meanwhile, is either `0xe0`, `0xe1`, `0xe2`, `0xe3`, `0xe4`, `0xe5`, `0xe6`, `0xe7`, `0xe8`, `0xe9`, `0xea`, `0xeb`, `0xec`, `0xed`, `0xee`, or `0xef`. Put another way, the fourth byte’s first four bits are `1110`.  
+
+Odds are, if you find this pattern of four bytes on media known to store photos (e.g., my memory card), they demarcate the start of a JPEG. To be fair, you might encounter these patterns on some disk purely by chance, so data recovery isn’t an exact science.  
+
+Fortunately, digital cameras tend to store photographs contiguously on memory cards, whereby each photo is stored immediately after the previously taken photo. Accordingly, the start of a JPEG usually demarks the end of another. However, digital cameras often initialize cards with a FAT file system whose “block size” is 512 bytes (B). The implication is that these cameras only write to those cards in units of 512 B. A photo that’s 1 MB (i.e., 1,048,576 B) thus takes up 1048576 ÷ 512 = 2048 “blocks” on a memory card. But so does a photo that’s, say, one byte smaller (i.e., 1,048,575 B)! The wasted space on disk is called “slack space.” Forensic investigators often look at slack space for remnants of suspicious data.  
+
+The implication of all these details is that you, the investigator, can probably write a program that iterates over a copy of my memory card, looking for JPEGs’ signatures. Each time you find a signature, you can open a new file for writing and start filling that file with bytes from my memory card, closing that file only once you encounter another signature. Moreover, rather than read my memory card’s bytes one at a time, you can read 512 of them at a time into a buffer for efficiency’s sake. Thanks to FAT, you can trust that JPEGs’ signatures will be “block-aligned.” That is, you need only look for those signatures in a block’s first four bytes.  
+
+Realize, of course, that JPEGs can span contiguous blocks. Otherwise, no JPEG could be larger than 512 B. But the last byte of a JPEG might not fall at the very end of a block. Recall the possibility of slack space. But not to worry. Because this memory card was brand-new when I started snapping photos, odds are it’d been “zeroed” (i.e., filled with 0s) by the manufacturer, in which case any slack space will be filled with 0s. It’s okay if those trailing 0s end up in the JPEGs you recover; they should still be viewable.  
+Now, I only have one memory card, but there are a lot of you! And so I’ve gone ahead and created a “forensic image” of the card, storing its contents, byte after byte, in a file called `card.raw`. So that you don’t waste time iterating over millions of 0s unnecessarily, I’ve only imaged the first few megabytes of the memory card. But you should ultimately find that the image contains 50 JPEGs.  
+
+### **Problem Solving**
+
+Get the files for the recovery problem [HERE](https://cdn.cs50.net/2019/fall/psets/4/recover/recover.zip).  
+
+Let's take a look at the code provided in the .zip:  
+
+??? example "`recover.c` code"
+    ```c linenums="1"
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int main(int argc, char *argv[])
+    {
+
+    }
+    ```
+The above code is basically bare of anything, which means we should break down what we need to do:  
+
+**Tasks**  
+
+* Open memory card  
+
+* Look for beginning of a JPEG  
+
+* Open a new JPEG file  
+
+* Write 512 bytes until a new JPEG is found  
+
+* Stop at the end of the file  
+
+Let's look at some things we can do for each step:  
+
+**Open memory card**
+
+We can take advantage of the `fopen()` function to open the memory card:  
+
+```c
+FILE *f = fopen(filename, "r");
+```
+Here inside the `fopen();` the filename is the name of the file you are trying to open and the `"r"` means you want to read the files.  
+
+**Look for beginning of a JPEG**  
+
+As mentioned previously, each JPEG file starts with a distinct header, meaning that first byte is always `0xff`, the second byte is always `0xd8`, the third byte is always `0xff`, and the fourth byte can vary a little bit, but always start with `0xe`.  
+
+Luckily for us, each JPEG is stored back-to-back in this problem file.  
+
+We can utilize the `fread()` function to look for JPEGs.  
+
+```c
+fread(data, size, number, inptr);
+```
+The above code can be broken down as:  
+
+* `data`: pointer to where to store data you're reading.
+
+* `size`: size of each element to read.
+
+* `number`: number of elements to read.
+
+* `inptr`: `FILE *` to read from.  
+
+For example, we can check to see if the first byte of an array, for example called `buffer`, contains `0xff`:  
+
+```c
+buffer[0] == 0xff
+buffer[1] == 0xd8
+buffer[2] == 0xff
+```
+`buffer[3]` is a little bit more confusing because it can vary.  We could use a boolean expression here to check all the different variations to start:  
+
+```c
+buffer[3] == 0xe0 || buffer[3] == 0xe1 || buffer[3] == 0xe2
+...
+```
+But having to write out all 16 variations could become tedious.  For a shortcut, we could use bitwise arithmatic:  
+
+```c
+(buffer[3] & 0xf0) == 0xe0
+```
+This is going to say to look at the first 4 bits of this 8 bit byte, and set the remaining 4 bytes to zero.  This clears out the last 4 bits and compares the results.  
+
+**Open a new JPEG file**  
+
+After we find a JPEG, we need to make a new JPEG file.  To begin we need to have filenames set as `###.jpg`, starting at `000.jpg`.  This will help us keep track of the number of JPEGs found.  
+
+We can utilize the `sprintf()` function here, where instead of printing to the terminal, it prints to a `string`.  
+
+For example, we could use the following code:  
+
+```c
+sprintf(filename, "%03i.jpg", 2);
+```  
+`%03i.jpg` simply means to print an integer with 3 digits.  
+
+Next, to create the new file, we can use the `fopen()` function again:  
+
+```c
+FILE *img = fopen(filename, "w");
+```
+Notice the `"w"`, which stands for write.  
+
+To begin writing the new file, we can use the `fwrite` function:  
+
+```c
+fwrite(data, size, number, outptr);
+```
+The above code can be broken down as:  
+
+* `data`: pointer to bytes that will be written to file.
+
+* `size`: size of each element to write.
+
+* `number`: number of elements to write.
+
+* `outptr`: `FILE *` to write to.  
+
+* Returns number of items of size `size` were read.  
+
+**Pseudocode**  
+```
+Open memory card
+Repeat until end of card: 
+    Read 512 bytes into a buffer
+    If start of new JPEG
+        If first JPEG
+            ...
+        Else
+            ...
+    Else
+        If already found JPEG
+```
+### Solution  
+
+??? example "`recover.c` code"
+    ```c linenums="1"
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <cs50.h>
+    #include <stdint.h>
+    typedef uint8_t BYTE; //defining BYTE as a byte (unsigned integer of length = 8 bits)
+    #define BLOCK_SIZE 512 // setting BLOCK_SIZE to 512 bytes
+    #define FILE_NAME_SIZE 8
+    bool start_jpeg(BYTE buffer[]);
+
+    int main(int argc, char *argv[])
+    {
+        if (argc !=2)
+        {
+            printf("Usage: ./recover image\n");
+            return 1;
+        }
+        FILE* infile = fopen(argv[1], "r")
+        if (infile == NULL)
+        {
+            printf("File not found\n");
+            return 1;
+        }
+
+        BYTE buffer[BLOCK_SIZE];
+        int file_index = 0;
+        bool first_jpeg = false;
+        FILE* outfile;
+        while (fread(buffer, BLOCK_SIZE, 1, infile))
+        {
+            if (start_jpeg(buffer))
+            {
+                if (!first_jpeg)
+                    first_jpeg = true;
+                else
+                    fclose(outfile);
+
+                char filename(FILE_NAME_SIZE);
+                sprintf(filename, "%03i.jpg", file_index++);
+                outfile = fopen(filename, "w");
+                if (outfile == NULL)
+                    return 1;
+                fwrite(buffer, BLOCK_SIZE, 1, outfile);
+            }
+
+            else if (first_jpeg)
+            {
+                fwrite(buffer, BLOCK_SIZE, 1, outfile)
+            }
+        }
+        fclose(outfile);
+        fclose(infile);
+
+    }
+
+    bool start_jpeg(BYTE buffer[])
+    {
+        return buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0;
+
+    }
+    ```
