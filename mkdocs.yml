@@ -51,4 +51,5 @@ nav:
       - 'Memory' : 
         - Memory Overview: c-memory.md
         - Memory Problems: c-memory-problems.md
+      - Data Structures : c-data-structures.md
   - About : about.md

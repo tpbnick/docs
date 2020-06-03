@@ -1,4 +1,4 @@
-# Welcome to Nick's Docs :sunglasses:
+# Welcome to Nick's Docs :books:
 
 This is a place for documentation examples, programming notes, and projects.  
   
@@ -20,11 +20,12 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [Variables and Scope](c-variable-scope.md)
     - [Algorithms](c-algorithms.md)
     - [Memory](c-memory.md)
+    - [Data Structures](c-data-structures.md)
 
 ??? abstract "C++"
 	- Coming Soon!
 
-??? abstract "Python :snake:"
+??? abstract "Python  :snake:"
 	- Coming Soon!
 
 ??? abstract "Go"
