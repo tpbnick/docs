@@ -313,3 +313,73 @@ We can combine all of our snippets of code into a complete program:
 A **tree** is another data structure where each node points to two other nodes, one to the left (with a smaller value) and one to the right (with a larger value):  
 
 ![binary-search-tree](https://nicklyss.com/wp-content/uploads/2020/06/binary_search_tree.png)  
+
+Notice that there are now two dimensions to this data structure, where some nodes are on different "levels" than others.  We can imagine implementing this with a more complex version of a node in a linked list, where each node has not one but two pointers, one to the value in the "middle of the left half" and one to the value in the "middle of the right half".  Note: all elements to the left of the node are smaller and all elements to the right are greater.  
+
+This is called a binary search tree because each node has at most two children, or nodes it is pointing to, and a search tree because it's sorted in a way that allows us to search correctly.  
+
+And like a linked list, we'll want to keep a pointer to just the beginning of the list, but in this case we want to point to the root, or top center node of the tree (the 4 in the image above).  
+
+Now, we can easily do binary search, and since each node is pointing to another, we can also insert nodes into the tree without moving all of them around as we would have to do with an array.  Recursively searching this tree would look something like:  
+
+```c
+typedef struct node
+{
+    int number;
+    struct node *left;
+    struct node *right;
+} node;
+
+// Here, *tree is a pointer to the root of our tree.
+bool search(node *tree)
+{
+    // We need a base case, if the current tree (or part of the tree) is NULL,
+    // to return false:
+    if (tree == NULL)
+    {
+        return false;
+    }
+    // Now, depending on if the number in the current node is bigger or smaller,
+    // we can just look at the left or right side of the tree:
+    else if (50 < tree->number)
+    {
+        return search(tree->left);
+    }
+    else if (50 > tree->number)
+    {
+        return search(tree->right);
+    }
+    // Otherwise, the number must be equal to what we're looking for:
+    else {
+        return true;
+    }
+}
+```  
+The running time of searching a tree is *O*(log *n*) and inserting nodes while keeping the tree balances is also *O*(log *n*).  By spending a bit more memory and time to maintain the tree, we've now gained faster searching compared to a plain linked list.  
+
+A data structure with almost a constant time search is a **hash table**, which is a combination of an array and a linked list.  We have an array of linked lists, and each linked list in the array has elements of a certain category.  For example, in the real world we might have lots of nametags, and we might sort them into 26 buckets, one labeled with each letter of the alphabet, so we can find nametags by looking in just one bucket.  
+
+We can implement this in a hash table with an array of 26 pointers, each of which points to a linked list for a letter of the alphabet:  
+
+![hash-table](https://nicklyss.com/wp-content/uploads/2020/06/hash_table.png)  
+
+Since we have random access with arrays, we can add elements quickly, and also index quickly into a bucket.  
+
+A bucket might have might have multiple matching values, so we'll use a linked list to store all of them horizontally.  (We call this a collision, when two values match in the same way.)  
+This is called a hash table because we use a hash function, which takes some input and maps it to a bucket it should go in.  In our example, the hash function is just at the first letter of the name, so it might return `0` for "Albus" and `25` for "Zacharias".  
+
+But in the worst case, all the names might start with the same letter, so we might end up with the equivalent of a single linked list again.  We might look at the first two letters, and allocate enough buckets for 26x26 possible hashed values, or even the first three letters, and now we’ll need 26x26x26 buckets. But we could still have a worst case where all our values start with the same three characters, so the running time for search is *O*(*n*). In practice, though, we can get closer to *O*(1) if we have about as many buckets as possible values, especially if we have an ideal hash function, where we can sort our inputs into unique buckets.  
+
+We can use another data structure called a **trie** (prounounced like "try", and is short for "retrieval"):  
+
+![trie](https://nicklyss.com/wp-content/uploads/2020/06/trie.png)  
+
+Imagine we want to store a dictionary of words efficiently, and be able to access each one in constant time. A trie is like a tree, but each node is an array. Each array will have each letter, A-Z, stored. For each word, the first letter will point to an array, where the next valid letter will point to another array, and so on, until we reach something indicating the end of a valid word. If our word isn’t in the trie, then one of the arrays won’t have a pointer or terminating character for our word. Now, even if our data structure has lots of words, the lookup time will be just the length of the word we’re looking for, and this might be a fixed maximum so we have *O*(1) for searching and insertion. The cost for this, though, is 26 times as much memory as we need for each character.  
+
+There are even higher-level constructs, **abstract data structures**, where we use our building blocks of arrays, linked lists, hash tables, and tries to implement a solution to some problem.  
+
+For example, one abstract data structure is a **queue**, where we want to be able to add values and remove values in a first-in-first-out (FIFO) way. To add a value we might enqueue it, and to remove a value we would dequeue it. And we can implement this with an array that we resize as we add items, or a linked list where we append values to the end.  
+
+An “opposite” data structure would be a **stack**, where items most recently added (pushed) are removed (popped) first, in a last-in-first-out (LIFO) way. Our email inbox is a stack, where our most recent emails are at the top.  
+
+Another example is a **dictionary**, where we can map keys to values, or strings to values, and we can implement one with a hash table where a word comes with some other information (like its definition or meaning).

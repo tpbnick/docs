@@ -22,10 +22,10 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [Memory](c-memory.md)
     - [Data Structures](c-data-structures.md)
 
-??? abstract "C++"
-	- Coming Soon!
+??? tip "Python :snake:"
+    - [Python Basics](py.md)
 
-??? abstract "Python  :snake:"
+??? abstract "C++"
 	- Coming Soon!
 
 ??? abstract "Go"
