@@ -1,5 +1,69 @@
 # Data Structures  
 
+## Data Structures Summary  
+
+By this point we've now examined four different ways to store sets of data:  
+
+* [Arrays](#arrays)
+
+* [Linked lists](#linked-lists)
+
+* [Hash tables](#hash-tables)
+
+* [Tries](#tries)  
+
+There are even some variations on these (trees and heaps, quite similar to tries, stacks and queues quite similar to arrays or linked lists, etc.) but this will generally cover most of what we're looking at in C.  
+
+### Arrays  
+
+* Insertion is bad - lots of shifting to fit an element in the middle.
+
+* Deletion is bad - lots of shifting after removing an element.
+
+* Lookup is great - random access, constant time.
+
+* Relatively easy to sort.  
+
+* Relatively small size-wise.  
+
+* Stuck with a fixed size, no flexibility.
+
+### Linked lists  
+
+* Insertion is easy - just tack onto the front.
+
+* Deletion is easy - once you find the element.
+
+* Lookup is bad - have to rely on linear search.
+
+* Relatively difficult to sort - unless you're willing to compromise on super-fast insertion and instead sort as you construct.
+
+* Relatively small size-wise (not as small as arrays).  
+
+### Hash tables
+
+* Insertion is a two-step process - hash, then add.
+
+* Deletion is easy - once you find the element.
+
+* Lookup is on average better than with linked lists because you have the benefit of real-world constant factor.
+
+* Not an ideal data structure if sorting is the goal - just use an array.
+
+* Can run the gamut on size.  
+
+### Tries
+
+* Insertion is complex - a lot of dynamic memory allocation, but gets easier as you go.
+
+* Deletion is easy - just free a node.
+
+* Lookup is fast - not quite as fast as an array, but almost.
+
+* Already sorted - sorts as you build in almost all situations.
+
+* Rapidly becomes huge, even with very little data present, not great if space is at a premium.  
+
 ## Pointers  
 
 In the [memory](c-memory.md) notes, we learned about pointers, `malloc`, and other useful tools for working with memory.  
@@ -151,7 +215,22 @@ To build a data structure, we’ll need some tools we’ve seen:
 
 ## Linked Lists  
 
-With a **linked list**, we can store a list of values that can easily be grown by storing values in different parts of memory:  
+So far, we've only had one kind of data structure for representing collections of like values - `struct` - which give us "containers" for holding variables of different types, typically.  
+Arrays are great for element lookup, but unless we want to insert at the very end of an array, inserting elements is quite costly.  Arrays also suffer from great inflexibility - what happens if we need a larger array than we thought?  
+
+Through clever use of pointers, dynamic memory allocation and `struct`s, we can put the pieces together to develop a new kind of data structure that gives us the ability to grow and shrink a collection of like values to fit our needs.  
+
+We call this combination of elements, when used in this way, a **linked list**.  
+
+A linked list **node** is a special kind of `struct` with two members:  
+
+* Data of some type (`int`, `char`, `float`...)
+
+* A pointer to another node of the same type  
+
+In this way, a set of nodes together can be thought of as forming a chain of elements that we can follow from beginning to end.  
+
+With a linked list, we can store a list of values that can easily be grown by storing values in different parts of memory:  
 
 ![linked-list](https://nicklyss.com/wp-content/uploads/2020/06/linked_list.png)  
 
@@ -161,6 +240,86 @@ With a **linked list**, we can store a list of values that can easily be grown b
 
 * This uses two chunks of memory, where the second chunk is used to point at the next chunk of memory. By the way, `NUL` refers to `\0`, a character that ends a string, and `NULL` refers to an address of all zeros, or a null pointer that we can think of as pointing nowhere.  These chunks are linked by the pointers in the second chunk of memory.  
 
+In order to work with linked lists effectively, there are a number of operations that we need to understand: 
+
+1. [Create a linked list when it doesn't already exist](#create-a-linked-list).
+
+2. [Search through a linked list to find an element](#search-through-a-linked-list-to-find-an-element).
+
+3. [Insert a new node into the linked list](#insert-a-new-node-into-the-linked-list).
+
+4. [Delete a single element from a linked list](#delete-a-single-element-from-a-linked-list).
+
+5. [Delete an entire linked list](#delete-an-entire-linked-list). 
+
+### Create a linked list
+
+```c
+sllnode* create(VALUE val); // ssl stands for "single-linked list" in the following code
+```
+Steps involved: 
+
+* Dynamically allocate space for a new `sllnode`.
+
+* Check to make sure we didn't run out of memory.
+
+* Initialize the node's `val` field.
+
+* Initialize the node's `next` field.
+
+* Return a pointer to the newly created `sllnode`.
+
+### Search through a linked list to find an element
+
+```c
+bool find(sllnode* head, VALUE val);
+```  
+
+Steps involved:  
+
+* Create a traversal pointer pointing to the list's head.
+
+* If the current node's `val` field is what we're looking for, report success.
+
+* If not, set the traversal point to the next pointer in the list and go back to step 2 (above).
+
+* If you've reached the end of the list, report failure. 
+
+### Insert a new node into the linked list  
+
+```c
+sllnode* insert(sllnode* head, VALUE val);
+``` 
+
+Steps involved:  
+
+* Dynamically allocate space for a new `sllnode`.
+
+* Check to make sure we didn't run out of memory.
+
+* Populate and insert the node at the beginning of the linked list. 
+
+* Return a pointer to the new head of the linked list.  
+
+### Delete a single element from a linked list  
+
+Deleting a single element from a singley-linked list can be a little tricky because it can cause different problems.  There are solutions for this in doubley-linked lists.
+
+### Delete an entire linked list  
+
+```c
+void destroy(sllnode* head);
+```
+
+Steps involved:  
+
+* If you've reached a null pointer, stop.
+
+* Delete the rest of the list.
+
+* Free the current node.
+
+### Additional linked list notes
 Unlike with arrays, we no longer randomly access elements in a linked list. For example, we can no longer access the 5th element of the list by calculating where it is, in constant time. (Since we know arrays store elements back-to-back, we can add 1, or 4, or the size of our element, to calculate addresses.) Instead, we have to follow each element’s pointer, one at a time. And we need to allocate twice as much memory as we needed before for each element.  
 
 In code, we might create our own struct called `node` (like a node from a graph in mathematics), and we need to store both an `int` and a pointer to the next `node` called `next`.  
@@ -308,6 +467,34 @@ We can combine all of our snippets of code into a complete program:
 	}
     ``` 
 
+## Hash Table  
+
+**Hash tables** combine the random access ability of an array with the dynamism of a linked list.  
+
+This means (assuming we define our hash table well):
+
+* Insetion can start to tend toward Θ(1)
+
+* Deletion can start to tend toward Θ(1)
+
+* Lookup can start to tend toward Θ(1)
+
+Θ above stands for the average case.  
+
+We're gaining the advantages of both types of data structure (arrays & linked lists), while mitigating the disadvantages.
+
+We can implement this in a hash table with an array of 26 pointers, each of which points to a linked list for a letter of the alphabet:  
+
+![hash-table](https://nicklyss.com/wp-content/uploads/2020/06/hash_table.png)  
+
+Since we have random access with arrays, we can add elements quickly, and also index quickly into a bucket.  
+
+A bucket might have might have multiple matching values, so we'll use a linked list to store all of them horizontally.  (We call this a collision, when two values match in the same way.)  
+This is called a hash table because we use a hash function, which takes some input and maps it to a bucket it should go in.  In our example, the hash function is just at the first letter of the name, so it might return `0` for "Albus" and `25` for "Zacharias".  
+
+But in the worst case, all the names might start with the same letter, so we might end up with the equivalent of a single linked list again.  We might look at the first two letters, and allocate enough buckets for 26x26 possible hashed values, or even the first three letters, and now we’ll need 26x26x26 buckets. But we could still have a worst case where all our values start with the same three characters, so the running time for search is *O*(*n*). In practice, though, we can get closer to *O*(1) if we have about as many buckets as possible values, especially if we have an ideal hash function, where we can sort our inputs into unique buckets.  
+
+
 ## More data structures  
 
 A **tree** is another data structure where each node points to two other nodes, one to the left (with a smaller value) and one to the right (with a larger value):  
@@ -357,19 +544,6 @@ bool search(node *tree)
 ```  
 The running time of searching a tree is *O*(log *n*) and inserting nodes while keeping the tree balances is also *O*(log *n*).  By spending a bit more memory and time to maintain the tree, we've now gained faster searching compared to a plain linked list.  
 
-A data structure with almost a constant time search is a **hash table**, which is a combination of an array and a linked list.  We have an array of linked lists, and each linked list in the array has elements of a certain category.  For example, in the real world we might have lots of nametags, and we might sort them into 26 buckets, one labeled with each letter of the alphabet, so we can find nametags by looking in just one bucket.  
-
-We can implement this in a hash table with an array of 26 pointers, each of which points to a linked list for a letter of the alphabet:  
-
-![hash-table](https://nicklyss.com/wp-content/uploads/2020/06/hash_table.png)  
-
-Since we have random access with arrays, we can add elements quickly, and also index quickly into a bucket.  
-
-A bucket might have might have multiple matching values, so we'll use a linked list to store all of them horizontally.  (We call this a collision, when two values match in the same way.)  
-This is called a hash table because we use a hash function, which takes some input and maps it to a bucket it should go in.  In our example, the hash function is just at the first letter of the name, so it might return `0` for "Albus" and `25` for "Zacharias".  
-
-But in the worst case, all the names might start with the same letter, so we might end up with the equivalent of a single linked list again.  We might look at the first two letters, and allocate enough buckets for 26x26 possible hashed values, or even the first three letters, and now we’ll need 26x26x26 buckets. But we could still have a worst case where all our values start with the same three characters, so the running time for search is *O*(*n*). In practice, though, we can get closer to *O*(1) if we have about as many buckets as possible values, especially if we have an ideal hash function, where we can sort our inputs into unique buckets.  
-
 We can use another data structure called a **trie** (prounounced like "try", and is short for "retrieval"):  
 
 ![trie](https://nicklyss.com/wp-content/uploads/2020/06/trie.png)  
@@ -382,4 +556,5 @@ For example, one abstract data structure is a **queue**, where we want to be abl
 
 An “opposite” data structure would be a **stack**, where items most recently added (pushed) are removed (popped) first, in a last-in-first-out (LIFO) way. Our email inbox is a stack, where our most recent emails are at the top.  
 
-Another example is a **dictionary**, where we can map keys to values, or strings to values, and we can implement one with a hash table where a word comes with some other information (like its definition or meaning).
+Another example is a **dictionary**, where we can map keys to values, or strings to values, and we can implement one with a hash table where a word comes with some other information (like its definition or meaning).  
+
