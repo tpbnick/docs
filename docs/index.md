@@ -25,6 +25,9 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
 ??? tip "Python :snake:"
     - [Python Basics](py.md)
 
+??? abstract "SQL"
+    - Coming Soon!
+
 ??? abstract "C++"
 	- Coming Soon!
 
@@ -33,11 +36,6 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
 
 ??? abstract "R"
 	- Coming Soon!
-
-??? abstract "SQL"
-	- Coming Soon!
-
-
 
 ## Quick Links
 

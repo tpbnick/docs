@@ -51,7 +51,9 @@ nav:
       - 'Memory' : 
         - Memory Overview: c-memory.md
         - Memory Problems: c-memory-problems.md
-      - Data Structures : c-data-structures.md
+      - 'Data Structures' :
+        - Data Structures Overview : c-data-structures.md
+        - Data Structures Problem : c-data-structures-problems.md
     - 'Python':
       - Python Basics : py.md
   - About : about.md

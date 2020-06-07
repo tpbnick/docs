@@ -481,7 +481,17 @@ This means (assuming we define our hash table well):
 
 Θ above stands for the average case.  
 
-We're gaining the advantages of both types of data structure (arrays & linked lists), while mitigating the disadvantages.
+We're gaining the advantages of both types of data structure (arrays & linked lists), while mitigating the disadvantages.  
+
+To get this performance upgrade, we create a new structure whereby when we insert data into the structure, the data itself gives us a clue about where we will find the data, should we need to look it up later.  
+
+A hash table amounts to a combination of two things:  
+
+* First, a **hash function**, which returns a nonnegative integer value called a *hash code*.
+
+* Second, an **array** capable of storing data of the type we wish to place into the data structure.  
+
+The idea is that we run our data through the hash function, and then store the data in the element of the array represented by the returned hash code.  
 
 We can implement this in a hash table with an array of 26 pointers, each of which points to a linked list for a letter of the alphabet:  
 
@@ -490,10 +500,20 @@ We can implement this in a hash table with an array of 26 pointers, each of whic
 Since we have random access with arrays, we can add elements quickly, and also index quickly into a bucket.  
 
 A bucket might have might have multiple matching values, so we'll use a linked list to store all of them horizontally.  (We call this a collision, when two values match in the same way.)  
+
 This is called a hash table because we use a hash function, which takes some input and maps it to a bucket it should go in.  In our example, the hash function is just at the first letter of the name, so it might return `0` for "Albus" and `25` for "Zacharias".  
 
 But in the worst case, all the names might start with the same letter, so we might end up with the equivalent of a single linked list again.  We might look at the first two letters, and allocate enough buckets for 26x26 possible hashed values, or even the first three letters, and now we’ll need 26x26x26 buckets. But we could still have a worst case where all our values start with the same three characters, so the running time for search is *O*(*n*). In practice, though, we can get closer to *O*(1) if we have about as many buckets as possible values, especially if we have an ideal hash function, where we can sort our inputs into unique buckets.  
 
+## Tries  
+
+We can use another data structure called a **trie** (prounounced like "try", and is short for "retrieval"):  
+
+![trie](https://nicklyss.com/wp-content/uploads/2020/06/trie.png)  
+
+Tries combine structures and poiinters together to store data in an interesting way.  The data to be searched for in the trie is now a roadmap.  If you can follow the map from beginning to end, the data exists in the trie, if you can't, it does not exist in the trie.  Unlike with a hash table, there are no collisions, and no two pieces of data (unless they are identical) have the same path.  
+
+Imagine we want to store a dictionary of words efficiently, and be able to access each one in constant time. A trie is like a tree, but each node is an array. Each array will have each letter, A-Z, stored. For each word, the first letter will point to an array, where the next valid letter will point to another array, and so on, until we reach something indicating the end of a valid word. If our word isn’t in the trie, then one of the arrays won’t have a pointer or terminating character for our word. Now, even if our data structure has lots of words, the lookup time will be just the length of the word we’re looking for, and this might be a fixed maximum so we have *O*(1) for searching and insertion. The cost for this, though, is 26 times as much memory as we need for each character.  
 
 ## More data structures  
 
@@ -543,12 +563,6 @@ bool search(node *tree)
 }
 ```  
 The running time of searching a tree is *O*(log *n*) and inserting nodes while keeping the tree balances is also *O*(log *n*).  By spending a bit more memory and time to maintain the tree, we've now gained faster searching compared to a plain linked list.  
-
-We can use another data structure called a **trie** (prounounced like "try", and is short for "retrieval"):  
-
-![trie](https://nicklyss.com/wp-content/uploads/2020/06/trie.png)  
-
-Imagine we want to store a dictionary of words efficiently, and be able to access each one in constant time. A trie is like a tree, but each node is an array. Each array will have each letter, A-Z, stored. For each word, the first letter will point to an array, where the next valid letter will point to another array, and so on, until we reach something indicating the end of a valid word. If our word isn’t in the trie, then one of the arrays won’t have a pointer or terminating character for our word. Now, even if our data structure has lots of words, the lookup time will be just the length of the word we’re looking for, and this might be a fixed maximum so we have *O*(1) for searching and insertion. The cost for this, though, is 26 times as much memory as we need for each character.  
 
 There are even higher-level constructs, **abstract data structures**, where we use our building blocks of arrays, linked lists, hash tables, and tries to implement a solution to some problem.  
 
