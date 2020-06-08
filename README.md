@@ -1,4 +1,4 @@
-# Welcome to Nick's Docs :sunglasses:
+# Welcome to Nick's Docs :books:
 
 This is a place for documentation examples, programming notes, and projects.  
   
