@@ -56,4 +56,6 @@ nav:
         - Data Structures Problem : c-data-structures-problems.md
     - 'Python':
       - Python Basics : py.md
+      - Variables and Simple Data Types : py-data-types.md
+      - Lists : py-lists.md
   - About : about.md

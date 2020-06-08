@@ -24,6 +24,8 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
 
 ??? tip "Python :snake:"
     - [Python Basics](py.md)
+    - [Variables and Simple Data Types](py-data-types.md)
+    - [Lists](py-lists.md)
 
 ??? abstract "SQL"
     - Coming Soon!
