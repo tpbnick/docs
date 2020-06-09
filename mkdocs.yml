@@ -58,4 +58,5 @@ nav:
       - Python Basics : py.md
       - Variables and Simple Data Types : py-data-types.md
       - Lists : py-lists.md
+      - Working with Lists : py-working-with-lists.md
   - About : about.md
