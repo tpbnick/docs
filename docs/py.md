@@ -55,14 +55,14 @@ Python variables have three big differences from C:
 
 Two varieties: while and for 
 
-```py
+```py linenums="1"
 counter = 0
 while counter < 100:
 		print(counter)
 		counter += 1
 ```  
 
-```py 
+```py linenums="1" 
 for x in range(100):
 	print(x)
 ```  
@@ -73,12 +73,12 @@ Here is where things really start to get a lot better than C.
 
 Python arrays (more appropriately known as *lists*) are **not** fixed in size; they can grow or shrink as needed, and you can always tack extra elements onto your array and splce things in and out easily.  
 
-```py
+```py linenums="1"
 nums = [1, 2, 3, 4]
 ```  
 Instead of square bracket syntax, you can also simply use a function to create a list:  
 
-```py
+```py linenums="1"
 nums = list()
 ``` 
 
@@ -88,7 +88,7 @@ Tuples are ordered, immutable sets of data; they are great for associating colle
 
 Here is a list of tuples:  
 
-```py
+```py linenums="1"
 presidents = [
 	("George Washington", 1789),
 	("John Adams", 1797),
@@ -98,7 +98,7 @@ presidents = [
 ```
 This list is iterable as well: 
 
-```py
+```py linenums="1"
 for prez, year in presidents:
 	print("In {1}, {0} took office".format(prez, year))
 ```  
@@ -107,7 +107,7 @@ for prez, year in presidents:
 
 Python also has built in support for dictionaries, allowing you to specifiy list indices with words or phrases (keys).  
 
-```py
+```py linenums="1"
 pizzas = {
 	"cheese": 9,
 	"pepperoni": 10,
@@ -122,7 +122,7 @@ Python has support fr functions as well.  Like variables, we don't need to speci
 
 All functions are introduced with the `def` keyword.  
 
-```py
+```py linenums="1"
 def square(x):
 	result = 0
 	for i in range(0, x):
@@ -136,7 +136,7 @@ Python is an *object-oriented* programming language.
 
 Objects have properties and *methods*, or functions that are inherent to the object, and mean nothing outside of it.  You must also define methods inside the object.  
 
-```py
+```py linenums="1"
 object.method()
 ```  
 
@@ -146,7 +146,7 @@ Classes require an initialization function, also more-generally known as a *cons
 
 In defining each method of an object, `self` should be its first parameter, which stipulates on what object the method is called.  
 
-```py
+```py linenums="1"
 class Student():
 
 	def __init__(self, name, id):
@@ -168,7 +168,7 @@ Tabs and indentation actually matter in this language, and things will not work 
 
 ## First Program  
 
-```py
+```py linenums="1"
 print("Hello Puthon World!")
 ```  
 

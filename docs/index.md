@@ -27,6 +27,7 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [Variables and Simple Data Types](py-data-types.md)
     - [Lists](py-lists.md)
     - [Working with Lists](py-working-with-lists.md)
+    - [If Statements](py-if-statements.md)
 
 ??? abstract "SQL"
     - Coming Soon!

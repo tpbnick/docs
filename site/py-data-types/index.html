@@ -792,6 +792,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../py-if-statements/" title="If Statements" class="md-nav__link">
+      If Statements
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -981,9 +993,11 @@
                 <h1 id="variables-and-simple-data-types">Variables and Simple Data Types</h1>
 <h2 id="variables">Variables</h2>
 <p>Let's go back to the <a href="https://docs.nicklyss.com/py#first-program">first program</a> and use a variable.  To do this, we simply add a new line at the beginning of the file and modify the second line:  </p>
-<p><div class="highlight"><pre><span></span><code><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Hello Python World!&quot;</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Hello Python World!&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 We have now created a <em>variable</em> named <code>message</code>.  Every variable is connected to a <em>value</em>, which is the information associated with that variable.  In this case the value is the <code>Hello Python World!</code> text.  </p>
 <p>Adding a variable makes a little more work for the Python interpreter.  When it processes the first line, it associates the variable <code>message</code> with the <code>Hello Puthon World!</code> text. When it reaches the second line, it prints the value associated with <code>message</code> to the screen.  </p>
 <h3 id="naming-and-using-variables">Naming and Using Variables</h3>
@@ -1008,27 +1022,35 @@ We have now created a <em>variable</em> named <code>message</code>.  Every varia
 <h2 id="strings">Strings</h2>
 <p>Because most programs define and gather some sort of data, and then do something useful with it, it helps to classify different types of data.  The first data type we'll look at is the <em>string</em>.  Strings are quite simple at first glance, but you can use them in many different ways.  </p>
 <p>A <em>string</em> is a series of characters.  Anything inside quotes is considered a string in Python, and you can use single or double quotes around your strings like this: </p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;This is a string&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="s2">&quot;This is a string&quot;</span>
 <span class="s1">&#39;This is also a string&#39;</span>
 </code></pre></div>
+</td></tr></table>
 
 <p>This flexibility allows you to use quotes and apostrophes within your strings:</p>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;I told my friend, &quot;Python is my favorite language!&quot;&#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="s1">&#39;I told my friend, &quot;Python is my favorite language!&quot;&#39;</span>
 </code></pre></div>
+</td></tr></table>
 
 <h3 id="changing-case-in-a-string-with-methods">Changing Case in a String with Methods</h3>
 <p>One of the simplest tasks you can do with strings is change the case of the words in a string:  </p>
-<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ada lovelace&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ada lovelace&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
 </code></pre></div>
+</td></tr></table>
 
 <p>In the above example, the variable <code>name</code> refers to the lowercase string <code>ada lovelace</code>/  The method <code>title()</code> appears after the variable in the <code>print()</code> call.  A <em>method</em> is an action that Python can perform on a piece of data.  The dot (.) after <code>name</code> in <code>name.title()</code> tells Python to make the <code>title()</code> method act on the variable <code>name</code>.  </p>
 <p>The <code>title()</code> method changes each word to title case, where each word begins with a capital letter.  This is useful because you'll often want to think of a name as a piece of information.  For example, you might want to program the input values of <code>Ada</code>. <code>ADA</code>, and <code>ada</code> as the same name, and display them all as <code>Ada</code>.  </p>
 <p>Several other useful methods are available for dealing with case as well.  For example, you can change a string to all uppercase or all lowercase letters like this:  </p>
-<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Ada Lovelace&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Ada Lovelace&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 </code></pre></div>
+</td></tr></table>
 
 <p>This will display the following: </p>
 <div class="highlight"><pre><span></span><code>ADA LOVELACE
@@ -1037,35 +1059,49 @@ ada lovelace
 
 <h3 id="using-variables-in-strings">Using Variables in Strings</h3>
 <p>In some situations, you may want to use a variable's name inside a string.  For example, you might want two variables to represent a first name and a last name respectively, and then want to combine those values to display someone's full name:</p>
-<div class="highlight"><pre><span></span><code><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;ada&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;ada&quot;</span>
 <span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;lovelace&quot;</span>
 <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 
 <p>To insert a variable's value into a string, place the letter <code>f</code> immediately before the opening quoatation mark. Put braces around the name or names of any variable you want to use inside the string.  Python will replace each variable with its value when the string is displayed.  </p>
 <p>These strings are called <em>f-strings</em>.  The <em>f</em> is for <em>format</em>, because Python formats the string by replaceing the name of any variable in braces with its value.  </p>
 <p>You can do a lot with f-strings.  For example, you can use f-strings to compose complete messages using the information associated with a variable:  </p>
-<p><div class="highlight"><pre><span></span><code><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;ada&quot;</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;ada&quot;</span>
 <span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;lovelace&quot;</span>
 <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 The above code would display the following:  </p>
 <div class="highlight"><pre><span></span><code>Hello, Ada Lovelace!
 </code></pre></div>
 
 <p>We can actually make this even simpler, by assigning the entire message to a variable:  </p>
-<p><div class="highlight"><pre><span></span><code><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;ada&quot;</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;ada&quot;</span>
 <span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;lovelace&quot;</span>
 <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">!&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 The final <code>print()</code> call is much simpler in this case.  </p>
 <details class="warning"><summary>f-string compatibility</summary><p>f-strings were first introduced in Python 3.6.  If you are using Python 3.5 or earlier, you must use the <code>format()</code> method rather than the above <code>f</code> syntax. To use format(), list the variables you want to use in the string inside the parentheses following format.  Each variable is referred to by a set of braces; the braces will be filled by the values listed in parentheses in the order provided: </p>
-<div class="highlight"><pre><span></span><code><span class="n">full_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">full_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">)</span>
 </code></pre></div>
+</td></tr></table>
 
 </details>
 <h3 id="adding-whitespace-to-strings-with-tabs-or-newlines">Adding Whitespace to Strings with Tabs or Newlines</h3>
@@ -1085,7 +1121,13 @@ The final <code>print()</code> call is much simpler in this case.  </p>
 <p>Extra whitespace can be confusing in your programs.  To programmers, <code>'python'</code> and <code>'python '</code> look pretty much the same, but to a program, they are two different strings.  Puthon detects the extra space in <code>'python '</code> and considers it significant unless you tell it otherwise.  </p>
 <p>It is important to think about whitespace, because often you'll want to compare two strings to determine whether they are the same.  For example, one important instance might involve checking people's usernames when they login to a website.  Extra whitespace can be confusing in much simpler situations as well.  Fortunately, Python makes it simple to eliminate extraneous whitespace from data that people enter.  </p>
 <p>Python can look for extra whitespace on the right and left sides of a string.  To ensure that no whitespace exists at the right end of a string, use the <code>rstrip()</code> method.  </p>
-<div class="highlight"><pre><span></span><code><span class="n">favorite_language</span> <span class="o">=</span> <span class="s1">&#39;python &#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">favorite_language</span> <span class="o">=</span> <span class="s1">&#39;python &#39;</span>
 
 <span class="n">favorite_language</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;python &#39;</span>
@@ -1093,6 +1135,7 @@ The final <code>print()</code> call is much simpler in this case.  </p>
 <span class="n">favorite_language</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span><span class="s1">&#39;python&#39;</span>
 </code></pre></div>
+</td></tr></table>
 
 <p>Running the above code with the <code>rstrip()</code> method does not permanently remove the whitespace at the end of the string.  If the code was run again without the <code>rstrip()</code>, the extra whitespace would appear again.  </p>
 <h3 id="avoiding-syntax-errors-with-strings">Avoiding Syntax Errors with Strings</h3>
@@ -1101,7 +1144,17 @@ The final <code>print()</code> call is much simpler in this case.  </p>
 <h2 id="numbers">Numbers</h2>
 <p>Numbers are used quite often in programming to keep score in games, represent data in visualizations, store information in web applications, and so on.  Python treats numbers in several different ways.  Let's first take a look at how Python manages integers, because they are the simplest to work with:  </p>
 <p>You can add (<code>+</code>), subtract (<code>-</code>), multiply (<code>*</code>) and divide (<code>/</code>) integers in Python.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
 <span class="mi">5</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span>
@@ -1113,9 +1166,17 @@ The final <code>print()</code> call is much simpler in this case.  </p>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="mf">1.5</span>
 </code></pre></div>
+</td></tr></table>
 
 <p>In a terminal session, Python simply returns the result of the operation.  Python uses two multiplication symbols to represent exponents: </p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span> 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span> 
 <span class="mi">9</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">3</span>
@@ -1124,55 +1185,76 @@ The final <code>print()</code> call is much simpler in this case.  </p>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span>
 <span class="mi">1000000</span>
 </code></pre></div>
+</td></tr></table>
 
 <p>Python supports the order of operations too, so you can use multiple operations in one expression.  You can also use parentheses to modify the order of operations so Python can evaluate your expression in the order you specify.  For example:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="mi">4</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="mi">4</span>
 <span class="mi">14</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
 <span class="mi">20</span>
 </code></pre></div>
+</td></tr></table>
 
 <h3 id="floats">Floats</h3>
 <p>Python calls any number with a decimal point a <em>float</em>. This term is used in most programming languages (like in <a href="https://docs.nicklyss.com/c">C</a>), and it refers to the fact that a decimal point can appear at any position in a number.  Every programming language must be carefully designed to properly manage decimal numbers so numbers behave appropriately no matter where the decimal point appears.  </p>
 <p>For the most part, you can use decimals without worrying how they behave.  Simply enter the numbers you want to use, and Python will most likely do what you expect:  </p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.1</span>
 <span class="mf">0.2</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="mf">0.2</span>
 <span class="mf">0.4</span>
 </code></pre></div>
+</td></tr></table>
 
 <p>But beware, sometimes you will get an arbitrary number of decimals in your answer:  </p>
-<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mf">0.2</span> <span class="o">+</span> <span class="mf">0.1</span>
 <span class="mf">0.3000000000000004</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="mf">0.1</span>
 <span class="mf">0.3000000000000004</span>
 </code></pre></div>
+</td></tr></table>
 This happens in all languages and is of little concern.  Python tries to find a way to represent the result as precisely as possible, which is sometimes difficult given how computers have to represent numbers internally.  </p>
 <h3 id="integers-and-floats">Integers and Floats</h3>
 <p>When you divide any two numbers, even if they are integers that result in a whole number, you'll always get a float: </p>
-<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span><span class="o">/</span><span class="mi">2</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span><span class="o">/</span><span class="mi">2</span>
 <span class="mf">2.0</span>
 </code></pre></div>
+</td></tr></table>
 If you mix an integer and a float in any operation, you'll get a float as well.  Python defaults to a float in any operation that uses a float, even if the output is a whole number.  </p>
 <h3 id="underscores-in-numbers">Underscores in Numbers</h3>
 <p>When you're writing long numbers, you can group digits using underscores to make large numbers more readable in code: </p>
-<p><div class="highlight"><pre><span></span><code><span class="n">universe_age</span> <span class="o">=</span> <span class="mi">14_000_000_000</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">universe_age</span> <span class="o">=</span> <span class="mi">14_000_000_000</span>
 </code></pre></div>
+</td></tr></table>
 When you print a number that was defined with underscores, Python only prints the digits.  Even if the numbers are not grouped in threes, Python will still ignore the underscores.  This feature works for both integers and floats, but only in Python 3.6 and later.  </p>
 <h3 id="multiple-assignment">Multiple Assignment</h3>
 <p>You can assign values to more than one variable using just a single line.  This can help shorten your programs and make them easier to read; you'll use this technique most often when initializing a set of number.  </p>
 <p>For example, here is how you can initialize the variables <code>x</code>, <code>y</code>, and <code>z</code> to zero: </p>
-<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
 </code></pre></div>
+</td></tr></table>
 
 <p>You need to separate the variable names with commas, and do the same with the values, and Python will assign each value to its respectively positioned variable.  As long as the number of values matches the number of variables, Python will match them up correctly.  </p>
 <h3 id="constants">Constants</h3>
 <p>A <em>constant</em> is like a variable whose value stays the same throughout the life of a program.  Python doesn't have built-in constant types, but Python programmers use all capital letters to indicate a variable should be treated as a constant and never be changed: </p>
-<div class="highlight"><pre><span></span><code><span class="n">MAX_CONNECTIONS</span> <span class="o">=</span> <span class="mi">5000</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">MAX_CONNECTIONS</span> <span class="o">=</span> <span class="mi">5000</span>
 </code></pre></div>
+</td></tr></table>
 
 <h2 id="comments">Comments</h2>
 <p>Comments are an extremely useful feature in most programming languages.  Adding a hash mark (#) indicates a comment.  Anything following a hash mark in your code is ignored by the Python interpreter until a new line of code is detected.  </p>

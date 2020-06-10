@@ -6,13 +6,13 @@ A *list* is a collection of items in a particular order.  You can make a list th
 
 In Python, square brackets ([ ]) indicate a list, and individual elements in the list are separated by commas.  Here is a simple example of a list that contains a few kinds of bicylces:  
 
-```py
+```py linenums="1"
 bicylces = ['trek', 'cannondale', 'redline', 'specialized']
 print(bicylces)
 ```
 If you ask Python to print a list, Python returns its representation of the list, including the square brackets:
 
-```py
+```py linenums="1"
 ['trek', 'cannondale', 'redline', 'specialized']
 ```  
 Because this isn't the output you want your users to see, let's learn how to access the individual items in a list.  
@@ -23,7 +23,7 @@ Lists are ordered collections, so you can access any element in a list by tellin
 
 For example, let's pull out the first bicycle in the list `bicycles`:
 
-```py
+```py linenums="1"
 bicylces = ['trek', 'cannondale', 'redline', 'specialized']
 print(bicylces[0])
 ```
@@ -33,18 +33,18 @@ print(bicylces[0])
 
 When you print out a single item from a list, Python will return just that element without square brackets:  
 
-```py
+```py linenums="1"
 trek
 ```
 We can also use the `.title()` method, discussed in [variables and simple data types](https://docs.nicklyss/py-data-types/#using-variables-in-strings).  This will capitalize the first letter of the element:  
 
-```py
+```py linenums="1"
 bicylces = ['trek', 'cannondale', 'redline', 'specialized']
 print(bicylces[0].title())
 ```
 The above example would print out the first element as follows:  
 
-```py
+```py linenums="1"
 Trek
 ```  
 ### Using Individual Values from a List 
@@ -53,7 +53,7 @@ You can use individual values from a list just as you would any other variable. 
 
 Let's try pulling the first bicycly from the list and composing a message using that value:  
 
-```py
+```py linenums="1"
 bicylces = ['trek', 'cannondale', 'redline', 'specialized']
 message = f"My first bicycle was a {bicycles[0].title()}."
 print(message)
@@ -75,7 +75,7 @@ The syntax for modifying an element is similar to the syntax for [accessing an e
 
 For example, let's say we have a list of motorcycles, and the first item in the list is `'honda'`.  How would we go about changing the value of the first item?  
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki']
 print(motorcycles)
 
@@ -100,7 +100,7 @@ You might want to add a new element to a list for many reasons.  For example, yo
 
 The simplest way to add a new element to a list is to *append* the item to the list.  When you append an item to a list, the new element is added to the end of the list.  Using the same list we had in the previous example, we'll add the new element `'ducati'` to the end of the list:  
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki']
 print(motorcycles)
 
@@ -120,7 +120,7 @@ example, you can start with an empty list and then add items to the list
 using a series of append() calls. Using an empty list, let’s add the elements
 `'honda'`, `'yamaha'`, and `'suzuki'` to the list:  
 
-```py
+```py linenums="1"
 motorcycles = []
 
 motorcycles.append('honda')
@@ -145,7 +145,7 @@ you just created.
 
 You can also add a new element at any position in your list by using the `insert()` method.  You do this by specifying the index of the new element and the value of the new item:  
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki']
 
 motorcycles.insert(0, 'ducati')
@@ -164,7 +164,7 @@ Often, you'll want to remove an item or a set of items from a list.  You can rem
 
 If you know the position of the item you want to remove from a list, you can use the `del` statement.  
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki']
 print(motorcycles)
 
@@ -185,7 +185,7 @@ The `pop()` method removes the last item in a list, but it lets you work with th
 
 Let's pop a motorcycle from a list of motorcycles:  
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki']
 print(motorcycles)
 
@@ -204,7 +204,7 @@ suzuki
 
 How might this `pop()` method be useful?  Imagine that the motorcycles in the list are store in chronological order according to when we owned them.  If this is the case, we can use the `pop()` method to print a statement about the last motorcycle we bought:  
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki']
 
 last_owned = motorcycles.pop()
@@ -220,7 +220,7 @@ The last motorcycle I owned was a Suzuki.
 
 We can use `pop()` to remove an item from any position in a list by including the index of the item you want to remove in parenthese:  
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki']
 
 first_owned = motorcycles.pop(0)
@@ -242,7 +242,7 @@ Sometimes you won't know the position of the value you want to remove from a lis
 
 For example, let's say we want to remove the value `'ducati'` from the list of motorcycles:  
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
 print(motorcycles)
 
@@ -257,7 +257,7 @@ The above code tells Python to find and remove `'ducati'` from within the `motor
 ```  
 You can also use the `remove()` method to work with a value that's being removed form a list.  Let's remove the value `'ducati'` and print a reason for removing it from the list: 
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki', 'ducati']
 print(motorcycles)
 
@@ -288,7 +288,7 @@ Often, your lists will be created in an unpredictable order, because you can't a
 
 Python's `sort()` method makes it relatively easy to sort a list.  Imagine we have a list of cars and want to change the order of the list to store them alphabetically.  To keep the task simple, let's assume that all the values in the list are lowercase:  
 
-```py
+```py linenums="1"
 cars = ['bmw', 'audi', 'toyota', 'subaru']
 cars.sort()
 print(cars)
@@ -300,7 +300,7 @@ The `sort()` method, shown above changes the order of the list permanently.  The
 ``` 
 You can also sort this list in reverse alphabetical order by passing the argument `reverse=True` to the `sort()` method.  The following example sorts the list of cars in reverse alphabetical order: 
 
-```py
+```py linenums="1"
 cars = ['bmw', 'audi', 'toyota', 'subaru']
 cars.sort(reverse=True)
 print(cars)
@@ -310,7 +310,7 @@ print(cars)
 
 To maintain the original order of a list but present it in a sorted order, you can use the `sorted()` function.  The `sorted()` function lets you display your list in a particular order but doesn't affect the actual order of the list.  Let's try this function on the list of cars:  
 
-```py
+```py linenums="1"
 cars = ['bmw', 'audi', 'toyota', 'subaru']
 
 print("Here is the orginal list:")
@@ -343,7 +343,7 @@ Here is the original list again:
 
 To reverse the original order of a list, we can use the `reverse()` method.  If we originally stored the list of cars in chronological order according to when we owned them, we could easily rearrange the list into reverse chronological order:  
 
-```py 
+```py linenums="1" 
 cars = ['bmw', 'audi', 'toyota', 'subaru']
 print(cars)
 
@@ -362,7 +362,7 @@ The `reverse()` method changes the order of a list permanently, but you can alwa
 
 You can quickly find the length of a list by using the `len()` funtion.  The list in this example has four items, so the output will be the integer 4:  
 
-```py
+```py linenums="1"
 cars = ['bmw', 'audi', 'toyota', 'subaru']
 len(cars)
 ``` 
@@ -370,13 +370,13 @@ len(cars)
 
 One type of error is common when you're working with lists for the first time.  Let's say we have a list with three items, and you ask for the fourth item:  
 
-```py
+```py linenums="1"
 motorcycles = ['honda', 'yamaha', 'suzuki']
 print(motorcycles[3])
 ``` 
 Running this code results in an *index error*:  
 
-```py
+```py linenums="1"
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-10-9811709cfb18> in <module>

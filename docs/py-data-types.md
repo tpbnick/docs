@@ -4,7 +4,7 @@
 
 Let's go back to the [first program](https://docs.nicklyss.com/py#first-program) and use a variable.  To do this, we simply add a new line at the beginning of the file and modify the second line:  
 
-```py
+```py linenums="1"
 message = "Hello Python World!"
 print(message)
 ```
@@ -32,14 +32,14 @@ Because most programs define and gather some sort of data, and then do something
 
 A *string* is a series of characters.  Anything inside quotes is considered a string in Python, and you can use single or double quotes around your strings like this: 
 
-```py
+```py linenums="1"
 "This is a string"
 'This is also a string'
 ```
 
 This flexibility allows you to use quotes and apostrophes within your strings:
 
-```py
+```py linenums="1"
 'I told my friend, "Python is my favorite language!"'
 ``` 
 
@@ -47,7 +47,7 @@ This flexibility allows you to use quotes and apostrophes within your strings:
 
 One of the simplest tasks you can do with strings is change the case of the words in a string:  
 
-```py
+```py linenums="1"
 name = "ada lovelace"
 print(name.title())
 ```
@@ -58,7 +58,7 @@ The `title()` method changes each word to title case, where each word begins wit
 
 Several other useful methods are available for dealing with case as well.  For example, you can change a string to all uppercase or all lowercase letters like this:  
 
-```py
+```py linenums="1"
 name = "Ada Lovelace"
 print(name.upper())
 print(name.lower())
@@ -75,7 +75,7 @@ ada lovelace
 
 In some situations, you may want to use a variable's name inside a string.  For example, you might want two variables to represent a first name and a last name respectively, and then want to combine those values to display someone's full name:
 
-```py
+```py linenums="1"
 first_name = "ada"
 last_name = "lovelace"
 full_name = f"{first_name} {last_name}"
@@ -88,7 +88,7 @@ These strings are called *f-strings*.  The *f* is for *format*, because Python f
 
 You can do a lot with f-strings.  For example, you can use f-strings to compose complete messages using the information associated with a variable:  
 
-```py
+```py linenums="1"
 first_name = "ada"
 last_name = "lovelace"
 full_name = f"{first_name} {last_name}"
@@ -102,7 +102,7 @@ Hello, Ada Lovelace!
 
 We can actually make this even simpler, by assigning the entire message to a variable:  
 
-```py
+```py linenums="1"
 first_name = "ada"
 last_name = "lovelace"
 full_name = f"{first_name} {last_name}"
@@ -114,7 +114,7 @@ The final `print()` call is much simpler in this case.
 ??? warning "f-string compatibility"
 	f-strings were first introduced in Python 3.6.  If you are using Python 3.5 or earlier, you must use the `format()` method rather than the above `f` syntax. To use format(), list the variables you want to use in the string inside the parentheses following format.  Each variable is referred to by a set of braces; the braces will be filled by the values listed in parentheses in the order provided: 
 
-	```py
+	```py linenums="1"
 	full_name = "{} {}".format(first_name, last_name)
 	```
 
@@ -136,7 +136,7 @@ It is important to think about whitespace, because often you'll want to compare 
 
 Python can look for extra whitespace on the right and left sides of a string.  To ensure that no whitespace exists at the right end of a string, use the `rstrip()` method.  
 
-```py
+```py linenums="1"
 favorite_language = 'python '
 
 favorite_language
@@ -160,7 +160,7 @@ Numbers are used quite often in programming to keep score in games, represent da
 
 You can add (`+`), subtract (`-`), multiply (`*`) and divide (`/`) integers in Python.
 
-```py 
+```py linenums="1" 
 >>> 2 + 3
 5
 
@@ -176,7 +176,7 @@ You can add (`+`), subtract (`-`), multiply (`*`) and divide (`/`) integers in P
 
 In a terminal session, Python simply returns the result of the operation.  Python uses two multiplication symbols to represent exponents: 
 
-```py
+```py linenums="1"
 >>> 3 ** 2 
 9
 
@@ -189,7 +189,7 @@ In a terminal session, Python simply returns the result of the operation.  Pytho
 
 Python supports the order of operations too, so you can use multiple operations in one expression.  You can also use parentheses to modify the order of operations so Python can evaluate your expression in the order you specify.  For example:
 
-```py
+```py linenums="1"
 >>> 2 + 3*4
 14
 
@@ -203,7 +203,7 @@ Python calls any number with a decimal point a *float*. This term is used in mos
 
 For the most part, you can use decimals without worrying how they behave.  Simply enter the numbers you want to use, and Python will most likely do what you expect:  
 
-```py
+```py linenums="1"
 >>> 0.1 + 0.1
 0.2
 
@@ -213,7 +213,7 @@ For the most part, you can use decimals without worrying how they behave.  Simpl
 
 But beware, sometimes you will get an arbitrary number of decimals in your answer:  
 
-```py
+```py linenums="1"
 >>> 0.2 + 0.1
 0.3000000000000004
 
@@ -226,7 +226,7 @@ This happens in all languages and is of little concern.  Python tries to find a 
 
 When you divide any two numbers, even if they are integers that result in a whole number, you'll always get a float: 
 
-```py
+```py linenums="1"
 >>> 4/2
 2.0
 ```
@@ -236,7 +236,7 @@ If you mix an integer and a float in any operation, you'll get a float as well. 
 
 When you're writing long numbers, you can group digits using underscores to make large numbers more readable in code: 
 
-```py
+```py linenums="1"
 universe_age = 14_000_000_000
 ```
 When you print a number that was defined with underscores, Python only prints the digits.  Even if the numbers are not grouped in threes, Python will still ignore the underscores.  This feature works for both integers and floats, but only in Python 3.6 and later.  
@@ -247,7 +247,7 @@ You can assign values to more than one variable using just a single line.  This 
 
 For example, here is how you can initialize the variables `x`, `y`, and `z` to zero: 
 
-```py
+```py linenums="1"
 x, y, z = 0, 0, 0
 ```
 
@@ -257,7 +257,7 @@ You need to separate the variable names with commas, and do the same with the va
 
 A *constant* is like a variable whose value stays the same throughout the life of a program.  Python doesn't have built-in constant types, but Python programmers use all capital letters to indicate a variable should be treated as a constant and never be changed: 
 
-```py
+```py linenums="1"
 MAX_CONNECTIONS = 5000
 ```
 

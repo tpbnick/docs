@@ -59,4 +59,5 @@ nav:
       - Variables and Simple Data Types : py-data-types.md
       - Lists : py-lists.md
       - Working with Lists : py-working-with-lists.md
+      - If Statements : py-if-statements.md
   - About : about.md
