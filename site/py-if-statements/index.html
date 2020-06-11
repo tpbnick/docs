@@ -686,6 +686,60 @@
     Conditional Tests
   </a>
   
+    <nav class="md-nav" aria-label="Conditional Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checking-for-equality" class="md-nav__link">
+    Checking for Equality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignoring-case-when-checking-for-equality" class="md-nav__link">
+    Ignoring Case When Checking for Equality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-for-inequality" class="md-nav__link">
+    Checking for Inequality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-comparisons" class="md-nav__link">
+    Numerical Comparisons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-multiple-conditions" class="md-nav__link">
+    Checking Multiple Conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Checking Multiple Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-and-to-check-multiple-conditions" class="md-nav__link">
+    Using and to Check Multiple Conditions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -754,6 +808,60 @@
     Conditional Tests
   </a>
   
+    <nav class="md-nav" aria-label="Conditional Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checking-for-equality" class="md-nav__link">
+    Checking for Equality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignoring-case-when-checking-for-equality" class="md-nav__link">
+    Ignoring Case When Checking for Equality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-for-inequality" class="md-nav__link">
+    Checking for Inequality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numerical-comparisons" class="md-nav__link">
+    Numerical Comparisons
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-multiple-conditions" class="md-nav__link">
+    Checking Multiple Conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Checking Multiple Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-and-to-check-multiple-conditions" class="md-nav__link">
+    Using and to Check Multiple Conditions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -799,6 +907,117 @@ Toyota
 </code></pre></div>
 
 <h2 id="conditional-tests">Conditional Tests</h2>
+<p>At the heart of every <code>if</code> statement is an expression that canbe evaluated as <code>True</code> or <code>False</code> and is called a <em>conditional test</em>.  Python uses the values <code>True</code> and <code>False</code> to decide whether the code in an <code>if</code> statement should be executed.  If a conditional test evaluates to <code>True</code>, Python executes the code following the <code>if</code> statement.  If the test evaluates to <code>False</code>, Python ignores the code following the <code>if</code> statement.  </p>
+<h3 id="checking-for-equality">Checking for Equality</h3>
+<p>Most conditional tests compare the current value of a variable to a specific value of interest.  The simplest conditional test checks whether the value of a variable is equal to the value of interest:  </p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;bmw&#39;</span>
+<span class="n">car</span> <span class="o">==</span> <span class="s1">&#39;bmw&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+The code at line 1 sets the value of car to 'bmw' using a single equal sign, as you've seen many times already.  The code at line 2 checks whether the value of <code>car</code> is <code>'bmw'</code> using a double equal sign (<code>==</code>).  This <em>equality operator</em> returns <code>True</code> if the values on the left and right side of the operator match, and <code>False</code> if they don't match.  The values in this example match, so Python returns <code>True</code>.  </p>
+<p>When the value of <code>car</code> is anything other than <code>'bmw'</code>, this test returns <code>False</code>.  </p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;audi&#39;</span>
+<span class="n">car</span> <span class="o">==</span> <span class="s1">&#39;bmw&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+A single equal sign is really a statment; you might read the code at line one as "Set the value of <code>car</code> equal to <code>'audi'</code>".  On the other side, a double equal sign, like the one on line 2, asks a question: "Is the vale of <code>car</code> equal to <code>'bmw'</code>?"  Most programming languages use equal signs in this way.  </p>
+<h3 id="ignoring-case-when-checking-for-equality">Ignoring Case When Checking for Equality</h3>
+<p>Testing for equality is case sensitive in Python.  For example, ywo values with different capitalization are not considered equal: </p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;Audi&#39;</span>
+<span class="n">car</span> <span class="o">==</span> <span class="s1">&#39;audi&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+If case matters, this behavior is advantageous.  But if case doesn't matter and instead you just want to test the value of a variable, you can convert the variable's value to lowercase before doing the comparison:  </p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;Audi&#39;</span>
+<span class="n">car</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;audi&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+This test would return <code>True</code> no matter how the value <code>'Audi'</code> is formatted because the test is now case insensitive.  The <code>lower()</code> function doesn't change the value that was originally stored in <code>car</code>, so you can do this kind of comparison without affecting the original variable: </p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;Audi&#39;</span>
+<span class="n">car</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;audi&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code>&#39;Audi&#39;
+</code></pre></div>
+At the first line 1, we assigned the capitalized string <code>'Audi'</code> to the variable <code>car</code>.  At line 2, we convert the value of <code>car</code> to lowercase and compare the lowercase value to the string <code>'audi'</code>.  The two strings match, so Python returns <code>True</code>.  When we check what is stored in <code>car</code> again, we can see that it has not been affected by the <code>lower()</code> method.  </p>
+<p>Websites enforce certain rules for the data that users enter in a manner similar to this.  For example, a site might use a conditional test like this to ensure that every user has a truly unique username, not just a variation on the capitalization of another person's username.  When someone submits a username, that new username is converted to lowercase and compared to the lowercase versions of all existing usernames.  During this check, a username like <code>'John'</code> will be rejected if any variation of <code>'john'</code> is already in use.  </p>
+<h3 id="checking-for-inequality">Checking for Inequality</h3>
+<p>When you want to determine whether two values are not equal, you can combine an exclamation point and an equal sign (!=).  The exclamation point represents <em>not</em>, as it does in many programming languages.  </p>
+<p>Let's use another <code>if</code> statement to examine how to use the inequality operator.  We'll store a requested pizza topping in a variable and then print a message if the person did not order anchovies:  </p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">requested_topping</span> <span class="o">=</span> <span class="s1">&#39;mushrooms&#39;</span>
+
+<span class="k">if</span> <span class="n">requested_topping</span> <span class="o">!=</span> <span class="s1">&#39;anchovies&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hold the anchovies!&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+The code on line 3 compares the value of <code>requested_topping</code> to the value <code>anchovies</code>.  If these two values do not match, Python returns <code>True</code> and executes the code following the <code>if</code> statement.  If the two values match, Python returns <code>False</code> and does not run the code following the <code>if</code> statement.  </p>
+<p>Because the value of <code>requested_topping</code> is not <code>anchovies</code>, the <code>print()</code> function is executed: </p>
+<p><div class="highlight"><pre><span></span><code>Hold the anchovies!
+</code></pre></div>
+Most of the conditional expressions you write will test for equality, but sometimes you'll find it more efficient to test for inequality.  </p>
+<h3 id="numerical-comparisons">Numerical Comparisons</h3>
+<p>Testing numerical values is pretty straightforward.  For example, the following code checks whether a person is 18 years old: </p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="s1">&#39;18&#39;</span>
+<span class="n">age</span> <span class="o">==</span> <span class="s1">&#39;18&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+You can also test to see if two numbers are not equal.  For example, the following code prints a message if the given answer is not correct:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">answer</span> <span class="o">=</span> <span class="mi">17</span>
+
+<span class="k">if</span> <span class="n">answer</span> <span class="o">!=</span> <span class="mi">42</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is not the correct answer.  Please try again!&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+The conditional test at line 3 passes, because the value of <code>answer</code> (17) is not equal to 42.  Because the test passes, the indented code block is executed.  </p>
+<p>You can include various mathematical comparisons in your conditional statements as well, such as less than, less than or equal to, greater than, and greater than or equal to.  </p>
+<h3 id="checking-multiple-conditions">Checking Multiple Conditions</h3>
+<p>You may want to check multiple conditions at the same time.  For example, sometimes you might need two conditions to be <code>True</code> to take an action.  Other times you might be satisfied with just one condition being <code>True</code>.  The keywords <code>and</code> and <code>or</code> can help you in these situations. </p>
+<h4 id="using-and-to-check-multiple-conditions">Using <code>and</code> to Check Multiple Conditions</h4>
+<p>To check whether two conditions are both <code>True</code> simultaneously, use the keyword <code>and</code> to combine the two conditional tests; if each test passes, the overall expression evaluates to <code>True</code>.  If either test fails or if both tests fail, the expression evaluates to <code>False</code>.  </p>
+<p>For example, you can check whether two people are both over 21 using the following test:  </p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age_0</span> <span class="o">=</span> <span class="mi">22</span>
+<span class="n">age_1</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">age_0</span> <span class="o">&gt;=</span> <span class="mi">21</span> <span class="ow">and</span> <span class="n">age_1</span> <span class="o">&gt;=</span> <span class="mi">21</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age_1</span> <span class="o">=</span> <span class="mi">22</span>
+<span class="n">age_0</span> <span class="o">&gt;=</span> <span class="mi">21</span> <span class="ow">and</span> <span class="n">age_1</span> <span class="o">&gt;=</span> <span class="mi">21</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div></p>
                 
               
               

@@ -492,7 +492,7 @@ Python will then return all the elements in the tuple, just as it would for a li
 ### Writing over a Tuple
 Although you cannot modify a tuple, you can assign a new value to a variable that represents a tuple.  So if we wanted to change our dimensions, we could redefine an entire tuple:
 
-```py linenums="1" linenums="1"
+```py linenums="1" 
 dimensions = (200, 50)
 print("Original dimensions:")
 for dimension in dimensions:
