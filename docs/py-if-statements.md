@@ -144,6 +144,7 @@ age_0 >= 21 and age_1 >= 21
 ```
 False
 ```
+On line 1, we define two ages, `age_0` and `age_1`.  On line 3, we check whether both ages are 21 or older.  The test on the left passes, but the one on the right fails, so the overall conditional expression evaluates to `False`. 
 ```py linenums="1"
 age_1 = 22
 age_0 >= 21 and age_1 >= 21
@@ -151,3 +152,32 @@ age_0 >= 21 and age_1 >= 21
 ```
 True
 ```
+On line 1, we change `age_1` to 22. The value of `age_1` is now greater than 21, so both individual tests pass, causing the overal conditional expression to evaluate as `True`.  
+
+To improve readability, you can use parentheses around the individual tests, but they are not required.  If you use parentheses, your test would look like this:  
+```py linenums="1"
+(age_0 >= 21) and (age_1 >= 21)
+``` 
+
+#### Using `or` to Check Multiple Conditions  
+The keyword `or` allows you to check multiple conditions as well, but it passes when either or both of the individual test pass.  As `or` expression fails onl when both individual tests fail.  
+
+Let's consider two ages again, but this time we'll look for only one person to be over 21:  
+
+```py
+age_0 = 22
+age_1 = 18
+age_0 >= 21 or age_1 >=21
+```
+```
+True
+```
+We start with two variables again at line 1.  Because the test for `age_0` at line 3 passes, the overall expression evaluates to `True`.  
+```py
+age_0 = 18
+age_0 >= 21 or age_1 >= 21
+```
+We now lowe `age_0` to 18.  In the test at line 2, both tests now fail and the overall expression evaluates to `False`.  
+
+### Checking Whether a Value Is in a List  
+
