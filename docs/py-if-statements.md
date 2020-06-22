@@ -180,4 +180,50 @@ age_0 >= 21 or age_1 >= 21
 We now lowe `age_0` to 18.  In the test at line 2, both tests now fail and the overall expression evaluates to `False`.  
 
 ### Checking Whether a Value Is in a List  
+Sometimes it is important to check whether a list contains a certain value before taking an action.  For example, you might want to check whether a new username already exists in a list of current usernames before completeing someone's registration on a webstie.  In a mapping project, you might want to check whether a submitted location already exists in a list of known locations.  
 
+To find out whether a particular value is already in a list, use the keyword `in`.  Let's consider some code you might write for a pizzeria.  We'll make a list of toppings a customer has requested for a pizza and then check whether certain toppings are in the list.  
+
+```py
+requested_toppings = ['mushrooms', 'onions', 'pineapple']
+'mushrooms' in requested_toppings
+```
+```
+True
+```
+```py
+'pepperoni' in requested_toppings
+```
+```
+False
+```
+We told Python to check for the existence of `'mushrooms'` and `'pepperoni'` in the list `requested_toppings`.  This technique is quite powerful because you can create a list of essential values, and then easily check whether the value you're testing matches one of the values in the list.  
+
+### Checking Whether a Value is Not in a List
+Other times, it's important to know if a value does not appear in a list.  You can use the keyword `not` in this situation.  For example, consider a list of users who are banned from commenting in a forum.  You can check whether a user has been banned before allowing that user to submit a comment:  
+
+```py linenums="1"
+banned_users = ['andrew', 'carolina', 'david']
+user = 'marie'
+
+if user not in banned_users:
+	print(f"{user.title()}, you can post a response if you wish.")
+```
+
+The code on line 4 reads quite clearly.  If the value of `user` is not in the list of `banned_users`, Python returns `True` and execites the indented line.  
+
+The user `'marie'` is not in the list `banned_users`, so she sees a message inviting her to post a response: 
+
+```
+Marie, you can post a response if you wish.
+```  
+
+### Boolean Expressions
+A Boolean expression is just another name for a condtitional test.  A *Boolean value* is either `True` or `False`, just like the value of a conditional expression after it has been evaluated.  
+
+Boolean values are often used to keep track of certain conditions, such as whether a game is running or whether a user can edit certain content on a website.  
+
+```py
+game_active = True
+can_edit = False
+```
