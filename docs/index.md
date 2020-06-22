@@ -28,6 +28,7 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [Lists](py-lists.md)
     - [Working with Lists](py-working-with-lists.md)
     - [If Statements](py-if-statements.md)
+    - [Dictionaries](py-dictionaries.md)
 
 ??? abstract "SQL"
     - Coming Soon!

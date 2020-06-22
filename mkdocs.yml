@@ -60,4 +60,5 @@ nav:
       - Lists : py-lists.md
       - Working with Lists : py-working-with-lists.md
       - If Statements : py-if-statements.md
+      - Dictionaries : py-dictionaries.md
   - About : about.md
