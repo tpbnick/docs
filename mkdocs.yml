@@ -3,8 +3,17 @@ theme:
   name: material
   logo: 'https://nicklyss.com/wp-content/uploads/2020/04/logo4.png'
   favicon: 'https://nicklyss.com/wp-content/uploads/2020/04/logo4.png'
+  features:
+    - tabs
+  static_templates:
+    - 404.html
+  font:
+    text: Roboto
+    code: Roboto Mono
 plugins:
   - search
+  - minify:
+      minify_html: true
 extra_javascript:
   - javascripts/extra.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML

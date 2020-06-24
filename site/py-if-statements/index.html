@@ -1,1419 +1,142 @@
-
-
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      <link rel="shortcut icon" href="https://nicklyss.com/wp-content/uploads/2020/04/logo4.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.3">
-    
-    
-      
-        <title>If Statements - Nick's Docs</title>
-      
-    
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.62d34fff.min.css">
-      
-      
-    
-    <link rel="stylesheet" href="../css/lightgallery.min.css">
-
-    
-    
-    <script src="../js/lightgallery.min.js"></script>
-
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
-      
-    
-    
-    
-    
-      
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#if-statements" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href=".." title="Nick's Docs" class="md-header-nav__button md-logo" aria-label="Nick's Docs">
-      
-  <img src="https://nicklyss.com/wp-content/uploads/2020/04/logo4.png" alt="logo">
-
-    </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
-    </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
-            Nick's Docs
-          </span>
-          <span class="md-header-nav__topic md-ellipsis">
-            
-              If Statements
-            
-          </span>
-        </div>
-      
-    </div>
-    
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-      </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-  </nav>
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-        
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Nick's Docs" class="md-nav__button md-logo" aria-label="Nick's Docs">
-      
-  <img src="https://nicklyss.com/wp-content/uploads/2020/04/logo4.png" alt="logo">
-
-    </a>
-    Nick's Docs
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Nick's Portfolio
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Nick's Portfolio" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Nick's Portfolio
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../portfolio/" title="Main Portfolio" class="md-nav__link">
-      Main Portfolio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
-    
-    <label class="md-nav__link" for="nav-2-2">
-      Google Chrome User Guide
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Google Chrome User Guide" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Google Chrome User Guide
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../chrome/" title="What is Google Chrome?" class="md-nav__link">
-      What is Google Chrome?
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../chromeinstall/" title="Google Chrome Install" class="md-nav__link">
-      Google Chrome Install
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../chromemedia/" title="Google Chrome Media" class="md-nav__link">
-      Google Chrome Media
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      Programming Notes
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Programming Notes" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Programming Notes
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
-    
-    <label class="md-nav__link" for="nav-3-1">
-      C
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="C" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        C
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c/" title="C Basics" class="md-nav__link">
-      C Basics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-arrays/" title="Arrays" class="md-nav__link">
-      Arrays
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-functions/" title="Functions" class="md-nav__link">
-      Functions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-cl-arguments/" title="Command Line Arguments" class="md-nav__link">
-      Command Line Arguments
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-variable-scope/" title="Variables and Scope" class="md-nav__link">
-      Variables and Scope
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-6" type="checkbox" id="nav-3-1-6">
-    
-    <label class="md-nav__link" for="nav-3-1-6">
-      Algorithms
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Algorithms" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-1-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Algorithms
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-algorithms/" title="Algorithm Overview" class="md-nav__link">
-      Algorithm Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-algorithms-problems/" title="Algorithm Problems" class="md-nav__link">
-      Algorithm Problems
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-7" type="checkbox" id="nav-3-1-7">
-    
-    <label class="md-nav__link" for="nav-3-1-7">
-      Memory
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Memory" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-1-7">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Memory
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-memory/" title="Memory Overview" class="md-nav__link">
-      Memory Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-memory-problems/" title="Memory Problems" class="md-nav__link">
-      Memory Problems
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-8" type="checkbox" id="nav-3-1-8">
-    
-    <label class="md-nav__link" for="nav-3-1-8">
-      Data Structures
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Data Structures" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-1-8">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Data Structures
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-data-structures/" title="Data Structures Overview" class="md-nav__link">
-      Data Structures Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-data-structures-problems/" title="Data Structures Problem" class="md-nav__link">
-      Data Structures Problem
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
-    
-    <label class="md-nav__link" for="nav-3-2">
-      Python
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Python" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Python
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py/" title="Python Basics" class="md-nav__link">
-      Python Basics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py-data-types/" title="Variables and Simple Data Types" class="md-nav__link">
-      Variables and Simple Data Types
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py-lists/" title="Lists" class="md-nav__link">
-      Lists
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py-working-with-lists/" title="Working with Lists" class="md-nav__link">
-      Working with Lists
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        If Statements
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="If Statements" class="md-nav__link md-nav__link--active">
-      If Statements
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-simple-example" class="md-nav__link">
-    A Simple Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conditional-tests" class="md-nav__link">
-    Conditional Tests
-  </a>
-  
-    <nav class="md-nav" aria-label="Conditional Tests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#checking-for-equality" class="md-nav__link">
-    Checking for Equality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ignoring-case-when-checking-for-equality" class="md-nav__link">
-    Ignoring Case When Checking for Equality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-for-inequality" class="md-nav__link">
-    Checking for Inequality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#numerical-comparisons" class="md-nav__link">
-    Numerical Comparisons
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-multiple-conditions" class="md-nav__link">
-    Checking Multiple Conditions
-  </a>
-  
-    <nav class="md-nav" aria-label="Checking Multiple Conditions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-and-to-check-multiple-conditions" class="md-nav__link">
-    Using and to Check Multiple Conditions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-or-to-check-multiple-conditions" class="md-nav__link">
-    Using or to Check Multiple Conditions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-whether-a-value-is-in-a-list" class="md-nav__link">
-    Checking Whether a Value Is in a List
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-whether-a-value-is-not-in-a-list" class="md-nav__link">
-    Checking Whether a Value is Not in a List
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boolean-expressions" class="md-nav__link">
-    Boolean Expressions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#if-statements_1" class="md-nav__link">
-    if Statements
-  </a>
-  
-    <nav class="md-nav" aria-label="if Statements">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#simple-if-statements" class="md-nav__link">
-    Simple if Statements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#if-else-statements" class="md-nav__link">
-    if-else Statements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-if-elif-else-chain" class="md-nav__link">
-    The if-elif-else Chain
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-multiple-elif-blocks" class="md-nav__link">
-    Using Multiple elif Blocks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#omitting-the-else-block" class="md-nav__link">
-    Omitting the else Block
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-multiple-conditions" class="md-nav__link">
-    Testing Multiple Conditions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-if-statements-with-lists" class="md-nav__link">
-    Using if Statements with Lists
-  </a>
-  
-    <nav class="md-nav" aria-label="Using if Statements with Lists">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#checking-for-special-items" class="md-nav__link">
-    Checking for Special Items
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-that-a-list-is-not-empty" class="md-nav__link">
-    Checking that a List is Not Empty
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-multiple-lists" class="md-nav__link">
-    Using Multiple Lists
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py-dictionaries/" title="Dictionaries" class="md-nav__link">
-      Dictionaries
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../about/" title="About" class="md-nav__link">
-      About
-    </a>
-  </li>
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-simple-example" class="md-nav__link">
-    A Simple Example
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conditional-tests" class="md-nav__link">
-    Conditional Tests
-  </a>
-  
-    <nav class="md-nav" aria-label="Conditional Tests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#checking-for-equality" class="md-nav__link">
-    Checking for Equality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ignoring-case-when-checking-for-equality" class="md-nav__link">
-    Ignoring Case When Checking for Equality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-for-inequality" class="md-nav__link">
-    Checking for Inequality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#numerical-comparisons" class="md-nav__link">
-    Numerical Comparisons
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-multiple-conditions" class="md-nav__link">
-    Checking Multiple Conditions
-  </a>
-  
-    <nav class="md-nav" aria-label="Checking Multiple Conditions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-and-to-check-multiple-conditions" class="md-nav__link">
-    Using and to Check Multiple Conditions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-or-to-check-multiple-conditions" class="md-nav__link">
-    Using or to Check Multiple Conditions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-whether-a-value-is-in-a-list" class="md-nav__link">
-    Checking Whether a Value Is in a List
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-whether-a-value-is-not-in-a-list" class="md-nav__link">
-    Checking Whether a Value is Not in a List
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boolean-expressions" class="md-nav__link">
-    Boolean Expressions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#if-statements_1" class="md-nav__link">
-    if Statements
-  </a>
-  
-    <nav class="md-nav" aria-label="if Statements">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#simple-if-statements" class="md-nav__link">
-    Simple if Statements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#if-else-statements" class="md-nav__link">
-    if-else Statements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-if-elif-else-chain" class="md-nav__link">
-    The if-elif-else Chain
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-multiple-elif-blocks" class="md-nav__link">
-    Using Multiple elif Blocks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#omitting-the-else-block" class="md-nav__link">
-    Omitting the else Block
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-multiple-conditions" class="md-nav__link">
-    Testing Multiple Conditions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-if-statements-with-lists" class="md-nav__link">
-    Using if Statements with Lists
-  </a>
-  
-    <nav class="md-nav" aria-label="Using if Statements with Lists">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#checking-for-special-items" class="md-nav__link">
-    Checking for Special Items
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-that-a-list-is-not-empty" class="md-nav__link">
-    Checking that a List is Not Empty
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-multiple-lists" class="md-nav__link">
-    Using Multiple Lists
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                
-                  
-                
-                
-                <h1 id="if-statements">If Statements</h1>
-<p>Python often involves examining a set of conditions and deciding which action to take based on those conditions.  Python's <code>if</code> statement allows you to examine the current state of a program and respond appropriately to that state.  </p>
-<h2 id="a-simple-example">A Simple Example</h2>
-<p>The following short example shows how <code>if</code> tests let you respond to special situations correctly.  Imagine you have a list of cars and you want to print out the name of each car.  Car names are proper names, so the names of most cars should be printed in title case.  However, the value <code>'bmw'</code> should be printed in all uppercase.  The following code loops through a list of car names and looks for the value <code>'bmw'</code>.  Whenever the value is <code>'bmw'</code>, it's printed in uppercase instead of title case.<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://nicklyss.com/wp-content/uploads/2020/04/logo4.png><meta name=generator content="mkdocs-1.1, mkdocs-material-5.3.3"><title>If Statements - Nick's Docs</title><link rel=stylesheet href=../assets/stylesheets/main.fe0cca5b.min.css><link href=https://fonts.gstatic.com rel=preconnect crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback"><style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style></head> <body dir=ltr> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#if-statements class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header-nav md-grid" aria-label=Header> <a href=.. title="Nick's Docs" class="md-header-nav__button md-logo" aria-label="Nick's Docs"> <img src=https://nicklyss.com/wp-content/uploads/2020/04/logo4.png alt=logo> </a> <label class="md-header-nav__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg> </label> <div class=md-header-nav__title data-md-component=header-title> <div class=md-header-nav__ellipsis> <span class="md-header-nav__topic md-ellipsis"> Nick's Docs </span> <span class="md-header-nav__topic md-ellipsis"> If Statements </span> </div> </div> <label class="md-header-nav__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query data-md-state=active> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </label> <button type=reset class="md-search__icon md-icon" aria-label=Clear data-md-component=search-reset tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg> </button> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class="md-tabs md-tabs--active" aria-label=Tabs data-md-component=tabs> <div class="md-tabs__inner md-grid"> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../portfolio/ class=md-tabs__link> Nick's Portfolio </a> </li> <li class=md-tabs__item> <a href=../c/ class=md-tabs__link> Programming Notes </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=.. title="Nick's Docs" class="md-nav__button md-logo" aria-label="Nick's Docs"> <img src=https://nicklyss.com/wp-content/uploads/2020/04/logo4.png alt=logo> </a> Nick's Docs </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=.. title=Home class=md-nav__link> Home </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-2 type=checkbox id=nav-2> <label class=md-nav__link for=nav-2> Nick's Portfolio <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="Nick's Portfolio" data-md-level=1> <label class=md-nav__title for=nav-2> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Nick's Portfolio </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../portfolio/ title="Main Portfolio" class=md-nav__link> Main Portfolio </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-2-2 type=checkbox id=nav-2-2> <label class=md-nav__link for=nav-2-2> Google Chrome User Guide <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="Google Chrome User Guide" data-md-level=2> <label class=md-nav__title for=nav-2-2> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Google Chrome User Guide </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../chrome/ title="What is Google Chrome?" class=md-nav__link> What is Google Chrome? </a> </li> <li class=md-nav__item> <a href=../chromeinstall/ title="Google Chrome Install" class=md-nav__link> Google Chrome Install </a> </li> <li class=md-nav__item> <a href=../chromemedia/ title="Google Chrome Media" class=md-nav__link> Google Chrome Media </a> </li> <li class=md-nav__item> <a href=../glossary/ title=Glossary class=md-nav__link> Glossary </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3 type=checkbox id=nav-3 checked> <label class=md-nav__link for=nav-3> Programming Notes <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="Programming Notes" data-md-level=1> <label class=md-nav__title for=nav-3> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Programming Notes </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-1 type=checkbox id=nav-3-1> <label class=md-nav__link for=nav-3-1> C <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=C data-md-level=2> <label class=md-nav__title for=nav-3-1> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> C </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c/ title="C Basics" class=md-nav__link> C Basics </a> </li> <li class=md-nav__item> <a href=../c-arrays/ title=Arrays class=md-nav__link> Arrays </a> </li> <li class=md-nav__item> <a href=../c-functions/ title=Functions class=md-nav__link> Functions </a> </li> <li class=md-nav__item> <a href=../c-cl-arguments/ title="Command Line Arguments" class=md-nav__link> Command Line Arguments </a> </li> <li class=md-nav__item> <a href=../c-variable-scope/ title="Variables and Scope" class=md-nav__link> Variables and Scope </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-1-6 type=checkbox id=nav-3-1-6> <label class=md-nav__link for=nav-3-1-6> Algorithms <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Algorithms data-md-level=3> <label class=md-nav__title for=nav-3-1-6> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Algorithms </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-algorithms/ title="Algorithm Overview" class=md-nav__link> Algorithm Overview </a> </li> <li class=md-nav__item> <a href=../c-algorithms-problems/ title="Algorithm Problems" class=md-nav__link> Algorithm Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-1-7 type=checkbox id=nav-3-1-7> <label class=md-nav__link for=nav-3-1-7> Memory <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Memory data-md-level=3> <label class=md-nav__title for=nav-3-1-7> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Memory </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-memory/ title="Memory Overview" class=md-nav__link> Memory Overview </a> </li> <li class=md-nav__item> <a href=../c-memory-problems/ title="Memory Problems" class=md-nav__link> Memory Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-1-8 type=checkbox id=nav-3-1-8> <label class=md-nav__link for=nav-3-1-8> Data Structures <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="Data Structures" data-md-level=3> <label class=md-nav__title for=nav-3-1-8> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Data Structures </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-data-structures/ title="Data Structures Overview" class=md-nav__link> Data Structures Overview </a> </li> <li class=md-nav__item> <a href=../c-data-structures-problems/ title="Data Structures Problem" class=md-nav__link> Data Structures Problem </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-2 type=checkbox id=nav-3-2 checked> <label class=md-nav__link for=nav-3-2> Python <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Python data-md-level=2> <label class=md-nav__title for=nav-3-2> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Python </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../py/ title="Python Basics" class=md-nav__link> Python Basics </a> </li> <li class=md-nav__item> <a href=../py-data-types/ title="Variables and Simple Data Types" class=md-nav__link> Variables and Simple Data Types </a> </li> <li class=md-nav__item> <a href=../py-lists/ title=Lists class=md-nav__link> Lists </a> </li> <li class=md-nav__item> <a href=../py-working-with-lists/ title="Working with Lists" class=md-nav__link> Working with Lists </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> If Statements <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg> </span> </label> <a href=./ title="If Statements" class="md-nav__link md-nav__link--active"> If Statements </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Table of contents </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#a-simple-example class=md-nav__link> A Simple Example </a> </li> <li class=md-nav__item> <a href=#conditional-tests class=md-nav__link> Conditional Tests </a> <nav class=md-nav aria-label="Conditional Tests"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#checking-for-equality class=md-nav__link> Checking for Equality </a> </li> <li class=md-nav__item> <a href=#ignoring-case-when-checking-for-equality class=md-nav__link> Ignoring Case When Checking for Equality </a> </li> <li class=md-nav__item> <a href=#checking-for-inequality class=md-nav__link> Checking for Inequality </a> </li> <li class=md-nav__item> <a href=#numerical-comparisons class=md-nav__link> Numerical Comparisons </a> </li> <li class=md-nav__item> <a href=#checking-multiple-conditions class=md-nav__link> Checking Multiple Conditions </a> <nav class=md-nav aria-label="Checking Multiple Conditions"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#using-and-to-check-multiple-conditions class=md-nav__link> Using and to Check Multiple Conditions </a> </li> <li class=md-nav__item> <a href=#using-or-to-check-multiple-conditions class=md-nav__link> Using or to Check Multiple Conditions </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#checking-whether-a-value-is-in-a-list class=md-nav__link> Checking Whether a Value Is in a List </a> </li> <li class=md-nav__item> <a href=#checking-whether-a-value-is-not-in-a-list class=md-nav__link> Checking Whether a Value is Not in a List </a> </li> <li class=md-nav__item> <a href=#boolean-expressions class=md-nav__link> Boolean Expressions </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#if-statements_1 class=md-nav__link> if Statements </a> <nav class=md-nav aria-label="if Statements"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#simple-if-statements class=md-nav__link> Simple if Statements </a> </li> <li class=md-nav__item> <a href=#if-else-statements class=md-nav__link> if-else Statements </a> </li> <li class=md-nav__item> <a href=#the-if-elif-else-chain class=md-nav__link> The if-elif-else Chain </a> </li> <li class=md-nav__item> <a href=#using-multiple-elif-blocks class=md-nav__link> Using Multiple elif Blocks </a> </li> <li class=md-nav__item> <a href=#omitting-the-else-block class=md-nav__link> Omitting the else Block </a> </li> <li class=md-nav__item> <a href=#testing-multiple-conditions class=md-nav__link> Testing Multiple Conditions </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#using-if-statements-with-lists class=md-nav__link> Using if Statements with Lists </a> <nav class=md-nav aria-label="Using if Statements with Lists"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#checking-for-special-items class=md-nav__link> Checking for Special Items </a> </li> <li class=md-nav__item> <a href=#checking-that-a-list-is-not-empty class=md-nav__link> Checking that a List is Not Empty </a> </li> <li class=md-nav__item> <a href=#using-multiple-lists class=md-nav__link> Using Multiple Lists </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../py-dictionaries/ title=Dictionaries class=md-nav__link> Dictionaries </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../about/ title=About class=md-nav__link> About </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Table of contents </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#a-simple-example class=md-nav__link> A Simple Example </a> </li> <li class=md-nav__item> <a href=#conditional-tests class=md-nav__link> Conditional Tests </a> <nav class=md-nav aria-label="Conditional Tests"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#checking-for-equality class=md-nav__link> Checking for Equality </a> </li> <li class=md-nav__item> <a href=#ignoring-case-when-checking-for-equality class=md-nav__link> Ignoring Case When Checking for Equality </a> </li> <li class=md-nav__item> <a href=#checking-for-inequality class=md-nav__link> Checking for Inequality </a> </li> <li class=md-nav__item> <a href=#numerical-comparisons class=md-nav__link> Numerical Comparisons </a> </li> <li class=md-nav__item> <a href=#checking-multiple-conditions class=md-nav__link> Checking Multiple Conditions </a> <nav class=md-nav aria-label="Checking Multiple Conditions"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#using-and-to-check-multiple-conditions class=md-nav__link> Using and to Check Multiple Conditions </a> </li> <li class=md-nav__item> <a href=#using-or-to-check-multiple-conditions class=md-nav__link> Using or to Check Multiple Conditions </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#checking-whether-a-value-is-in-a-list class=md-nav__link> Checking Whether a Value Is in a List </a> </li> <li class=md-nav__item> <a href=#checking-whether-a-value-is-not-in-a-list class=md-nav__link> Checking Whether a Value is Not in a List </a> </li> <li class=md-nav__item> <a href=#boolean-expressions class=md-nav__link> Boolean Expressions </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#if-statements_1 class=md-nav__link> if Statements </a> <nav class=md-nav aria-label="if Statements"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#simple-if-statements class=md-nav__link> Simple if Statements </a> </li> <li class=md-nav__item> <a href=#if-else-statements class=md-nav__link> if-else Statements </a> </li> <li class=md-nav__item> <a href=#the-if-elif-else-chain class=md-nav__link> The if-elif-else Chain </a> </li> <li class=md-nav__item> <a href=#using-multiple-elif-blocks class=md-nav__link> Using Multiple elif Blocks </a> </li> <li class=md-nav__item> <a href=#omitting-the-else-block class=md-nav__link> Omitting the else Block </a> </li> <li class=md-nav__item> <a href=#testing-multiple-conditions class=md-nav__link> Testing Multiple Conditions </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#using-if-statements-with-lists class=md-nav__link> Using if Statements with Lists </a> <nav class=md-nav aria-label="Using if Statements with Lists"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#checking-for-special-items class=md-nav__link> Checking for Special Items </a> </li> <li class=md-nav__item> <a href=#checking-that-a-list-is-not-empty class=md-nav__link> Checking that a List is Not Empty </a> </li> <li class=md-nav__item> <a href=#using-multiple-lists class=md-nav__link> Using Multiple Lists </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content> <article class="md-content__inner md-typeset"> <h1 id=if-statements>If Statements</h1> <p>Python often involves examining a set of conditions and deciding which action to take based on those conditions. Python's <code>if</code> statement allows you to examine the current state of a program and respond appropriately to that state. </p> <h2 id=a-simple-example>A Simple Example</h2> <p>The following short example shows how <code>if</code> tests let you respond to special situations correctly. Imagine you have a list of cars and you want to print out the name of each car. Car names are proper names, so the names of most cars should be printed in title case. However, the value <code>'bmw'</code> should be printed in all uppercase. The following code loops through a list of car names and looks for the value <code>'bmw'</code>. Whenever the value is <code>'bmw'</code>, it's printed in uppercase instead of title case.<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
 4
 5
 6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">cars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span> <span class="s1">&#39;bmw&#39;</span><span class="p">,</span> <span class="s1">&#39;subaru&#39;</span><span class="p">,</span> <span class="s1">&#39;toyota&#39;</span><span class="p">]</span>
+7</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>cars</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;audi&#39;</span><span class=p>,</span> <span class=s1>&#39;bmw&#39;</span><span class=p>,</span> <span class=s1>&#39;subaru&#39;</span><span class=p>,</span> <span class=s1>&#39;toyota&#39;</span><span class=p>]</span>
 
-<span class="k">for</span> <span class="n">car</span> <span class="ow">in</span> <span class="n">cars</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">car</span> <span class="o">==</span> <span class="s1">&#39;bmw&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">car</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">car</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
-</code></pre></div>
-</td></tr></table>
-The loop in this example first checks to see if the current value of <code>car</code> is <code>'bmw'</code>.  If it is, the value is printed in all uppercase.  If the value of <code>car</code> is anything other than <code>'bmw'</code>, it's printed in title case:<br />
-<div class="highlight"><pre><span></span><code>Audi
+<span class=k>for</span> <span class=n>car</span> <span class=ow>in</span> <span class=n>cars</span><span class=p>:</span>
+    <span class=k>if</span> <span class=n>car</span> <span class=o>==</span> <span class=s1>&#39;bmw&#39;</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>car</span><span class=o>.</span><span class=n>upper</span><span class=p>())</span>
+    <span class=k>else</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>car</span><span class=o>.</span><span class=n>title</span><span class=p>())</span>
+</code></pre></div> </td></tr></table> The loop in this example first checks to see if the current value of <code>car</code> is <code>'bmw'</code>. If it is, the value is printed in all uppercase. If the value of <code>car</code> is anything other than <code>'bmw'</code>, it's printed in title case:<br> <div class=highlight><pre><span></span><code>Audi
 BMW
 Subaru
 Toyota
-</code></pre></div></p>
-<h2 id="conditional-tests">Conditional Tests</h2>
-<p>At the heart of every <code>if</code> statement is an expression that canbe evaluated as <code>True</code> or <code>False</code> and is called a <em>conditional test</em>.  Python uses the values <code>True</code> and <code>False</code> to decide whether the code in an <code>if</code> statement should be executed.  If a conditional test evaluates to <code>True</code>, Python executes the code following the <code>if</code> statement.  If the test evaluates to <code>False</code>, Python ignores the code following the <code>if</code> statement.  </p>
-<h3 id="checking-for-equality">Checking for Equality</h3>
-<p>Most conditional tests compare the current value of a variable to a specific value of interest.  The simplest conditional test checks whether the value of a variable is equal to the value of interest:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;bmw&#39;</span>
-<span class="n">car</span> <span class="o">==</span> <span class="s1">&#39;bmw&#39;</span>
-</code></pre></div>
-</td></tr></table>
-<div class="highlight"><pre><span></span><code>True
-</code></pre></div>
-The code at line 1 sets the value of car to 'bmw' using a single equal sign, as you've seen many times already.  The code at line 2 checks whether the value of <code>car</code> is <code>'bmw'</code> using a double equal sign (<code>==</code>).  This <em>equality operator</em> returns <code>True</code> if the values on the left and right side of the operator match, and <code>False</code> if they don't match.  The values in this example match, so Python returns <code>True</code>.  </p>
-<p>When the value of <code>car</code> is anything other than <code>'bmw'</code>, this test returns <code>False</code>.<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;audi&#39;</span>
-<span class="n">car</span> <span class="o">==</span> <span class="s1">&#39;bmw&#39;</span>
-</code></pre></div>
-</td></tr></table>
-<div class="highlight"><pre><span></span><code>False
-</code></pre></div>
-A single equal sign is really a statment; you might read the code at line one as "Set the value of <code>car</code> equal to <code>'audi'</code>".  On the other side, a double equal sign, like the one on line 2, asks a question: "Is the vale of <code>car</code> equal to <code>'bmw'</code>?"  Most programming languages use equal signs in this way.  </p>
-<h3 id="ignoring-case-when-checking-for-equality">Ignoring Case When Checking for Equality</h3>
-<p>Testing for equality is case sensitive in Python.  For example, ywo values with different capitalization are not considered equal: 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;Audi&#39;</span>
-<span class="n">car</span> <span class="o">==</span> <span class="s1">&#39;audi&#39;</span>
-</code></pre></div>
-</td></tr></table>
-<div class="highlight"><pre><span></span><code>False
-</code></pre></div>
-If case matters, this behavior is advantageous.  But if case doesn't matter and instead you just want to test the value of a variable, you can convert the variable's value to lowercase before doing the comparison:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;Audi&#39;</span>
-<span class="n">car</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;audi&#39;</span>
-</code></pre></div>
-</td></tr></table>
-<div class="highlight"><pre><span></span><code>True
-</code></pre></div>
-This test would return <code>True</code> no matter how the value <code>'Audi'</code> is formatted because the test is now case insensitive.  The <code>lower()</code> function doesn't change the value that was originally stored in <code>car</code>, so you can do this kind of comparison without affecting the original variable: 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span> <span class="o">=</span> <span class="s1">&#39;Audi&#39;</span>
-<span class="n">car</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;audi&#39;</span>
-</code></pre></div>
-</td></tr></table>
-<div class="highlight"><pre><span></span><code>True
-</code></pre></div>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">car</span>
-</code></pre></div>
-</td></tr></table>
-<div class="highlight"><pre><span></span><code>&#39;Audi&#39;
-</code></pre></div>
-At the first line 1, we assigned the capitalized string <code>'Audi'</code> to the variable <code>car</code>.  At line 2, we convert the value of <code>car</code> to lowercase and compare the lowercase value to the string <code>'audi'</code>.  The two strings match, so Python returns <code>True</code>.  When we check what is stored in <code>car</code> again, we can see that it has not been affected by the <code>lower()</code> method.  </p>
-<p>Websites enforce certain rules for the data that users enter in a manner similar to this.  For example, a site might use a conditional test like this to ensure that every user has a truly unique username, not just a variation on the capitalization of another person's username.  When someone submits a username, that new username is converted to lowercase and compared to the lowercase versions of all existing usernames.  During this check, a username like <code>'John'</code> will be rejected if any variation of <code>'john'</code> is already in use.  </p>
-<h3 id="checking-for-inequality">Checking for Inequality</h3>
-<p>When you want to determine whether two values are not equal, you can combine an exclamation point and an equal sign (!=).  The exclamation point represents <em>not</em>, as it does in many programming languages.  </p>
-<p>Let's use another <code>if</code> statement to examine how to use the inequality operator.  We'll store a requested pizza topping in a variable and then print a message if the person did not order anchovies:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+</code></pre></div></p> <h2 id=conditional-tests>Conditional Tests</h2> <p>At the heart of every <code>if</code> statement is an expression that canbe evaluated as <code>True</code> or <code>False</code> and is called a <em>conditional test</em>. Python uses the values <code>True</code> and <code>False</code> to decide whether the code in an <code>if</code> statement should be executed. If a conditional test evaluates to <code>True</code>, Python executes the code following the <code>if</code> statement. If the test evaluates to <code>False</code>, Python ignores the code following the <code>if</code> statement. </p> <h3 id=checking-for-equality>Checking for Equality</h3> <p>Most conditional tests compare the current value of a variable to a specific value of interest. The simplest conditional test checks whether the value of a variable is equal to the value of interest:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>car</span> <span class=o>=</span> <span class=s1>&#39;bmw&#39;</span>
+<span class=n>car</span> <span class=o>==</span> <span class=s1>&#39;bmw&#39;</span>
+</code></pre></div> </td></tr></table> <div class=highlight><pre><span></span><code>True
+</code></pre></div> The code at line 1 sets the value of car to 'bmw' using a single equal sign, as you've seen many times already. The code at line 2 checks whether the value of <code>car</code> is <code>'bmw'</code> using a double equal sign (<code>==</code>). This <em>equality operator</em> returns <code>True</code> if the values on the left and right side of the operator match, and <code>False</code> if they don't match. The values in this example match, so Python returns <code>True</code>. </p> <p>When the value of <code>car</code> is anything other than <code>'bmw'</code>, this test returns <code>False</code>.<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>car</span> <span class=o>=</span> <span class=s1>&#39;audi&#39;</span>
+<span class=n>car</span> <span class=o>==</span> <span class=s1>&#39;bmw&#39;</span>
+</code></pre></div> </td></tr></table> <div class=highlight><pre><span></span><code>False
+</code></pre></div> A single equal sign is really a statment; you might read the code at line one as "Set the value of <code>car</code> equal to <code>'audi'</code>". On the other side, a double equal sign, like the one on line 2, asks a question: "Is the vale of <code>car</code> equal to <code>'bmw'</code>?" Most programming languages use equal signs in this way. </p> <h3 id=ignoring-case-when-checking-for-equality>Ignoring Case When Checking for Equality</h3> <p>Testing for equality is case sensitive in Python. For example, ywo values with different capitalization are not considered equal: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>car</span> <span class=o>=</span> <span class=s1>&#39;Audi&#39;</span>
+<span class=n>car</span> <span class=o>==</span> <span class=s1>&#39;audi&#39;</span>
+</code></pre></div> </td></tr></table> <div class=highlight><pre><span></span><code>False
+</code></pre></div> If case matters, this behavior is advantageous. But if case doesn't matter and instead you just want to test the value of a variable, you can convert the variable's value to lowercase before doing the comparison:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>car</span> <span class=o>=</span> <span class=s1>&#39;Audi&#39;</span>
+<span class=n>car</span><span class=o>.</span><span class=n>lower</span><span class=p>()</span> <span class=o>==</span> <span class=s1>&#39;audi&#39;</span>
+</code></pre></div> </td></tr></table> <div class=highlight><pre><span></span><code>True
+</code></pre></div> This test would return <code>True</code> no matter how the value <code>'Audi'</code> is formatted because the test is now case insensitive. The <code>lower()</code> function doesn't change the value that was originally stored in <code>car</code>, so you can do this kind of comparison without affecting the original variable: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>car</span> <span class=o>=</span> <span class=s1>&#39;Audi&#39;</span>
+<span class=n>car</span><span class=o>.</span><span class=n>lower</span><span class=p>()</span> <span class=o>==</span> <span class=s1>&#39;audi&#39;</span>
+</code></pre></div> </td></tr></table> <div class=highlight><pre><span></span><code>True
+</code></pre></div> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>car</span>
+</code></pre></div> </td></tr></table> <div class=highlight><pre><span></span><code>&#39;Audi&#39;
+</code></pre></div> At the first line 1, we assigned the capitalized string <code>'Audi'</code> to the variable <code>car</code>. At line 2, we convert the value of <code>car</code> to lowercase and compare the lowercase value to the string <code>'audi'</code>. The two strings match, so Python returns <code>True</code>. When we check what is stored in <code>car</code> again, we can see that it has not been affected by the <code>lower()</code> method. </p> <p>Websites enforce certain rules for the data that users enter in a manner similar to this. For example, a site might use a conditional test like this to ensure that every user has a truly unique username, not just a variation on the capitalization of another person's username. When someone submits a username, that new username is converted to lowercase and compared to the lowercase versions of all existing usernames. During this check, a username like <code>'John'</code> will be rejected if any variation of <code>'john'</code> is already in use. </p> <h3 id=checking-for-inequality>Checking for Inequality</h3> <p>When you want to determine whether two values are not equal, you can combine an exclamation point and an equal sign (!=). The exclamation point represents <em>not</em>, as it does in many programming languages. </p> <p>Let's use another <code>if</code> statement to examine how to use the inequality operator. We'll store a requested pizza topping in a variable and then print a message if the person did not order anchovies:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">requested_topping</span> <span class="o">=</span> <span class="s1">&#39;mushrooms&#39;</span>
+4</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>requested_topping</span> <span class=o>=</span> <span class=s1>&#39;mushrooms&#39;</span>
 
-<span class="k">if</span> <span class="n">requested_topping</span> <span class="o">!=</span> <span class="s1">&#39;anchovies&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hold the anchovies!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-The code on line 3 compares the value of <code>requested_topping</code> to the value <code>anchovies</code>.  If these two values do not match, Python returns <code>True</code> and executes the code following the <code>if</code> statement.  If the two values match, Python returns <code>False</code> and does not run the code following the <code>if</code> statement.  </p>
-<p>Because the value of <code>requested_topping</code> is not <code>anchovies</code>, the <code>print()</code> function is executed: </p>
-<p><div class="highlight"><pre><span></span><code>Hold the anchovies!
-</code></pre></div>
-Most of the conditional expressions you write will test for equality, but sometimes you'll find it more efficient to test for inequality.  </p>
-<h3 id="numerical-comparisons">Numerical Comparisons</h3>
-<p>Testing numerical values is pretty straightforward.  For example, the following code checks whether a person is 18 years old: 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="s1">&#39;18&#39;</span>
-<span class="n">age</span> <span class="o">==</span> <span class="s1">&#39;18&#39;</span>
-</code></pre></div>
-</td></tr></table>
-<div class="highlight"><pre><span></span><code>True
-</code></pre></div>
-You can also test to see if two numbers are not equal.  For example, the following code prints a message if the given answer is not correct:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<span class=k>if</span> <span class=n>requested_topping</span> <span class=o>!=</span> <span class=s1>&#39;anchovies&#39;</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Hold the anchovies!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> The code on line 3 compares the value of <code>requested_topping</code> to the value <code>anchovies</code>. If these two values do not match, Python returns <code>True</code> and executes the code following the <code>if</code> statement. If the two values match, Python returns <code>False</code> and does not run the code following the <code>if</code> statement. </p> <p>Because the value of <code>requested_topping</code> is not <code>anchovies</code>, the <code>print()</code> function is executed: </p> <p><div class=highlight><pre><span></span><code>Hold the anchovies!
+</code></pre></div> Most of the conditional expressions you write will test for equality, but sometimes you'll find it more efficient to test for inequality. </p> <h3 id=numerical-comparisons>Numerical Comparisons</h3> <p>Testing numerical values is pretty straightforward. For example, the following code checks whether a person is 18 years old: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age</span> <span class=o>=</span> <span class=s1>&#39;18&#39;</span>
+<span class=n>age</span> <span class=o>==</span> <span class=s1>&#39;18&#39;</span>
+</code></pre></div> </td></tr></table> <div class=highlight><pre><span></span><code>True
+</code></pre></div> You can also test to see if two numbers are not equal. For example, the following code prints a message if the given answer is not correct: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">answer</span> <span class="o">=</span> <span class="mi">17</span>
+4</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>answer</span> <span class=o>=</span> <span class=mi>17</span>
 
-<span class="k">if</span> <span class="n">answer</span> <span class="o">!=</span> <span class="mi">42</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is not the correct answer.  Please try again!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-The conditional test at line 3 passes, because the value of <code>answer</code> (17) is not equal to 42.  Because the test passes, the indented code block is executed.  </p>
-<p>You can include various mathematical comparisons in your conditional statements as well, such as less than, less than or equal to, greater than, and greater than or equal to.  </p>
-<h3 id="checking-multiple-conditions">Checking Multiple Conditions</h3>
-<p>You may want to check multiple conditions at the same time.  For example, sometimes you might need two conditions to be <code>True</code> to take an action.  Other times you might be satisfied with just one condition being <code>True</code>.  The keywords <code>and</code> and <code>or</code> can help you in these situations. </p>
-<h4 id="using-and-to-check-multiple-conditions">Using <code>and</code> to Check Multiple Conditions</h4>
-<p>To check whether two conditions are both <code>True</code> simultaneously, use the keyword <code>and</code> to combine the two conditional tests; if each test passes, the overall expression evaluates to <code>True</code>.  If either test fails or if both tests fail, the expression evaluates to <code>False</code>.  </p>
-<p>For example, you can check whether two people are both over 21 using the following test:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<span class=k>if</span> <span class=n>answer</span> <span class=o>!=</span> <span class=mi>42</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;That is not the correct answer.  Please try again!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> The conditional test at line 3 passes, because the value of <code>answer</code> (17) is not equal to 42. Because the test passes, the indented code block is executed. </p> <p>You can include various mathematical comparisons in your conditional statements as well, such as less than, less than or equal to, greater than, and greater than or equal to. </p> <h3 id=checking-multiple-conditions>Checking Multiple Conditions</h3> <p>You may want to check multiple conditions at the same time. For example, sometimes you might need two conditions to be <code>True</code> to take an action. Other times you might be satisfied with just one condition being <code>True</code>. The keywords <code>and</code> and <code>or</code> can help you in these situations. </p> <h4 id=using-and-to-check-multiple-conditions>Using <code>and</code> to Check Multiple Conditions</h4> <p>To check whether two conditions are both <code>True</code> simultaneously, use the keyword <code>and</code> to combine the two conditional tests; if each test passes, the overall expression evaluates to <code>True</code>. If either test fails or if both tests fail, the expression evaluates to <code>False</code>. </p> <p>For example, you can check whether two people are both over 21 using the following test:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age_0</span> <span class="o">=</span> <span class="mi">22</span>
-<span class="n">age_1</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="n">age_0</span> <span class="o">&gt;=</span> <span class="mi">21</span> <span class="ow">and</span> <span class="n">age_1</span> <span class="o">&gt;=</span> <span class="mi">21</span>
-</code></pre></div>
-</td></tr></table>
-<div class="highlight"><pre><span></span><code>False
-</code></pre></div>
-On line 1, we define two ages, <code>age_0</code> and <code>age_1</code>.  On line 3, we check whether both ages are 21 or older.  The test on the left passes, but the one on the right fails, so the overall conditional expression evaluates to <code>False</code>. 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age_1</span> <span class="o">=</span> <span class="mi">22</span>
-<span class="n">age_0</span> <span class="o">&gt;=</span> <span class="mi">21</span> <span class="ow">and</span> <span class="n">age_1</span> <span class="o">&gt;=</span> <span class="mi">21</span>
-</code></pre></div>
-</td></tr></table>
-<div class="highlight"><pre><span></span><code>True
-</code></pre></div>
-On line 1, we change <code>age_1</code> to 22. The value of <code>age_1</code> is now greater than 21, so both individual tests pass, causing the overal conditional expression to evaluate as <code>True</code>.  </p>
-<p>To improve readability, you can use parentheses around the individual tests, but they are not required.  If you use parentheses, your test would look like this:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">age_0</span> <span class="o">&gt;=</span> <span class="mi">21</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">age_1</span> <span class="o">&gt;=</span> <span class="mi">21</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table></p>
-<h4 id="using-or-to-check-multiple-conditions">Using <code>or</code> to Check Multiple Conditions</h4>
-<p>The keyword <code>or</code> allows you to check multiple conditions as well, but it passes when either or both of the individual test pass.  As <code>or</code> expression fails onl when both individual tests fail.  </p>
-<p>Let's consider two ages again, but this time we'll look for only one person to be over 21:<br />
-<div class="highlight"><pre><span></span><code><span class="n">age_0</span> <span class="o">=</span> <span class="mi">22</span>
-<span class="n">age_1</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="n">age_0</span> <span class="o">&gt;=</span> <span class="mi">21</span> <span class="ow">or</span> <span class="n">age_1</span> <span class="o">&gt;=</span><span class="mi">21</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>True
-</code></pre></div>
-We start with two variables again at line 1.  Because the test for <code>age_0</code> at line 3 passes, the overall expression evaluates to <code>True</code>.<br />
-<div class="highlight"><pre><span></span><code><span class="n">age_0</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="n">age_0</span> <span class="o">&gt;=</span> <span class="mi">21</span> <span class="ow">or</span> <span class="n">age_1</span> <span class="o">&gt;=</span> <span class="mi">21</span>
-</code></pre></div>
-We now lowe <code>age_0</code> to 18.  In the test at line 2, both tests now fail and the overall expression evaluates to <code>False</code>.  </p>
-<h3 id="checking-whether-a-value-is-in-a-list">Checking Whether a Value Is in a List</h3>
-<p>Sometimes it is important to check whether a list contains a certain value before taking an action.  For example, you might want to check whether a new username already exists in a list of current usernames before completeing someone's registration on a webstie.  In a mapping project, you might want to check whether a submitted location already exists in a list of known locations.  </p>
-<p>To find out whether a particular value is already in a list, use the keyword <code>in</code>.  Let's consider some code you might write for a pizzeria.  We'll make a list of toppings a customer has requested for a pizza and then check whether certain toppings are in the list.<br />
-<div class="highlight"><pre><span></span><code><span class="n">requested_toppings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;onions&#39;</span><span class="p">,</span> <span class="s1">&#39;pineapple&#39;</span><span class="p">]</span>
-<span class="s1">&#39;mushrooms&#39;</span> <span class="ow">in</span> <span class="n">requested_toppings</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>True
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="s1">&#39;pepperoni&#39;</span> <span class="ow">in</span> <span class="n">requested_toppings</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>False
-</code></pre></div>
-We told Python to check for the existence of <code>'mushrooms'</code> and <code>'pepperoni'</code> in the list <code>requested_toppings</code>.  This technique is quite powerful because you can create a list of essential values, and then easily check whether the value you're testing matches one of the values in the list.  </p>
-<h3 id="checking-whether-a-value-is-not-in-a-list">Checking Whether a Value is Not in a List</h3>
-<p>Other times, it's important to know if a value does not appear in a list.  You can use the keyword <code>not</code> in this situation.  For example, consider a list of users who are banned from commenting in a forum.  You can check whether a user has been banned before allowing that user to submit a comment:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+3</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age_0</span> <span class=o>=</span> <span class=mi>22</span>
+<span class=n>age_1</span> <span class=o>=</span> <span class=mi>18</span>
+<span class=n>age_0</span> <span class=o>&gt;=</span> <span class=mi>21</span> <span class=ow>and</span> <span class=n>age_1</span> <span class=o>&gt;=</span> <span class=mi>21</span>
+</code></pre></div> </td></tr></table> <div class=highlight><pre><span></span><code>False
+</code></pre></div> On line 1, we define two ages, <code>age_0</code> and <code>age_1</code>. On line 3, we check whether both ages are 21 or older. The test on the left passes, but the one on the right fails, so the overall conditional expression evaluates to <code>False</code>. <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age_1</span> <span class=o>=</span> <span class=mi>22</span>
+<span class=n>age_0</span> <span class=o>&gt;=</span> <span class=mi>21</span> <span class=ow>and</span> <span class=n>age_1</span> <span class=o>&gt;=</span> <span class=mi>21</span>
+</code></pre></div> </td></tr></table> <div class=highlight><pre><span></span><code>True
+</code></pre></div> On line 1, we change <code>age_1</code> to 22. The value of <code>age_1</code> is now greater than 21, so both individual tests pass, causing the overal conditional expression to evaluate as <code>True</code>. </p> <p>To improve readability, you can use parentheses around the individual tests, but they are not required. If you use parentheses, your test would look like this:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=p>(</span><span class=n>age_0</span> <span class=o>&gt;=</span> <span class=mi>21</span><span class=p>)</span> <span class=ow>and</span> <span class=p>(</span><span class=n>age_1</span> <span class=o>&gt;=</span> <span class=mi>21</span><span class=p>)</span>
+</code></pre></div> </td></tr></table></p> <h4 id=using-or-to-check-multiple-conditions>Using <code>or</code> to Check Multiple Conditions</h4> <p>The keyword <code>or</code> allows you to check multiple conditions as well, but it passes when either or both of the individual test pass. As <code>or</code> expression fails onl when both individual tests fail. </p> <p>Let's consider two ages again, but this time we'll look for only one person to be over 21:<br> <div class=highlight><pre><span></span><code><span class=n>age_0</span> <span class=o>=</span> <span class=mi>22</span>
+<span class=n>age_1</span> <span class=o>=</span> <span class=mi>18</span>
+<span class=n>age_0</span> <span class=o>&gt;=</span> <span class=mi>21</span> <span class=ow>or</span> <span class=n>age_1</span> <span class=o>&gt;=</span><span class=mi>21</span>
+</code></pre></div> <div class=highlight><pre><span></span><code>True
+</code></pre></div> We start with two variables again at line 1. Because the test for <code>age_0</code> at line 3 passes, the overall expression evaluates to <code>True</code>.<br> <div class=highlight><pre><span></span><code><span class=n>age_0</span> <span class=o>=</span> <span class=mi>18</span>
+<span class=n>age_0</span> <span class=o>&gt;=</span> <span class=mi>21</span> <span class=ow>or</span> <span class=n>age_1</span> <span class=o>&gt;=</span> <span class=mi>21</span>
+</code></pre></div> We now lowe <code>age_0</code> to 18. In the test at line 2, both tests now fail and the overall expression evaluates to <code>False</code>. </p> <h3 id=checking-whether-a-value-is-in-a-list>Checking Whether a Value Is in a List</h3> <p>Sometimes it is important to check whether a list contains a certain value before taking an action. For example, you might want to check whether a new username already exists in a list of current usernames before completeing someone's registration on a webstie. In a mapping project, you might want to check whether a submitted location already exists in a list of known locations. </p> <p>To find out whether a particular value is already in a list, use the keyword <code>in</code>. Let's consider some code you might write for a pizzeria. We'll make a list of toppings a customer has requested for a pizza and then check whether certain toppings are in the list.<br> <div class=highlight><pre><span></span><code><span class=n>requested_toppings</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;mushrooms&#39;</span><span class=p>,</span> <span class=s1>&#39;onions&#39;</span><span class=p>,</span> <span class=s1>&#39;pineapple&#39;</span><span class=p>]</span>
+<span class=s1>&#39;mushrooms&#39;</span> <span class=ow>in</span> <span class=n>requested_toppings</span>
+</code></pre></div> <div class=highlight><pre><span></span><code>True
+</code></pre></div> <div class=highlight><pre><span></span><code><span class=s1>&#39;pepperoni&#39;</span> <span class=ow>in</span> <span class=n>requested_toppings</span>
+</code></pre></div> <div class=highlight><pre><span></span><code>False
+</code></pre></div> We told Python to check for the existence of <code>'mushrooms'</code> and <code>'pepperoni'</code> in the list <code>requested_toppings</code>. This technique is quite powerful because you can create a list of essential values, and then easily check whether the value you're testing matches one of the values in the list. </p> <h3 id=checking-whether-a-value-is-not-in-a-list>Checking Whether a Value is Not in a List</h3> <p>Other times, it's important to know if a value does not appear in a list. You can use the keyword <code>not</code> in this situation. For example, consider a list of users who are banned from commenting in a forum. You can check whether a user has been banned before allowing that user to submit a comment:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">banned_users</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;andrew&#39;</span><span class="p">,</span> <span class="s1">&#39;carolina&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">]</span>
-<span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;marie&#39;</span>
+5</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>banned_users</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;andrew&#39;</span><span class=p>,</span> <span class=s1>&#39;carolina&#39;</span><span class=p>,</span> <span class=s1>&#39;david&#39;</span><span class=p>]</span>
+<span class=n>user</span> <span class=o>=</span> <span class=s1>&#39;marie&#39;</span>
 
-<span class="k">if</span> <span class="n">user</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">banned_users</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">user</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, you can post a response if you wish.&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table></p>
-<p>The code on line 4 reads quite clearly.  If the value of <code>user</code> is not in the list of <code>banned_users</code>, Python returns <code>True</code> and execites the indented line.  </p>
-<p>The user <code>'marie'</code> is not in the list <code>banned_users</code>, so she sees a message inviting her to post a response: </p>
-<div class="highlight"><pre><span></span><code>Marie, you can post a response if you wish.
-</code></pre></div>
-
-<h3 id="boolean-expressions">Boolean Expressions</h3>
-<p>A Boolean expression is just another name for a condtitional test.  A <em>Boolean value</em> is either <code>True</code> or <code>False</code>, just like the value of a conditional expression after it has been evaluated.  </p>
-<p>Boolean values are often used to keep track of certain conditions, such as whether a game is running or whether a user can edit certain content on a website.<br />
-<div class="highlight"><pre><span></span><code><span class="n">game_active</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">can_edit</span> <span class="o">=</span> <span class="kc">False</span>
-</code></pre></div></p>
-<h2 id="if-statements_1"><code>if</code> Statements</h2>
-<p>When you understand conditional tests, you can start writing <code>if</code> statements.  Several different kinds of <code>if</code> statments exist, and your choice of which to use depends on the number of conditions you need to test.  You saw several examples of <code>if</code> statments in the discussion about conditional tests, but now let's dif deeper into the topic.  </p>
-<h3 id="simple-if-statements">Simple <code>if</code> Statements</h3>
-<p>The simplest kind of <code>if</code> statment has one test and one action:<br />
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">conditional_test</span><span class="p">:</span>
-    <span class="n">do</span> <span class="n">something</span>
-</code></pre></div></p>
-<p>You can put any conditional test in the first line and just about any action in the indented block following the test.  If the condtional test evaluates to <code>True</code>, Python executes the code following the <code>if</code> statement.  If the test evaluates to <code>False</code>, Python ignores the code following the <code>if</code> statement.  </p>
-<p>Let's say we have a variable representing a person's age, and we want to know if that person is old enough to vote.  The following code tests whether the person can vote:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<span class=k>if</span> <span class=n>user</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>banned_users</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>user</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>, you can post a response if you wish.&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table></p> <p>The code on line 4 reads quite clearly. If the value of <code>user</code> is not in the list of <code>banned_users</code>, Python returns <code>True</code> and execites the indented line. </p> <p>The user <code>'marie'</code> is not in the list <code>banned_users</code>, so she sees a message inviting her to post a response: </p> <div class=highlight><pre><span></span><code>Marie, you can post a response if you wish.
+</code></pre></div> <h3 id=boolean-expressions>Boolean Expressions</h3> <p>A Boolean expression is just another name for a condtitional test. A <em>Boolean value</em> is either <code>True</code> or <code>False</code>, just like the value of a conditional expression after it has been evaluated. </p> <p>Boolean values are often used to keep track of certain conditions, such as whether a game is running or whether a user can edit certain content on a website.<br> <div class=highlight><pre><span></span><code><span class=n>game_active</span> <span class=o>=</span> <span class=kc>True</span>
+<span class=n>can_edit</span> <span class=o>=</span> <span class=kc>False</span>
+</code></pre></div></p> <h2 id=if-statements_1><code>if</code> Statements</h2> <p>When you understand conditional tests, you can start writing <code>if</code> statements. Several different kinds of <code>if</code> statments exist, and your choice of which to use depends on the number of conditions you need to test. You saw several examples of <code>if</code> statments in the discussion about conditional tests, but now let's dif deeper into the topic. </p> <h3 id=simple-if-statements>Simple <code>if</code> Statements</h3> <p>The simplest kind of <code>if</code> statment has one test and one action:<br> <div class=highlight><pre><span></span><code><span class=k>if</span> <span class=n>conditional_test</span><span class=p>:</span>
+    <span class=n>do</span> <span class=n>something</span>
+</code></pre></div></p> <p>You can put any conditional test in the first line and just about any action in the indented block following the test. If the condtional test evaluates to <code>True</code>, Python executes the code following the <code>if</code> statement. If the test evaluates to <code>False</code>, Python ignores the code following the <code>if</code> statement. </p> <p>Let's say we have a variable representing a person's age, and we want to know if that person is old enough to vote. The following code tests whether the person can vote:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="mi">19</span>
-<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are old enough to vote!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-On line 2, Python checks to see whether the value of age is greater than or equal to 18.  It is, so Python executes the indented <code>print()</code> call on line 3:
-<div class="highlight"><pre><span></span><code>You are old enough to vote!
-</code></pre></div></p>
-<p>Indentation plays the same role in <code>if</code> statements as it did in <code>for</code> loops.  All indented lines after an <code>if</code> statement will be executed if the test passes, and the entire block if indented lines will be ignored if the test does not pass.<br />
-You can have as many lines of code as you want in the block following the <code>if</code> statement.  Let's add another line of output if the person is old enough to vote, asking if the individual has registered to vote yet:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+3</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age</span> <span class=o>=</span> <span class=mi>19</span>
+<span class=k>if</span> <span class=n>age</span> <span class=o>&gt;=</span> <span class=mi>18</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;You are old enough to vote!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> On line 2, Python checks to see whether the value of age is greater than or equal to 18. It is, so Python executes the indented <code>print()</code> call on line 3: <div class=highlight><pre><span></span><code>You are old enough to vote!
+</code></pre></div></p> <p>Indentation plays the same role in <code>if</code> statements as it did in <code>for</code> loops. All indented lines after an <code>if</code> statement will be executed if the test passes, and the entire block if indented lines will be ignored if the test does not pass.<br> You can have as many lines of code as you want in the block following the <code>if</code> statement. Let's add another line of output if the person is old enough to vote, asking if the individual has registered to vote yet: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="mi">19</span>
-<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are old enough to vote!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Have you registeredto vote yet?&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-The conditional test passes, and both <code>print()</code> calls are indented, so both lines are printed:
-<div class="highlight"><pre><span></span><code>You are old enough to vote!
+4</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age</span> <span class=o>=</span> <span class=mi>19</span>
+<span class=k>if</span> <span class=n>age</span> <span class=o>&gt;=</span> <span class=mi>18</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;You are old enough to vote!&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Have you registeredto vote yet?&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> The conditional test passes, and both <code>print()</code> calls are indented, so both lines are printed: <div class=highlight><pre><span></span><code>You are old enough to vote!
 Have you registered to vote yet?
-</code></pre></div>
-If the value of <code>age</code> is less than 18, this program would produce no output.  </p>
-<h3 id="if-else-statements"><code>if-else</code> Statements</h3>
-<p>Often, you'll want to take one action when a conditional test passes and a different action in all other cases.  Python's <code>if-else</code> syntax makes this possible.  An <code>if-else</code> block is similar to a simple <code>if</code> statement, but the <code>else</code> statement allows you to define an action or set of actions that are executed when the conditional test fails.  </p>
-<p>We'll display the same message we had previously if the person is old enough to vote, but this time we'll add a message for anyone who is not old enough to vote:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+</code></pre></div> If the value of <code>age</code> is less than 18, this program would produce no output. </p> <h3 id=if-else-statements><code>if-else</code> Statements</h3> <p>Often, you'll want to take one action when a conditional test passes and a different action in all other cases. Python's <code>if-else</code> syntax makes this possible. An <code>if-else</code> block is similar to a simple <code>if</code> statement, but the <code>else</code> statement allows you to define an action or set of actions that are executed when the conditional test fails. </p> <p>We'll display the same message we had previously if the person is old enough to vote, but this time we'll add a message for anyone who is not old enough to vote: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
 4
 5
 6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are old enough to vote!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Have you registeredto vote yet?&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, you are too younng to vote.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please register as soon as you turn 18!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-If the conditional test on line 2 passes, the first block of indented <code>print()</code> calls are executed.  If the test evaluates to <code>False</code>, the <code>else</code> block on line 5 is executed.  Because age is less than 18 this time, the conditional test fails and the code in the <code>else</code> block is executed.  </p>
-<p>This code works because it only has two possible situations to evaluate: a person is either old enough to vote or not old enough to vote.  The <code>if-else</code> structure works well in situation in which you want Python to always execute one of two possible actions.  In a simple <code>if-else</code> chain like this, one of the two actions will always be executed.  </p>
-<h3 id="the-if-elif-else-chain">The <code>if-elif-else</code> Chain</h3>
-<p>Often, you'll need to test more than two possible situations, and to evaluate these you can use Python's <code>if-elif-else</code> syntax.  Python executes only one block in an <code>if-elif-else</code> chain.  It runs each conditional test in order until one passes.  When a test passes, the code following that test is executed and Python skips the rest of the test.  </p>
-<p>Many real-world situations involve more than two possible conditions.  For example, consider an amusement park that charges different rates for different age groups:  </p>
-<ul>
-<li>
-<p>Admission for anyone under age 4 is free.</p>
-</li>
-<li>
-<p>Admission for anyone between the ages of 4 and 18 is $25.  </p>
-</li>
-<li>
-<p>Admission for anyone age 18 or older is $40.  </p>
-</li>
-</ul>
-<p>How can we use an <code>if</code> statement to determine a person's admission rate?  The following code tests for the age group of a person and then prints an admission price message:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+7</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age</span> <span class=o>=</span> <span class=mi>17</span>
+<span class=k>if</span> <span class=n>age</span> <span class=o>&gt;=</span> <span class=mi>18</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;You are old enough to vote!&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Have you registeredto vote yet?&quot;</span><span class=p>)</span>
+<span class=k>else</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Sorry, you are too younng to vote.&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Please register as soon as you turn 18!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> If the conditional test on line 2 passes, the first block of indented <code>print()</code> calls are executed. If the test evaluates to <code>False</code>, the <code>else</code> block on line 5 is executed. Because age is less than 18 this time, the conditional test fails and the code in the <code>else</code> block is executed. </p> <p>This code works because it only has two possible situations to evaluate: a person is either old enough to vote or not old enough to vote. The <code>if-else</code> structure works well in situation in which you want Python to always execute one of two possible actions. In a simple <code>if-else</code> chain like this, one of the two actions will always be executed. </p> <h3 id=the-if-elif-else-chain>The <code>if-elif-else</code> Chain</h3> <p>Often, you'll need to test more than two possible situations, and to evaluate these you can use Python's <code>if-elif-else</code> syntax. Python executes only one block in an <code>if-elif-else</code> chain. It runs each conditional test in order until one passes. When a test passes, the code following that test is executed and Python skips the rest of the test. </p> <p>Many real-world situations involve more than two possible conditions. For example, consider an amusement park that charges different rates for different age groups: </p> <ul> <li> <p>Admission for anyone under age 4 is free.</p> </li> <li> <p>Admission for anyone between the ages of 4 and 18 is $25. </p> </li> <li> <p>Admission for anyone age 18 or older is $40. </p> </li> </ul> <p>How can we use an <code>if</code> statement to determine a person's admission rate? The following code tests for the age group of a person and then prints an admission price message:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
 4
 5
 6
 7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
+8</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age</span> <span class=o>=</span> <span class=mi>12</span>
 
-<span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your admission cost is $0.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your admission cost is $25.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your admission cost is $40.&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table></p>
-<p>The <code>if</code> test on line 3 tests whether a person is under 4 years old.  If the test passes, an appropriate message is printed an Python skips the rest of the tests.  The <code>elif</code> code on line 5 is really another <code>if</code> test, which runs only if the previous test fails.  At this point in the chain, we know the person is at least 4 years old because the first test failed. If the person is under 18, an appropriate message is printed and Python skips the <code>else</code> block.  If both the <code>if</code> and <code>elif</code> tests fail, Python runs the code in the <code>else</code> block on line 7.  </p>
-<p>In this example, the test on line 3 evaluates to <code>False</code>, so its code block is not executed.  However, the second test evaluates to <code>True</code> (12 is less than 18) so its code is executed.  The output is one sentence, informing the user of the admission cost:<br />
-<div class="highlight"><pre><span></span><code>Your admission cost is $25.
-</code></pre></div>
-Any age greater than 17 would cause the first two tests to fail.  In these situations, the <code>else</code> block would be executed and the admission price would be $40.  </p>
-<p>Rather than printing the admission price within the <code>if-elif-else</code> block, it would be more concise to just set the price inside the <code>if-elif-else</code> chain and then have a simple <code>print()</code> call that runs after the chain has been evaluated:  </p>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<span class=k>if</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>4</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Your admission cost is $0.&quot;</span><span class=p>)</span>
+<span class=k>elif</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>18</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Your admission cost is $25.&quot;</span><span class=p>)</span>
+<span class=k>else</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Your admission cost is $40.&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table></p> <p>The <code>if</code> test on line 3 tests whether a person is under 4 years old. If the test passes, an appropriate message is printed an Python skips the rest of the tests. The <code>elif</code> code on line 5 is really another <code>if</code> test, which runs only if the previous test fails. At this point in the chain, we know the person is at least 4 years old because the first test failed. If the person is under 18, an appropriate message is printed and Python skips the <code>else</code> block. If both the <code>if</code> and <code>elif</code> tests fail, Python runs the code in the <code>else</code> block on line 7. </p> <p>In this example, the test on line 3 evaluates to <code>False</code>, so its code block is not executed. However, the second test evaluates to <code>True</code> (12 is less than 18) so its code is executed. The output is one sentence, informing the user of the admission cost:<br> <div class=highlight><pre><span></span><code>Your admission cost is $25.
+</code></pre></div> Any age greater than 17 would cause the first two tests to fail. In these situations, the <code>else</code> block would be executed and the admission price would be $40. </p> <p>Rather than printing the admission price within the <code>if-elif-else</code> block, it would be more concise to just set the price inside the <code>if-elif-else</code> chain and then have a simple <code>print()</code> call that runs after the chain has been evaluated: </p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
 4
@@ -1421,32 +144,17 @@ Any age greater than 17 would cause the first two tests to fail.  In these situa
 6
 7
 8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
+9</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age</span> <span class=o>=</span> <span class=mi>12</span>
 
-<span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your admission cost is $</span><span class="si">{</span><span class="n">price</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-Lines 4, 6, and 8 set the value of <code>price</code> according to the person's age, as in the previous example.  After the price is set by the <code>if-elif-else</code> chain, a separate unindented <code>print()</code> call line 9 uses this value to display a message reporting the person's admission price.  </p>
-<p>This code produces the same output as the previous example, but the
-purpose of the <code>if-elif-else</code> chain is narrower. Instead of determining a
-price and displaying a message, it simply determines the admission price.
-In addition to being more efficient, this revised code is easier to modify
-than the original approach. To change the text of the output message,
-you would need to change only one <code>print()</code> call rather than three separate
-<code>print()</code> calls. </p>
-<p>We can also get user input for age by using a <code>int(input())</code> call in line 1 as follows:
-<div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is your age?</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span>
-</code></pre></div>
-<strong>Note</strong>: we must use <code>int(input)</code> instead of just <code>input()</code> because it will error out when mathematical checks (<code>&lt;</code>) are used on a string.  Setting the <code>input</code> and an <code>int</code> will make the mathematical checks function correctly.  </p>
-<h3 id="using-multiple-elif-blocks">Using Multiple <code>elif</code> Blocks</h3>
-<p>You can use as many <code>elif</code> blocks in your code as you like.  For example, if the amusement park were to implement a discount for seniors, you could add one more conditional test to the code to determine whether someone qualified for the senior discount.  Let's say anyone 65 or older pays half the regular admission, or $20:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<span class=k>if</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>4</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>0</span>
+<span class=k>elif</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>18</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>25</span>
+<span class=k>else</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>40</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Your admission cost is $</span><span class=si>{</span><span class=n>price</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> Lines 4, 6, and 8 set the value of <code>price</code> according to the person's age, as in the previous example. After the price is set by the <code>if-elif-else</code> chain, a separate unindented <code>print()</code> call line 9 uses this value to display a message reporting the person's admission price. </p> <p>This code produces the same output as the previous example, but the purpose of the <code>if-elif-else</code> chain is narrower. Instead of determining a price and displaying a message, it simply determines the admission price. In addition to being more efficient, this revised code is easier to modify than the original approach. To change the text of the output message, you would need to change only one <code>print()</code> call rather than three separate <code>print()</code> calls. </p> <p>We can also get user input for age by using a <code>int(input())</code> call in line 1 as follows: <div class=highlight><pre><span></span><code><span class=n>age</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=nb>input</span><span class=p>(</span><span class=s2>&quot;What is your age?</span><span class=se>\n</span><span class=s2>&quot;</span><span class=p>))</span>
+</code></pre></div> <strong>Note</strong>: we must use <code>int(input)</code> instead of just <code>input()</code> because it will error out when mathematical checks (<code>&lt;</code>) are used on a string. Setting the <code>input</code> and an <code>int</code> will make the mathematical checks function correctly. </p> <h3 id=using-multiple-elif-blocks>Using Multiple <code>elif</code> Blocks</h3> <p>You can use as many <code>elif</code> blocks in your code as you like. For example, if the amusement park were to implement a discount for seniors, you could add one more conditional test to the code to determine whether someone qualified for the senior discount. Let's say anyone 65 or older pays half the regular admission, or $20:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
  2
  3
  4
@@ -1457,24 +165,19 @@ you would need to change only one <code>print()</code> call rather than three se
  9
 10
 11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
+12</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age</span> <span class=o>=</span> <span class=mi>12</span>
 
-<span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">65</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">20</span>
+<span class=k>if</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>4</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>0</span>
+<span class=k>elif</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>18</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>25</span>
+<span class=k>elif</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>65</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>40</span>
+<span class=k>else</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>20</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your admission cost is $</span><span class="si">{</span><span class="n">price</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-Most of this code is unchanged.  The second <code>elif</code> block on line 7 now checks to make sure a person is less than 65 before assigning them the full admission rate of $40.  Notice that the value assigned in the <code>else</code> block on line 9 needs to be changed to $20, because the only ages that make it to this block are people 65 or older.  </p>
-<h3 id="omitting-the-else-block">Omitting the <code>else</code> Block</h3>
-<p>Python does not require an <code>else</code> block at the end of an <code>if-elif</code> chain.  Sometimes an <code>else</code> block is useful; sometimes it is clearer to use an additional <code>elif</code> statement that catches the specific condition of interest:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Your admission cost is $</span><span class=si>{</span><span class=n>price</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> Most of this code is unchanged. The second <code>elif</code> block on line 7 now checks to make sure a person is less than 65 before assigning them the full admission rate of $40. Notice that the value assigned in the <code>else</code> block on line 9 needs to be changed to $20, because the only ages that make it to this block are people 65 or older. </p> <h3 id=omitting-the-else-block>Omitting the <code>else</code> Block</h3> <p>Python does not require an <code>else</code> block at the end of an <code>if-elif</code> chain. Sometimes an <code>else</code> block is useful; sometimes it is clearer to use an additional <code>elif</code> statement that catches the specific condition of interest:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
  2
  3
  4
@@ -1485,27 +188,19 @@ Most of this code is unchanged.  The second <code>elif</code> block on line 7 no
  9
 10
 11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="mi">12</span>
+12</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>age</span> <span class=o>=</span> <span class=mi>12</span>
 
-<span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">65</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="k">elif</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">65</span><span class="p">:</span>
-    <span class="n">price</span> <span class="o">=</span> <span class="mi">20</span>
+<span class=k>if</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>4</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>0</span>
+<span class=k>elif</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>18</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>25</span>
+<span class=k>elif</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>65</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>40</span>
+<span class=k>elif</span> <span class=n>age</span> <span class=o>&gt;=</span> <span class=mi>65</span><span class=p>:</span>
+    <span class=n>price</span> <span class=o>=</span> <span class=mi>20</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your admission cost is $</span><span class="si">{</span><span class="n">price</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-The extra <code>elif</code> block on line 9 assigns a price of $20 when the person is 65 or older, which is a bit clearer than the general <code>else</code> block.  With this change, every block of code must pass a specific test in order to be executed.  </p>
-<p>The <code>else</code> block is a catchall statement.  It matches any condition that wasn't matched by a sepcific <code>if</code> or <code>elif</code> test, and that can sometimes include invalid or even malicious data.  If you have a specific final confition you are testing for, consider using a file <code>elif</code> block and omit the <code>else</code> block.  As a result, you'll gain extra confidence that your code will run only under the correct conditions.  </p>
-<h3 id="testing-multiple-conditions">Testing Multiple Conditions</h3>
-<p>The <code>if-elif-else</code> chain is powerful, but it's only appropriate to use it when you just need one test to pass.  As soon as Python finds one test that passes, it skips the rest of the tests.  This behavior is beneficial, because it's efficient and allows you to test for one specific condition.  </p>
-<p>However, sometimes it is important to check all of the conditions of interest.  In this case, you should use a series of simple <code>if</code> statments with no <code>elif</code> or <code>else</code> blocks.  This technique makes sense when more than one condition should be <code>True</code>.  </p>
-<p>Let's reconsider the pizzeria example.  If someone requests a two-topping pizza, you'll need to be sure to include both toppings on their pizza:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Your admission cost is $</span><span class=si>{</span><span class=n>price</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> The extra <code>elif</code> block on line 9 assigns a price of $20 when the person is 65 or older, which is a bit clearer than the general <code>else</code> block. With this change, every block of code must pass a specific test in order to be executed. </p> <p>The <code>else</code> block is a catchall statement. It matches any condition that wasn't matched by a sepcific <code>if</code> or <code>elif</code> test, and that can sometimes include invalid or even malicious data. If you have a specific final confition you are testing for, consider using a file <code>elif</code> block and omit the <code>else</code> block. As a result, you'll gain extra confidence that your code will run only under the correct conditions. </p> <h3 id=testing-multiple-conditions>Testing Multiple Conditions</h3> <p>The <code>if-elif-else</code> chain is powerful, but it's only appropriate to use it when you just need one test to pass. As soon as Python finds one test that passes, it skips the rest of the tests. This behavior is beneficial, because it's efficient and allows you to test for one specific condition. </p> <p>However, sometimes it is important to check all of the conditions of interest. In this case, you should use a series of simple <code>if</code> statments with no <code>elif</code> or <code>else</code> blocks. This technique makes sense when more than one condition should be <code>True</code>. </p> <p>Let's reconsider the pizzeria example. If someone requests a two-topping pizza, you'll need to be sure to include both toppings on their pizza:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
  2
  3
  4
@@ -1514,54 +209,37 @@ The extra <code>elif</code> block on line 9 assigns a price of $20 when the pers
  7
  8
  9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">requested_toppings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;extra cheese&#39;</span><span class="p">]</span>
+10</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>requested_toppings</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;mushrooms&#39;</span><span class=p>,</span> <span class=s1>&#39;extra cheese&#39;</span><span class=p>]</span>
 
-<span class="k">if</span> <span class="s1">&#39;mushrooms&#39;</span> <span class="ow">in</span> <span class="n">requested_toppings</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding mushrooms.&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="s1">&#39;pepperoni&#39;</span> <span class="ow">in</span>  <span class="n">requested_toppings</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding pepperoni.&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="s1">&#39;extra cheese&#39;</span> <span class="ow">in</span> <span class="n">requested_toppings</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding extra cheese.&quot;</span><span class="p">)</span>
+<span class=k>if</span> <span class=s1>&#39;mushrooms&#39;</span> <span class=ow>in</span> <span class=n>requested_toppings</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Adding mushrooms.&quot;</span><span class=p>)</span>
+<span class=k>if</span> <span class=s1>&#39;pepperoni&#39;</span> <span class=ow>in</span>  <span class=n>requested_toppings</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Adding pepperoni.&quot;</span><span class=p>)</span>
+<span class=k>if</span> <span class=s1>&#39;extra cheese&#39;</span> <span class=ow>in</span> <span class=n>requested_toppings</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Adding extra cheese.&quot;</span><span class=p>)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Finished making your pizza!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-We start with a list containing the requested toppings.  The <code>if</code> statement at line 3 checks to see whether the person requested mushrooms on their pizza.  If so, a message is printed confirming the topping.  The test for pepperoni on like 5 is another simple <code>if</code> statement, not an <code>elif</code> or <code>else</code> statement, so this test runs regardless of whether the previous test passed or not.  The code on like 7 checks whether extra cheese was requested regardless of the results of the first two tests.  These three independent tests are executed every time this program is run.  </p>
-<p>Because every condition in this example is evaluated, bot mushrooms and extra cheese are added to the pizza:  </p>
-<p><div class="highlight"><pre><span></span><code>Adding mushrooms.
+<span class=nb>print</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Finished making your pizza!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> We start with a list containing the requested toppings. The <code>if</code> statement at line 3 checks to see whether the person requested mushrooms on their pizza. If so, a message is printed confirming the topping. The test for pepperoni on like 5 is another simple <code>if</code> statement, not an <code>elif</code> or <code>else</code> statement, so this test runs regardless of whether the previous test passed or not. The code on like 7 checks whether extra cheese was requested regardless of the results of the first two tests. These three independent tests are executed every time this program is run. </p> <p>Because every condition in this example is evaluated, bot mushrooms and extra cheese are added to the pizza: </p> <p><div class=highlight><pre><span></span><code>Adding mushrooms.
 Adding extra cheese.
 
 Finished making your pizza!
-</code></pre></div>
-This code would not work properly if we used an <code>if-elif-else</code> block, because the code would stop working after only one test passes.  </p>
-<p>In summary, if you want only one block of code to run, use an <code>if-elif-else</code> chain.  If more than one code of block needs to run, use a series of independent <code>if</code> statements.  </p>
-<h2 id="using-if-statements-with-lists">Using <code>if</code> Statements with Lists</h2>
-<p>You can do some interesting work when you combine lists and <code>if</code> statements.  You can watch for special values that need to be treated differently than other values in the list.  You can manage changing conditions efficiently, such as the availability of certain items i a restaurant throughout a shift.  You can also begin to prove that your code works as you expect it to in all possible situations.  </p>
-<h3 id="checking-for-special-items">Checking for Special Items</h3>
-<p>Earlier, we covered how to handle a special value like 'bmw', which needed to be printed in a different format than other values in the list.  Now that we have a basic understanding of conditional tests and <code>if</code> statements, let's take a closer look at how you can watch for special values in a list and handle those values appropriately.  </p>
-<p>Let's continue with the pizzeria example.  The pizzeria displays a message whenever a topping is added to your pizza, as it's being made.  The code for this action can be written very efficiently by making a list of toppings the customer has requested and using a loop to announce each topping as it's added to the pizza:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+</code></pre></div> This code would not work properly if we used an <code>if-elif-else</code> block, because the code would stop working after only one test passes. </p> <p>In summary, if you want only one block of code to run, use an <code>if-elif-else</code> chain. If more than one code of block needs to run, use a series of independent <code>if</code> statements. </p> <h2 id=using-if-statements-with-lists>Using <code>if</code> Statements with Lists</h2> <p>You can do some interesting work when you combine lists and <code>if</code> statements. You can watch for special values that need to be treated differently than other values in the list. You can manage changing conditions efficiently, such as the availability of certain items i a restaurant throughout a shift. You can also begin to prove that your code works as you expect it to in all possible situations. </p> <h3 id=checking-for-special-items>Checking for Special Items</h3> <p>Earlier, we covered how to handle a special value like 'bmw', which needed to be printed in a different format than other values in the list. Now that we have a basic understanding of conditional tests and <code>if</code> statements, let's take a closer look at how you can watch for special values in a list and handle those values appropriately. </p> <p>Let's continue with the pizzeria example. The pizzeria displays a message whenever a topping is added to your pizza, as it's being made. The code for this action can be written very efficiently by making a list of toppings the customer has requested and using a loop to announce each topping as it's added to the pizza:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
 4
 5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">requested_toppings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;green peppers&#39;</span><span class="p">,</span> <span class="s1">&#39;extra cheese&#39;</span><span class="p">]</span>
+6</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>requested_toppings</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;mushrooms&#39;</span><span class=p>,</span> <span class=s1>&#39;green peppers&#39;</span><span class=p>,</span> <span class=s1>&#39;extra cheese&#39;</span><span class=p>]</span>
 
-<span class="k">for</span> <span class="n">requested_topping</span> <span class="ow">in</span> <span class="n">requested_toppings</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adding </span><span class="si">{</span><span class="n">requested_topping</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class=k>for</span> <span class=n>requested_topping</span> <span class=ow>in</span> <span class=n>requested_toppings</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Adding </span><span class=si>{</span><span class=n>requested_topping</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Finished making your pizza!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-The output is straightforward because the code is just a simple <code>for</code> loop:
-<div class="highlight"><pre><span></span><code>Adding mushrooms.
+<span class=nb>print</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Finished making your pizza!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> The output is straightforward because the code is just a simple <code>for</code> loop: <div class=highlight><pre><span></span><code>Adding mushrooms.
 Adding green peppers.
 Adding extra cheese.
 
 Finished making your pizza!
-</code></pre></div>
-But what if the pizzeria runs out of green peppers?  An <code>if</code> statement inside the <code>for</code> loop can handle this situation appropriately:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+</code></pre></div> But what if the pizzeria runs out of green peppers? An <code>if</code> statement inside the <code>for</code> loop can handle this situation appropriately: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
 4
@@ -1569,43 +247,31 @@ But what if the pizzeria runs out of green peppers?  An <code>if</code> statemen
 6
 7
 8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">requested_toppings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;green peppers&#39;</span><span class="p">,</span> <span class="s1">&#39;extra cheese&#39;</span><span class="p">]</span>
+9</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>requested_toppings</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;mushrooms&#39;</span><span class=p>,</span> <span class=s1>&#39;green peppers&#39;</span><span class=p>,</span> <span class=s1>&#39;extra cheese&#39;</span><span class=p>]</span>
 
-<span class="k">for</span> <span class="n">requested_topping</span> <span class="ow">in</span> <span class="n">requested_toppings</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">requested_topping</span> <span class="o">==</span> <span class="s1">&#39;green peppers&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, we are out of green peppers right now.&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adding </span><span class="si">{</span><span class="n">requested_topping</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class=k>for</span> <span class=n>requested_topping</span> <span class=ow>in</span> <span class=n>requested_toppings</span><span class=p>:</span>
+    <span class=k>if</span> <span class=n>requested_topping</span> <span class=o>==</span> <span class=s1>&#39;green peppers&#39;</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Sorry, we are out of green peppers right now.&quot;</span><span class=p>)</span>
+    <span class=k>else</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Adding </span><span class=si>{</span><span class=n>requested_topping</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Finished making your pizza!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-This time we check each requested item before adding it to the pizza.  The code at line 4 checks to see if the person requested green peppers.  If so, we display a message that we are out of green peppers.  The <code>else</code> block on line 6 ensures that all other toppings are added to the pizza.  </p>
-<h3 id="checking-that-a-list-is-not-empty">Checking that a List is Not Empty</h3>
-<p>We've made a simple assumption about every list we've worked with so far; we've assumed that each list has at least one item in it.  Soon we'll let users provide the information that's stored in a list, so we won't be able to assume that a list has any items in it each time a loop is run.  In this situation, it's useful to check whether a list is empty before running a <code>for</code> loop.  </p>
-<p>As an example, let's check whether the list of requested toppings is empty before building the pizza.  If the list is empty, we'll prompt the use and make sure they want a plain pizza.  If the list is not empty, we'll build the pizza just as we did in the previous examples:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<span class=nb>print</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Finished making your pizza!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> This time we check each requested item before adding it to the pizza. The code at line 4 checks to see if the person requested green peppers. If so, we display a message that we are out of green peppers. The <code>else</code> block on line 6 ensures that all other toppings are added to the pizza. </p> <h3 id=checking-that-a-list-is-not-empty>Checking that a List is Not Empty</h3> <p>We've made a simple assumption about every list we've worked with so far; we've assumed that each list has at least one item in it. Soon we'll let users provide the information that's stored in a list, so we won't be able to assume that a list has any items in it each time a loop is run. In this situation, it's useful to check whether a list is empty before running a <code>for</code> loop. </p> <p>As an example, let's check whether the list of requested toppings is empty before building the pizza. If the list is empty, we'll prompt the use and make sure they want a plain pizza. If the list is not empty, we'll build the pizza just as we did in the previous examples:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
 4
 5
 6
 7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">requested_toppings</span> <span class="o">=</span> <span class="p">[]</span>
+8</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>requested_toppings</span> <span class=o>=</span> <span class=p>[]</span>
 
-<span class="k">if</span> <span class="n">requested_toppings</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">requested_topping</span> <span class="ow">in</span> <span class="n">requested_toppings</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adding </span><span class="si">{</span><span class="n">requested_topping</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Finished making your pizza!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Are you sure you want a plain pizza?&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-This time we start out with an empty list.  Instead of jumping right into the <code>for</code> loop, we do a quick check on line 3.  When the name of a list is used in an <code>if</code> statement, Python returns <code>True</code> if the list contains at least one item; an empty list evaluates to <code>False</code>.  If <code>requested_toppings</code> passes the conditional test, we run the same <code>for</code> loop we used in the previous example.  If the conditional test fails, we print a message asking the customer if they really want a plain pizza with no toppings.  </p>
-<h3 id="using-multiple-lists">Using Multiple Lists</h3>
-<p>People will ask for just about anything, especially when it comes to pizza toppings.  What if a customer wants french fries on their pizza?  You can use lists and <code>if</code> statements to make sure your input makes sense before you act on it.  </p>
-<p>Let's watch out for unusual topping requests before we build a pizza.  The following example defines two lists.  The first is a list of available toppings at the pizzeria, and the second is the list of toppings that the user has requested.  This time, each item in <code>requested_toppings</code> is checked against the list of available toppings before it is added to the pizza:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<span class=k>if</span> <span class=n>requested_toppings</span><span class=p>:</span>
+    <span class=k>for</span> <span class=n>requested_topping</span> <span class=ow>in</span> <span class=n>requested_toppings</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Adding </span><span class=si>{</span><span class=n>requested_topping</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Finished making your pizza!&quot;</span><span class=p>)</span>
+<span class=k>else</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Are you sure you want a plain pizza?&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> This time we start out with an empty list. Instead of jumping right into the <code>for</code> loop, we do a quick check on line 3. When the name of a list is used in an <code>if</code> statement, Python returns <code>True</code> if the list contains at least one item; an empty list evaluates to <code>False</code>. If <code>requested_toppings</code> passes the conditional test, we run the same <code>for</code> loop we used in the previous example. If the conditional test fails, we print a message asking the customer if they really want a plain pizza with no toppings. </p> <h3 id=using-multiple-lists>Using Multiple Lists</h3> <p>People will ask for just about anything, especially when it comes to pizza toppings. What if a customer wants french fries on their pizza? You can use lists and <code>if</code> statements to make sure your input makes sense before you act on it. </p> <p>Let's watch out for unusual topping requests before we build a pizza. The following example defines two lists. The first is a list of available toppings at the pizzeria, and the second is the list of toppings that the user has requested. This time, each item in <code>requested_toppings</code> is checked against the list of available toppings before it is added to the pizza:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
  2
  3
  4
@@ -1615,99 +281,23 @@ This time we start out with an empty list.  Instead of jumping right into the <c
  8
  9
 10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">available_toppings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;olives&#39;</span><span class="p">,</span> <span class="s1">&#39;green peppers&#39;</span><span class="p">,</span> <span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span> <span class="s1">&#39;pineapple&#39;</span><span class="p">,</span> <span class="s1">&#39;extra cheese&#39;</span><span class="p">]</span>
+11</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>available_toppings</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;mushrooms&#39;</span><span class=p>,</span> <span class=s1>&#39;olives&#39;</span><span class=p>,</span> <span class=s1>&#39;green peppers&#39;</span><span class=p>,</span> <span class=s1>&#39;pepperoni&#39;</span><span class=p>,</span> <span class=s1>&#39;pineapple&#39;</span><span class=p>,</span> <span class=s1>&#39;extra cheese&#39;</span><span class=p>]</span>
 
-<span class="n">requested_toppings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;french fries&#39;</span><span class="p">,</span> <span class="s1">&#39;extra cheese&#39;</span><span class="p">]</span>
+<span class=n>requested_toppings</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;mushrooms&#39;</span><span class=p>,</span> <span class=s1>&#39;french fries&#39;</span><span class=p>,</span> <span class=s1>&#39;extra cheese&#39;</span><span class=p>]</span>
 
-<span class="k">for</span> <span class="n">requested_topping</span> <span class="ow">in</span> <span class="n">requested_toppings</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">requested_topping</span> <span class="ow">in</span> <span class="n">available_toppings</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adding </span><span class="si">{</span><span class="n">requested_topping</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sorry, we don&#39;t have </span><span class="si">{</span><span class="n">requested_topping</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class=k>for</span> <span class=n>requested_topping</span> <span class=ow>in</span> <span class=n>requested_toppings</span><span class=p>:</span>
+    <span class=k>if</span> <span class=n>requested_topping</span> <span class=ow>in</span> <span class=n>available_toppings</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Adding </span><span class=si>{</span><span class=n>requested_topping</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+    <span class=k>else</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Sorry, we don&#39;t have </span><span class=si>{</span><span class=n>requested_topping</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Finished making your pizza!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-On line 1, we defined a list of available toppings.  Next, on line 3, we created a list of requested toppings from the customer (Note the unusual request for 'french fries').  On line 5, we loop through the list of requested toppings.  Inside the loop, we first check to see if each requested topping is actually in the list of available toppings.  If it is, we add the topping to the pizza.  If the requested topping is not available, we run the <code>else</code> block and print a message saying that the topping is not available.  </p>
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-      </main>
-      
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../py-working-with-lists/" title="Working with Lists" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Working with Lists
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../py-dictionaries/" title="Dictionaries" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Dictionaries
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-</footer>
-      
-    </div>
-    
-    
-      <script src="../assets/javascripts/vendor.f81b9e8b.min.js"></script>
-      <script src="../assets/javascripts/bundle.23546af0.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
-      
-      <script>
+<span class=nb>print</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Finished making your pizza!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> On line 1, we defined a list of available toppings. Next, on line 3, we created a list of requested toppings from the customer (Note the unusual request for 'french fries'). On line 5, we loop through the list of requested toppings. Inside the loop, we first check to see if each requested topping is actually in the list of available toppings. If it is, we add the topping to the pizza. If the requested topping is not available, we run the <code>else</code> block and print a message saying that the topping is not available. </p> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid" aria-label=Footer> <a href=../py-working-with-lists/ title="Working with Lists" class="md-footer-nav__link md-footer-nav__link--prev" rel=prev> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Previous </span> Working with Lists </div> </div> </a> <a href=../py-dictionaries/ title=Dictionaries class="md-footer-nav__link md-footer-nav__link--next" rel=next> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Next </span> Dictionaries </div> </div> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg> </div> </a> </nav> </div> </footer> </div> <script src=../assets/javascripts/vendor.d710d30a.min.js></script> <script src=../assets/javascripts/bundle.4a5ba8d6.min.js></script><script id=__lang type=application/json>{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script> <script>
         app = initialize({
           base: "..",
-          features: [],
+          features: ["tabs"],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+            worker: "../assets/javascripts/worker/search.9b3611bd.min.js"
           }, typeof search !== "undefined" && search)
         })
-      </script>
-      
-        <script src="../javascripts/extra.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-      
-    
-    <script>
-    var elements = document.getElementsByClassName("lightgallery");
-    for(var i=0; i<elements.length; i++) {
-       lightGallery(elements[i]);
-    }
-    </script>
-
-  </body>
-</html>
+      </script> <script src=../javascripts/extra.js></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> </body> </html>

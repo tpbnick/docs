@@ -12,6 +12,8 @@
 
 * [Python Crash Course - 2nd Edition (2019) (PDF)](https://nicklyss.com/wp-content/uploads/2020/06/Python-Crash-Course-2nd-Edition-A-Hands-On-Project-Based-Introduction-to-Programming.pdf)
 
+* [Python Crash Course - Basics](https://ehmatthes.github.io/pcc_2e/cheat_sheets/cheat_sheets/)
+
 ## Introduction  
 
 Python is a powerful multiparadigm computer programming language, optimized

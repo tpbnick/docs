@@ -1,945 +1,508 @@
-
-
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      <link rel="shortcut icon" href="https://nicklyss.com/wp-content/uploads/2020/04/logo4.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.3">
-    
-    
-      
-        <title>Dictionaries - Nick's Docs</title>
-      
-    
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.62d34fff.min.css">
-      
-      
-    
-    <link rel="stylesheet" href="../css/lightgallery.min.css">
-
-    
-    
-    <script src="../js/lightgallery.min.js"></script>
-
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
-      
-    
-    
-    
-    
-      
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#dictionaries" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href=".." title="Nick's Docs" class="md-header-nav__button md-logo" aria-label="Nick's Docs">
-      
-  <img src="https://nicklyss.com/wp-content/uploads/2020/04/logo4.png" alt="logo">
-
-    </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
-    </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
-            Nick's Docs
-          </span>
-          <span class="md-header-nav__topic md-ellipsis">
-            
-              Dictionaries
-            
-          </span>
-        </div>
-      
-    </div>
-    
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-      </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-  </nav>
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-        
-      
-      
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Nick's Docs" class="md-nav__button md-logo" aria-label="Nick's Docs">
-      
-  <img src="https://nicklyss.com/wp-content/uploads/2020/04/logo4.png" alt="logo">
-
-    </a>
-    Nick's Docs
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Nick's Portfolio
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Nick's Portfolio" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Nick's Portfolio
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../portfolio/" title="Main Portfolio" class="md-nav__link">
-      Main Portfolio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
-    
-    <label class="md-nav__link" for="nav-2-2">
-      Google Chrome User Guide
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Google Chrome User Guide" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Google Chrome User Guide
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../chrome/" title="What is Google Chrome?" class="md-nav__link">
-      What is Google Chrome?
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../chromeinstall/" title="Google Chrome Install" class="md-nav__link">
-      Google Chrome Install
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../chromemedia/" title="Google Chrome Media" class="md-nav__link">
-      Google Chrome Media
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      Programming Notes
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Programming Notes" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Programming Notes
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
-    
-    <label class="md-nav__link" for="nav-3-1">
-      C
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="C" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        C
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c/" title="C Basics" class="md-nav__link">
-      C Basics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-arrays/" title="Arrays" class="md-nav__link">
-      Arrays
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-functions/" title="Functions" class="md-nav__link">
-      Functions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-cl-arguments/" title="Command Line Arguments" class="md-nav__link">
-      Command Line Arguments
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-variable-scope/" title="Variables and Scope" class="md-nav__link">
-      Variables and Scope
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-6" type="checkbox" id="nav-3-1-6">
-    
-    <label class="md-nav__link" for="nav-3-1-6">
-      Algorithms
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Algorithms" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-1-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Algorithms
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-algorithms/" title="Algorithm Overview" class="md-nav__link">
-      Algorithm Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-algorithms-problems/" title="Algorithm Problems" class="md-nav__link">
-      Algorithm Problems
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-7" type="checkbox" id="nav-3-1-7">
-    
-    <label class="md-nav__link" for="nav-3-1-7">
-      Memory
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Memory" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-1-7">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Memory
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-memory/" title="Memory Overview" class="md-nav__link">
-      Memory Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-memory-problems/" title="Memory Problems" class="md-nav__link">
-      Memory Problems
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1-8" type="checkbox" id="nav-3-1-8">
-    
-    <label class="md-nav__link" for="nav-3-1-8">
-      Data Structures
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Data Structures" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-1-8">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Data Structures
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-data-structures/" title="Data Structures Overview" class="md-nav__link">
-      Data Structures Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c-data-structures-problems/" title="Data Structures Problem" class="md-nav__link">
-      Data Structures Problem
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
-    
-    <label class="md-nav__link" for="nav-3-2">
-      Python
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Python" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Python
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py/" title="Python Basics" class="md-nav__link">
-      Python Basics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py-data-types/" title="Variables and Simple Data Types" class="md-nav__link">
-      Variables and Simple Data Types
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py-lists/" title="Lists" class="md-nav__link">
-      Lists
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py-working-with-lists/" title="Working with Lists" class="md-nav__link">
-      Working with Lists
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../py-if-statements/" title="If Statements" class="md-nav__link">
-      If Statements
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Dictionaries
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Dictionaries" class="md-nav__link md-nav__link--active">
-      Dictionaries
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-simple-dictionary" class="md-nav__link">
-    A Simple Dictionary
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-dictionaries" class="md-nav__link">
-    Working with Dictionaries
-  </a>
-  
-    <nav class="md-nav" aria-label="Working with Dictionaries">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#accessing-values-in-a-dictionary" class="md-nav__link">
-    Accessing Values in a Dictionary
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../about/" title="About" class="md-nav__link">
-      About
-    </a>
-  </li>
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-simple-dictionary" class="md-nav__link">
-    A Simple Dictionary
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-dictionaries" class="md-nav__link">
-    Working with Dictionaries
-  </a>
-  
-    <nav class="md-nav" aria-label="Working with Dictionaries">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#accessing-values-in-a-dictionary" class="md-nav__link">
-    Accessing Values in a Dictionary
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                
-                  
-                
-                
-                <h1 id="dictionaries">Dictionaries</h1>
-<p>Understanding dictionaries allows you to model a variety of real-world objects more accurately.  For example, we could create a dictionary representing a person and then store as much information as we want about that person.  You can store their name, location, age, profession, and any other aspect of a person you can describe.  We can store any two kinds of information that can be matched up, such as a list of words and their meanings, a list of people's names and their favorite numbers, a list of mountains and their elevations, etc.  </p>
-<h2 id="a-simple-dictionary">A Simple Dictionary</h2>
-<p>Consider a game featuring aliens that can have different colors and point values.  This simple dictionary stores information about a particular alien:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://nicklyss.com/wp-content/uploads/2020/04/logo4.png><meta name=generator content="mkdocs-1.1, mkdocs-material-5.3.3"><title>Dictionaries - Nick's Docs</title><link rel=stylesheet href=../assets/stylesheets/main.fe0cca5b.min.css><link href=https://fonts.gstatic.com rel=preconnect crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback"><style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style></head> <body dir=ltr> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#dictionaries class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header-nav md-grid" aria-label=Header> <a href=.. title="Nick's Docs" class="md-header-nav__button md-logo" aria-label="Nick's Docs"> <img src=https://nicklyss.com/wp-content/uploads/2020/04/logo4.png alt=logo> </a> <label class="md-header-nav__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg> </label> <div class=md-header-nav__title data-md-component=header-title> <div class=md-header-nav__ellipsis> <span class="md-header-nav__topic md-ellipsis"> Nick's Docs </span> <span class="md-header-nav__topic md-ellipsis"> Dictionaries </span> </div> </div> <label class="md-header-nav__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query data-md-state=active> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </label> <button type=reset class="md-search__icon md-icon" aria-label=Clear data-md-component=search-reset tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg> </button> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class="md-tabs md-tabs--active" aria-label=Tabs data-md-component=tabs> <div class="md-tabs__inner md-grid"> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../portfolio/ class=md-tabs__link> Nick's Portfolio </a> </li> <li class=md-tabs__item> <a href=../c/ class=md-tabs__link> Programming Notes </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=.. title="Nick's Docs" class="md-nav__button md-logo" aria-label="Nick's Docs"> <img src=https://nicklyss.com/wp-content/uploads/2020/04/logo4.png alt=logo> </a> Nick's Docs </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=.. title=Home class=md-nav__link> Home </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-2 type=checkbox id=nav-2> <label class=md-nav__link for=nav-2> Nick's Portfolio <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="Nick's Portfolio" data-md-level=1> <label class=md-nav__title for=nav-2> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Nick's Portfolio </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../portfolio/ title="Main Portfolio" class=md-nav__link> Main Portfolio </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-2-2 type=checkbox id=nav-2-2> <label class=md-nav__link for=nav-2-2> Google Chrome User Guide <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="Google Chrome User Guide" data-md-level=2> <label class=md-nav__title for=nav-2-2> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Google Chrome User Guide </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../chrome/ title="What is Google Chrome?" class=md-nav__link> What is Google Chrome? </a> </li> <li class=md-nav__item> <a href=../chromeinstall/ title="Google Chrome Install" class=md-nav__link> Google Chrome Install </a> </li> <li class=md-nav__item> <a href=../chromemedia/ title="Google Chrome Media" class=md-nav__link> Google Chrome Media </a> </li> <li class=md-nav__item> <a href=../glossary/ title=Glossary class=md-nav__link> Glossary </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3 type=checkbox id=nav-3 checked> <label class=md-nav__link for=nav-3> Programming Notes <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="Programming Notes" data-md-level=1> <label class=md-nav__title for=nav-3> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Programming Notes </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-1 type=checkbox id=nav-3-1> <label class=md-nav__link for=nav-3-1> C <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=C data-md-level=2> <label class=md-nav__title for=nav-3-1> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> C </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c/ title="C Basics" class=md-nav__link> C Basics </a> </li> <li class=md-nav__item> <a href=../c-arrays/ title=Arrays class=md-nav__link> Arrays </a> </li> <li class=md-nav__item> <a href=../c-functions/ title=Functions class=md-nav__link> Functions </a> </li> <li class=md-nav__item> <a href=../c-cl-arguments/ title="Command Line Arguments" class=md-nav__link> Command Line Arguments </a> </li> <li class=md-nav__item> <a href=../c-variable-scope/ title="Variables and Scope" class=md-nav__link> Variables and Scope </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-1-6 type=checkbox id=nav-3-1-6> <label class=md-nav__link for=nav-3-1-6> Algorithms <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Algorithms data-md-level=3> <label class=md-nav__title for=nav-3-1-6> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Algorithms </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-algorithms/ title="Algorithm Overview" class=md-nav__link> Algorithm Overview </a> </li> <li class=md-nav__item> <a href=../c-algorithms-problems/ title="Algorithm Problems" class=md-nav__link> Algorithm Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-1-7 type=checkbox id=nav-3-1-7> <label class=md-nav__link for=nav-3-1-7> Memory <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Memory data-md-level=3> <label class=md-nav__title for=nav-3-1-7> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Memory </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-memory/ title="Memory Overview" class=md-nav__link> Memory Overview </a> </li> <li class=md-nav__item> <a href=../c-memory-problems/ title="Memory Problems" class=md-nav__link> Memory Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-1-8 type=checkbox id=nav-3-1-8> <label class=md-nav__link for=nav-3-1-8> Data Structures <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="Data Structures" data-md-level=3> <label class=md-nav__title for=nav-3-1-8> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Data Structures </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-data-structures/ title="Data Structures Overview" class=md-nav__link> Data Structures Overview </a> </li> <li class=md-nav__item> <a href=../c-data-structures-problems/ title="Data Structures Problem" class=md-nav__link> Data Structures Problem </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3-2 type=checkbox id=nav-3-2 checked> <label class=md-nav__link for=nav-3-2> Python <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Python data-md-level=2> <label class=md-nav__title for=nav-3-2> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Python </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../py/ title="Python Basics" class=md-nav__link> Python Basics </a> </li> <li class=md-nav__item> <a href=../py-data-types/ title="Variables and Simple Data Types" class=md-nav__link> Variables and Simple Data Types </a> </li> <li class=md-nav__item> <a href=../py-lists/ title=Lists class=md-nav__link> Lists </a> </li> <li class=md-nav__item> <a href=../py-working-with-lists/ title="Working with Lists" class=md-nav__link> Working with Lists </a> </li> <li class=md-nav__item> <a href=../py-if-statements/ title="If Statements" class=md-nav__link> If Statements </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> Dictionaries <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg> </span> </label> <a href=./ title=Dictionaries class="md-nav__link md-nav__link--active"> Dictionaries </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Table of contents </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#a-simple-dictionary class=md-nav__link> A Simple Dictionary </a> </li> <li class=md-nav__item> <a href=#working-with-dictionaries class=md-nav__link> Working with Dictionaries </a> <nav class=md-nav aria-label="Working with Dictionaries"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#accessing-values-in-a-dictionary class=md-nav__link> Accessing Values in a Dictionary </a> </li> <li class=md-nav__item> <a href=#adding-new-key-value-pairs class=md-nav__link> Adding New Key-Value Pairs </a> </li> <li class=md-nav__item> <a href=#starting-with-an-empty-dictionary class=md-nav__link> Starting with an Empty Dictionary </a> </li> <li class=md-nav__item> <a href=#modifying-values-ina-dictionary class=md-nav__link> Modifying Values ina Dictionary </a> </li> <li class=md-nav__item> <a href=#removing-key-value-pairs class=md-nav__link> Removing Key-Value Pairs </a> </li> <li class=md-nav__item> <a href=#a-dictionary-of-similar-objects class=md-nav__link> A Dictionary of Similar Objects </a> </li> <li class=md-nav__item> <a href=#using-get-to-access-values class=md-nav__link> Using get() to Access Values </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#looping-through-a-dictionary class=md-nav__link> Looping Through a Dictionary </a> <nav class=md-nav aria-label="Looping Through a Dictionary"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#looping-through-all-key-value-pairs class=md-nav__link> Looping Through All Key-Value Pairs </a> </li> <li class=md-nav__item> <a href=#looping-through-all-the-keys-in-a-dictionary class=md-nav__link> Looping Through All The Keys in a Dictionary </a> </li> <li class=md-nav__item> <a href=#looping-through-a-dictionarys-keys-in-a-particular-order class=md-nav__link> Looping Through a Dictionary's Keys in a Particular Order </a> </li> <li class=md-nav__item> <a href=#looping-through-all-values-in-a-dictionary class=md-nav__link> Looping Through All Values in a Dictionary </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#nesting class=md-nav__link> Nesting </a> <nav class=md-nav aria-label=Nesting> <ul class=md-nav__list> <li class=md-nav__item> <a href=#a-list-of-dictionaries class=md-nav__link> A List of Dictionaries </a> </li> <li class=md-nav__item> <a href=#a-list-in-a-dictionary class=md-nav__link> A List in a Dictionary </a> </li> <li class=md-nav__item> <a href=#a-dictionary-in-a-dictionary class=md-nav__link> A Dictionary in a Dictionary </a> </li> </ul> </nav> </li> </ul> </nav> </li> </ul> </nav> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../about/ title=About class=md-nav__link> About </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Table of contents </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#a-simple-dictionary class=md-nav__link> A Simple Dictionary </a> </li> <li class=md-nav__item> <a href=#working-with-dictionaries class=md-nav__link> Working with Dictionaries </a> <nav class=md-nav aria-label="Working with Dictionaries"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#accessing-values-in-a-dictionary class=md-nav__link> Accessing Values in a Dictionary </a> </li> <li class=md-nav__item> <a href=#adding-new-key-value-pairs class=md-nav__link> Adding New Key-Value Pairs </a> </li> <li class=md-nav__item> <a href=#starting-with-an-empty-dictionary class=md-nav__link> Starting with an Empty Dictionary </a> </li> <li class=md-nav__item> <a href=#modifying-values-ina-dictionary class=md-nav__link> Modifying Values ina Dictionary </a> </li> <li class=md-nav__item> <a href=#removing-key-value-pairs class=md-nav__link> Removing Key-Value Pairs </a> </li> <li class=md-nav__item> <a href=#a-dictionary-of-similar-objects class=md-nav__link> A Dictionary of Similar Objects </a> </li> <li class=md-nav__item> <a href=#using-get-to-access-values class=md-nav__link> Using get() to Access Values </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#looping-through-a-dictionary class=md-nav__link> Looping Through a Dictionary </a> <nav class=md-nav aria-label="Looping Through a Dictionary"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#looping-through-all-key-value-pairs class=md-nav__link> Looping Through All Key-Value Pairs </a> </li> <li class=md-nav__item> <a href=#looping-through-all-the-keys-in-a-dictionary class=md-nav__link> Looping Through All The Keys in a Dictionary </a> </li> <li class=md-nav__item> <a href=#looping-through-a-dictionarys-keys-in-a-particular-order class=md-nav__link> Looping Through a Dictionary's Keys in a Particular Order </a> </li> <li class=md-nav__item> <a href=#looping-through-all-values-in-a-dictionary class=md-nav__link> Looping Through All Values in a Dictionary </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#nesting class=md-nav__link> Nesting </a> <nav class=md-nav aria-label=Nesting> <ul class=md-nav__list> <li class=md-nav__item> <a href=#a-list-of-dictionaries class=md-nav__link> A List of Dictionaries </a> </li> <li class=md-nav__item> <a href=#a-list-in-a-dictionary class=md-nav__link> A List in a Dictionary </a> </li> <li class=md-nav__item> <a href=#a-dictionary-in-a-dictionary class=md-nav__link> A Dictionary in a Dictionary </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content> <article class="md-content__inner md-typeset"> <h1 id=dictionaries>Dictionaries</h1> <p>Understanding dictionaries allows you to model a variety of real-world objects more accurately. For example, we could create a dictionary representing a person and then store as much information as we want about that person. You can store their name, location, age, profession, and any other aspect of a person you can describe. We can store any two kinds of information that can be matched up, such as a list of words and their meanings, a list of people's names and their favorite numbers, a list of mountains and their elevations, etc. </p> <h2 id=a-simple-dictionary>A Simple Dictionary</h2> <p>Consider a game featuring aliens that can have different colors and point values. This simple dictionary stores information about a particular alien:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">alien_0</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+4</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>5</span><span class=p>}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">alien_0</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alien_0</span><span class="p">[</span><span class="s1">&#39;points&#39;</span><span class="p">])</span>
-</code></pre></div>
-</td></tr></table>
-The dictionary <code>alien_0</code> stores the alien's color and point value.  The last two lines access and display that information, as shown here:<br />
-<div class="highlight"><pre><span></span><code>green
+<span class=nb>print</span><span class=p>(</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>])</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;points&#39;</span><span class=p>])</span>
+</code></pre></div> </td></tr></table> The dictionary <code>alien_0</code> stores the alien's color and point value. The last two lines access and display that information, as shown here:<br> <div class=highlight><pre><span></span><code>green
 5
-</code></pre></div>
-As with most new programming concepts, using dictionaries takes practice.  Once you've worked with dictionaries for a bit, you'll soon see how effectively they can model real-world situations.  </p>
-<h2 id="working-with-dictionaries">Working with Dictionaries</h2>
-<p>A <em>dictionary</em> in Python is a collection of <em>key-value pairs</em>.  Each <em>key</em> is connected to a value, and you can use a key to access the value associated with that key.  A key's value can be a number, a string, a list, or even another dictionary.  In fact, you can use any object that you can create in Python as a value in a dictionary.  </p>
-<p>In Python, a dictionary is wrapped in braces, { }, with a series of key-value pairs inside the braces, as shown in the earlier example:<br />
-<div class="highlight"><pre><span></span><code><span class="n">alien_0</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
-</code></pre></div>
-A <em>key-value pair</em> is a set of values associated with each other.  When you provide a key, Python returns the value associated with that key.  Every key is connected to its value by a colon, and individual key-value pairs are separated by commas.  You can store as many key-value pairs as you want in a dictionary.  </p>
-<p>The simplest dictionary has exactly one key-value pair, as shown in this modified version of the <code>alien_0</code> dictionary:<br />
-<div class="highlight"><pre><span></span><code><span class="n">alien_0</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}</span>
-</code></pre></div>
-This dictionary stores one piece of information about <code>alien_0</code>, namely the alien's color.  The string <code>'color'</code> is a key in this dictionary, and its associated value is <code>'green'</code>.  </p>
-<h3 id="accessing-values-in-a-dictionary">Accessing Values in a Dictionary</h3>
-<p>To get the value associated with a key, give the name of the dictionary and then place the key inside a set of square brackets, as shown here:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">alien_0</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alien_0</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">])</span>
-</code></pre></div>
-</td></tr></table>
-This returns the value associated with the key <code>'color'</code> from the dictionary <code>alien_0</code>:
-<div class="highlight"><pre><span></span><code>green
-</code></pre></div>
-You can have an ulimited number of key-value pairs in a dictionary.  For example, here's the original <code>alien_0</code> dictionary with two key-value pairs: 
-<div class="highlight"><pre><span></span><code><span class="n">alien_0</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
-</code></pre></div>
-Now you can access either the color or the point value of <code>alien_0</code>.  If a player shoots down this alien, you can look up how many points they should earn using code like this:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+</code></pre></div> As with most new programming concepts, using dictionaries takes practice. Once you've worked with dictionaries for a bit, you'll soon see how effectively they can model real-world situations. </p> <h2 id=working-with-dictionaries>Working with Dictionaries</h2> <p>A <em>dictionary</em> in Python is a collection of <em>key-value pairs</em>. Each <em>key</em> is connected to a value, and you can use a key to access the value associated with that key. A key's value can be a number, a string, a list, or even another dictionary. In fact, you can use any object that you can create in Python as a value in a dictionary. </p> <p>In Python, a dictionary is wrapped in braces, { }, with a series of key-value pairs inside the braces, as shown in the earlier example:<br> <div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>5</span><span class=p>}</span>
+</code></pre></div> A <em>key-value pair</em> is a set of values associated with each other. When you provide a key, Python returns the value associated with that key. Every key is connected to its value by a colon, and individual key-value pairs are separated by commas. You can store as many key-value pairs as you want in a dictionary. </p> <p>The simplest dictionary has exactly one key-value pair, as shown in this modified version of the <code>alien_0</code> dictionary:<br> <div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>}</span>
+</code></pre></div> This dictionary stores one piece of information about <code>alien_0</code>, namely the alien's color. The string <code>'color'</code> is a key in this dictionary, and its associated value is <code>'green'</code>. </p> <h3 id=accessing-values-in-a-dictionary>Accessing Values in a Dictionary</h3> <p>To get the value associated with a key, give the name of the dictionary and then place the key inside a set of square brackets, as shown here:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>}</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>])</span>
+</code></pre></div> </td></tr></table> This returns the value associated with the key <code>'color'</code> from the dictionary <code>alien_0</code>: <div class=highlight><pre><span></span><code>green
+</code></pre></div> You can have an ulimited number of key-value pairs in a dictionary. For example, here's the original <code>alien_0</code> dictionary with two key-value pairs: <div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>5</span><span class=p>}</span>
+</code></pre></div> Now you can access either the color or the point value of <code>alien_0</code>. If a player shoots down this alien, you can look up how many points they should earn using code like this:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">alien_0</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+4</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>5</span><span class=p>}</span>
 
-<span class="n">new_points</span> <span class="o">=</span> <span class="n">alien_0</span><span class="p">[</span><span class="s1">&#39;points&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You just earned </span><span class="si">{</span><span class="n">new_points</span><span class="si">}</span><span class="s2"> points!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table></p>
-                
-              
-              
-                
+<span class=n>new_points</span> <span class=o>=</span> <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;points&#39;</span><span class=p>]</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;You just earned </span><span class=si>{</span><span class=n>new_points</span><span class=si>}</span><span class=s2> points!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> Once the dictionary has been defined, the code on line 3 pulls the value associated with the key <code>'points'</code> from the dictionary. This value is then assigned to the variable <code>'new_points'</code>. The code on line 4 then prints a statement about how many points the player just earned. </p> <h3 id=adding-new-key-value-pairs>Adding New Key-Value Pairs</h3> <p>Dictionaries are dynamic structures, and you can add new key-value pairs to a dictionary at any time. For example, to add a new key-value pair, you would give the name of the dictionary followed by the new key in square brackets along with the new value. </p> <p>Let's add two new pieces to the <code>alien_0</code> dictionary: the alien's x- and y- coordinates, which will help us display the alien in a particular position on the screen. Let's place the alien on the left edge of the screen, 25 pixels down from the top. Because screen coordinates usually start at the upper-left corner of the screen, we'll place the alien on the left edge of the screen by setting the x-coordinate to 0 and 25 pixels from the top by setting the y-coordinate to positive 25:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=s1>&#39;5&#39;</span><span class=p>}</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>alien_0</span><span class=p>)</span>
 
+<span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;x_position&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=mi>0</span>
+<span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;y_position&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=mi>25</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>alien_0</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> We start by defining the same dictionary that we have been working with. We then print this dictionary, displaying a snapshot of its information. On line 4, we add a new key-value pair to the dictionary: key <code>'x_position'</code> and a value of <code>0</code>. We do the same for key <code>'y_position'</code> on the next line. Finally, when we print the modified dictionary, we see the two additional key-value pairs:<br> <div class=highlight><pre><span></span><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: &#39;5&#39;}
+{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: &#39;5&#39;, &#39;x_position&#39;: 0, &#39;y_position&#39;: 25}
+</code></pre></div> The final version of the dictionary contains four key-value pairs.</p> <h3 id=starting-with-an-empty-dictionary>Starting with an Empty Dictionary</h3> <p>It's sometimes convenient, or even necessary, to start with an empty dictionary and then add each new item to it. To start filling an empty dictionary, define a dictionary with an empty set of braces and then add each key-value pair on its own line. For example, here's how to build the <code>alien_0</code> dictionary using this approach: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{}</span>
 
-              
-            </article>
-          </div>
-        </div>
-      </main>
-      
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../py-if-statements/" title="If Statements" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                If Statements
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../about/" title="About" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                About
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-</footer>
-      
-    </div>
-    
-    
-      <script src="../assets/javascripts/vendor.f81b9e8b.min.js"></script>
-      <script src="../assets/javascripts/bundle.23546af0.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
-      
-      <script>
+<span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;green&#39;</span>
+<span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;points&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;5&#39;</span>
+
+<span class=nb>print</span><span class=p>(</span><span class=n>alien_0</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> Here we define an empty <code>alien_0</code> dictionary, and then add color and point values to it. The result is the dictionary we have been usinging in previous examples:<br> <div class=highlight><pre><span></span><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: &#39;5&#39;}
+</code></pre></div> Typically, you'll use empty dictionaries when storing user-supplied data in a dictionary or when you write code that generates a large number of key-value pairs automatically. </p> <h3 id=modifying-values-ina-dictionary>Modifying Values ina Dictionary</h3> <p>To modify a value in a dictionary, give the name of the dictionary with the key in square brackets and then the new value you want associated with that key. For example, consider an alien that changes from green to yellow as a game progresses: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>}</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;The alien is </span><span class=si>{</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+
+<span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;yellow&#39;</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;The alien is now </span><span class=si>{</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> We first define a dictionary for <code>alien_0</code> that contains only the aliens color; then we change the value associated with the key <code>'color'</code> to <code>'yellow'</code>. The output shows that the alien has indeed changed from green to yellow:<br> <div class=highlight><pre><span></span><code>The alien is green.
+The alien is now yellow.
+</code></pre></div> For a more interesting example, let's track the position of an alien that can move at different speeds. We'll sotre a value representing the alien's current speed and then use it to determine how far to the right the alien should move:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;x_position&#39;</span><span class=p>:</span> <span class=mi>0</span><span class=p>,</span> <span class=s1>&#39;y_position&#39;</span><span class=p>:</span> <span class=mi>25</span><span class=p>,</span> <span class=s1>&#39;speed&#39;</span><span class=p>:</span> <span class=s1>&#39;medium&#39;</span><span class=p>}</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Original position: </span><span class=si>{</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;x_position&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+<span class=c1># Move the alien to the right.</span>
+<span class=c1># Determine how far to move the alien based on its current speed.</span>
+<span class=k>if</span> <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;speed&#39;</span><span class=p>]</span> <span class=o>==</span> <span class=s1>&#39;slow&#39;</span><span class=p>:</span>
+    <span class=n>x_increment</span> <span class=o>=</span> <span class=mi>1</span>
+<span class=k>elif</span> <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;speed&#39;</span><span class=p>]</span> <span class=o>==</span> <span class=s1>&#39;medium&#39;</span><span class=p>:</span>
+    <span class=n>x_increment</span> <span class=o>=</span> <span class=mi>2</span>
+<span class=k>else</span><span class=p>:</span>
+    <span class=c1># This must be a fast alien.</span>
+    <span class=n>x_increment</span> <span class=o>=</span> <span class=mi>3</span>
+<span class=c1># The new position is the old position plus the increment.</span>
+<span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;x_position&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;x_position&#39;</span><span class=p>]</span> <span class=o>+</span> <span class=n>x_increment</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;New position: </span><span class=si>{</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;x_position&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> We start by defining an alien with an initial <em>x</em> and <em>y</em> position, and a speed of <code>'medium'</code>. We also print the original value of <code>x_position</code> to see how far the alien moves to the right. </p> <p>On line 5, an <code>if-elif-else</code> chain determins how far the alien should move to the right and assigns this value to the variable <code>x_increment</code>. If the alien's speed is <code>'slow'</code>, it moves one unit, if it is <code>'medium'</code>, it moves two, and if it is <code>'fast'</code>, it moves three. Once the increment has been calculated, it is added to the value of <code>x_position</code> on line 13 and the result is stored in the dictionary's <code>x_position</code>. </p> <p>Because this is a medium-speed alien, its position shifts two units to the right: <div class=highlight><pre><span></span><code>Original position: 0
+New position: 2
+</code></pre></div> This technique is pretty cool: by changing one value in the alien's dictionary, you can change the overall behavior of the alien. For example, to turn this medium-speed alien into a fast alien, you would add the line:<br> <div class=highlight><pre><span></span><code><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;speed&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;fast&#39;</span>
+</code></pre></div> The <code>if-elif-else block</code> would then assign a larger value to <code>x_increment</code> the next time the code runs.</p> <h3 id=removing-key-value-pairs>Removing Key-Value Pairs</h3> <p>When you no longer need a piece of information that is stored ina dictionary, you can you the <code>del</code> statement to completely remove a key-value pair. All <code>del</code> needs is the name of the dictionary and the key that you want to remove. </p> <p>For example, let's remove the key <code>'points'</code> from the <code>alien_0</code> dictionary along with its value: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>5</span><span class=p>}</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>alien_0</span><span class=p>)</span>
+
+<span class=k>del</span> <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;points&#39;</span><span class=p>]</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>alien_0</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> The code on line 4 tells Python to delete the key <code>'points'</code> from the dictionary <code>alien_0</code> and to remove the value associated with that key as well. The output shows that the key <code>'points'</code> and its value of 5 are deleted from the dictionary, and the rest is unaffected:<br> <div class=highlight><pre><span></span><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5}
+{&#39;color&#39;: &#39;green&#39;}
+</code></pre></div></p> <h3 id=a-dictionary-of-similar-objects>A Dictionary of Similar Objects</h3> <p>The previous example involved storing different kinds of information about one object, an alien in a game. You can also use a dictionary to store one kind of information about many objects. For example, a dictionary of a group of people's favorite programming language. A dictionary for this could look like:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>favorite_languages</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;jen&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;sarah&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;edward&#39;</span><span class=p>:</span> <span class=s1>&#39;ruby&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;phil&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> As you can see, we've broken a larger dictionary into several lines (mainly for better readability). Each key is the name of a person and each value is their favorite language. When you know you'll need more than one line to define a dictionary, press <code>ENTER</code> after the opening brace. Then indent the next line one tab, and write your first key-value pair, followed by a comma. </p> <p>Once you have finished defining the dictionary, add a closing brace on a new line after the last key-value pair and indent it one level so it aligns with the keys in the dictionary. It's good practice to include a comma after the last key-value pair, just in case you want to add more in the future. </p> <p>To use this dictionary, given the name of a person, you can easily look up their favorite language:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>favorite_languages</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;jen&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;sarah&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;edward&#39;</span><span class=p>:</span> <span class=s1>&#39;ruby&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;phil&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+<span class=p>}</span>
+
+<span class=n>language</span> <span class=o>=</span> <span class=n>favorite_languages</span><span class=p>[</span><span class=s1>&#39;sarah&#39;</span><span class=p>]</span><span class=o>.</span><span class=n>title</span><span class=p>()</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Sarah&#39;s favorite langugage is </span><span class=si>{</span><span class=n>language</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> To see which language Sarah chose, we ask for the value at: <div class=highlight><pre><span></span><code><span class=n>favorite_languages</span><span class=p>[</span><span class=s1>&#39;sarah&#39;</span><span class=p>]</span>
+</code></pre></div> We use this syntax to pull Sarah's favorite language from the dictionary (line 8) and assign it to the variable <code>language</code>. Creating a new variable here makes for a much cleaner <code>print()</code> call. The output shows Sarah's favorite Language: <div class=highlight><pre><span></span><code>Sarah&#39;s favorite langugage is C.
+</code></pre></div></p> <h3 id=using-get-to-access-values>Using <code>get()</code> to Access Values</h3> <p>Using keys in square brackets to retrieve the value you're interested in from a dictionary might cause one potential problem: if the key you ask for doesn't exist, you'll get an error. </p> <p>Let's see what happens when you ask for the point value of an alien that doesn't have a point value set: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;speed&#39;</span><span class=p>:</span> <span class=s1>&#39;slow&#39;</span><span class=p>}</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;points&#39;</span><span class=p>])</span>
+</code></pre></div> </td></tr></table> This results in a traceback, showing a KeyError:<br> <div class=highlight><pre><span></span><code>KeyError                                  Traceback (most recent call last)
+&lt;ipython-input-9-3914d637e9f3&gt; in &lt;module&gt;
+      1 alien_0 = {&#39;color&#39;: &#39;green&#39;, &#39;speed&#39;: &#39;slow&#39;}
+----&gt; 2 print(alien_0[&#39;points&#39;])
+
+KeyError: &#39;points&#39;
+</code></pre></div> For dictionaries, we can use the <code>get()</code> method to set a default value that will be returned if the requested key doesn't exist. </p> <p>The <code>get()</code> method requires a key as a first argument. As a second optional argument, you can pass the value to be returned if the key doesn't exist: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;speed&#39;</span><span class=p>:</span> <span class=s1>&#39;slow&#39;</span><span class=p>}</span>
+
+<span class=n>point_value</span> <span class=o>=</span> <span class=n>alien_0</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;points&#39;</span><span class=p>,</span> <span class=s1>&#39;No point value assigned.&#39;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>point_value</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> If the key <code>'points'</code> exists in the dictionary, you'll get corresponding value. If it doesn't, you get the default value. In this case, <code>points</code> doesn't exist, and we get a clean message instead of an error: <div class=highlight><pre><span></span><code>No point value assigned.
+</code></pre></div> If there's a chance the key you're asking for might not exist, consider using the <code>get()</code> method instead of the square bracket notation. </p> <h2 id=looping-through-a-dictionary>Looping Through a Dictionary</h2> <p>A single Python dictionary can contain just a few key-value pairs or millions of pairs. Because a dictionary can contain large amounts of data, Python lets you loop through a dictionary. Dictionaries can be used to store information in a variety of ways; therefore, several different ways exist to loop through them. You can loop through all of a dictionary's key-value pairs, through its keys, or its values. </p> <h3 id=looping-through-all-key-value-pairs>Looping Through All Key-Value Pairs</h3> <p>Before we explore the different approaches to looping, let's consider a new dictionary designed to store information about a user on website. The following dictionary would store one person's username, first name, and last name: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>user_0</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;username&#39;</span><span class=p>:</span> <span class=s1>&#39;efermi&#39;</span>
+    <span class=s1>&#39;first&#39;</span><span class=p>:</span> <span class=s1>&#39;enrico&#39;</span>
+    <span class=s1>&#39;last&#39;</span><span class=p>:</span> <span class=s1>&#39;fermi&#39;</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> You can access any single piece of information about <code>user_0</code> based on what you've already learned in this chapter. But what if you wanted to see everything stored in this user's dictionary? To do so, you could loop through the dictionary using a <code>for</code> loop. <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>user_0</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;username&#39;</span><span class=p>:</span> <span class=s1>&#39;efermi&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;first&#39;</span><span class=p>:</span> <span class=s1>&#39;enrico&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;last&#39;</span><span class=p>:</span> <span class=s1>&#39;fermi&#39;</span><span class=p>,</span>
+    <span class=p>}</span>
+
+<span class=k>for</span> <span class=n>key</span><span class=p>,</span> <span class=n>value</span> <span class=ow>in</span> <span class=n>user_0</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Key: </span><span class=si>{</span><span class=n>key</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Value: </span><span class=si>{</span><span class=n>value</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> As shown on line 7, to write a <code>for</code> loop for a dictionary, you create names for the two variables that will hold the key and value in each key-value pair. You can choose any names you want for these two variables. This code would work just as well if you had used abbreviated for the variable names, like this: <div class=highlight><pre><span></span><code><span class=k>for</span> <span class=n>k</span><span class=p>,</span> <span class=n>v</span> <span class=ow>in</span> <span class=n>user_0</span><span class=o>.</span><span class=n>items</span><span class=p>()</span>
+</code></pre></div> The second half of the <code>for</code> statement on line 7 includes the name of the dictionary followed by the method <code>items()</code>, which returns a list of key-value pairs. The <code>for</code> loop then assigns each of these pairs to the two vairbales provided. In the preceding example, we use the variables to print each key (line 8), followed by the associated value (line 9). The "\n" in the first <code>print()</code> call ensures that a blank line is inserted bfore each key-value pair in the output:<br> <div class=highlight><pre><span></span><code>Key: username
+Value: efermi
+
+Key: first
+Value: enrico
+
+Key: last
+Value: fermi
+</code></pre></div> Looping through all key-value pairs works particularly well for dictionaries like the <em><code>favorite_languages</code></em> example from <a href=https://docs.nicklyss.com/py-dictionaries/#a-dictionary-of-similar-objects>above</a>, which stores the same kind of information for many different keys. If you loop through the <em><code>favorite_languages</code></em> dictionary, you get the name of each person in the dictionary and their favorite programming language. Because the keys always refer to a person's name and the value is always language, we'll use the variables <code>name</code> and <code>language</code> in the loop, instead of <code>key</code> and <code>value</code>. This will make it easier to follow what's happening inside the loop:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>favorite_languages</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;jen&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;sarah&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;edward&#39;</span><span class=p>:</span> <span class=s1>&#39;ruby&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;phil&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+<span class=p>}</span>
+
+<span class=k>for</span> <span class=n>name</span><span class=p>,</span> <span class=n>language</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>&#39;s favorite language is </span><span class=si>{</span><span class=n>language</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> The code on line 8 tells Python to loop through each key-value pair in the dictionary. As it works through each pair the key is assigned to the variable <code>name</code>, and the value is assigned to the variable <code>language</code>. These descriptive names make it much easier to see what the <code>print()</code> call on line 9 is doing. </p> <p>Now, in just a few lines of code, we can display all the information from the poll:<br> <div class=highlight><pre><span></span><code>Jen&#39;s favorite language is Python!
+Sarah&#39;s favorite language is C!
+Edward&#39;s favorite language is Ruby!
+Phil&#39;s favorite language is Python!
+</code></pre></div> This type of looping would work just as well if our dictionary stored the results from polling a thousand or even a million people. </p> <h3 id=looping-through-all-the-keys-in-a-dictionary>Looping Through All The Keys in a Dictionary</h3> <p>The <code>keys()</code> method is useful when you don't need to work with all of the values in a dictionary. Let's loop through the <em><code>favorite_languages</code></em> dictionary and print the names of everyone who answered: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>favorite_languages</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;jen&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;sarah&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;edward&#39;</span><span class=p>:</span> <span class=s1>&#39;ruby&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;phil&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+<span class=p>}</span>
+
+<span class=k>for</span> <span class=n>name</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>keys</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>())</span>
+</code></pre></div> </td></tr></table> The code on line 8 tells Python to pull all the keys from the dictionary <code>favorite_languages</code> and assign them one at a time to the variable <code>name</code>. The output shows the names of everyone who answered:<br> <div class=highlight><pre><span></span><code>Jen
+Sarah
+Edward
+Phil
+</code></pre></div> Looping through the keys is actually the default behavior when looping through a dictionary, so this code would have exactly the same output if you wrote: <div class=highlight><pre><span></span><code><span class=k>for</span> <span class=n>name</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=p>:</span>
+</code></pre></div> rather than: <div class=highlight><pre><span></span><code><span class=k>for</span> <span class=n>name</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>keys</span><span class=p>():</span>
+</code></pre></div> You can choose to use the <code>keys()</code> method explicitly if it makes your code easier to read, or you can omit it if you wish. </p> <p>You can access the value associated with any key you care about inside the loop by using the current key. Let's print a message to a couple of friends about the languages they chose. We'll loop through the names in the dictionary as we did previously, but when the name matches on of our friends, we'll display a message about their favorite language: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>favorite_languages</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;jen&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;sarah&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;edward&#39;</span><span class=p>:</span> <span class=s1>&#39;ruby&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;phil&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+<span class=p>}</span>
+
+<span class=n>friends</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;phil&#39;</span><span class=p>,</span> <span class=s1>&#39;sarah&#39;</span><span class=p>]</span>
+<span class=k>for</span> <span class=n>name</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>keys</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Hi, </span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+
+    <span class=k>if</span> <span class=n>name</span> <span class=ow>in</span> <span class=n>friends</span><span class=p>:</span>
+        <span class=n>language</span> <span class=o>=</span> <span class=n>favorite_languages</span><span class=p>[</span><span class=n>name</span><span class=p>]</span><span class=o>.</span><span class=n>title</span><span class=p>()</span>
+        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\t</span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>, I see you love </span><span class=si>{</span><span class=n>language</span><span class=si>}</span><span class=s2>!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> On line 8 we make a list of friends that we want to print a message to. Inside the loop, we print each person's name. Then on line 12 we check whether the <code>name</code> we're working with is in the list <code>friends</code>. If it is, we determine the person's favorite language using the name of the dictionary and the current value of <code>name</code> as the key (line 13). We then print a special greeting, including a reference to their language of choice. </p> <p>Everyone's name is printed, but our friends receive a special message: <div class=highlight><pre><span></span><code>Hi, Jen.
+Hi, Sarah.
+    Sarah, I see you love C!
+Hi, Edward.
+Hi, Phil.
+    Phil, I see you love Python!
+</code></pre></div> You can also use the <code>keys()</code> method to find out if a particular person was polled. This time, let's find out if Erin took the poll: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>favorite_languages</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;jen&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;sarah&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;edward&#39;</span><span class=p>:</span> <span class=s1>&#39;ruby&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;phil&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+<span class=p>}</span>
+
+<span class=k>if</span> <span class=s1>&#39;erin&#39;</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>keys</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Erin, please take our poll!&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> The <code>keys()</code> method isn't just for looping: it actually returns a list of all the keys, and the code on line 8 simply checks if <code>'erin'</code> is in the list. Because she is not, a message is printed inviting her to take the poll.</p> <h3 id=looping-through-a-dictionarys-keys-in-a-particular-order>Looping Through a Dictionary's Keys in a Particular Order</h3> <p>Starting in Python 3.7, looping through a dictionary returns the items in the same order they were inserted. Sometimes, though, you'll want to loop through a dictionary in a different order. </p> <p>One way to do this is to sort the keys as they're retunred in the <code>for</code> loop. You can use the <code>sorted()</code> function to get a copy of the keys in order:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>favorite_languages</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;jen&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;sarah&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;edward&#39;</span><span class=p>:</span> <span class=s1>&#39;ruby&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;phil&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+<span class=p>}</span>
+
+<span class=k>for</span> <span class=n>name</span> <span class=ow>in</span> <span class=nb>sorted</span><span class=p>(</span><span class=n>favorite_languages</span><span class=o>.</span><span class=n>keys</span><span class=p>()):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>, thank you for taking the poll.&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> This <code>for</code> statement is like other <code>for</code> statements except that we've wrapped the <code>sorted()</code> function around the <code>dictionary.keys()</code> method. This tells Python to list all keys in the dictionary and sort that list before looping through it. The output shows everyone who took the poll, with the names displayed in order:<br> <div class=highlight><pre><span></span><code>Edward, thank you for taking the poll.
+Jen, thank you for taking the poll.
+Phil, thank you for taking the poll.
+Sarah, thank you for taking the poll.
+</code></pre></div></p> <h3 id=looping-through-all-values-in-a-dictionary>Looping Through All Values in a Dictionary</h3> <p>If you are primarily interested in the values that a dictionary contains, you can use the <code>values()</code> method to return a list of values without any keys. For example, say we simply want a list of all languages chosen in our programming language poll without the name of the person who chose each language: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>favorite_languages</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;jen&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;sarah&#39;</span><span class=p>:</span> <span class=s1>&#39;c&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;edward&#39;</span><span class=p>:</span> <span class=s1>&#39;ruby&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;phil&#39;</span><span class=p>:</span> <span class=s1>&#39;python&#39;</span><span class=p>,</span>
+<span class=p>}</span>
+
+<span class=nb>print</span><span class=p>(</span><span class=s2>&quot;The following languages have been mentioned:&quot;</span><span class=p>)</span>
+<span class=k>for</span> <span class=n>language</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>values</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>language</span><span class=o>.</span><span class=n>title</span><span class=p>())</span>
+</code></pre></div> </td></tr></table> The <code>for</code> statement here pulls each value from the dictionary and assigns it to the variable <code>language</code>. When these values are printed, we get a list of all chosen languages: <div class=highlight><pre><span></span><code>The following languages have been mentioned:
+Python
+C
+Ruby
+Python
+</code></pre></div> This approach pulls all the values from the dictionary without checking for repeats. That might work fine with a small number of values, but in a poll with a large number of respondents, this would result in a very repetitive list. To see each language chosen without repitionm we can use a set. A <em>set</em> is a collection in which each item must be unique. We can use the following <code>for</code> loop in place of the one used above:<br> <div class=highlight><pre><span></span><code><span class=k>for</span> <span class=n>language</span> <span class=ow>in</span> <span class=nb>set</span><span class=p>(</span><span class=n>favorite_languages</span><span class=o>.</span><span class=n>values</span><span class=p>()):</span>
+</code></pre></div> When you wrap <code>set()</code> around a list that contains duplicate items, Python identifies the unique items in the list and build a set from those items. The result is a nonrepetitive list of languages that have been menetioned:<br> <div class=highlight><pre><span></span><code>The following languages have been mentioned:
+C
+Ruby
+Python
+</code></pre></div></p> <h2 id=nesting>Nesting</h2> <p>Sometimes you'll want to store multiple dictionaries in a list, or a list of items as a value in a dictionary. This is called <em>nesting</em>. You can nest dictionaries inside a list, a list of items inside a dictionary, or even a dictionary inside another dictionary. Nesting is a powerful feature, as the following examples will demonstrate.</p> <h3 id=a-list-of-dictionaries>A List of Dictionaries</h3> <p>The <code>alien_0</code> dictionary contains a variety of information about one alien, but it has no room to store information about a second alien, much less a full screen of aliens. How can you managae a fleet of aliens? One way is to make a list of aliens in which each alien is a dictionary of information about that alien. For example, the following code builds a list of three aliens:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>5</span><span class=p>}</span>
+<span class=n>alien_1</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;yellow&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>10</span><span class=p>}</span>
+<span class=n>alien_2</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;red&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>15</span><span class=p>}</span>
+
+<span class=n>aliens</span> <span class=o>=</span> <span class=p>[</span><span class=n>alien_0</span><span class=p>,</span> <span class=n>alien_1</span><span class=p>,</span> <span class=n>alien_2</span><span class=p>]</span>
+
+<span class=k>for</span> <span class=n>alien</span> <span class=ow>in</span> <span class=n>aliens</span><span class=p>:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>alien</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> We first create three dictionaries, each representing a different alien. On line 5 we store each of these dictionaries in a list called <code>aliens</code>. Finally, we loop through the list and print out each alien: <div class=highlight><pre><span></span><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5}
+{&#39;color&#39;: &#39;yellow&#39;, &#39;points&#39;: 10}
+{&#39;color&#39;: &#39;red&#39;, &#39;points&#39;: 15}
+</code></pre></div> A more realistic example would involve more than three alies with code that automatically generates each alien. In the following example we use <code>range()</code> to create a fleet of 30 aliens: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Make an empty list for storing aliens</span>
+<span class=n>aliens</span> <span class=o>=</span> <span class=p>[]</span>
+
+<span class=c1># Make 30 green aliens.</span>
+<span class=k>for</span> <span class=n>alien_number</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>30</span><span class=p>):</span>
+    <span class=n>new_alien</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>5</span><span class=p>,</span> <span class=s1>&#39;speed&#39;</span><span class=p>:</span> <span class=s1>&#39;slow&#39;</span><span class=p>}</span>
+    <span class=n>aliens</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>new_alien</span><span class=p>)</span>
+
+<span class=c1># Show the first 5 aliens.</span>
+<span class=k>for</span> <span class=n>alien</span> <span class=ow>in</span> <span class=n>aliens</span><span class=p>[:</span><span class=mi>5</span><span class=p>]:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>alien</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=s2>&quot;...&quot;</span><span class=p>)</span>
+
+<span class=c1># Show how many aliens have been created.</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Total number of aliens: </span><span class=si>{</span><span class=nb>len</span><span class=p>(</span><span class=n>aliens</span><span class=p>)</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> This example befins with an empty list to hold all of the aliens that will created. At line 5 <code>range()</code> returns a series of numbers, which just tells Python how many times we want the loop to repeat. Each time the loop runs we create a new alien (line 6) and then append each new alien to the list <code>aliens</code> (line 7). On line 10 we us a slice to print the first five aliens, and then on line 15 we print the length of the list to prove we've actually generated the full fleet of 30 aliens: <div class=highlight><pre><span></span><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
+{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
+{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
+{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
+{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
+...
+Total number of aliens: 30
+</code></pre></div> These aliens all have the same characteristics, but Python considers each one a separate object, which allows us to modify each alien individually. </p> <p>How might you work with a group of aliens like this? Imagine that one aspect of a game has some aliens changing color and moving faster as the game progress. When it's time to change colors, we can use a <code>for</code> loop and an <code>if</code> statement to change the color of the aliens. For example, to change the first three aliens to yellow, medium-speed aliens worth 10 points each, we could do this:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Make an empty list for storing aliens</span>
+<span class=n>aliens</span> <span class=o>=</span> <span class=p>[]</span>
+
+<span class=c1># Make 30 green aliens.</span>
+<span class=k>for</span> <span class=n>alien_number</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>30</span><span class=p>):</span>
+    <span class=n>new_alien</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>5</span><span class=p>,</span> <span class=s1>&#39;speed&#39;</span><span class=p>:</span> <span class=s1>&#39;slow&#39;</span><span class=p>}</span>
+    <span class=n>aliens</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>new_alien</span><span class=p>)</span>
+
+<span class=k>for</span> <span class=n>alien</span> <span class=ow>in</span> <span class=n>aliens</span><span class=p>[:</span><span class=mi>3</span><span class=p>]:</span>
+    <span class=k>if</span> <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span> <span class=o>==</span> <span class=s1>&#39;green&#39;</span><span class=p>:</span>
+        <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;yellow&#39;</span>
+        <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;speed&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;medium&#39;</span>
+        <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;points&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;10&#39;</span>
+
+<span class=c1># Show the first 5 aliens.</span>
+<span class=k>for</span> <span class=n>alien</span> <span class=ow>in</span> <span class=n>aliens</span><span class=p>[:</span><span class=mi>5</span><span class=p>]:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>alien</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=s2>&quot;...&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> Because we want to modify the first three aliens, we loop through a slice that includes only the first three aliens. All of the aliens are green now but that won't always be the case, so we write an <code>if</code> statement to make sure we're only modifying green aliens. If the alien is green, we change the color to <code>'yellow'</code>, the speed to <code>'medium'</code>, and the point value to <code>10</code>, as shown in the following output: <div class=highlight><pre><span></span><code>{&#39;color&#39;: &#39;yellow&#39;, &#39;points&#39;: &#39;10&#39;, &#39;speed&#39;: &#39;medium&#39;}
+{&#39;color&#39;: &#39;yellow&#39;, &#39;points&#39;: &#39;10&#39;, &#39;speed&#39;: &#39;medium&#39;}
+{&#39;color&#39;: &#39;yellow&#39;, &#39;points&#39;: &#39;10&#39;, &#39;speed&#39;: &#39;medium&#39;}
+{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
+{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
+...
+</code></pre></div> You could expand this loop by adding an <code>elif</code> block that turns yellow aliens into red, fast-moving ones worth 15 points each. Without showing the entire program again, that loop would look like this: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=k>for</span> <span class=n>alien</span> <span class=ow>in</span> <span class=n>aliens</span><span class=p>[:</span><span class=mi>3</span><span class=p>]:</span>
+    <span class=k>if</span> <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span> <span class=o>==</span> <span class=s1>&#39;green&#39;</span><span class=p>:</span>
+        <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;yellow&#39;</span>
+        <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;speed&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;medium&#39;</span>
+        <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;points&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;10&#39;</span>
+    <span class=k>elif</span> <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span> <span class=o>==</span> <span class=s1>&#39;yellow&#39;</span><span class=p>:</span>
+        <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;red&#39;</span>
+        <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;speed&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;fast&#39;</span>
+        <span class=n>alien</span><span class=p>[</span><span class=s1>&#39;points&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=mi>15</span>
+</code></pre></div> </td></tr></table> It's common to store a number of dictionaries in a list when each dictionary contains many kinds of information about one subject. For example, you might create a dictionary for each user on a website and store the individual dictionaries in a list called <code>users</code>. All of the dictionaries in the list should have an identical structure so you can loop through the list and work with each dictionary object in the same way. </p> <h3 id=a-list-in-a-dictionary>A List in a Dictionary</h3> <p>Rather than putting a dictionary inside a list, it's sometimes useful to put a list inside a dictionary. For example, consider how you might describe a pizza that someone is ordering. If you were to use only a list, all you could really store is a list of the pizza's toppings. With a dictionary, a list of toppings can be just one aspect of the pizza you're describing. </p> <p>In the following example, two kinds of information are stored for each pizza: a type of crust and a list of toppings. The list of toppings is a value associated with the key <code>'toppings'</code>. To use the items in the list, we give the name of the dictionary and the key <code>'toppings'</code>, as we would any value in the dictionary. Instead of returning a single value, we get a list of toppings:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1># Store information about a pizza being ordered.  </span>
+<span class=n>pizza</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;crust&#39;</span><span class=p>:</span> <span class=s1>&#39;thick&#39;</span><span class=p>,</span>
+    <span class=s1>&#39;toppings&#39;</span><span class=p>:</span> <span class=p>[</span><span class=s1>&#39;mushrooms&#39;</span><span class=p>,</span> <span class=s1>&#39;extra cheese&#39;</span><span class=p>],</span>
+<span class=p>}</span>
+
+<span class=c1># Summarize the order.</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;You ordered a </span><span class=si>{</span><span class=n>pizza</span><span class=p>[</span><span class=s1>&#39;crust&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>-crust pizza &quot;</span>
+    <span class=s2>&quot;with the following toppings:&quot;</span><span class=p>)</span>
+
+<span class=k>for</span> <span class=n>topping</span> <span class=ow>in</span> <span class=n>pizza</span><span class=p>[</span><span class=s1>&#39;toppings&#39;</span><span class=p>]:</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\t</span><span class=s2>&quot;</span> <span class=o>+</span> <span class=n>topping</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> We begin on line 2 with a dictionary that holds information about a pizza that has been ordered. One key in the dictionary is <code>'crust'</code>, and the associated value is the string <code>'thick'</code>. The next key, <code>'toppings'</code>, has a list as its value that stores all the requested toppings. On line 8 we summarize the order before building the pizza. When you need to break up a long ling in a <code>print()</code> call, choose an appropriate point at which to break the line being printed and quotation mark. Indent the next line, add an opening quotation mark, and continue the string. Python will automatically combine all of the strings it finds inside the parentheses. To print the toppings, we write a <code>for</code> loop on line 10. To access the list of toppings, we use the key <code>'toppings'</code>, and Python grabs the list of toppings from the dictionary. </p> <p>The following output summarizes the pizza that we plan to build:<br> <div class=highlight><pre><span></span><code>You ordered a thick-crust pizza with the following toppings:
+    mushrooms
+    extra cheese
+</code></pre></div> You can nest a list inside a dictionary any time you want more than one value to be associated with a single key in a dictionary. In the earlier example of favorite programming languages, if we were to store each person's responses in a list, people could choose more than one favorite language. When we loop through the dictionary, the value associated with each person would be a list of languages rather than a single language. Inside the dictionary's <code>for</code> loop, we use another <code>for</code> loop to run through the list of languages associated with each person:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>favorite_languages</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;jen&#39;</span><span class=p>:</span> <span class=p>[</span><span class=s1>&#39;python&#39;</span><span class=p>,</span> <span class=s1>&#39;ruby&#39;</span><span class=p>],</span>
+    <span class=s1>&#39;sarah&#39;</span><span class=p>:</span> <span class=p>[</span><span class=s1>&#39;c&#39;</span><span class=p>],</span>
+    <span class=s1>&#39;edward&#39;</span><span class=p>:</span> <span class=p>[</span><span class=s1>&#39;ruby&#39;</span><span class=p>,</span> <span class=s1>&#39;go&#39;</span><span class=p>],</span>
+    <span class=s1>&#39;phil&#39;</span><span class=p>:</span> <span class=p>[</span><span class=s1>&#39;python&#39;</span><span class=p>,</span> <span class=s1>&#39;haskell&#39;</span><span class=p>],</span>
+<span class=p>}</span>
+
+<span class=k>for</span> <span class=n>name</span><span class=p>,</span> <span class=n>languages</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>&#39;s favorite languages are:&quot;</span><span class=p>)</span>
+    <span class=k>for</span> <span class=n>language</span> <span class=ow>in</span> <span class=n>languages</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\t</span><span class=si>{</span><span class=n>language</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> As you can see on line 1, the value associated with each name is now a list. Notice that some people have one favorite language and others have multiple favorites. When we loop through the dictionary on line 8, we use the variable name <code>languages</code> to hold each value from the dictionary, because we know that each value will be a list. Inside the main dictionary loop, we use another <code>for</code> loop (line 10) to run through each persons list of favorite languages. </p> <p>Now each person can list as many favorite languages as they like:<br> <div class=highlight><pre><span></span><code>Jen&#39;s favorite languages are:
+    Python
+    Ruby
+
+Sarah&#39;s favorite languages are:
+    C
+
+Edward&#39;s favorite languages are:
+    Ruby
+    Go
+
+Phil&#39;s favorite languages are:
+    Python
+    Haskell
+</code></pre></div> To refine this program even further, you can ad an <code>if</code> statement at the beginning of the dictionary's <code>for</code> loop to see whether each person has more than one favorite language by examining the value of <code>len(languages)</code>. If a person has more than one favoriem the output would stay the same. If the person has only one favorite language, you could change the wording to reflect that. For example, you could say "Sarah's favorite language is C."</p> <h3 id=a-dictionary-in-a-dictionary>A Dictionary in a Dictionary</h3> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid" aria-label=Footer> <a href=../py-if-statements/ title="If Statements" class="md-footer-nav__link md-footer-nav__link--prev" rel=prev> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Previous </span> If Statements </div> </div> </a> <a href=../about/ title=About class="md-footer-nav__link md-footer-nav__link--next" rel=next> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Next </span> About </div> </div> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg> </div> </a> </nav> </div> </footer> </div> <script src=../assets/javascripts/vendor.d710d30a.min.js></script> <script src=../assets/javascripts/bundle.4a5ba8d6.min.js></script><script id=__lang type=application/json>{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script> <script>
         app = initialize({
           base: "..",
-          features: [],
+          features: ["tabs"],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+            worker: "../assets/javascripts/worker/search.9b3611bd.min.js"
           }, typeof search !== "undefined" && search)
         })
-      </script>
-      
-        <script src="../javascripts/extra.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-      
-    
-    <script>
-    var elements = document.getElementsByClassName("lightgallery");
-    for(var i=0; i<elements.length; i++) {
-       lightGallery(elements[i]);
-    }
-    </script>
-
-  </body>
-</html>
+      </script> <script src=../javascripts/extra.js></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> </body> </html>
