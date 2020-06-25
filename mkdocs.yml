@@ -70,4 +70,5 @@ nav:
       - Working with Lists : py-working-with-lists.md
       - If Statements : py-if-statements.md
       - Dictionaries : py-dictionaries.md
+      - User Input and while Loops : py-user-input-while-loops.md
   - About : about.md
