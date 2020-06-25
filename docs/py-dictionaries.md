@@ -564,3 +564,39 @@ Phil's favorite languages are:
 To refine this program even further, you can ad an `if` statement at the beginning of the dictionary's `for` loop to see whether each person has more than one favorite language by examining the value of `len(languages)`.  If a person has more than one favoriem the output would stay the same.  If the person has only one favorite language, you could change the wording to reflect that.  For example, you could say "Sarah's favorite language is C."
 
 ### A Dictionary in a Dictionary
+You can nest a dictionary inside another dictionary, b ut your code can get complicated quickly when you do.  For example, if you have several users for a website, each with a unique username, you can use the usernames as the keys in a dictionary.  You can then store information about each user by using a dictionary as the value associated with their username.  In the following listing, we store three pieces of information about each user: their first name, last name, and location.  We'll access this information by looping through the usernames and the dictionary of information associated with each username:  
+```py linenums="1"
+users = {
+	'aeinstein': {
+		'first': 'albert',
+		'last': 'einstein',
+		'location': 'princeton',
+	},
+	'mcurie': {
+		'first': 'marie',
+		'last': 'curie',
+		'location': 'paris',
+	},
+}
+
+for username, user_info in users.items():
+	print(f"\nUsername: {username}")
+	full_name = f"{user_info['first']} {user_info['last']}"
+	location = user_info['location']
+
+	print(f"\tFull name: {full_name.title()}")
+	print(f"\tLocation: {location.title()}")
+```
+We first define a dictionary called `users` with two keys: one each for the usernames `'aeinstein'` and `'mcurie'`.  The value associated with each key is a dictionary that includes each user's first name, last name, and location.  On line 14 we loop through the `users` dictionary.  Python assigns each key to the variable `username`, and the dictionary associated with each username is assigned to the variable `user_info`.  Once inside the main dictionary loop, we print the user-name at line 15.  
+
+On line 16 we start accessing the inner dictionary.  The variable `user_info`, which contains the dictionary of user information, has three keys: `'first'`, `'last'`, and `'location'`.  We use each key to generate a neatly formated full name and location for each person, and then print a summary of what we know about each user:
+```
+Username: aeinstein
+	Full name: Albert Einstein
+	Location: Princeton
+
+Username: mcurie
+	Full name: Marie Curie
+	Location: Paris
+```
+Notice that the structure of each user's dictionary is identical.  Although not required by Python, this structure makes nested dictionaries easier to work with.  If each user's dictionary had different keys, the code inside the `for` loop would be more complicated.  

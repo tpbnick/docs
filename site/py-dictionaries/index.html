@@ -20,7 +20,7 @@
 4</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>,</span> <span class=s1>&#39;points&#39;</span><span class=p>:</span> <span class=mi>5</span><span class=p>}</span>
 
 <span class=n>new_points</span> <span class=o>=</span> <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;points&#39;</span><span class=p>]</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;You just earned </span><span class=si>{</span><span class=n>new_points</span><span class=si>}</span><span class=s2> points!&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;You just earned </span><span class=si>{new_points}</span><span class=s2> points!&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> Once the dictionary has been defined, the code on line 3 pulls the value associated with the key <code>'points'</code> from the dictionary. This value is then assigned to the variable <code>'new_points'</code>. The code on line 4 then prints a statement about how many points the player just earned. </p> <h3 id=adding-new-key-value-pairs>Adding New Key-Value Pairs</h3> <p>Dictionaries are dynamic structures, and you can add new key-value pairs to a dictionary at any time. For example, to add a new key-value pair, you would give the name of the dictionary followed by the new key in square brackets along with the new value. </p> <p>Let's add two new pieces to the <code>alien_0</code> dictionary: the alien's x- and y- coordinates, which will help us display the alien in a particular position on the screen. Let's place the alien on the left edge of the screen, 25 pixels down from the top. Because screen coordinates usually start at the upper-left corner of the screen, we'll place the alien on the left edge of the screen by setting the x-coordinate to 0 and 25 pixels from the top by setting the y-coordinate to positive 25:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
@@ -51,10 +51,10 @@
 3
 4
 5</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;color&#39;</span><span class=p>:</span> <span class=s1>&#39;green&#39;</span><span class=p>}</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;The alien is </span><span class=si>{</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;The alien is </span><span class=si>{alien_0[&#39;color&#39;]}</span><span class=s2>.&quot;</span><span class=p>)</span>
 
 <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;yellow&#39;</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;The alien is now </span><span class=si>{</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;color&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;The alien is now </span><span class=si>{alien_0[&#39;color&#39;]}</span><span class=s2>.&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> We first define a dictionary for <code>alien_0</code> that contains only the aliens color; then we change the value associated with the key <code>'color'</code> to <code>'yellow'</code>. The output shows that the alien has indeed changed from green to yellow:<br> <div class=highlight><pre><span></span><code>The alien is green.
 The alien is now yellow.
 </code></pre></div> For a more interesting example, let's track the position of an alien that can move at different speeds. We'll sotre a value representing the alien's current speed and then use it to determine how far to the right the alien should move:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
@@ -71,7 +71,7 @@ The alien is now yellow.
 12
 13
 14</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>alien_0</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;x_position&#39;</span><span class=p>:</span> <span class=mi>0</span><span class=p>,</span> <span class=s1>&#39;y_position&#39;</span><span class=p>:</span> <span class=mi>25</span><span class=p>,</span> <span class=s1>&#39;speed&#39;</span><span class=p>:</span> <span class=s1>&#39;medium&#39;</span><span class=p>}</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Original position: </span><span class=si>{</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;x_position&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Original position: </span><span class=si>{alien_0[&#39;x_position&#39;]}</span><span class=s2>&quot;</span><span class=p>)</span>
 <span class=c1># Move the alien to the right.</span>
 <span class=c1># Determine how far to move the alien based on its current speed.</span>
 <span class=k>if</span> <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;speed&#39;</span><span class=p>]</span> <span class=o>==</span> <span class=s1>&#39;slow&#39;</span><span class=p>:</span>
@@ -83,7 +83,7 @@ The alien is now yellow.
     <span class=n>x_increment</span> <span class=o>=</span> <span class=mi>3</span>
 <span class=c1># The new position is the old position plus the increment.</span>
 <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;x_position&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;x_position&#39;</span><span class=p>]</span> <span class=o>+</span> <span class=n>x_increment</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;New position: </span><span class=si>{</span><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;x_position&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;New position: </span><span class=si>{alien_0[&#39;x_position&#39;]}</span><span class=s2>&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> We start by defining an alien with an initial <em>x</em> and <em>y</em> position, and a speed of <code>'medium'</code>. We also print the original value of <code>x_position</code> to see how far the alien moves to the right. </p> <p>On line 5, an <code>if-elif-else</code> chain determins how far the alien should move to the right and assigns this value to the variable <code>x_increment</code>. If the alien's speed is <code>'slow'</code>, it moves one unit, if it is <code>'medium'</code>, it moves two, and if it is <code>'fast'</code>, it moves three. Once the increment has been calculated, it is added to the value of <code>x_position</code> on line 13 and the result is stored in the dictionary's <code>x_position</code>. </p> <p>Because this is a medium-speed alien, its position shifts two units to the right: <div class=highlight><pre><span></span><code>Original position: 0
 New position: 2
 </code></pre></div> This technique is pretty cool: by changing one value in the alien's dictionary, you can change the overall behavior of the alien. For example, to turn this medium-speed alien into a fast alien, you would add the line:<br> <div class=highlight><pre><span></span><code><span class=n>alien_0</span><span class=p>[</span><span class=s1>&#39;speed&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;fast&#39;</span>
@@ -125,7 +125,7 @@ New position: 2
 <span class=p>}</span>
 
 <span class=n>language</span> <span class=o>=</span> <span class=n>favorite_languages</span><span class=p>[</span><span class=s1>&#39;sarah&#39;</span><span class=p>]</span><span class=o>.</span><span class=n>title</span><span class=p>()</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Sarah&#39;s favorite langugage is </span><span class=si>{</span><span class=n>language</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Sarah&#39;s favorite langugage is </span><span class=si>{language}</span><span class=s2>.&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> To see which language Sarah chose, we ask for the value at: <div class=highlight><pre><span></span><code><span class=n>favorite_languages</span><span class=p>[</span><span class=s1>&#39;sarah&#39;</span><span class=p>]</span>
 </code></pre></div> We use this syntax to pull Sarah's favorite language from the dictionary (line 8) and assign it to the variable <code>language</code>. Creating a new variable here makes for a much cleaner <code>print()</code> call. The output shows Sarah's favorite Language: <div class=highlight><pre><span></span><code>Sarah&#39;s favorite langugage is C.
 </code></pre></div></p> <h3 id=using-get-to-access-values>Using <code>get()</code> to Access Values</h3> <p>Using keys in square brackets to retrieve the value you're interested in from a dictionary might cause one potential problem: if the key you ask for doesn't exist, you'll get an error. </p> <p>Let's see what happens when you ask for the point value of an alien that doesn't have a point value set: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
@@ -169,8 +169,8 @@ KeyError: &#39;points&#39;
     <span class=p>}</span>
 
 <span class=k>for</span> <span class=n>key</span><span class=p>,</span> <span class=n>value</span> <span class=ow>in</span> <span class=n>user_0</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Key: </span><span class=si>{</span><span class=n>key</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Value: </span><span class=si>{</span><span class=n>value</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Key: </span><span class=si>{key}</span><span class=s2>&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Value: </span><span class=si>{value}</span><span class=s2>&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> As shown on line 7, to write a <code>for</code> loop for a dictionary, you create names for the two variables that will hold the key and value in each key-value pair. You can choose any names you want for these two variables. This code would work just as well if you had used abbreviated for the variable names, like this: <div class=highlight><pre><span></span><code><span class=k>for</span> <span class=n>k</span><span class=p>,</span> <span class=n>v</span> <span class=ow>in</span> <span class=n>user_0</span><span class=o>.</span><span class=n>items</span><span class=p>()</span>
 </code></pre></div> The second half of the <code>for</code> statement on line 7 includes the name of the dictionary followed by the method <code>items()</code>, which returns a list of key-value pairs. The <code>for</code> loop then assigns each of these pairs to the two vairbales provided. In the preceding example, we use the variables to print each key (line 8), followed by the associated value (line 9). The "\n" in the first <code>print()</code> call ensures that a blank line is inserted bfore each key-value pair in the output:<br> <div class=highlight><pre><span></span><code>Key: username
 Value: efermi
@@ -196,7 +196,7 @@ Value: fermi
 <span class=p>}</span>
 
 <span class=k>for</span> <span class=n>name</span><span class=p>,</span> <span class=n>language</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>&#39;s favorite language is </span><span class=si>{</span><span class=n>language</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>!&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;{name.title()}&#39;s favorite language is {language.title()}!&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> The code on line 8 tells Python to loop through each key-value pair in the dictionary. As it works through each pair the key is assigned to the variable <code>name</code>, and the value is assigned to the variable <code>language</code>. These descriptive names make it much easier to see what the <code>print()</code> call on line 9 is doing. </p> <p>Now, in just a few lines of code, we can display all the information from the poll:<br> <div class=highlight><pre><span></span><code>Jen&#39;s favorite language is Python!
 Sarah&#39;s favorite language is C!
 Edward&#39;s favorite language is Ruby!
@@ -246,11 +246,11 @@ Phil
 
 <span class=n>friends</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;phil&#39;</span><span class=p>,</span> <span class=s1>&#39;sarah&#39;</span><span class=p>]</span>
 <span class=k>for</span> <span class=n>name</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>keys</span><span class=p>():</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Hi, </span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Hi, {name.title()}.&quot;</span><span class=p>)</span>
 
     <span class=k>if</span> <span class=n>name</span> <span class=ow>in</span> <span class=n>friends</span><span class=p>:</span>
         <span class=n>language</span> <span class=o>=</span> <span class=n>favorite_languages</span><span class=p>[</span><span class=n>name</span><span class=p>]</span><span class=o>.</span><span class=n>title</span><span class=p>()</span>
-        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\t</span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>, I see you love </span><span class=si>{</span><span class=n>language</span><span class=si>}</span><span class=s2>!&quot;</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\t</span><span class=s2>{name.title()}, I see you love </span><span class=si>{language}</span><span class=s2>!&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> On line 8 we make a list of friends that we want to print a message to. Inside the loop, we print each person's name. Then on line 12 we check whether the <code>name</code> we're working with is in the list <code>friends</code>. If it is, we determine the person's favorite language using the name of the dictionary and the current value of <code>name</code> as the key (line 13). We then print a special greeting, including a reference to their language of choice. </p> <p>Everyone's name is printed, but our friends receive a special message: <div class=highlight><pre><span></span><code>Hi, Jen.
 Hi, Sarah.
     Sarah, I see you love C!
@@ -290,7 +290,7 @@ Hi, Phil.
 <span class=p>}</span>
 
 <span class=k>for</span> <span class=n>name</span> <span class=ow>in</span> <span class=nb>sorted</span><span class=p>(</span><span class=n>favorite_languages</span><span class=o>.</span><span class=n>keys</span><span class=p>()):</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>, thank you for taking the poll.&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;{name.title()}, thank you for taking the poll.&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> This <code>for</code> statement is like other <code>for</code> statements except that we've wrapped the <code>sorted()</code> function around the <code>dictionary.keys()</code> method. This tells Python to list all keys in the dictionary and sort that list before looping through it. The output shows everyone who took the poll, with the names displayed in order:<br> <div class=highlight><pre><span></span><code>Edward, thank you for taking the poll.
 Jen, thank you for taking the poll.
 Phil, thank you for taking the poll.
@@ -370,7 +370,7 @@ Python
 <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;...&quot;</span><span class=p>)</span>
 
 <span class=c1># Show how many aliens have been created.</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Total number of aliens: </span><span class=si>{</span><span class=nb>len</span><span class=p>(</span><span class=n>aliens</span><span class=p>)</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Total number of aliens: {len(aliens)}&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> This example befins with an empty list to hold all of the aliens that will created. At line 5 <code>range()</code> returns a series of numbers, which just tells Python how many times we want the loop to repeat. Each time the loop runs we create a new alien (line 6) and then append each new alien to the list <code>aliens</code> (line 7). On line 10 we us a slice to print the first five aliens, and then on line 15 we print the length of the list to prove we've actually generated the full fleet of 30 aliens: <div class=highlight><pre><span></span><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
 {&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
 {&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;speed&#39;: &#39;slow&#39;}
@@ -454,7 +454,7 @@ Total number of aliens: 30
 <span class=p>}</span>
 
 <span class=c1># Summarize the order.</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;You ordered a </span><span class=si>{</span><span class=n>pizza</span><span class=p>[</span><span class=s1>&#39;crust&#39;</span><span class=p>]</span><span class=si>}</span><span class=s2>-crust pizza &quot;</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;You ordered a </span><span class=si>{pizza[&#39;crust&#39;]}</span><span class=s2>-crust pizza &quot;</span>
     <span class=s2>&quot;with the following toppings:&quot;</span><span class=p>)</span>
 
 <span class=k>for</span> <span class=n>topping</span> <span class=ow>in</span> <span class=n>pizza</span><span class=p>[</span><span class=s1>&#39;toppings&#39;</span><span class=p>]:</span>
@@ -480,9 +480,9 @@ Total number of aliens: 30
 <span class=p>}</span>
 
 <span class=k>for</span> <span class=n>name</span><span class=p>,</span> <span class=n>languages</span> <span class=ow>in</span> <span class=n>favorite_languages</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=si>{</span><span class=n>name</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>&#39;s favorite languages are:&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>{name.title()}&#39;s favorite languages are:&quot;</span><span class=p>)</span>
     <span class=k>for</span> <span class=n>language</span> <span class=ow>in</span> <span class=n>languages</span><span class=p>:</span>
-        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\t</span><span class=si>{</span><span class=n>language</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\t</span><span class=s2>{language.title()}&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> As you can see on line 1, the value associated with each name is now a list. Notice that some people have one favorite language and others have multiple favorites. When we loop through the dictionary on line 8, we use the variable name <code>languages</code> to hold each value from the dictionary, because we know that each value will be a list. Inside the main dictionary loop, we use another <code>for</code> loop (line 10) to run through each persons list of favorite languages. </p> <p>Now each person can list as many favorite languages as they like:<br> <div class=highlight><pre><span></span><code>Jen&#39;s favorite languages are:
     Python
     Ruby
@@ -497,7 +497,53 @@ Edward&#39;s favorite languages are:
 Phil&#39;s favorite languages are:
     Python
     Haskell
-</code></pre></div> To refine this program even further, you can ad an <code>if</code> statement at the beginning of the dictionary's <code>for</code> loop to see whether each person has more than one favorite language by examining the value of <code>len(languages)</code>. If a person has more than one favoriem the output would stay the same. If the person has only one favorite language, you could change the wording to reflect that. For example, you could say "Sarah's favorite language is C."</p> <h3 id=a-dictionary-in-a-dictionary>A Dictionary in a Dictionary</h3> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid" aria-label=Footer> <a href=../py-if-statements/ title="If Statements" class="md-footer-nav__link md-footer-nav__link--prev" rel=prev> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Previous </span> If Statements </div> </div> </a> <a href=../about/ title=About class="md-footer-nav__link md-footer-nav__link--next" rel=next> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Next </span> About </div> </div> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg> </div> </a> </nav> </div> </footer> </div> <script src=../assets/javascripts/vendor.d710d30a.min.js></script> <script src=../assets/javascripts/bundle.4a5ba8d6.min.js></script><script id=__lang type=application/json>{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script> <script>
+</code></pre></div> To refine this program even further, you can ad an <code>if</code> statement at the beginning of the dictionary's <code>for</code> loop to see whether each person has more than one favorite language by examining the value of <code>len(languages)</code>. If a person has more than one favoriem the output would stay the same. If the person has only one favorite language, you could change the wording to reflect that. For example, you could say "Sarah's favorite language is C."</p> <h3 id=a-dictionary-in-a-dictionary>A Dictionary in a Dictionary</h3> <p>You can nest a dictionary inside another dictionary, b ut your code can get complicated quickly when you do. For example, if you have several users for a website, each with a unique username, you can use the usernames as the keys in a dictionary. You can then store information about each user by using a dictionary as the value associated with their username. In the following listing, we store three pieces of information about each user: their first name, last name, and location. We'll access this information by looping through the usernames and the dictionary of information associated with each username:<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>users</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s1>&#39;aeinstein&#39;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=s1>&#39;first&#39;</span><span class=p>:</span> <span class=s1>&#39;albert&#39;</span><span class=p>,</span>
+        <span class=s1>&#39;last&#39;</span><span class=p>:</span> <span class=s1>&#39;einstein&#39;</span><span class=p>,</span>
+        <span class=s1>&#39;location&#39;</span><span class=p>:</span> <span class=s1>&#39;princeton&#39;</span><span class=p>,</span>
+    <span class=p>},</span>
+    <span class=s1>&#39;mcurie&#39;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=s1>&#39;first&#39;</span><span class=p>:</span> <span class=s1>&#39;marie&#39;</span><span class=p>,</span>
+        <span class=s1>&#39;last&#39;</span><span class=p>:</span> <span class=s1>&#39;curie&#39;</span><span class=p>,</span>
+        <span class=s1>&#39;location&#39;</span><span class=p>:</span> <span class=s1>&#39;paris&#39;</span><span class=p>,</span>
+    <span class=p>},</span>
+<span class=p>}</span>
+
+<span class=k>for</span> <span class=n>username</span><span class=p>,</span> <span class=n>user_info</span> <span class=ow>in</span> <span class=n>users</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Username: </span><span class=si>{username}</span><span class=s2>&quot;</span><span class=p>)</span>
+    <span class=n>full_name</span> <span class=o>=</span> <span class=sa>f</span><span class=s2>&quot;</span><span class=si>{user_info[&#39;first&#39;]}</span><span class=s2> </span><span class=si>{user_info[&#39;last&#39;]}</span><span class=s2>&quot;</span>
+    <span class=n>location</span> <span class=o>=</span> <span class=n>user_info</span><span class=p>[</span><span class=s1>&#39;location&#39;</span><span class=p>]</span>
+
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\t</span><span class=s2>Full name: {full_name.title()}&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\t</span><span class=s2>Location: {location.title()}&quot;</span><span class=p>)</span>
+</code></pre></div> </td></tr></table> We first define a dictionary called <code>users</code> with two keys: one each for the usernames <code>'aeinstein'</code> and <code>'mcurie'</code>. The value associated with each key is a dictionary that includes each user's first name, last name, and location. On line 14 we loop through the <code>users</code> dictionary. Python assigns each key to the variable <code>username</code>, and the dictionary associated with each username is assigned to the variable <code>user_info</code>. Once inside the main dictionary loop, we print the user-name at line 15. </p> <p>On line 16 we start accessing the inner dictionary. The variable <code>user_info</code>, which contains the dictionary of user information, has three keys: <code>'first'</code>, <code>'last'</code>, and <code>'location'</code>. We use each key to generate a neatly formated full name and location for each person, and then print a summary of what we know about each user: <div class=highlight><pre><span></span><code>Username: aeinstein
+    Full name: Albert Einstein
+    Location: Princeton
+
+Username: mcurie
+    Full name: Marie Curie
+    Location: Paris
+</code></pre></div> Notice that the structure of each user's dictionary is identical. Although not required by Python, this structure makes nested dictionaries easier to work with. If each user's dictionary had different keys, the code inside the <code>for</code> loop would be more complicated. </p> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid" aria-label=Footer> <a href=../py-if-statements/ title="If Statements" class="md-footer-nav__link md-footer-nav__link--prev" rel=prev> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Previous </span> If Statements </div> </div> </a> <a href=../about/ title=About class="md-footer-nav__link md-footer-nav__link--next" rel=next> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Next </span> About </div> </div> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg> </div> </a> </nav> </div> </footer> </div> <script src=../assets/javascripts/vendor.d710d30a.min.js></script> <script src=../assets/javascripts/bundle.4a5ba8d6.min.js></script><script id=__lang type=application/json>{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script> <script>
         app = initialize({
           base: "..",
           features: ["tabs"],
