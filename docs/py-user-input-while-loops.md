@@ -264,3 +264,105 @@ Now the value of `x` will start at 1 but never change.  As a result, the conditi
 Every programmer accidentally writes and infinite `while` loop from time to time, especially when a program's loops have subtle exit conditions.  If your program gets stuck in an infinite loop, press `CTRL-C` or just close the terminal window displaying the program's output.  
 
 To avoid writing infinite loops, test every `while` loop and make sure the loop stops when you expect it to.  If you want your program to end when the user enters a certain input value, run the program and enter that value.  If the program doesn't end, scrutinize the way your program handles the value that should cause the loop to exit.  Make sure at least one part of the program can make the loop's condition `False` or cause it to reach a `break` statement.  
+
+## Using a `while` Loop with Lists and Dicitonaries
+So far, we've worked with only one piece of user information at a time.  We received the user's input and then printed the input or a response to it.  The next time through the `while` loop, we'd receive another input value and respond to that.  But to keep track of many users and pieces of information, we'll need to use lists and dictionaries with our `while` loops.  
+
+A `for` loop is effective for looping through a lsit, but you shouldn't modify a list inside a `for` loop because Python will have trouble keeping track of the items in the list.  To modify a list as you work through it, use a `while` loop.  Using `while` loops with lists and dictionaries allow you to collect, store, and organize lots of input to examine and report on later. 
+
+### Moving Items from One List to Another
+Consider a list of newly registered but unverified users of a website.  After we verify these users, how can we move them to a separate list of confirmed users?  One way would be to use a `while` loop to pull users from the list of unconfirmed users as we verify them and then add them to a separate list of confirmed users.  Here's what that code might look like:  
+```py linenums="1"
+# Start with users that need to be verified,
+# and an empty list to hold confirmed users.
+unconfirmed_users = ['alice', 'brian', 'candace']
+confirmed_users = []
+
+# Verify each user until there are no more unconfirmed users.
+# Move each verified user into the list of confirmed users.
+while unconfirmed_users:
+	current_user = unconfirmed_users.pop()
+
+	print(f"Verifying user: {current_user.title()}")
+	confirmed_users.append(current_user)
+
+#Display all confirmed users.
+print("\nThe following users have been confirmed:")
+for confirmed_user in confirmed_users:
+	print(confirmed_user.title())
+```
+We begin with a list of unconfirmed users on line 3 (Alice, Brian, and Candace) and an empty list to hold confirmed users.  The `while` loop on line 8 runs as long as the list `unconfirmed_users` is not empty.  Within this loop, the `pop()` function (line 9) removes unverified users one at a time from the end of `unconfirmed_users`.  Here, because Candace is te last in the `unconfirmed_users` list, her name will be the first to be removed, assigned to `current_user`, and added to the `confirmed_users` list on line 12.  Next is Brian, then Alice.  
+
+We simulate confirming each user by printing a verification message then adding them to the list of confirmed users.  As the list of unconfirmed users shrinks, the list of confirmed users grows.  When the list of unconfirmed users is empty, the loop stops and the list of confirmed users in printed:  
+```
+Verifying user: Candace
+Verifying user: Brian
+Verifying user: Alice
+
+The following users have been confirmed:
+Candace
+Brian
+Alice
+```
+### Removing All Instances of Specific Values from a List
+In previous notes ([located here](https://docs.nicklyss.com/py-lists/#removing-elements-from-a-list)) we used `remove()` to remove a specific value from a list.  The `remove()` function worked because the value we were interested in appeared only once in the list.  But what if you want to remove all instances of a value from a list?  
+
+Say you have a list of pets with the value `'cat'` repeated several times.  To remove all instances of that value, you can run a `while` loop until `'cat'` is no longer in the list, as shown here:
+```py linenums="1"
+pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+print(pets)
+
+while 'cat' in pets:
+	pets.remove('cat')
+
+print(pets)
+```
+We start with a list containing multiple instances of `'cat'`.  After printing the list, Python enters the `while` loop because it finds the value `'cat'` in the list at least once.  Once insidethe loop, Python removes the first instance of `'cat'`, returns to the `while` line, and then reenters the loop when it finds that `'cat'` is still in the list.  It removes each instance of `'cat'` until the value is no longer in the list, at which point Python exits the loop and prints the list again: 
+```
+['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+['dog', 'dog', 'goldfish', 'rabbit']
+```
+### Filling a Dictionary with User Input
+You can prompt for as much input as you need in each pass through a `while` loop.  Let's make a polling program in which each pass through the loop prompts for the participant's name and response.  We'll store the data we gather in a dictionary, because we want to connect each response with a particular user:
+```py linenums="1"
+responses = {}
+
+# Set a flag to indicate that polling is active
+polling_active = True
+
+while polling_active:
+	# Prompt for the person's name and response.
+	name = input("\nWhat is your name? ")
+	response = input("Which mountain would you like to climb someday? ")
+
+	# Store the response in the dictionary
+	responses[name] = response
+
+	# Find out if anyone else if going to take the poll.
+	repeat = input("Would you like to let another person respond? (yes/no) ")
+	if repeat == 'no':
+		polling_active = False
+
+# Polling is complete.  Show the results.
+print("\n--- Poll Results ---")
+for name, response in responses.items():
+	print(f"{name} would like to climb {response}.")
+```
+The program first defines an empty dictionary (`responses`) and sets a flag (`polling_active`) to indicate that polling is active.  As long as `polling_active` is `True`, Python will run the code in the `while` loop.  
+
+Within the loop, the user is prompted to enter their name and a mountain they'd like to climb (line 8).  That information is stored in the `responses` dictionary (line 12), and the user is asked whether or not to keep the poll running (line 15).  If they enter yes, the program enters the `while` loop again.  If they enter no, the `polling_active` flag is set to `False`, the `while` loop stops running, and the final code block at line 20 displays the results of the poll.  
+
+If you run this program and enter sample resonses, you should see output like this:  
+```
+What is your name? Eric
+Which mountain would you like to climb someday? Denali
+Would you like to let another person respond? (yes/ no) yes
+
+What is your name? Lynn
+Which mountain would you like to climb someday? Devil's Thumb
+Would you like to let another person respond? (yes/ no) no
+
+--- Poll Results ---
+Lynn would like to climb Devil's Thumb.
+Eric would like to climb Denali.
+```
