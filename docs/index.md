@@ -30,6 +30,7 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [If Statements](py-if-statements.md)
     - [Dictionaries](py-dictionaries.md)
     - [User Input and `while` Loops](py-user-input-while-loops.md)
+    - [Functions](py-functions.md)
 
 ??? abstract "SQL"
     - Coming Soon!
