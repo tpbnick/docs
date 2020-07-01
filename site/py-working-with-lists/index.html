@@ -21,7 +21,7 @@ carolina
 2
 3</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>magicians</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;alice&#39;</span><span class=p>,</span> <span class=s1>&#39;david&#39;</span><span class=p>,</span> <span class=s1>&#39;carolina&#39;</span><span class=p>]</span>
 <span class=k>for</span> <span class=n>magician</span> <span class=ow>in</span> <span class=n>magicians</span><span class=p>:</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>magician</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>, that was a great trick!&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;{magician.title()}, that was a great trick!&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> The only difference in this code is within the <code>for</code> loop, where we compose a message to each magician, starting with their name. The first time through the loop the value of <code>magician</code> is <code>'alice'</code>, so Python starts the first message with the name <code>'alice'</code>. The seond time through the message begins with the next index in the list (<code>'david'</code>). The output should look as follows:</p> <div class=highlight><pre><span></span><code>Alice, that was a great trick!
 David, that was a great trick!
 Carolina, that was a great trick!
@@ -30,8 +30,8 @@ Carolina, that was a great trick!
 3
 4</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>magicians</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;alice&#39;</span><span class=p>,</span> <span class=s1>&#39;david&#39;</span><span class=p>,</span> <span class=s1>&#39;carolina&#39;</span><span class=p>]</span>
 <span class=k>for</span> <span class=n>magician</span> <span class=ow>in</span> <span class=n>magicians</span><span class=p>:</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>magician</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>, that was a great trick!&quot;</span><span class=p>)</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;I can&#39;t wait to see your next trick, </span><span class=si>{</span><span class=n>magician</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>.</span><span class=se>\n</span><span class=s2>&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;{magician.title()}, that was a great trick!&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;I can&#39;t wait to see your next trick, {magician.title()}.</span><span class=se>\n</span><span class=s2>&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> Because both calls for <code>print()</code> are indented, each line will be executed once for every magician in the list. This will have the output:<br> <div class=highlight><pre><span></span><code>Alice, that was a great trick!
 I can&#39;t wait to see your next trick, Alice.
 
@@ -46,8 +46,8 @@ I can&#39;t wait to see your next trick, Carolina.
 4
 5</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>magicians</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;alice&#39;</span><span class=p>,</span> <span class=s1>&#39;david&#39;</span><span class=p>,</span> <span class=s1>&#39;carolina&#39;</span><span class=p>]</span>
 <span class=k>for</span> <span class=n>magician</span> <span class=ow>in</span> <span class=n>magicians</span><span class=p>:</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>magician</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>, that was a great trick!&quot;</span><span class=p>)</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;I can&#39;t wait to see your next trick, </span><span class=si>{</span><span class=n>magician</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>.</span><span class=se>\n</span><span class=s2>&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;{magician.title()}, that was a great trick!&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;I can&#39;t wait to see your next trick, {magician.title()}.</span><span class=se>\n</span><span class=s2>&quot;</span><span class=p>)</span>
 <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;Thank you, everyone.  That was a great magic show!&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> The first two calls to <code>print()</code> are repeated once for each magician in the list, as you saw earlier. However, because the final line is not indented, it's printed only once: </p> <p><div class=highlight><pre><span></span><code>Alice, that was a great trick!
 I can&#39;t wait to see your next trick, Alice.
@@ -73,8 +73,8 @@ IndentationError: expected an indented block
 3
 4</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>magicians</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;alice&#39;</span><span class=p>,</span> <span class=s1>&#39;david&#39;</span><span class=p>,</span> <span class=s1>&#39;carolina&#39;</span><span class=p>]</span>
 <span class=k>for</span> <span class=n>magician</span> <span class=ow>in</span> <span class=n>magicians</span><span class=p>:</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>magician</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>, that was a great trick!&quot;</span><span class=p>)</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;I can&#39;t wait to see your next trick, </span><span class=si>{</span><span class=n>magician</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>.</span><span class=se>\n</span><span class=s2>&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;{magician.title()}, that was a great trick!&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;I can&#39;t wait to see your next trick, {magician.title()}.</span><span class=se>\n</span><span class=s2>&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> The second call to print should also be indented, but because Python finds at least one indented line after the <code>for</code> statement, it doen't report an error. As a result, the first <code>print()</code> is executed once for each name in the list, but because the second <code>print()</code> call is not indented, it will only run once. Because the final value associated with <code>magician</code> is <code>'carolina'</code>, she is the only one who recieves the "looking forward to the next trick message": </p> <p><div class=highlight><pre><span></span><code>Alice, that was a great trick!
 David, that was a great trick!
 Carolina, that was a great trick!

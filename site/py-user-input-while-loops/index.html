@@ -5,7 +5,7 @@
 Hello Everyone!
 </code></pre></div></p> <h3 id=writing-clear-prompts>Writing Clear Prompts</h3> <p>Each time you use the <code>input()</code> function, you should include a clear, easy-to-follow prompt that tells the suer exactly what kind of information you're looking for. Any statment that tells the user what to enter should work. For example: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>name</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=s2>&quot;Please enter your name: &quot;</span><span class=p>)</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Hello, </span><span class=si>{</span><span class=n>name</span><span class=si>}</span><span class=s2>!&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Hello, </span><span class=si>{name}</span><span class=s2>!&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> Add a space at the end of your prompts (after the colon in the preceding example) to separate the prompt from the user's response and to make it clear to your user where to enter their text. </p> <p>Sometimes you'll want to write a prompt that is longer than one line. For example, you might want to tel the user why you're asking for certain input. You can assign your prompt to a variable and pass that variable to the <code>input()</code> function. This allows you to build your prompt over several lines, then write a clean <code>input()</code> statement.<br> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span>1
 2
 3
@@ -14,7 +14,7 @@ Hello Everyone!
 <span class=n>prompt</span> <span class=o>+=</span> <span class=s2>&quot;</span><span class=se>\n</span><span class=s2>What is your first name? &quot;</span>
 
 <span class=n>name</span> <span class=o>=</span> <span class=nb>input</span><span class=p>(</span><span class=n>prompt</span><span class=p>)</span>
-<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Hello, </span><span class=si>{</span><span class=n>name</span><span class=si>}</span><span class=s2>!&quot;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>Hello, </span><span class=si>{name}</span><span class=s2>!&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> This example shows one way to build a multi-line string. The first line assigns the first part of the message to the variable <code>prompt</code>. In the second line, the operator <code>=+</code> takes the string that was assigned to <code>prompt</code> and adds the new string onto the end. </p> <p>The above prompt now spans two lines, again with space after the question mark for clarity:<br> <div class=highlight><pre><span></span><code>If you tell us who you are, we can personalize the messages you see.
 What is your first name? Nick
 
@@ -53,9 +53,9 @@ TypeError: unorderable types: str() &gt;= int()
 6</pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=n>number</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=nb>input</span><span class=p>(</span><span class=s2>&quot;Enter a number, and I&#39;ll tell you if it&#39;s even or odd: &quot;</span><span class=p>))</span>
 
 <span class=k>if</span> <span class=n>number</span> <span class=o>%</span> <span class=mi>2</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>The number </span><span class=si>{</span><span class=n>number</span><span class=si>}</span><span class=s2> is even.&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>The number </span><span class=si>{number}</span><span class=s2> is even.&quot;</span><span class=p>)</span>
 <span class=k>else</span><span class=p>:</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>The number </span><span class=si>{</span><span class=n>number</span><span class=si>}</span><span class=s2> is odd.&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>The number </span><span class=si>{number}</span><span class=s2> is odd.&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> Even numbers are always divisible by two, so if the modulo of a number and two is zero (here, <code>if number % 2 == 0</code>) the number is even. Otherwise, it's odd.<br> <div class=highlight><pre><span></span><code>Enter a number, and I&#39;ll tell you if it&#39;s even or odd: 5
 
 The number 5 is odd.
@@ -174,7 +174,7 @@ quit
 <span class=k>while</span> <span class=n>unconfirmed_users</span><span class=p>:</span>
     <span class=n>current_user</span> <span class=o>=</span> <span class=n>unconfirmed_users</span><span class=o>.</span><span class=n>pop</span><span class=p>()</span>
 
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Verifying user: </span><span class=si>{</span><span class=n>current_user</span><span class=o>.</span><span class=n>title</span><span class=p>()</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Verifying user: {current_user.title()}&quot;</span><span class=p>)</span>
     <span class=n>confirmed_users</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>current_user</span><span class=p>)</span>
 
 <span class=c1>#Display all confirmed users.</span>
@@ -246,7 +246,7 @@ Alice
 <span class=c1># Polling is complete.  Show the results.</span>
 <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;</span><span class=se>\n</span><span class=s2>--- Poll Results ---&quot;</span><span class=p>)</span>
 <span class=k>for</span> <span class=n>name</span><span class=p>,</span> <span class=n>response</span> <span class=ow>in</span> <span class=n>responses</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
-    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{</span><span class=n>name</span><span class=si>}</span><span class=s2> would like to climb </span><span class=si>{</span><span class=n>response</span><span class=si>}</span><span class=s2>.&quot;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;</span><span class=si>{name}</span><span class=s2> would like to climb </span><span class=si>{response}</span><span class=s2>.&quot;</span><span class=p>)</span>
 </code></pre></div> </td></tr></table> The program first defines an empty dictionary (<code>responses</code>) and sets a flag (<code>polling_active</code>) to indicate that polling is active. As long as <code>polling_active</code> is <code>True</code>, Python will run the code in the <code>while</code> loop. </p> <p>Within the loop, the user is prompted to enter their name and a mountain they'd like to climb (line 8). That information is stored in the <code>responses</code> dictionary (line 12), and the user is asked whether or not to keep the poll running (line 15). If they enter yes, the program enters the <code>while</code> loop again. If they enter no, the <code>polling_active</code> flag is set to <code>False</code>, the <code>while</code> loop stops running, and the final code block at line 20 displays the results of the poll. </p> <p>If you run this program and enter sample resonses, you should see output like this:<br> <div class=highlight><pre><span></span><code>What is your name? Eric
 Which mountain would you like to climb someday? Denali
 Would you like to let another person respond? (yes/ no) yes
