@@ -135,3 +135,315 @@ We changed the definition of `describe_pet()` to include a default value, `'dog'
 I have a dog.
 My dog's name is Willie.
 ```
+Note that the order of the parameters in the function definition had to be changed.  Because the default value makes it unnecessary to specify a type of animal as an argument, the only argument left in the function call is the pet's name.  Python still interprets this as a positional argument, so if the function is called with just the pet's name, that argument will match up with the first parameter listed in the function's definition.  This is the reason the first parameter needs to be `pet_name`.  
+
+The simplest way to use this function now is to provide just a dog's name in the function call:   
+```py
+describe_pet('willie')
+```
+This function call would have the same output as the previous example.  The only argument provided is `'willie'`, so it is matched up with the first parameter in the definition, `pet_name`.  Because no argument is provided for `animal_type`, Python uses the default value `'dog'`.  
+
+To describe an animal other than a dog, you could use a function call like this:  
+```py
+describe_pet(pet_name='harry', animal_type='hamster')
+```
+Because an explicit argument for `animal_type` is provoided, Python will ignore the parameter's default value.  
+
+??? tip "Note on default values"
+	When you use default values, any parameter with a default value needs to be listed after all the parameters that don't have default values.  This allows Python to continue interpreting positional arguments correctly.  
+
+### Equivalent Function Calls
+Because positional arguments, keyword arguments, and default values can all be used together, often you'll have several equivalent ways to call a function.  Consider the following definition for `describe_pet()` with one default value provided: 
+```py
+def describe_pet(pet_name, animal_type='dog'):
+```
+With this definition, an argument always needs to be provided for `pet_name`, and this value can be provided using the positional or keyword format.  If the animal being described is not a dog, an argument for `animal_type` mist be included in the call, and this argument can also be specified using the positional or keyword format.  
+
+All the follwoing calls would work for this function:  
+```py linenums="1"
+# A dog named Willie.
+describe_pet('willie')
+describe_pet(pet_name='willie')
+
+# A hamster named Harry.
+describe_pet('harry', 'hamster')
+describe_pet(pet_name='harry', animal_type='hamster')
+describe_pet(animal_type='hamster', pet_name='harry')
+```
+Each of these function calls would have the same output as the previous examples.  It doesn't really matter which calling style you use.  As long as your function calls produce the output you want, just use the style you find easiest to understand.  
+
+### Avoiding Argument Errors
+When you start to use functions, don't be surprides if you encounter errors about unmatched arguments.  Unmatched arguments occur when you provide fewer or more arguments than a function needs to do its wor.  For example, here's what happens if we try to call `describe_pet()` with no arguments: 
+```py linenums="1"
+def describe_pet(animal_type, pet_name):
+	"""Display information about a pet."""
+	print(f"\nI have a {animal_type}.")
+	print(f"My {animal_type}'s name is {pet_name.title()}.")
+
+describe_pet()
+```
+Python recognizes that some information is missing from the function call, and the traceback tells us that:
+```
+TypeError                                 Traceback (most recent call last)
+File <"pets.py">, line 6, in <module>
+      4         print(f"My {animal_type}'s name is {pet_name.title()}.")
+      5 
+----> 6 describe_pet()
+
+TypeError: describe_pet() missing 2 required positional arguments: 'animal_type' and 'pet_name'
+```
+The traceback tells us the location of the problem (line 6), allowing us to look back and see that something went wrong in our function call. Next, the offending function call is written out for us to see. Finally, the traceback tells us the call is missing two arguments and reports the names of the missing arguments.  If this function were in a separate file, we could probably rewrite the call correctly without having to open that file and read the function code.  
+
+Python is helpful in that it reads the function's code for us and tells us the names of the argument we need to provide.  This is another motivation for giving your variables and functions descriptive names.  If you do, Pythons error messages will be more useful to you and anyone else who might use your code.  
+
+If you provide too many arguments, you should get a similar traceback that cal help you correctly match your function call to the function definition.  
+
+## Return Values
+A function doesn't always have to display its output directly.  Instead, it can process some data and then reutn a value or set of values.  The value the function returns is called a *return value*.  The return statement takes a value from inside a function and sends it back to the line that called the function.  Return values allow you to move much of your program's grunt work into functions, which can simplify the body of your program.  
+
+### Returning a Simple Value
+Let's look at a function that takes a first and last name, and returns a neatly formatted name:
+```py linenums="1"
+def get_formatted_name(first_name, last_name):
+	"""Return a full name, fully formatted."""
+	full_name = f"{first_name} {last_name}"
+	return full_name.title()
+
+musician = get_formatted_name('jimi', 'hendrix')
+print(musician)
+```
+The defintion of `get_formatted_name()` takes as parameters a first and last name (line 1).  The function combines these two names, adds a space between them, and assigns the result to `full_name` (line 3).  The value of `full_name` is converted to title case, and then returned to the calling line at line 4.  
+
+When you call a function that returns a value, you need to provide a variable that the return value can be assigned to.  In this case, the returned value is assigned to the variable `musician` on line 6.  The output shows a neatly formatted name made up of the parts of a person's name: 
+```
+Jimi Hendrix
+```
+This might seem like a lot of work to get a neatly formatted name when we could have just written:
+```py
+print("Jimi Hendrix")
+```
+But when you consider working with a large program that needs to store many first and last names separately, functions like `get_formatted_name()` become very useful.  You store first and last names separately and then call this function whenever you want to display a full name.  
+
+### Making an Argument Optional
+Sometimes it makes sense to make an argument optional so that people using the function can choose to provide extra information only if they want to.  You can use default values to make an argument optional.  
+
+For example, say we want to exapand `get_formatted_name()` to handle middle names as well.  A first attempt to include middle names might look like this:
+```py linenums="1"
+def get_formatted_name(first_name, middle_name, last_name):
+	"""Return a full name, fully formatted."""
+	full_name = f"{first_name} {middle_name} {last_name}"
+	return full_name.title()
+
+musician = get_formatted_name('john', 'lee' 'hooker')
+print(musician)
+```
+This function works when given a first, middle, and last name. The function takes in all three parts of a name and then builds a string out of them.  The function adds spaces where appropriate and converts the full name to title case:
+```
+John Lee Hooker
+```
+But middle names aren't always needed, and this function as written would not work if you tried to call it with only a first name and a last name.  To make a middle name optional, we can give the `middle_name` argument an empty default valuye and ignore the argument unless a user provides a value.  To make `get_formatted_name()` work without a middle name, we set the default value of `middle_name` to an empty string and move it to the end of list of parameters:  
+```py linenums="1"
+def get_formatted_name(first_name, last_name, middle_name=''):
+	"""Return a full name, neatly formatted."""
+	if middle_name:
+		full_name = f"{first_name} {middle_name} {last_name}"
+	else:
+		full_name = f"{first_name} {last_name}"
+	return full_name.title()
+
+musician = get_formatted_name('jimi', 'hendrix')
+print(musician)
+
+musician = get_formatted_name('john', 'hooker', 'lee')
+print(musician)
+```
+In this example, the name is built from three possible parts.  Because there's always a first and last name, these parameters are listed first in the function's definition.  The middle name is optional, so it's listed last in the definition, and its default value is an empty string (line 1).  
+
+In the body of the function, we check to see if a middle name has been provided.  Python interprets non-empty strings as `True`, so `if middle_name` evaluates to `True` if a middle name argument is in the function call (line 3).  If a middle name is provided, the first, middle, and last names are combined to form a full name.  This name is then changed to title case and returned to the function call line where it's assigned to the variable `musician` and printed.  If no middle name is provided, the empty string fails the `if` test and the `else` block runs (line 5).  The full name is made with just a dirst and last name, and the formatted name is returned to the calling line where it's assigned to `musician` and printed.  
+
+Calling this function with a first and last name is straightforward.  If we're using a middle name, however, we have to make sure the middle name is the last argument passed so Python will match up the positional arguments correctly (line 12).  
+
+This modified version of our function works for people with just a first and last name, and it works for people who have a middle name as well:  
+```
+Jimi Hendrix
+John Lee Hooker
+```
+Optional values allow functions to handle a wide range of use cases while letting function calls remain as simple as possible.  
+
+### Returning a Dictionary
+A function can return any kind of value you need it to, including more complicated data structures like lists and dictionaries. For example, the following function takes in parts of a name and returns a dictionary representing a person:  
+```py linenums="1"
+def build_person(first_name, last_name):
+    """Return a dictionary of information about a person."""
+    person = {'first': first_name, 'last': last_name}
+    return person
+
+musician = build_person('jimi', 'hendrix')
+print(musician)
+```
+The function `build_person()` takes in a first and last name, and puts these values into a dictionary (line 3).  The value of `first_name` is stored with the key `'first'`, and the value of `last_name` is stored with the key `'last'`.  The entire dictionary representing the person is returned at line 4.  The return value is printed on the final line with the original two pieces of textual information now stored in a dictionary:  
+```
+{'first': 'jimi', 'last': 'hendrix'}
+```
+This function takes in a simple textual information and puts it into a more meaningful data structure that lets you work with the information beyond just printing it.  The strings `'jimi'` and `'hendrix'` are now labeled as a first name and last name.  You can easily extend this function to accept optional values like a middle name, an age, an occupation, or any other information you want to store about a person.  For example, the following change allows you to store a person's age as well:  
+```py linenums="1"
+def build_person(first_name, last_name, age=None):
+	"""Return a dictionary of information about a person."""
+	person = {'first': first_name, 'last': last_name}
+	if age:
+		person['age'] = age
+	return person
+
+musician = build_person('jimi', 'hendrix', age=27)
+print(musician)
+```
+We add a new optional parameter `age` to the function definition and assign the parameter the special value `None`, which is used when a variable has no specific value assigned to it.  You can think of `None` as a placeholder value.  In conditional tests, `None` evaluates to `False`.  If the function call includes a value fo `age`, that value is stored in the dictionary.  This function always stores a person's name, but it can also be modified to store any other information you want about a person.  
+
+### Using a Function with a `while` Loop
+You can use functions with all the Python structures you've learned about so far.  For example, let's use the `get_formatted_name()` function with a `while` loop to greet users more formally.  Here's a first attempt at greeting people using their first and last names: 
+```py linenums="1"
+def get_formatted_name(first_name, last_name):
+	"""Return a full name, neatly formatted."""
+	full_name = f"{first_name} {last_name}"
+	return full_name.title()
+
+# This is an infinite loop!
+while True:
+	print("\nPlease tell me your name:")
+	f_name = input("First name: ")
+	l_name = input("Last name: ")
+
+	formatted_name = get_formatted_name(f_name, l_name)
+	print(f"\nHello, {formatted_name}!")
+``` 
+For this example, we use a simple version of `get_formatted_name()` that doesn't involve middle names.  The `while` loop asks the user to enter their name, and we prompt for their first and last name separately (line 8).  
+
+But there's one problem with this `while` loop: We haven't defined a quit condition.  Where do you put a quit condition when you ask for a series of input?  We want the user to be able to quit as easily as possible, so each prompt should offer a way to quit.  The `break` statement offers a straightforward way to exit the loop at either prompt: 
+```py linenums="1"
+def get_formatted_name(first_name, last_name):
+	"""Return a full name, neatly formatted."""
+	full_name = f"{first_name} {last_name}"
+	return full_name.title()
+
+# This is an infinite loop!
+while True:
+	print("\nPlease tell me your name:")
+	print("(enter 'q' at any time to quit)")
+
+	f_name = input("First name: ")
+	if f_name == 'q':
+		break
+	l_name = input("Last name: ")
+	if l_name == 'q':
+		break
+
+	formatted_name = get_formatted_name(f_name, l_name)
+	print(f"\nHello, {formatted_name}!")
+```
+We add a message that informs the user how to quit, and then we break out of the loop if the user enters the quit value at either prompt.  Now the program will continue greeting people until someone enters `'q'` for either name:
+```
+Please tell me your name:
+(enter 'q' at any time to quit)
+First name: Nick
+Last name: Platt
+
+Hello, Nick Platt!
+
+Please tell me your name:
+(enter 'q' at any time to quit)
+First name: q
+```
+
+## Passing a List
+You'll often find it useful to pass a list to a function, whether it's a list of names, numbers, or more complex objects, such as dictionaries.  When you pass a list to a function, the function gets direct access to the contents of the list.  Let's use functions to make working with lists more efficient.  
+
+Say we have a list of users and want to print a greeting to each.  The following example sends a list of names to a function called `greet_users()`, which greets each person in the list individually:  
+```py linenums="1"
+def greet_users(names):
+	"""Print a simple greeting to each user in the list."""
+	for name in names:
+		msg = f"Hello, {name.title()}!"
+		print(msg)
+
+usernames = ['hannah', 'ty', 'margot']
+greet_users(usernames)
+```
+We define `greet_users()` so it expects a list of names, which it assigns to the parameter `names`.  The function loops through the list it receives and prints a greeting to each user. On line 7, we define a list of users and then pass the list `usernames` to `greet_users()` in our function call:
+```
+Hello, Hannah!
+Hello, Ty!
+Hello, Margot!
+```
+This is the output we wanted.  Every user sees a personalized greeting, and you can call the function any time you want to greet a specific set of users.  
+
+### Modifying a List in a Function
+When you pass a list to a function, the function can modify the list.  Any changes made to the list inside the function's body are permanent, allowing you to work efficiently even when you're dealing with large amounts of data.  
+
+Consider a company that creates 3D printed models of designs that users submit.  Designs that need to be printed are stored in a list, and after being printed they're moved to a separate list.  The following code does this without using functions:  
+```py linenums="1"
+# Start with some designs that need to be printed.
+unprinted_designs = ['phone case', 'robot pendant',  'dodecahedron']
+completed_models = []
+
+# Simulate printing each design, until none are left.
+# Move each design to completed_models after printing.
+while unprinted_designs:
+	current_design = unprinted_designs.pop()
+	print(f"Printing model: {current_design}")
+	completed_models.append(current_design)
+
+# Display all completed models.
+print("\nThe following models have been printed:")
+for completed_model in completed_models:
+	print(completed_model)
+```
+This program starts with a list of designs that need to be printed and an empty list called `completed_models` that each design will be moved to after it has been printed.  As long as designs remain `unprinted_designs`, the `while` loop simulates printing each design by removing a design from the end of the list, storing it in `current_design`, and displaying a message that current design is being printed.  It then adds the design to the list of completed models.  When the loop is finished running, a list of designs that have been printed is displayed:
+```
+Printing model: dodecahedron
+Printing model: robot pendant
+Printing model: phone case
+
+The following models have been printed:
+dodecahedron
+robot pendant
+phone case
+```
+We can reorganize this code by writing two functions, each of which does one specific job.  Most of the code won't change; we're just making it more carefully structured.  The first function will handle printing the designs, and the second will summarize the prints that have been made:
+```py linenums="1"
+def print_models(unprinted_designs, completed_models):
+    """
+    Simulate printing each design, until none are left.    
+    Move each design to completed_models after printing.    
+    """    
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()        
+        print(f"Printing model: {current_design}")        
+        completed_models.append(current_design) 
+def show_completed_models(completed_models):
+    """Show all the models that were printed."""    
+    print("\nThe following models have been printed:")    
+    for completed_model in completed_models:        
+    	print(completed_model)
+
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+```
+On line 1 we define the function `print_models()` with two parameters: a list of designs that need to be printed and a list of completed models.  Given these two lists, the function simulates printing each design by emptying the list of unprinted designs and filling up the list of completed models.  On line 10 we define the function `show_completed_models()` with one parameter: the list of completed models.  Given this list, `show_completed_models()` displays the name of each model that was printed.  
+
+This program has the same output as the version without functions, but the code is much more organized.  The code that does most of the work has been moved to two separate functions, which makes the main part of the program easier to understand.  Look at the body of the program to see how much easier it is to understand what this program is doing:
+```py linenums="1"
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+```
+We set up a list of unprinted designs and an empty list that will hold the completed models.  Then, because we've already defined our two functions, all we have to do is call them and pass them the right arguments.  We call `print_models()` and pass it the two lists it needs; as expected, `print_models()` simulates printing the designs.  Then we call `show_completed_models()` and pass it the list of completed models so it can report the models that have been printed.  The descriptive function names allow others to read this code and understand it, even without comments.  
+
+This program is easier to extend and maintain than the version without functions.  If we need to print more designs later on, we can simply call `print_models()` again.  If we realize the printing code needs to be modified, we can change the code once, and our changes will take place everywhere the function is called.  This technique is more efficient than having to update code separately in several places in the program.  
+
+This example also demonstrates the idea that every function should have one specific job.  The first function prints each design, and the second displays the completed models.  This is more beneficial than using one function to do both jobs.  If you're writing a function and notice the function is doing too many different tasks, try to split the code into two functions.  Remember that you can always call a function from another function, which can be helpful when splitting a complex task into a series of steps. 
+
