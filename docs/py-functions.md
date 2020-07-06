@@ -447,3 +447,98 @@ This program is easier to extend and maintain than the version without functions
 
 This example also demonstrates the idea that every function should have one specific job.  The first function prints each design, and the second displays the completed models.  This is more beneficial than using one function to do both jobs.  If you're writing a function and notice the function is doing too many different tasks, try to split the code into two functions.  Remember that you can always call a function from another function, which can be helpful when splitting a complex task into a series of steps. 
 
+### Preventing a Function from Modifying a List
+Sometimes you'll want to prevent a function from modifying a list.  For example, say that you start with a list of unprinted designs and write a function to move them to a list of completed models, as in the previous example.  You may decide that even though you've printed all the designs, you want to keep the original list of unprinted designs for your records.  But because you moved all the desing names out of `unprinted_designs`, the list is now empty, and the empty list is the only version you have; the original is gone.  In this case, you can address this issue by passing the function a copy of the list, not the original.  Any changes the function makes to the list will affect only the copy, leaving the original list intact.  
+
+You can send a copy of a list to a function like this:
+```py 
+function_name(list_name[:])
+```
+Ths slice notation [:] makes a copy of the list to send to the function.  If we didn't want to empty the list of unprinted desings in `printing_models.py`, we could call `print_models()` like this:
+```py
+print_models(unprinted_designs[:], completed_models)
+```
+The function `print_models()` can do its work because it still receives the names of all unprinted designs.  But this time it uses a copy of the original unprinted desings list, not the actual `unprinted_designs` list.  The list `completed_models` will fill up with the names of printed models like it did before, but original list of unprinted designs will be unaffected by the function.  
+
+Even though you can preserve the contents of a list by passing a copy of it to your functions, you should pass the original list to functions unless you have a specific reason to pass a copy.  It's more efficient for a function to work with an existing list to avoid using the time and memory needed to make a separate copy, especially when you're working with large lists.  
+
+## Passing an Arbitrary Number of Arguments
+Sometimes you won't know ahead of time how many arguments a function needs to accept.  Fortunately, Python allows a function to collect an arbitrary number of arguments from the calling statement.  
+
+For example, consider a function that builds a pizza.  It needs to accept a number of toppings, but you can't know ahead of time how many toppings a person will want.  The function in the following example has one parameter, `*toppings`, but this parameter collects as many arguments as the calling line provides:
+```py linenums="1"
+def make_pizza(*toppings):
+	"""Print the list of toppings that have been requested."""
+	print(toppings)
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+```
+The asterisk (`*`) in the parameter name `*toppings` tells Python to make an empty tuple called `toppings` and pack whatever values it receives into this tuple.  The `print()` call in the function body produces output showing that Python can handle a function call with one value and a call with three values.  It treats the different calls similarly.  Note that Python packs the arguments into a tuple, even if the function receives only one value:
+```
+('pepperoni',)
+('mushrooms', 'green peppers', 'extra cheese')
+```
+Now we can replace the `print()` call with a loop that runs through the list of toppings and describes the pizza being ordered:
+```py linenums="1"
+def make_pizza(*toppings):
+	"""Summarize the pizza we are about to make."""
+	print("\nMaking a pizza with the following toppings:")
+	for topping in toppings:
+		print(f"- {topping}")
+
+make_pizza('pepperoni')
+make_pizza('mushrooms', "green peppers", "extra cheese")
+```
+The function responds appropriately, whether it receives one value or three values:
+```
+Making a pizza with the following toppings:
+- pepperoni
+
+Making a pizza with the following toppings:
+- mushrooms
+- green peppers
+- extra cheese
+```
+This syntax works no matter how many arguments the function receives.
+
+### Mixing Positional and Arbitrary Arguments
+If you want a function to accept several different kinds of arguments, the parameter that accepts an arbitrary number of arguments must be placed last in the function definition.  Python matches positional and keyword arguments first and then collects any remaining arguments in the final parameter.  
+
+For example, if the function needs to take in a size for the pizza, that parameter must come before the parameter `*toppings`:
+```py linenums="1"
+def make_pizza(size, *toppings):
+	"""Summarize the pizza we are about to make."""
+	print(f"\nMaking a {size}-inch pizza with the following toppings:")
+	for topping in toppings:
+		print(f"- {topping}")
+
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+```
+In the function definition, Python assigns the first value it reveives to the parameter `size`.  All other values that come after are stored in the tuple `toppings`.  The function calls include an argument for the size first, followed by as many toppings as needed.  
+
+Now each pizza has a size and a number of toppings, and each piece of information is printed in the proper place, showing size first and toppings after:  
+```
+Making a 16-inch pizza with the following toppings:
+- pepperoni
+
+Making a 12-inch pizza with the following toppings:
+- mushrooms
+- green peppers
+- extra cheese
+```
+### Using Arbitrary Keyword Arguments
+Sometimes you'll want to accept an arbitrary number of arguments, but you won't know ahead of time what kind of information will be passed to the function.  In this case, you can write functions that accept as many key-value pairs as the calling statement provides.  One example involves building user profiles: you know you'll get information about a user, but you're not sure what kind of information you will receive.  The function `build_profile()` in the following example always takes in a first and last name, but it accepts an arbitrary number of keyword arguments as well:
+```py linenums="1"
+def build_profile(first, last, **user_info):
+	"""Build a dictionary containing everything we know about a user."""
+	user_info['first_name'] = first
+	user_info['last_name'] = last
+	return user_info
+
+user_profile = build_profile('albert', 'einstein', location='princeton', field='physics')
+print(user_profile)
+```
+The definition of `build_profile()` expects a first and last name, and then it allows the user to pass in as many name-value pairs as they want.  The double asterisks (`**`) before the parameter `**user_info` cause Python to create an empty dictionary called `user_info` and pack whatever name-value pairs it receives into this dictionary.  Within the function, you can access the key-value pairs in `user_info` just as you would for any dictionary.  
+
