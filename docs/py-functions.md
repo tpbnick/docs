@@ -542,3 +542,75 @@ print(user_profile)
 ```
 The definition of `build_profile()` expects a first and last name, and then it allows the user to pass in as many name-value pairs as they want.  The double asterisks (`**`) before the parameter `**user_info` cause Python to create an empty dictionary called `user_info` and pack whatever name-value pairs it receives into this dictionary.  Within the function, you can access the key-value pairs in `user_info` just as you would for any dictionary.  
 
+In the body of `build_profile()`, we add the first and last names to the `user_info` dictionary because we'll always receive these two pieces of information from the user (line 3/4), and they haven't been placed into the dictionary yet.  Then we return the `user_info` dictionary to the function call line.  
+
+We call `build_profile()`, passing it the first name `'albert'`, the last name `'einstein'`, and the two key-value pairs `location='princeton'` and `field='physics'`.  We assign the returned `profile` to `user_profile` and print `user_profile`:
+```
+{'location': 'princeton', 'field': 'physics', 'first_name': 'albert', 'last_name': 'einstein'}
+```
+The returned dictionary contains the user's first and last names and, in this case, the location and field of study as well.  The function would work no matter how many additional key-value pairs are provided in the function call.  
+
+You can mix positional, keyword, and arbitrary values in many different ways when writing your own functions.  It's useful to know that all these argument types exist because you'll see them often when you start reading other people's code.  It takes practice to learn to use the different types correctly and to know when to use each type.  
+
+## Storing Your Functions in Modules
+One advantage of functions is the way they separate blocks of code from your main program.  By using descriptive names for your functions, your program will be much easier to follow.  You can go a step further by storing your function in a separate file called a *module* and then *importing* that module into your main program.  An `import` statement tells Python to make the code in a module available in the currently running program file.  
+
+Storing your functions in a separate file allows you to hide the details of your program's code and focus on its higher-level logic.  It also allows you to reuse functions in many different programs.  When you store your functions in separate files, you can share those files with other programmers without having to share your entire program.  Knowing how to import functions also allows you to use libraries of functions that other programmers have written.  
+
+There are several ways to import a module:  
+
+### Importing an Entire Module
+To start importing functions, we first need to create a module.  A *module* is a file ending in *.py* that contains the code you want to import into your program.  Let's make a module that contains the function `make_pizza()`.  To make this module, we'll remove everything from the file `pizza.py` except the function `make_pizza()`.  
+
+`pizza.py`:
+```py linenums="1"
+def make_pizza(size, *toppings):
+	"""Summarize the pizza we are about to make."""
+	print(f"\nMaking a {size}-inch pizza with the following toppings:")
+	for topping in toppings:
+		print(f"- {topping}")
+```
+Now we'll make a separate file called `making_pizzas.py` in the same directory as `pizza.py`.  This file imports the module we just created and then makes two calls to `make_pizza()`.   
+
+`making_pizzas.py`:
+```py linenums="1"
+import pizza
+
+pizza.make_pizza(16, 'pepperoni')
+pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+```
+When Python reads this file, the line `import pizza` tells Python to open the file `pizza.py` and copy all the functions from it into this program.  You don't actually see code being copied between files because Python copies the code behind the scenes just before the program runs.  All you need to know is that any function defined in `pizza.py` will now be available in `making_pizzas.py`.  
+
+To call a function from an imported module, enter the name of the module you imported, `pizza`, followed by the name of the function, `make_pizza()`, separated by a dot (line 3).  This code produces the same output as the original program that didn't import a module:
+```
+Making a 16-inch pizza with the following toppings:
+- pepperoni
+
+Making a 12-inch pizza with the following toppings:
+- mushrooms
+- green peppers
+- extra cheese
+```
+This first approach to importing, in which you simply write `import` followed by the name of the module, makes every function from the module available in your program.  If you use this kind of `import` statement to import an entire module named `module_name.py`, each function in the module is available through the following syntax:
+```py
+module_name.function_name()
+```
+### Importing Specific Functions
+You can also import a specific function from a module.  Here's the general syntax for this approach:
+```py
+from module_name import function_name
+```
+You can import as many functions as you want from a module by separating each function's name with a comma:
+```py
+from module_name import function_0, function_1, function_2
+```
+The `making_pizzas.py` example would look like this if we want to import just the function we're going to use:
+```py linenums="1"
+from pizza import make_pizza
+
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+```
+With this syntax, you don't need to use the dot notation when you call a function.  Because we've explicitly imported the function `make_pizza()` in the `import` statement, we can call it by name when we use the function.  
+
+### Using `as` to Give a Function an Alias
