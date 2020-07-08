@@ -31,6 +31,7 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [Dictionaries](py-dictionaries.md)
     - [User Input and `while` Loops](py-user-input-while-loops.md)
     - [Functions](py-functions.md)
+    - [Classes](py-classes.md)
 
 ??? abstract "SQL"
     - Coming Soon!

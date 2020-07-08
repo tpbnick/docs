@@ -614,3 +614,57 @@ make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 With this syntax, you don't need to use the dot notation when you call a function.  Because we've explicitly imported the function `make_pizza()` in the `import` statement, we can call it by name when we use the function.  
 
 ### Using `as` to Give a Function an Alias
+If the name of a function you're importing might conflict with an existing name in your program or if the function name is long, you can use a short, unique *alias* - an alternate name similar to a nickname for a function.  You'll give the function this special nickname when you import the function.  
+
+Here we give the function `make_pizza()` an alias, `mp()` by importing `make_pizza` as `mp`.  The `as` keyword renames a function using the alias you provide:
+```py linenums="1"
+from pizza import make_pizza as mp
+
+mp(16, 'pepperoni')
+mp(12, 'mushrooms', 'green peppers', 'extra cheese')
+```
+The `import` statement shown here renames the function `make_pizza()` to `mp()` in this program.  Any time we want to call `make_pizza()` we can simply write `mp()` instead, and Python will run the code in `make_pizza()` while avoiding any confusion with another `make_pizza()` function you might have written in this program file.  
+
+The general syntax for providing an alias is:
+```py
+from module_name import function_name as fn
+```
+### Importing All Functions in a Module
+You can tell Python to import every function in a module by using the asterisk (`*`) operator:
+```py linenums="1"
+from pizza import *
+
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+```
+The asterisk in the `import` statement tells Python to copy every function from the module `pizza` (`pizza.py`) into this program file.  Because every function is imported, you can call each function by name without using the dot notation.  However, it is best not to use this approach when you're working with larger modules that you didn't write: if the module has a function name that matches an existing name in your project, you can get some unexpected results.  Python may see several functions or variables with the same name, and instead of importing all the functions separately, it will overwrite the functions.  
+
+The best approach is to import the function or functions you want, or import the entire module and use the dot notation.  This leads to clear code that's easy to read and understand.  I include this section so you'll recognize `import` statements like the following when you see them in other people's code:
+```py
+from module_name import *
+```
+## Styling Functions
+You need to keep a few details in mind when you're styling functions.  Functions should have descriptive names, and these names should use lowecase letters and underscores.  Descriptive names help you and other understand what your code is trying to do.  Module names should use these conventions as well.  
+
+Every function should have a comment that explains concisely what the function does.  This comment should appear immediately after the function definition and use the docstring format.  In a well-documented function, other programmers can use the function by reading only the description in the docstring.  They should be able to trust that the code works as described, and as long as they the name of the function, the arguments it needs, and the kind of value it returns, they should be able to use it in their programs.  
+
+If you specify a default value for a parameter, no spaces should be used on either side of the equal sign:
+```py
+def function_name(parameter_0, parameter_1='default value')
+```
+The same convention should be used for keyword arguments in function calls:
+```py
+function_name(value_0, parameter_1='value')
+```
+[PEP 8](https://www.python.org/dev/peps/pep-0008/) recommends that you limit lines of code to 79 characters so every line is visible in a reasonably sized editor window.  If a set of parameters causes a function's definition to be longer than 79 character, press `ENTER` after opening parenthesis on the definition line.  On the next line, press `TAB` twice to separate the list of arguments from the body of the function, which will only be indented by one level.  
+
+Most editors automatically line up any additional lines of parameters to match the indentation you have established on the first line:
+```py linenums="1"
+def function_name(
+		parameter_0, parameter_1, parameter_2
+		parameter_3, parameter_4, parameter_5):
+	function body...
+```
+If your program or module has more than one function, you can separate each by two blank lines to make it easier to see where one function ends and the next one begins.  
+
+All `import` statements should be written at the beginning of a file.  The only exception is if you use comments at the beginning of your file to describe the overall program.  

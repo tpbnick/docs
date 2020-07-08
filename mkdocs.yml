@@ -72,4 +72,5 @@ nav:
       - Dictionaries : py-dictionaries.md
       - User Input and while Loops : py-user-input-while-loops.md
       - Functions : py-functions.md
+      - Classes : py-classes.md
   - About : about.md
