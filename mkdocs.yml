@@ -74,4 +74,6 @@ nav:
       - Functions : py-functions.md
       - Classes : py-classes.md
       - Random Programs : py-random.md
+    - 'SQL':
+      - SQL Basics : sql.md
   - About : about.md

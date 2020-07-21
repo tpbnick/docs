@@ -34,8 +34,8 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [Classes](py-classes.md)
     - [Random Programs](py-random.md)
 
-??? abstract "SQL"
-    - Coming Soon!
+??? tip "SQL"
+    - [SQL Basics](sql.md)
 
 ??? abstract "C++"
 	- Coming Soon!
