@@ -82,13 +82,13 @@ WHERE condition
 ```
 More complex clauses can be constructed by joining numerous `AND` or `OR` logical keywords (i.e. num_wheels >= 4 AND doors <= 2).  Below are some useful operators that you can use for numerical data (i.e. integer or floating point):
 
-| Operator                | Condition                                            | SQL Example                   |
-|-------------------------|------------------------------------------------------|-------------------------------|
-| =, !=, <, <=, >, >=     | Standard numerical operators                         | col_name != 4                 |
-| BETWEEN ... AND ...     | Number is within a range of two values (inclusive)   | col_name BETWEEN 1.5 AND 10.5 |
-| NOT BETWEEN ... AND ... | Number is not within range of two values (inclusive) | col_name NOT BETWEEN 1 AND 10 |
-| IN (...)                | Number exists in a list                              | col_name IN (2, 4, 6)         |
-| NOT IN (...)            | Number does not exist in a list                      | col_name NOT IN (1, 3, 5)     |
+| Operator                | Condition                                            | SQL Example                           |
+|-------------------------|------------------------------------------------------|---------------------------------------|
+| =, !=, <, <=, >, >=     | Standard numerical operators                         | col_name **!**= 4                     |
+| BETWEEN ... AND ...     | Number is within a range of two values (inclusive)   | col_name **BETWEEN** 1.5 **AND** 10.5 |
+| NOT BETWEEN ... AND ... | Number is not within range of two values (inclusive) | col_name **NOT BETWEEN** 1 AND 10     |
+| IN (...)                | Number exists in a list                              | col_name **IN** (2, 4, 6)             |
+| NOT IN (...)            | Number does not exist in a list                      | col_name **NOT IN** (1, 3, 5)         |
 
 In addition to making the results more manageable to understand, writing clauses to constrain the set of rows returned also allows the query to run faster due to the reduction in unnecessary data being returned.  
 
@@ -112,4 +112,121 @@ SELECT title, year FROM movies WHERE year NOT BETWEEN 2000 AND 2010;
 4. Find the first 5 Pizar movies and their release `year`:
 ```sql
 SELECT title, year FROM movies WHERE year <= 2003;
+```
+
+When Writing `WHERE` clauses with columns containing text data, SQL supports a number of useful operators to do things like case-insensitive string comparison and wildcard pattern matching.  Below are a few common text-data specific operators:  
+
+| Operator     | Condition                                                                                             | SQL Example                                                            |
+|--------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| =            | Case sensitive exact string comparison (**notice the single equals**)                                 | col_name **=** "abc"                                                  |
+| != or <>     | Case sensitive exact string inequality comparison                                                     | col_name **!=** "abcd"                                                 |
+| LIKE         | Case insensitive exact string comparison                                                              | col_name **LIKE** "ABC"                                                |
+| NOT LIKE     | Case insensitive exact string inequality comparison                                                   | col_name **NOT LIKE** "ABCD"                                           |
+| %            | Used anywhere in a string to match a sequence of zero or more characters (only with LIKE or NOT LIKE) | col_name **LIKE** "%AT%" (matches "AT", "ATTIC", "CAT" or even "BATS") |
+| _            | Used anywhere in a string to match a single character (only with LIKE or NOT LIKE)                    | col_name **LIKE** "AN_" (matches "AND" but not "AN")                   |
+| IN (...)     | String exists in a list                                                                               | col_name **IN** ("A", "B", "C")                                        |
+| NOT IN (...) | String does not exist in a list                                                                       | col_name **NOT IN** ("D", "E", "F")                                    |  
+
+??? tip "String Quotes"
+	All strings must be quoted so that the query parser can distinguish words in the string from SQL keywords.  
+
+We should not that while most database implementations are quite efficient when using these operators, full-text search is best left to dedicated libraries like [Apache Lucene](http://lucene.apache.org/) or [Sphinx](http://sphinxsearch.com/).  These libraries are designed specifically to do full text search, and as a result are more efficient and can support a wider variety of search features including internationalization and advanced queries.  
+
+Now let's test these operators using the same .csv from above:
+
+1. Find all the Toy Story movies:
+```sql
+SELECT title, director FROM movies WHERE title LIKE "Toy Story%";
+```
+2. Find all the movies directed by John Lasseter:
+```sql
+SELECT title, director FROM movies WHERE director LIKE "John Lasseter";
+```
+3. Find all the movies (and director) not directed by John Lasseter:
+```sql
+SELECT title, director FROM movies WHERE director NOT LIKE "John Lasseter";
+```
+4. Find all the WALL-* movies:
+```sql
+SELECT title FROM movies WHERE title LIKE "WALL-_";
+```
+
+## Filtering and Sorting Query Results
+Even though the data in a database may be unique, the results of any particular query may not be - take our Movies table for example, many different movies can be released the same year.  In such cases, SQL provides a convenient way to discard rows that have a duplicate column value by using the **`DISTINCT`** keyword.  
+```sql
+SELECT DISTINCT column, another_column, ...
+FROM mytable
+WHERE condition(s);
+```
+Since the **`DISTINCT`** keyword will blindly remove duplicate values, we will learn in a future lesson how to discard duplicated based on specific columns using grouping and the **`GROUP BY`** cluase.  
+
+### Ordering Results
+Unlike our neatly ordered table in the last few lessons, most data in real databases are added in no particular column order.  As a result, it can be difficult to read through and understand the results of a query as the size of a table increases to thousands or even millions of rows.  
+
+To help with this, SQL provides a way to sort your results by a given column in ascending or descending order using the **`ORDER BY`** clause:
+```sql
+SELECT column, another_column, ...
+FROM mytable
+WHERE condition(s)
+ORDER BY column ASC/DESC;
+```
+When an **`ORDER BY`** clause is specified, each row is sorted alpha-numerically based on the specified column's value.  In some databases, you can also specify a collation to better sort data containing international text.  
+
+### Limiting Results to a Subset
+Another clause which is commonly used with the **`ORDER BY`** clause are the **`LIMIT`** and **`OFFSET`** clauses, which are a useful optimization to indicate to the database the subset of the results you care about.  
+
+The **`LIMIT`** will reduce the number of rows to return, and the optional **`OFFSET`** will specify where to begin counting the number rows from:
+```sql
+SELECT column, another_column, ...
+FROM mytable
+WHERE condition(s)
+ORDER BY column ASC/DESC
+LIMIT num_limit OFFSET num_offset;
+```
+If you think about websites like Reddit or Pinterest, the front page is a list of links sorted by popularity and time, and each subsequent page can be represented by sets of links at different offsets in the database.  Using these clauses, the database can then execute queries faster and more efficiently by processing and returning only the requested content.  
+
+??? tip "Order of Execution"
+	**`LIMIT`** and **`OFFSET`** are applied relative to the other parts of a query, generally done last after other clauses have been aplied.  
+
+Now let's do some exercises using the previous .csv used above:
+
+1. List all directors of Pixar movies (alphabetically), without duplicates:
+```sql
+SELECT DISTINCT director FROM movies ORDER BY director ASC;
+```
+2. List the last four Pixar movies released (ordered from most recent to last):
+```sql
+SELECT title FROM movies ORDER BY year DESC LIMIT 4;
+```
+3. List the first 5 Pixar movies sorted alphabetically:
+```sql
+SELECT title FROM movies ORDER BY title ASC LIMIT 5;
+```
+4. List the next 5 Pixar movies sorted alphabetically:
+```sql
+SELECT title FROM movies ORDER BY title ASC LIMIT 5 OFFSET 5;
+```
+
+## Review Exercises
+Let's take a new [.csv file](https://nicklyss.com/wp-content/uploads/2020/07/Cities.csv) containing a few of the most populous cities in North America and do some review exercises from what has been learned above:
+
+1. List all the Canadian cities and their populations:
+```sql
+SELECT city, population FROM north_american_cities WHERE country = "Canada";
+```
+2. Order all the cities in the United States by their latitude from north to south:
+```sql
+SELECT city, latitude FROM north_american_cities WHERE country = "United States" ORDER BY latitude DESC;
+```
+3. List all the cities west of Chicago, ordered from west to east:
+```sql
+SELECT city, longitude FROM north_american_cities WHERE longitude < -87.629798 ORDER BY longitude ASC;
+```
+4. List the two largest cities in Mexico (by population):
+```sql
+SELECT city, population FROM north_american_cities WHERE country = "Mexico" ORDER BY population DESC LIMIT 2;
+```
+5. List the third and fourth largest cities (by population) in the United States and their population:
+```sql
+SELECT city, population FROM north_american_cities WHERE country = "United States" ORDER BY population DESC LIMIT 2 OFFSET 2; 
 ```

@@ -76,4 +76,5 @@ nav:
       - Random Programs : py-random.md
     - 'SQL':
       - SQL Basics : sql.md
+      - Joins and Other Query Types : sql-joins-and-other-queries.md
   - About : about.md
