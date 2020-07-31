@@ -77,4 +77,6 @@ nav:
     - 'SQL':
       - SQL Basics : sql.md
       - Joins and Other Query Types : sql-joins-and-other-queries.md
+    - 'JavaScript':
+      - JavaScript Basics : js.md
   - About : about.md
