@@ -13,11 +13,13 @@
 ## Images
 
 * Custom Keyboard PCB with Switch Slot Callouts  
-![!Custom Keyboard PCB with Switch Slot Callouts.](https://nicklyss.com/wp-content/uploads/2020/05/Keyboard-PCB.png)  
-* Example 2
-* Example 3
-* Example 4
+<img src="https://nicklyss.com/wp-content/uploads/2020/05/Keyboard-PCB.png" width="700">  
 
+* Table Example  
+<img src="https://nicklyss.com/wp-content/uploads/2020/08/table.jpg" width="550">  
+
+* Instruction Example  
+<img src="https://nicklyss.com/wp-content/uploads/2020/08/arrow.png" width="700">  
 
 ## Contact
 Nicholas Platt  

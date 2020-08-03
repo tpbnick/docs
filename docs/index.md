@@ -37,6 +37,7 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
 ??? tip "SQL"
     - [SQL Basics](sql.md)
     - [Joins and Other Query Types](sql-joins-and-other-queries.md)
+    - [SQL Random Problems](sql-random.md)
 
 ??? tip "JavaScript"
     - [JavaScript Basics](js.md)
