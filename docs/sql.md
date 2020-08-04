@@ -12,6 +12,8 @@ Often times, in order for us to build the most function website we can, we depen
 
 * [SQL for Dummies (PDF)](https://nicklyss.com/wp-content/uploads/2020/07/SQL-for-Dummies-A.-Taylor.pdf)  
 
+* [Additional SQL Reference Material](https://www.w3schools.com/sql/)  
+
 For the following examples we will be using sqlite3, which is a SQL command line program, on the [CS50 IDE](https://ide.cs50.io/).  We will also be using the following [.csv file](https://nicklyss.com/wp-content/uploads/2020/07/Movies.csv) which contains a database with data about some of Pixar's classic movies.  Let's import this into the IDE.  First drag and drop the file into the left side of the IDE, preferably a folder.  Next, let's run the following commands:
 ```
 sqlite3 movies.db
