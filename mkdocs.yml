@@ -38,6 +38,14 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tabbed
   - pymdownx.tilde
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/nicholas-platt/
+    - icon: fontawesome/brands/github
+      link: https://github.com/tpbnick
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/nickplattfour/
 nav:
   - Home : index.md
   - 'Nick''s Portfolio':
@@ -48,6 +56,7 @@ nav:
       - Google Chrome Media : chromemedia.md
       - Glossary : glossary.md
   - 'Programming Notes':
+    - 'Notes Overview' : notes.md
     - 'C':
       - C Basics : c.md
       - Arrays : c-arrays.md
