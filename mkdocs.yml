@@ -46,6 +46,8 @@ extra:
       link: https://github.com/tpbnick
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/nickplattfour/
+    - icon: fontawesome/regular/envelope
+      link: mailto:nickplatt4@gmail.com
 nav:
   - Home : index.md
   - 'Nick''s Portfolio':

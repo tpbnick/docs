@@ -1,6 +1,6 @@
 # Random SQL Problems
 
-## Movies
+## Movies Exercise
 
 In the following problems we will be using [`movies.db`](https://cdn.cs50.net/2019/fall/psets/7/movies/movies.zip).  This database is made of of multiple tables: movies, ratings, stars, and directors.  We will need to `JOIN` some of these tables to answer some of the following problems:  
 
@@ -116,4 +116,98 @@ AND movie_id IN (
     FROM people JOIN stars ON stars.person_id = people.id
     WHERE name = "Kevin Bacon" AND birth = 1958
 )
+```
+
+## Houses Exercise
+We are now going to implement a program to import Hogwarts student data into a database, and then produce class roseters.  
+
+For this exercise we are going to use the files found in [houses.zip](https://cdn.cs50.net/2019/fall/psets/7/houses/houses.zip).  You will find the files `characters.csv`, `import.py`, `roster.py`, and `students.db`.  We will import all of the school's data into a database and write a Python program to query that database to get house rosters.  
+
+### Breakdown
+
+In `import.py`, we will write a program that imports data from a CSV spreadsheet.  The program should accept the name of a CSV file as a command-line argument.  
+
+* If the incorrect number of command-line arguments are provided, our program should print an error and exit.  
+
+* We are going to assume that the CSV file exists, and will have columns `name`, `house`, and `birth`.  
+
+For each student in the CSV file, we are going to insert the student into the `students` table in the `students.db` database.  
+
+* While the CSV file provided in houses.zip has just a `name` column, that database has separate columns for `first`, `middle`, and `last` names.  We will then want to first parse each name and separate it into first, middle, and last names.  We are going to assume that each person's name field will contain either two space-separated names (a first and last name) or three space-separated names (a first, middle, and last name).  For students without a middle name, we will leave their `middle` name field as `NULL` in the table.  
+
+In `roster.py`, we will write a program that prints a list of students for a given house in alphabetical order.  
+
+* We will make the program accept the name of a house as a command-line argument.  If the incorrect number of command-line arguments are provided, we will print an error or exit.  
+
+* Our program will query the `students` table in the `students.db` database for all students in the specified house.  
+
+* Or program should then print out each student's full name and birth year (formatted as, e.g., `Harry James Potter, born 1980` or `Luna Lovegood, born 1981`).  Each student will be printed on their own line.  Students should be ordered by last name.  If students share the same last name, we will order them by first name.  
+
+### Solution
+
+**`import.py`**
+```py
+from cs50 import SQL
+from sys import argv
+from sys import exit
+import csv
+
+#splits the names from the name column into their own array
+def partition_name(full_name):
+	names = full_name.split()
+	return names if len(names) >= 3 else [names[0], None, names[1]]
+
+#checks argument count
+if len(argv) != 2:
+	print("Arguments error")
+	exit(1)
+
+db = SQL("sqlite:///students.db")
+
+csv_path = argv[1]
+with open(csv_path) as csv_file:
+	reader = csv.DictReader(csv_file)
+	for row in reader:
+		names = partition_name(row["name"]) #partition_name gives an array
+		db.execute("INSERT INTO students(first, middle, last, house, birth) VALUES(?, ?, ?, ?, ?)", names[0], names[1], names[2], row["house"], row["birth"])
+```
+
+**`roster.py`**
+```py
+from cs50 import SQL
+from sys import argv
+from sys import exit
+
+if len(argv) != 2:
+    print("Argument Error")
+    exit(1)
+
+db = SQL("sqlite:///students.db")
+
+house_chosen = argv[1]
+rows = db.execute("SELECT * FROM students WHERE house = ? ORDER BY last, first", house_chosen)
+for row in rows:
+    first, middle, last, birth = row["first"], row["middle"], row["last"], row["birth"]
+    if row["middle"] == None:
+        print(f"{first} {last}, born {birth}")
+    else:
+        print(f"{first} {middle} {last}, born {birth}")
+```
+Now try running the following commands and check your answer:
+
+```
+$ python import.py characters.csv
+
+$ python roster.py Gryffindor
+Lavender Brown, born 1979
+Colin Creevey, born 1981
+Seamus Finnigan, born 1979
+Hermione Jean Granger, born 1979
+Neville Longbottom, born 1980
+Parvati Patil, born 1979
+Harry James Potter, born 1980
+Dean Thomas, born 1980
+Romilda Vane, born 1981
+Ginevra Molly Weasley, born 1981
+Ronald Bilius Weasley, born 1980
 ```
