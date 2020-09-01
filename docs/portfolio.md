@@ -1,8 +1,8 @@
 # Nicholas Platt's Portfolio
 
 ## Resume
-<object data="https://nicklyss.com/wp-content/uploads/2020/04/Nicholas-Platt-Resume.pdf" type="application/pdf" width="100%" height="500px">
-        <embed src="https://nicklyss.com/wp-content/uploads/2020/04/Nicholas-Platt-Resume.pdf" type="application/pdf" />
+<object data="https://nicklyss.com/wp-content/uploads/2020/09/Nicholas-Platt-Resume.pdf" type="application/pdf" width="100%" height="500px">
+        <embed src="https://nicklyss.com/wp-content/uploads/2020/09/Nicholas-Platt-Resume.pdf" type="application/pdf" />
     </object>
 
 ## Portfolio
@@ -11,7 +11,6 @@
 * [**User Guide Example - Google Chrome (2020)**](https://nicklyss.com/userguide)  User Guides/Manuals are extremely important for professional communication of business goals/features. User guides can include instructions, tips, FAQs, images, videos, etc., depending on what information is deemed most critical for efficient use of the program. In this User Guide example, I go over basic functionality of Google Chrome. Installation, initial setup, personalization, and advanced use are discussed in detail for all user types.
 
 ## Images
-
 * Custom Keyboard PCB with Switch Slot Callouts  
 <img src="https://nicklyss.com/wp-content/uploads/2020/05/Keyboard-PCB.png" width="700">  
 
@@ -19,7 +18,10 @@
 <img src="https://nicklyss.com/wp-content/uploads/2020/08/table.jpg" width="550">  
 
 * Instruction Example  
-<img src="https://nicklyss.com/wp-content/uploads/2020/08/arrow.png" width="700">  
+<img src="https://nicklyss.com/wp-content/uploads/2020/08/arrow.png" width="700">
+
+## About Me
+[Click Here](https://docs.nicklyss.com/about)  
 
 ## Contact
 Nicholas Platt  
