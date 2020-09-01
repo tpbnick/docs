@@ -1,8 +1,6 @@
 # Programming Notes
 
-## Overview
-
-Working notes:
+## Notes by Language
 
 ??? tip "C"
     - [C Basics](c.md)
@@ -33,3 +31,8 @@ Working notes:
 
 ??? tip "JavaScript"
     - [JavaScript Basics](js.md)
+
+
+## Random Notes
+
+* [APIs](api.md)

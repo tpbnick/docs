@@ -1,7 +1,7 @@
 # Nicholas Platt's Portfolio
 
 ## Resume
-<object data="https://nicklyss.com/wp-content/uploads/2020/09/Nicholas-Platt-Resume.pdf" type="application/pdf" width="100%" height="500px">
+<object data="https://nicklyss.com/wp-content/uploads/2020/09/Nicholas-Platt-Resume.pdf" type="application/pdf" scrolling="no" width="100%" height="600px" style="border-radius:10px; overflow: hidden; box-shadow: 3px 3px 3px #888;">
         <embed src="https://nicklyss.com/wp-content/uploads/2020/09/Nicholas-Platt-Resume.pdf" type="application/pdf" />
     </object>
 

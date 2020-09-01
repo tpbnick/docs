@@ -91,4 +91,6 @@ nav:
       - Random Problems : sql-random.md
     - 'JavaScript':
       - JavaScript Basics : js.md
+    - 'Random':
+      - API Overview : api.md
   - About : about.md
