@@ -961,4 +961,86 @@ We should get the following resutl:
 Here we can see information about their top songs, including name, release date, total tracks, type, direct URI, if it is explicit, the popularity, the track number, and much more.  It even includes a link to a [preview URL](https://p.scdn.co/mp3-preview/636cebb17ae17e216bfb39cb276ba29a21003ffb?cid=774b29d4f13844c495f206cafdad9c86)!  This is a great example of a layered system because the results are not rendered on every request!  The results can be cached because artist data doesn't update very often.  
 
 ## Using an API from the Command Line
-Let's try making an API request from our own command line, not a website!  Let's use a different API this time, one from Twilio.
+Let's try making an API request from our own command line, not a website!  Let's use a different API this time, one from [Twilio](https://www.twilio.com/).  We will be working with the "Programmable Messaging" API.  Let's click on "build" and try sending a message to our phone number from the website.  We can do this by adding whatever we want in the "Body" section and then clicking on "Make Request".  You should now receive a text message with whatever you wrote.  
+
+Let's take this a step further and open a terminal.  Let's make a Python program first to interact with this API and send the message:
+```py
+from twilio.rest import Client 
+ 
+account_sid = 'AC504e58232220f1698dbf3c144af87g2z' #these have been changed for security
+auth_token = '261209ecabd9de3cec413a4b458a423zaw' 
+client = Client(account_sid, auth_token) 
+ 
+message = client.messages.create( 
+                              from_='+12057654321',        
+                              to='+19091234567' 
+                          ) 
+ 
+print(message.sid)
+```
+After running the above Python program, we should get a response like:
+```json
+{
+    "sid": "SM55d7040dd06b4c33a19b38863843acea",
+    "date_created": "Wed, 02 Sep 2020 17:41:14 +0000",
+    "date_updated": "Wed, 02 Sep 2020 17:41:14 +0000",
+    "date_sent": null,
+    "account_sid": "AC504e58232220f1698dbf3c55a8ff73jm",
+    "to": "+19091234567",
+    "from": "+12057654321",
+    "messaging_service_sid": null,
+    "body": "Sent from your Twilio trial account - Hello!",
+    "status": "queued",
+    "num_segments": "1",
+    "num_media": "0",
+    "direction": "outbound-api",
+    "api_version": "2010-04-01",
+    "price": null,
+    "price_unit": "USD",
+    "error_code": null,
+    "error_message": null,
+    "uri": "/2010-04-01/Accounts/AC504e58232220f1698dbf3c55a8ff73jm/Messages/SM55d7040dd06b4c33a19b38863843acea.json",
+    "subresource_uris": {
+        "media": "/2010-04-01/Accounts/AC504e58232220f1698dbf3c55a8ff73jm/Messages/SM55d7040dd06b4c33a19b38863843acea/Media.json"
+    }
+}
+```
+Or an error message telling you what went wrong.  
+
+We can also do this as a cURL command:
+```curl
+curl 'https://api.twilio.com/2010-04-01/Accounts/AC504e58232220f1698dbf3c55a8ff73jm/Messages.json' -X POST \
+--data-urlencode 'To=+19091234567' \
+--data-urlencode 'From=+12057654321' \
+--data-urlencode 'Body=Hello!' \
+-u AC504e58232220f1698dbf3c115a8ggt52:[AuthToken]
+``` 
+
+If it worked, you should see the message pop up on a verifed phone!
+ 
+## Using Postman to Explore APIs
+[Postman](https://www.postman.com/) is a feature rich tool that helps users explore new APIs.  We can use either the browser application or the desktop application for the following.  Let's click on "Create a New Collection", which keeps all request that we make grouped together.  Let's recreate the calls we made to the Twilio API from above.  Let's name the collection "Twilio" and click "Create".  It should now show up in the collections area on the left sidebar.  Click on the Twilio collection and then "Add requests".  We can name the Request "Message Log", and add a descriptive description like the following:
+```
+All messages sent from my account.  
+
+[Twilio Documentation](https://www.twilio.com/docs/sms/api/message-resource?code-sample=code-read-list-all-messages&code-language=Node.js&code-sdk-version=3.x)
+```
+It is best practice to reference to the parent documentation whenever using an API for ease of access.  
+
+Now, let's click on the new `GET` request we have created to open it in the Launchpad.  We can now grab the URL from the Twilio cURL `GET` request from earlier:
+```
+https://api.twilio.com/2010-04-01/Accounts/AC504e58232220f1698dbf3c55a8ff73jm/Messages.json
+```
+Before we click "Send", we need to make sure we include our auth for Twilio in the "Authorization" in Postman.  We also need to add some variables in the "Variables" tab, specifically `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN`.  We can now use these variables in the authorization tab with {{TWILIO_ACCOUNT_SID}} in the username field and {{TWILIO_AUTH_TOKEN}} in the password field.  Now let's click "Send".  
+
+We should get a response with an array filled out will our previous message body, to/from info, date/time, etc.    
+
+### POST Request on Postman
+Let's create another request within the Twilio collection titled "Create a message".  Remember to put a description with a link to the documentation!  After creating the request, let's open it and change `GET` to `POST` in the dropdown menu.  We will need to look through the documentation on how to implement this request and make it follow the API's rules.  First, ets fill in the URL:
+```
+https://api.twilio.com/2010-04-01/Accounts/{{TWILIO_ACCOUNT_SID}}/Messages.json
+```
+Notice how we used the `{{TWILIO_ACCOUNT_SID}}` instead of the long id from the last request we made.  Now in the Body tab, lets add a `to` key with a value of the number you want to message.  Next, let's create a `body` key with whatever text you want to be sent.  We also need to add a `from` key with our `{{TWILIO_NUMBER}}` (we can add this to the credentials tab).  Now when we click "Send", a message should be sent to the verified number of your choice.  
+
+## Using Helper Libraries (JavaScript)
+In order to avoid writing repitive code, we can use helper libraries or SDKs Software Development Kits).  SDKs are unique to each programming language and help make your code more concise and legible.  
