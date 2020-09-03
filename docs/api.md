@@ -1044,3 +1044,7 @@ Notice how we used the `{{TWILIO_ACCOUNT_SID}}` instead of the long id from the 
 
 ## Using Helper Libraries (JavaScript)
 In order to avoid writing repitive code, we can use helper libraries or SDKs Software Development Kits).  SDKs are unique to each programming language and help make your code more concise and legible.  
+
+We are going to start out by working with [Node](https://nodejs.org/en/).  Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser.  After installing Node, we can open a command prompt and type in the command `node -v` to check what version of Node is loaded.  If an error occurs, Node is not installed properly on your machine.  First, let's create a new directory to work inside with the `mkdir scratch` command.  In that directory let's make a directory called `javascript` with the `mkdir javascript` command.  Lets open this folder in Visual Studio code and create a new file called `explore.js` in the javascript folder.  
+
+
