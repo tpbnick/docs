@@ -91,6 +91,8 @@ nav:
       - Random Problems : sql-random.md
     - 'JavaScript':
       - JavaScript Basics : js.md
+      - Variables and Simple Data Types: js-data-types.md
     - 'Random':
       - API Overview : api.md
+      - Django : django.md
   - About : about.md

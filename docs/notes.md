@@ -31,8 +31,11 @@
 
 ??? tip "JavaScript"
     - [JavaScript Basics](js.md)
+    - [Variables and Simple Data Types](js-data-types.md)
 
 
 ## Random Notes
 
 * [APIs](api.md)
+
+* [Django](django.md)

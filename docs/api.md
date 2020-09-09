@@ -964,11 +964,11 @@ Here we can see information about their top songs, including name, release date,
 Let's try making an API request from our own command line, not a website!  Let's use a different API this time, one from [Twilio](https://www.twilio.com/).  We will be working with the "Programmable Messaging" API.  Let's click on "build" and try sending a message to our phone number from the website.  We can do this by adding whatever we want in the "Body" section and then clicking on "Make Request".  You should now receive a text message with whatever you wrote.  
 
 Let's take this a step further and open a terminal.  Let's make a Python program first to interact with this API and send the message:
-```py
+```py linenums="1"
 from twilio.rest import Client 
  
 account_sid = 'AC504e58232220f1698dbf3c144af87g2z' #these have been changed for security
-auth_token = '261209ecabd9de3cec413a4b458a423zaw' 
+auth_token = '261209ecabd9de3cec413a4b458a423za' 
 client = Client(account_sid, auth_token) 
  
 message = client.messages.create( 
@@ -979,7 +979,7 @@ message = client.messages.create(
 print(message.sid)
 ```
 After running the above Python program, we should get a response like:
-```json
+```json linenums="1"
 {
     "sid": "SM55d7040dd06b4c33a19b38863843acea",
     "date_created": "Wed, 02 Sep 2020 17:41:14 +0000",
@@ -1042,9 +1042,274 @@ https://api.twilio.com/2010-04-01/Accounts/{{TWILIO_ACCOUNT_SID}}/Messages.json
 ```
 Notice how we used the `{{TWILIO_ACCOUNT_SID}}` instead of the long id from the last request we made.  Now in the Body tab, lets add a `to` key with a value of the number you want to message.  Next, let's create a `body` key with whatever text you want to be sent.  We also need to add a `from` key with our `{{TWILIO_NUMBER}}` (we can add this to the credentials tab).  Now when we click "Send", a message should be sent to the verified number of your choice.  
 
-## Using Helper Libraries (JavaScript)
+## Using Helper Libraries in JavaScript
 In order to avoid writing repitive code, we can use helper libraries or SDKs Software Development Kits).  SDKs are unique to each programming language and help make your code more concise and legible.  
 
-We are going to start out by working with [Node](https://nodejs.org/en/).  Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser.  After installing Node, we can open a command prompt and type in the command `node -v` to check what version of Node is loaded.  If an error occurs, Node is not installed properly on your machine.  First, let's create a new directory to work inside with the `mkdir scratch` command.  In that directory let's make a directory called `javascript` with the `mkdir javascript` command.  Lets open this folder in Visual Studio code and create a new file called `explore.js` in the javascript folder.  
+We are going to start out by working with [Node](https://nodejs.org/en/).  Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a web browser.  After installing Node, we can open a command prompt and type in the command `node -v` to check what version of Node is loaded.  If an error occurs, Node is not installed properly on your machine.  First, let's create a new directory to work inside with the `mkdir scratch` command.  In that directory let's make a directory called `javascript` with the `mkdir javascript` command.  Lets open this folder in Visual Studio Code (VS Code) and create a new file called `explore.js` in the javascript folder.  
 
+Let's open the terminal in VS Code and install the twilio library with the following command:
+```
+npm install twilio
+```
+Now that we have downloaded the file, let's write some code in the `explore.js` file we made earlier:
+```js linenums="1"
+const Twilio = require("twilio")
 
+const client = new Twilio("AC504e58232220f1698dbf3c55a8ff73jm", "261209ecabd9de3cec413a4b458a423za");
+```
+The two variables we using in the string are are account SID and Auth Token.  The problem with this is whenever we upload or share this with anyone, our account credentials are right there to be seen.  Later, we will put these into environment variables, but for now, we will stick with this for ease of demonstration.  
+
+The Twilio JS Client works like most JavaScript libraries.  It is asynchronous, and it relies on a concept called **promises**.  The way promises work is that there are set handlers for when a method call completes.  To get our message log, we would use the following method (line 5):
+
+```js linenums="1"
+const Twilio = require("twilio")
+
+const client = new Twilio("AC504e58232220f1698dbf3c55a8ff73jm", "261209ecabd9de3cec413a4b458a423za");
+
+client.messages.list();
+```
+
+The `client.messages.list()` method returns an object called a promise.  It is a promise of a future value, which in this case will be our messages.  Promises have an important method on them, and it's called **then**.  We can chain on a `.then` to the end of the method (this method should also be given a function that accepts a value).
+
+To pass `messages` a function, we use something called a *fat arrow function* (see below).  In the `.then` method, we will put the name of the value (`messages`), because this is what we are expecting to return.  Next we are going to put a fat arrow `=>`, followed by the function body.
+
+??? tip "Fat Arrow Functions"
+	"[Fat arrow functions](https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/#:~:text=Arrow%20functions%20%E2%80%93%20also%20called%20%E2%80%9Cfat,way%20this%20binds%20in%20functions.)" are a more concise syntax for writing function expressions. They utilize a new token, `=>`, that looks like a fat arrow. Arrow functions are anonymous and change the way `this` binds in functions.  By using arrow functions, we avoid having to type the `function` keyword, `return` keyword (it’s implicit in arrow functions), and curly brackets.
+
+Let's simply log out the most recent message.  To do that we add:
+
+```js linenums="1"
+const Twilio = require("twilio")
+
+const client = new Twilio("AC504e58232220f1698dbf3c55a8ff73jm", "261209ecabd9de3cec413a4b458a423za");
+
+client.messages
+	.list()
+	.then(messages => console.log(`The most recent message is: ${messages[0].body}`));
+```
+Finally, we will add a `console.log` to show that this is running asynchronously:
+```js linenums="1"
+const Twilio = require("twilio")
+
+const client = new Twilio("AC504e58232220f1698dbf3c55a8ff73jm", "261209ecabd9de3cec413a4b458a423za");
+
+client.messages
+	.list()
+	.then(messages => console.log(`The most recent message is: ${messages[0].body}`));
+
+console.log('Gathering your message log.');
+```
+Now when we run the following command in a terminal:
+```
+node explore.js
+```
+We should get the following response:
+```
+Gathering your message log.
+The most recent message is: Sent from your Twilio trial account - Hello!
+```
+If your file errored out, you would see the following response:
+```
+Gathering your message log.
+```
+Let's catch any error that may occur and display what the error was:
+```js linenums="1"
+const Twilio = require("twilio")
+
+const client = new Twilio("AC504e58232220f1698dbf3c55a8ff73jm", "261209ecabd9de3cec413a4b458a423za");
+
+client.messages
+	.list()
+	.then(messages => console.log(`The most recent message is: ${messages[0].body}`)
+	).catch(err => console.error(err));
+
+console.log('Gathering your message log.');
+```
+Let's remove one character from our account SID from the code and try running to file again.  We should see the following response:
+```
+Gathering your message log.
+RestException [Error]: The requested resource /2010-04-01/Accounts/AC504e58232220f1698dbf3c1169ef0d8/Messages.json was not found
+    at MessagePage.Page.processResponse (C:\Users\nickp\Desktop\scratch\node_modules\twilio\lib\base\Page.js:156:11)
+    at MessagePage.Page (C:\Users\nickp\Desktop\scratch\node_modules\twilio\lib\base\Page.js:16:22)
+    at new MessagePage (C:\Users\nickp\Desktop\scratch\node_modules\twilio\lib\rest\api\v2010\account\message.js:467:30)
+    at Function.<anonymous> (C:\Users\nickp\Desktop\scratch\node_modules\twilio\lib\rest\api\v2010\account\message.js:360:24)
+    at Promise_then_fulfilled (C:\Users\nickp\Desktop\scratch\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\nickp\Desktop\scratch\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\nickp\Desktop\scratch\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\nickp\Desktop\scratch\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\nickp\Desktop\scratch\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\nickp\Desktop\scratch\node_modules\asap\raw.js:50:29) {
+  status: 404,
+  code: 20404,
+  moreInfo: 'https://www.twilio.com/docs/errors/20404',
+  details: undefined
+}
+```
+## Using Helper Libraries in Python
+In that same scratch directory that we created earlier, let's create a new directory called python.  Next, let's create a file called `explore.py`.  Finally, let's install the Twilio helper library by running the following code:
+```
+pip install twilio
+```
+Now that the Twilio library is installed we can begin working on the `explore.py` file.  Let's print out the messages we have sent out:
+```py linenums="1"
+from twilio.rest import Client
+
+client = Client(
+	"AC504e58232220f1698dbf3c55a8ff73jmv",
+	"261209ecabd9de3cec413a4b458a423za")
+
+for msg in client.messages.list():
+	print(msg.body)
+```
+You should get the following result:
+```
+Sent from your Twilio trial account - Hello!
+Sent from your Twilio trial account - Test 123!
+```
+Let's go a little bit deeper and write some code to actually send a message in Python.  
+
+```py linenums="1"
+from twilio.rest import Client
+
+client = Client(
+	"AC504e58232220f1698dbf3c55a8ff73jmv",
+	"261209ecabd9de3cec413a4b458a423za")
+
+msg = client.messages.create(
+	to="+19091234567",
+	from_="+12057654321",
+	body="hello from Python!"
+	)
+
+print(f"Created a new message: {msg.sid}.")
+```
+After running this, our phone should receive a text message and we will get the following return in the terminal:
+```
+Created a new message: SMb3f7a74a5e754437acf9c7eecfded389.
+```
+Now let's run the get messages code from earlier to see if it shows up!
+```
+Sent from your Twilio trial account - Hello from Python!
+Sent from your Twilio trial account - Hello!
+Sent from your Twilio trial account - Test 123!
+```
+Now let's delete ALL messages that we have sent from our Twilio account.  This is fairly simple code:
+```py linenums="1"
+from twilio.rest import Client
+
+client = Client(
+	"AC504e58232220f1698dbf3c55a8ff73jmv",
+	"261209ecabd9de3cec413a4b458a423za")
+
+for msg in client.messages.list():
+    print(f"Deleting {msg.body}")
+    msg.delete()
+```
+It will now show all the messages it is deleting:
+```
+Deleting Sent from your Twilio trial account - Hello from Python!
+Deleting Sent from your Twilio trial account - Hello!
+Deleting Sent from your Twilio trial account - Test 123!
+```
+These helper libraries are able to extract out the HTTP calls we would have had to code out for us!
+
+## Flask Application Build
+Let's build a simple Complimenter application!  This application will take a name and phone number to compliment and the sender's name and compliment to be sent.  To do this, we are going to use Flask.  Flask is a web framework that provides an API that let's you extend the framework to create your application.  This application is going to be doing server-side rendering, which means that pages will only be created on the server-side and any change/navigation will require a full reload.  We are going to be using [Glitch](https://glitch.com) to provide a free web server for this project.  Let's create an account and click on "New Project" :arrow_right: "Clone Git Repo".  We're going to use the following [repo](https://github.com/craigsdennis/intro-to-apis-flask.git).
+
+If we click on "Tools" :arrow_right: "Log", we will see all logs of setup and a URL to our local server.  If you click on "Show" in the top, we can see a preview of our code!  
+
+We will start with the following code:
+```py linenums="1"
+import os
+
+from dotenv import load_dotenv
+from flask import (
+    Flask,
+    flash, 
+    render_template, 
+    redirect,
+    request,
+    url_for,
+)
+
+from twilio.rest import Client
+
+load_dotenv()
+app = Flask(__name__)
+app.secret_key = "ssssh don't tell anyone"
+
+TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER') #This pulls our phone number from the .env file from the repo.  Make sure to replace the account SID, Auth Token, and Phone number
+
+client = Client()
+
+def get_sent_messages():
+    messages = client.messages.list(from_=TWILIO_PHONE_NUMBER)
+    return messages
+
+def send_message(to, body):
+    client.messages.create(
+    to=to,
+	from_=TWILIO_PHONE_NUMBER,
+	body=body
+	)
+
+@app.route("/", methods=["GET"])
+def index():  
+    messages = get_sent_messages()
+    return render_template("index.html", messages=messages)
+
+@app.route("/add-compliment", methods=["POST"])
+def add_compliment():
+    sender = request.values.get('sender', 'Someone')
+    receiver = request.values.get('receiver', 'Someone')
+    compliment = request.values.get('compliment', 'wonderful')
+    to = request.values.get('to')
+    body = f'{sender} says: {receiver} is {compliment}. See more compliments at {request.url_root}'
+    send_message(to, body)
+    flash('Your message was successfully sent')
+    return redirect(url_for('index'))
+
+if __name__ == '__main__':
+    app.run()
+```
+We used similar code from above sections to both the `get_sent_messages()` and `send_message` functions.
+
+## Dealing with API Limits
+API developers need to consider the possiblity of their APIs being hammered by hundreds of thousands or even millions of requests in a short amount of time.  The web server may not be able to handle these requests and crash.  In order to prevent this, API developers have to code limits or throttle the number of queries possible by each user. 
+
+For example, Twilio limits the numbers you can text to verified numbers (at least in the Trial version).  If we attempt to text a number a message using our Complimentr application that is not verified we will get a long traceback error in the logs.  If we look at these logs, we will see that we receive an `HTTP 400 error: Unable to create record: The number is unverified...`.  Being aware of an API's limits can help you better plan your development.  
+
+## JavaScript Single Page Application
+Now let's try to implement the previous Complimentr application using only JavaScript.  For this, we are going to use a full-stack JavaScript application.  Full-stack means that the server code and front-end application is written in JS.  On the server side, the application uses Node.js and the web framework Express.  On the front-end, we will use the client-side framework Vue.  Let's use the following [repo](https://github.com/tpbnick/jsapp).  
+
+The JS version of the Complimentr app is implemented as a Very Simple Single Page Application (SPA).  This mean that once the page is loaded, the client will be responsible for rendering parts of the page.  We won't need to rely on a full page reload from the server each time something changes.  Let's take a look at `app.js` (the server-side of our application) from the repo.
+```js
+require("dotenv").config();
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
+const port = 3000;
+
+// This is a single page application and it's all rendered in public/index.html
+app.use(express.static("public"));
+// Parse the body of requests automatically
+app.use(bodyParser.json());
+
+app.get("/api/compliments", async (req, res) => {
+  // TODO: Get a list of messages sent from a specific number
+  const sentMessages = [];
+  // TODO: Gather only the body of those messages for sending to the client
+  const compliments = [];
+  res.json(compliments);
+});
+
+app.post("/api/compliments", async (req, res) => {
+  const to = req.body.to;
+  const from = process.env.TWILIO_PHONE_NUMBER;
+  const body = `${req.body.sender} says: ${req.body.receiver} is ${req.body.compliment}. See more compliments at ${req.headers.referer}`;
+  // TODO: Send a message
+  res.json({ success: false });
+});
+
+app.listen(port, () => console.log(`Prototype is listening on port ${port}!`));
+```

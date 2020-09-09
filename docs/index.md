@@ -42,6 +42,10 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
 ??? tip "JavaScript"
     - [JavaScript Basics](js.md)
 
+??? tip "Misc. Notes"
+    - [APIs Overview](api.md)
+    - [Django](django.md)
+
 ??? abstract "C++"
 	- Coming Soon!
 
