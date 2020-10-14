@@ -201,7 +201,7 @@ Python supports the order of operations too, so you can use multiple operations 
 
 Python calls any number with a decimal point a *float*. This term is used in most programming languages (like in [C](https://docs.nicklyss.com/c)), and it refers to the fact that a decimal point can appear at any position in a number.  Every programming language must be carefully designed to properly manage decimal numbers so numbers behave appropriately no matter where the decimal point appears.  
 
-For the most part, you can use decimals without worrying how they behave.  Simply enter the numbers you want to use, and Python will most likely do what you expect:  
+For the most part, you cnas use decimals without worrying how they behave.  Simply enter the numbers you want to use, and Python will most likely do what you expect:  
 
 ```py linenums="1"
 >>> 0.1 + 0.1
