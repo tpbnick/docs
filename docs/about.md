@@ -29,6 +29,8 @@ Below are some keyboards I have built!
 
 	<p class="center">**Custom Acrylic - Gateron Ink Blacks</p>**<img src="https://nicklyss.com/wp-content/uploads/2020/08/acrylic.jpg" style ="border-radius: 10px;">  
 
+	<p class="center">**TX-87 - C³Equalz X TKC Banana Splits</p>**<img src="https://nicklyss.com/media/uploads/2020/12/tx.png" style ="border-radius: 10px;">   
+
 	<p class="center">**Satisfaction 75 - Zealios V2**</p><img src="https://nicklyss.com/wp-content/uploads/2020/08/satisfaction.jpg" style ="border-radius: 10px;">  
 
 	<p class="center">**K75 - Gateron Ink Blacks**</p><img src="https://nicklyss.com/wp-content/uploads/2020/08/k75.jpg" style ="border-radius: 10px;">  
@@ -40,3 +42,4 @@ Nicholas Platt
 nickplatt4@gmail.com  
 (909)224-4200  
 [LinkedIn](https://www.linkedin.com/in/nicholas-platt/)
+

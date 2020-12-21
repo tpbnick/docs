@@ -1,8 +1,8 @@
-# Welcome to Nick's Docs :books:
+# Welcome to Nick's Docs <img class="books" src="https://nicklyss.com/media/uploads/2020/12/books1.png" height="50 !important">
 
 This is a place for documentation examples, programming notes, and projects.  
   
-If you are looking for Nick's Portfolio, please click [here](portfolio.md).
+If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u>.
 
 ## Portfolio Quick Links:
 
@@ -12,7 +12,7 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
 
 ## Programming Notes
 
-??? tip "C"
+??? homepage "C"
     - [C Basics](c.md)
     - [Arrays](c-arrays.md)
     - [Functions](c-functions.md)
@@ -22,7 +22,7 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [Memory](c-memory.md)
     - [Data Structures](c-data-structures.md)
 
-??? tip "Python :snake:"
+??? homepage "Python :snake:"
     - [Python Basics](py.md)
     - [Variables and Simple Data Types](py-data-types.md)
     - [Lists](py-lists.md)
@@ -34,25 +34,25 @@ If you are looking for Nick's Portfolio, please click [here](portfolio.md).
     - [Classes](py-classes.md)
     - [Random Programs](py-random.md)
 
-??? tip "SQL"
+??? homepage "SQL"
     - [SQL Basics](sql.md)
     - [Joins and Other Query Types](sql-joins-and-other-queries.md)
     - [SQL Random Problems](sql-random.md)
 
-??? tip "JavaScript"
+??? homepage "JavaScript"
     - [JavaScript Basics](js.md)
 
-??? tip "Misc. Notes"
+??? homepage "Misc. Notes"
     - [APIs Overview](api.md)
     - [Django](django.md)
 
-??? abstract "C++"
+??? homepage2 "C++"
 	- Coming Soon!
 
-??? abstract "Go"
+??? homepage2 "Go"
 	- Coming Soon!
 
-??? abstract "R"
+??? homepage2 "R"
 	- Coming Soon!
 
 ## Quick Links

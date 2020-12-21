@@ -2,7 +2,7 @@
 
 ## Notes by Language
 
-??? tip "C"
+??? homepage "C"
     - [C Basics](c.md)
     - [Arrays](c-arrays.md)
     - [Functions](c-functions.md)
@@ -12,7 +12,7 @@
     - [Memory](c-memory.md)
     - [Data Structures](c-data-structures.md)
 
-??? tip "Python :snake:"
+??? homepage "Python :snake:"
     - [Python Basics](py.md)
     - [Variables and Simple Data Types](py-data-types.md)
     - [Lists](py-lists.md)
@@ -24,12 +24,12 @@
     - [Classes](py-classes.md)
     - [Random Programs](py-random.md)
 
-??? tip "SQL"
+??? homepage "SQL"
     - [SQL Basics](sql.md)
     - [Joins and Other Query Types](sql-joins-and-other-queries.md)
     - [SQL Random Problems](sql-random.md)
 
-??? tip "JavaScript"
+??? homepage "JavaScript"
     - [JavaScript Basics](js.md)
     - [Variables and Simple Data Types](js-data-types.md)
 
