@@ -70,7 +70,7 @@ In the [memory](c-memory.md) notes, we learned about pointers, `malloc`, and oth
 
 Let's review the following snipped of code:  
 
-```c
+```c linenums="1"
 int main(void)
 {
     int *x;
@@ -232,7 +232,7 @@ In this way, a set of nodes together can be thought of as forming a chain of ele
 
 With a linked list, we can store a list of values that can easily be grown by storing values in different parts of memory:  
 
-![linked-list](https://nicklyss.com/wp-content/uploads/2020/06/linked_list.png)  
+![!linked-list](https://nicklyss.com/wp-content/uploads/2020/06/linked_list.png)  
 
 * This is different than an array since our values are no longer next to one another in memory.  
 
@@ -324,7 +324,7 @@ Unlike with arrays, we no longer randomly access elements in a linked list. For 
 
 In code, we might create our own struct called `node` (like a node from a graph in mathematics), and we need to store both an `int` and a pointer to the next `node` called `next`.  
 
-```c
+```c linenums="1"
 typedef struct node
 {
     int number;
@@ -339,7 +339,7 @@ We can build a linked list in code starting with our struct.  First, we'll want 
 
 To add an element, first we'll need to allocate some memory for a node, and set its values:  
 
-```c
+```c linenums="1"
 node *n = malloc(sizeof(node));
 // We want to make sure malloc succeeded in getting memory for us:
 if (n != NULL)
@@ -355,13 +355,13 @@ if (n != NULL)
 ```  
 Now our list can point to this node: `list = n;`:  
 
-![list-with-one-node](https://nicklyss.com/wp-content/uploads/2020/06/list_with_one_node.png)  
+![!list-with-one-node](https://nicklyss.com/wp-content/uploads/2020/06/list_with_one_node.png)  
 
 To add to our lsit, we'll create a new node the same way, perhaps with the value 4.  But now we need to update the pointer in our first node to point to it.  
 
 since our `list` pointer points only to the first node (and we can't be sure that the list only has one node), we need to "follow the breadcrumbs" and follow each node's next pointer:  
 
-```c
+```c linenums="1"
 // Create temporary pointer to what list is pointing to
 node *tmp = list;
 // As long as the node has a next pointer ...
@@ -375,7 +375,7 @@ while (tmp->next != NULL)
 ```  
 
 If we want to insert a node to the front of our linked list, we would need to carefully update our node to point to the one following it, before updating the list.  Otherwise, we'll lose the rest of our list:  
-```c
+```c linenums="1"
 // Here, we're inserting a node into the front of the list, so we want its
 // next pointer to point to the original list, before pointing the list to
 // n:
@@ -495,7 +495,7 @@ The idea is that we run our data through the hash function, and then store the d
 
 We can implement this in a hash table with an array of 26 pointers, each of which points to a linked list for a letter of the alphabet:  
 
-![hash-table](https://nicklyss.com/wp-content/uploads/2020/06/hash_table.png)  
+![!hash-table](https://nicklyss.com/wp-content/uploads/2020/06/hash_table.png)  
 
 Since we have random access with arrays, we can add elements quickly, and also index quickly into a bucket.  
 
@@ -509,7 +509,7 @@ But in the worst case, all the names might start with the same letter, so we mig
 
 We can use another data structure called a **trie** (prounounced like "try", and is short for "retrieval"):  
 
-![trie](https://nicklyss.com/wp-content/uploads/2020/06/trie.png)  
+![!trie](https://nicklyss.com/wp-content/uploads/2020/06/trie.png)  
 
 Tries combine structures and poiinters together to store data in an interesting way.  The data to be searched for in the trie is now a roadmap.  If you can follow the map from beginning to end, the data exists in the trie, if you can't, it does not exist in the trie.  Unlike with a hash table, there are no collisions, and no two pieces of data (unless they are identical) have the same path.  
 
@@ -519,7 +519,7 @@ Imagine we want to store a dictionary of words efficiently, and be able to acces
 
 A **tree** is another data structure where each node points to two other nodes, one to the left (with a smaller value) and one to the right (with a larger value):  
 
-![binary-search-tree](https://nicklyss.com/wp-content/uploads/2020/06/binary_search_tree.png)  
+![!binary-search-tree](https://nicklyss.com/wp-content/uploads/2020/06/binary_search_tree.png)  
 
 Notice that there are now two dimensions to this data structure, where some nodes are on different "levels" than others.  We can imagine implementing this with a more complex version of a node in a linked list, where each node has not one but two pointers, one to the value in the "middle of the left half" and one to the value in the "middle of the right half".  Note: all elements to the left of the node are smaller and all elements to the right are greater.  
 
@@ -529,7 +529,7 @@ And like a linked list, we'll want to keep a pointer to just the beginning of th
 
 Now, we can easily do binary search, and since each node is pointing to another, we can also insert nodes into the tree without moving all of them around as we would have to do with an array.  Recursively searching this tree would look something like:  
 
-```c
+```c linenums="1"
 typedef struct node
 {
     int number;

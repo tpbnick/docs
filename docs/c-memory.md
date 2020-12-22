@@ -32,7 +32,7 @@ Here, the `F` is a value of 15 in decimal, and each place is a power of 16, so t
 
 Here is a quick chart to compare decimal, hexadecimal, and binary:  
 
-![number table](https://nicklyss.com/wp-content/uploads/2020/05/numbertable.png)
+![!number table](https://nicklyss.com/wp-content/uploads/2020/05/numbertable.png)
 
 The RGB color system also conventionally uses hexadecimal to describe the amount of each color. For example, `000000` in hexadecimal means 0 of each red, green, and blue, for a color of black. And `FF0000` would be 255, or the highest possible, amount of red. With different values for each color, we can represent millions of different colors.  
 
@@ -48,7 +48,7 @@ If we use pointers instead, we have the power to pass the actual variable itself
 
 Let's create a small program that prints out a value of `n`:  
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 int main(void)
@@ -62,7 +62,7 @@ In our computer's memory, there are now 4 bytes somewhere that have the binary v
 
 The bytes for the variable `n` will start at a unique address and may look something like `0x12345678`.  In C, we can actually see the address with the `&` operator, which means "get the address of this variable":  
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 int main(void)
@@ -78,7 +78,7 @@ The address of a variable is called a **pointer**, which we can think of as a va
 
 The `*` is known as the **deference operator**.  It "goes to the reference" and access that data at that location, allowing you to manipulate it at will.
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 int main(void)
@@ -89,7 +89,7 @@ int main(void)
 ```  
 We also have to use the `*` operator (in an unfortunately confusing way) to declare a variable that we want to be a pointer:  
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 int main(void)
@@ -104,13 +104,13 @@ Here, we use int `*p` to declare a variable, `p`, that has the type of `*`, a po
 
 In our computer’s memory, the variables might look like this (each square representing a byte of memory):  
 
-![memory](https://nicklyss.com/wp-content/uploads/2020/05/memory.png)
+![!memory](https://nicklyss.com/wp-content/uploads/2020/05/memory.png)
 
 We have a pointer, `p`, with the address of some variable.  
 
 We can abstract away the actual value of the addresses now, since they’ll be different as we declare variables in our programs, and simply think of `p` as “pointing at” some value:
 
-![pointing](https://nicklyss.com/wp-content/uploads/2020/05/pointing.png)
+![!pointing](https://nicklyss.com/wp-content/uploads/2020/05/pointing.png)
 
 An easier way to look at this is if we have a mailbox labeled "123", with the number "50" inside it.  The mailbox would be `int n`, since it stores an integer. We might have another mailbox with the address “456”, inside of which is the value “123”, which is the address of our other mailbox. This would be `int *p`, since it’s a pointer to an integer.  
 A **pointer**, then, is a data item whose  
@@ -125,17 +125,17 @@ The simplest pointer available to us in C is the NULL pointer.  As you might exp
 
 Let's use a variable `string s` for a name like `EMMA` for an example.  We should be able to access each character in `EMMA` with `s[0] - s[4]`:  
 
-![array](https://nicklyss.com/wp-content/uploads/2020/05/s_array.png)  
+![!array](https://nicklyss.com/wp-content/uploads/2020/05/s_array.png)  
 
 It actually turns out that each character is stored in memory at a byte with some address, and `s` is actually just a pointer with the address of the first character:  
 
-![pointer](https://nicklyss.com/wp-content/uploads/2020/05/s_pointer.png)
+![!pointer](https://nicklyss.com/wp-content/uploads/2020/05/s_pointer.png)
 
 Because `s` is just a pointer to the beginning, only the `\0` indicates the end of the string.  
 
 In fact, the CS50 Library defines a `string` with `typedef char *string`, which just says that we want to name a new type, `string`, as a `char *`, or a pointer to a character.
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 int main(void)
@@ -149,7 +149,7 @@ int main(void)
 
 Let's create a quick program to compare integers:  
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 
@@ -174,7 +174,7 @@ We can compile and run this, and our program works as we’d expect, with the sa
 
 Now let's try the same thing, but using strings instead of integers:  
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 
@@ -199,7 +199,7 @@ If we run the above program we will see that it will give us the result "Differe
 
 Now let's look at how we can copy strings.  Let's make a simple program:  
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -226,7 +226,7 @@ int main(void)
 
 To actually make a copy of a string, we have to do a little more work:
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
@@ -272,7 +272,7 @@ So at the end, we can add a line `free(t)`, which won’t change how our program
 
 Let's look at an example program provided from valgrind's official documentation:  
 
-```c
+```c linenums="1"
 // http://valgrind.org/docs/manual/quick-start.html#quick-start.prepare
 
 #include <stdlib.h>
@@ -300,7 +300,7 @@ We have two colored drinks, purple and green, each of which is in a cup. We want
 
 Now, let’s say we wanted to swap the values of two integers.  
 
-```c
+```c linenums="1"
 void swap(int a, int b)
 {
     int tmp = a;
@@ -313,7 +313,7 @@ void swap(int a, int b)
 
 But, if we tried to use that function in a program, we don’t see any changes:  
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 void swap(int a, int b);
@@ -341,7 +341,7 @@ This does not work because the `swap` function successfully swaps `int a` and `i
 
 Within our computer’s memory, the different types of data that need to be stored for our program are organized into different sections:  
 
-![memory layout](https://nicklyss.com/wp-content/uploads/2020/05/memory_layout.png) 
+![!memory layout](https://nicklyss.com/wp-content/uploads/2020/05/memory_layout.png) 
 
 * The ** *machine code* ** section is our compiled program’s binary code. When we run our program, that code is loaded into the “top” of memory.
 
@@ -350,16 +350,16 @@ Within our computer’s memory, the different types of data that need to be stor
 * The ** *heap* ** section is an empty area where `malloc` can get free memory from, for our program to use.
 
 *  The ** *stack* ** section is used by functions in our program as they are called. For example, our `main` function is at the very bottom of the stack, and has the local variables `x` and `y`. The `swap` function, when it’s called, has its own frame, or slice, of memory that’s on top of `main`’s, with the local variables `a`, `b`, and `tmp`:  
-![stack](https://nicklyss.com/wp-content/uploads/2020/05/stack.png)  
+![!stack](https://nicklyss.com/wp-content/uploads/2020/05/stack.png)  
 
 * Once the function `swap` returns, the memory it was using is freed for the next function call, and we lose anything we did, other than the return values, and our program goes back to the function that called `swap`.  
 
 * So by passing in the addresses of `x` and `y` from `main` to `swap`, we can actually change the values of `x` and `y`:  
-![pointers](https://nicklyss.com/wp-content/uploads/2020/05/pointers.png)  
+![!pointers](https://nicklyss.com/wp-content/uploads/2020/05/pointers.png)  
 
 By passing in the address of `x` and `y`, our `swap` function from above can actually work:  
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 void swap(int *a, int *b); // we use * throughout to point to the real integer, not the copy
@@ -390,7 +390,7 @@ If we call `malloc` too many times, we will have a **heap overflow**, where we e
 
 We can implement `get_int` ourselve with a C library function, `scanf`:  
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 int main(void)
@@ -406,7 +406,7 @@ int main(void)
 
 We can try to get a string the same way:  
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 int main(void)
@@ -444,7 +444,7 @@ Some of the most common file input/output (I/O) functions that we will be workin
 
 With the ability to use pointers, we can also open files:  
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -478,7 +478,7 @@ Now we can create our own CSV files, files of comma-separated values (like a min
 
 We can also write a program that opens a file and tells us if it’s a JPEG (image) file:
 
-```c
+```c linenums="1"
 #include <stdio.h>
 
 int main(int argc, char *argv[])

@@ -49,7 +49,7 @@ Else if 50 > middle item
 
 Computer scientists have created a way to describe algorithms (how well it is designed), and it's generally called **big O**.  
 
-![Running Time](https://nicklyss.com/wp-content/uploads/2020/05/running_time.png)  
+![!Running Time](https://nicklyss.com/wp-content/uploads/2020/05/running_time.png)  
 
 The more formal way to describe this is with big O notation, which we can think of as “on the order of”. For example, if our algorithm is linear search, it will take approximately O(*n*) steps, “on the order of *n*”. In fact, even an algorithm that looks at two items at a time and takes *n*/2 steps has O(*n*). This is because, as n gets bigger and bigger, only the largest term, *n*, matters.  
 
@@ -79,7 +79,7 @@ And we have a similar set of the most common big Ω running times:
 
 Now let's create a program to better visualize a lienar search:  
 
-``` c
+``` c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 
@@ -105,7 +105,7 @@ And in each case, depending on whether the value was found or not, we can return
 
 We can do the same for names:  
 
-``` c
+``` c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -131,7 +131,7 @@ We can’t compare strings directly, since they’re not a simple data type but 
 
 Now lets implement a phone book with the same ideas:  
 
-``` c
+``` c linenums="1"
 #include <stdio.h>
 #include <string.h>
 
@@ -160,7 +160,7 @@ Let's improve the above code using our own custom data type!
 
 We can make our own custom data types called **structs**: 
 
-``` c
+``` c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -431,7 +431,7 @@ Every recursive function has two cases that could apply, given any input:
 
 We can see this in the following code:  
 
-```c
+```c linenums="1"
 //recursive version
 int fact(int n)
 {
@@ -450,7 +450,7 @@ int fact(int n)
 In general, but not always, recursive functions replace loops in non-recursive functions:  
 
 Below is the iterative version of the same code above (notice how much simpler the recursive version is).
-```c
+```c linenums="1"
 //iterative version
 int fact2(int n)
 {
@@ -474,7 +474,7 @@ In week 1, we [implemented a “pyramid” of blocks in the following shape](htt
 ```  
 
 This was the code we created for that problem set:  
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 
@@ -509,7 +509,7 @@ But notice that a pyramid of height 4 is actually a pyramid of height 3, with an
 
 With this idea in mind, we can write:  
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 

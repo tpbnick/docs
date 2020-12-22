@@ -29,14 +29,14 @@ markdown_extensions:
   - codehilite:
       guess_lang: false
       linenums: true
-  - pymdownx.inlinehilite:
+  - pymdownx.inlinehilite
   - pymdownx.superfences:
   - admonition
+  - lightgallery
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols

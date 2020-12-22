@@ -24,7 +24,7 @@ Perhaps the simplest way to hold an election, though, is via a method commonly k
 
 We are going to take the following code and complete the `vote` and `print_winner` functions:  
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -107,7 +107,7 @@ void print_winner(void)
 
 We can make up the following code for the `vote` and `print_winner` functions that solves the problem:  
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -245,7 +245,7 @@ One such ranked choice voting system is the instant runoff system. In an instant
 
 Let's look at the following code and see how we can implement this type of voting system.  We will need to fill in the correct code for the following functions: `vote`, `tabulate`, `print_winner`, `find_min`, `is_tie`, and `eliminate`.  
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 
@@ -483,7 +483,7 @@ Alice
 
 The correct code looks as follows:  
 
-```c
+```c linenums="1"
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
