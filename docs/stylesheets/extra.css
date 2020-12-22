@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --md-default-fg-color: #2E3440;
     --md-default-fg-color--light: hsla(0, 0%, 0%, 0.54);

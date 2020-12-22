@@ -171,7 +171,7 @@ Tabs and indentation actually matter in this language, and things will not work 
 ## First Program  
 
 ```py linenums="1"
-print("Hello Puthon World!")
+print("Hello Python World!")
 ```  
 
 If you compare this to C's [first code](https://docs.nicklyss.com/c#first-code), you will notice that we no longer need to create a `main` function or import the `<stdio.h>` library.  
