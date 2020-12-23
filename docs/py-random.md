@@ -12,7 +12,7 @@ Change owed: 0.41
 
 We will first ask a user how much changed they are owed and then tell them the minimum number of coins (.25, .10, .05, and .01) with which said change can be made.  
 
-We will utilized `get_float` from the CS50 library to get the user's input and `print` to output the answer.  
+We will utilized `get_float` from the CS50 library to get the user's input and `#!py print()` to output the answer.  
 
 Remember, if the user provides a non-negative value, our program should reprompt the user for a valid amount again and again until the user complies.  
 

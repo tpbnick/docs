@@ -376,7 +376,7 @@ The code works as the following:
   
 int main(void)
 { 
-	loat dollars;
+	float dollars;
       
 	do
 	{

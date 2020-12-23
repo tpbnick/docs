@@ -11,16 +11,16 @@ def greet_user():
 	print("Hello!")
 greet_user()
 ```
-This example shows the simplest structure of a function.  The code on line 1 uses the keyword `def` to inform Python that you're defining a function.  This is the *function definition*, which tells Python the name of the function and, if applicable, what kind of information the function needs to do its job.  The parentheses hold that information.  In this case, the name of the function is `greet_user()`, and it needs no information to do its job, so its parentheses are empty.  (Even so, the parentheses are required.)  Finally, the definition ends in a colon.  
+This example shows the simplest structure of a function.  The code on line 1 uses the keyword `#!py def` to inform Python that you're defining a function.  This is the *function definition*, which tells Python the name of the function and, if applicable, what kind of information the function needs to do its job.  The parentheses hold that information.  In this case, the name of the function is `greet_user()`, and it needs no information to do its job, so its parentheses are empty.  (Even so, the parentheses are required.)  Finally, the definition ends in a colon.  
 
-An indented lines that follow `def greet_user():` make up the *body* of the function.  The text on line 2 is a comment called a *docstring*, which describes what the function does.  Docstrings are enclosed in triple quotes, which Python looks for when it generates documentaion for the functions in your programs.  
+An indented lines that follow `#!py def greet_user():` make up the *body* of the function.  The text on line 2 is a comment called a *docstring*, which describes what the function does.  Docstrings are enclosed in triple quotes, which Python looks for when it generates documentaion for the functions in your programs.  
 
-The line `print("Hello!")` on line 3 is the only line of actual code in the body of this function, so `greet_user()` has just one job: `print("Hello!")`.  
+The line `#!py print("Hello!")` on line 3 is the only line of actual code in the body of this function, so `greet_user()` has just one job: `#!py print("Hello!")`.  
 
 When you want to use this function, you call it.  A *function call* tells Python to execute the code in the function.  To *call* a function, you write the name of the function, followed by any necessary information in parentheses, as shown on line 4.  Because no information is needed here, calling our function is as simple as entering `greet_user()`.  As expected, it prints `Hello!`.
 
 ### Passing Information to a Function
-Modified slightly, the function `greet_user()` can not only tell the user `Hello!` but also greet them by name.  For the function to do this, you enter `username` in the parentheses of the function's definition at `def greet_user()`.  By adding `username` here you allow the function to accept any value of `username` you specify.  The function now expects you to provide a value for `username` each time you call it.  When you call `greet_user()`, you can pass it a name, such as `'jesse'`, inside the parentheses:
+Modified slightly, the function `greet_user()` can not only tell the user `Hello!` but also greet them by name.  For the function to do this, you enter `username` in the parentheses of the function's definition at `#!py def greet_user()`.  By adding `username` here you allow the function to accept any value of `username` you specify.  The function now expects you to provide a value for `username` each time you call it.  When you call `greet_user()`, you can pass it a name, such as `#!py 'jesse'`, inside the parentheses:
 ```py linenums="1"
 def greet_user(username):
 	"""Display a simple greeting."""
@@ -28,14 +28,14 @@ def greet_user(username):
 
 greet_user('jesse')
 ```
-Entering `greet_user('jesse')` calls `greet_user()` and give the function the information it needs to execute the `print()` call.  The function acceptsthe name you passed it and displays the greeting for that name:
+Entering `#!py greet_user('jesse')` calls `#!py greet_user()` and give the function the information it needs to execute the `#!py print()` call.  The function acceptsthe name you passed it and displays the greeting for that name:
 ```
 Hello, Jesse!
 ```
 ### Arguments and Parameters
 In the preceding `greet_user()` function, we defined `greet_user()` to require a value for the variable `username`.  Once we called the function and gave it the information (a person's name), it printed the right greeting.  
 
-The variable `username` in the definition of `greet_user()` is an example of a *parameter*, a piece of information the function needs to do its job.  The value `'jesse'` is `greet_user('jesse')` is an example of an *argument*.  An argument is a piece of information that's passed from a function call to a function.  When we call the function, we place the value we want the function to work with in the parenthese.  In this case the argument `'jesse'` was passed to the function `greet_user()`, and the value was assigned to the parameter `username`.  
+The variable `username` in the definition of `greet_user()` is an example of a *parameter*, a piece of information the function needs to do its job.  The value `#!py 'jesse'` is `#!py reet_user('jesse')` is an example of an *argument*.  An argument is a piece of information that's passed from a function call to a function.  When we call the function, we place the value we want the function to work with in the parenthese.  In this case the argument `#!py 'jesse'` was passed to the function `greet_user()`, and the value was assigned to the parameter `username`.  
 
 ## Passing Arguments
 Because a function definition can have multiple parameters, a function call may need multiple arguments.  You can pass arguments to your functions in a number of ways.  You can use [*positional arguments*](https://docs.nicklyss.com/py-functions/#positional-arguements), which need to be in the same order as the parameters were written; *keyword arguements*, where each argument consists of a variable name and a value; and lists and dictionaries of values.  
@@ -52,7 +52,7 @@ def describe_pet(animal_type, pet_name):
 
 describe_pet('hamster', 'harry')
 ```
-The definition shows that this function needs a type of animal and the animal's name (line 1).  When we call `describe_pet()`, we need to provide an animal type and a name, in that order.  For example, in the function call, the argument `'hamster'` is assigned to the parameter `animal_type` and the argument `'harry'` is assigned to the parameter `pet_name` (line 6).  In the function body, these two parameters are used to display information about the pet being described.  
+The definition shows that this function needs a type of animal and the animal's name (line 1).  When we call `describe_pet()`, we need to provide an animal type and a name, in that order.  For example, in the function call, the argument `#!py 'hamster'` is assigned to the parameter `animal_type` and the argument `#!py 'harry'` is assigned to the parameter `pet_name` (line 6).  In the function body, these two parameters are used to display information about the pet being described.  
 
 The output describes a hamster named Harry:
 ```
@@ -70,7 +70,7 @@ def describe_pet(animal_type, pet_name):
 describe_pet('hamster', 'harry')
 describe_pet('dog', 'willie')
 ```
-The only change above was to line 7.  In the second function call, we pass `describe_pet()` the arguments `'dog'` and `'willie'`.  As with the previous set of arguments we used, Python matches `'dog'` with the parameter `animal_type` and `'willie'` with the parameter `pet_name`.  As before, the function does its job, but this time it also prints the values for a Dog named Willie:
+The only change above was to line 7.  In the second function call, we pass `describe_pet()` the arguments `#!py 'dog'` and `#!py 'willie'`.  As with the previous set of arguments we used, Python matches `#!py 'dog'` with the parameter `animal_type` and `#!py 'willie'` with the parameter `pet_name`.  As before, the function does its job, but this time it also prints the values for a Dog named Willie:
 ```
 I have a hamster.
 My hamster's name is Harry.
@@ -92,7 +92,7 @@ def describe_pet(animal_type, pet_name):
 
 describe_pet('harry', 'hamster')
 ```
-In the above function, we list the name first and the type of animal second.  Because the argument `'harry'` is listed first this time, that value is assigned to the parameter `animal_type`.  Likewise, `'hamster'` is assigned to `pet_name`.  Now we have a "harry" named "Hamster":
+In the above function, we list the name first and the type of animal second.  Because the argument `#!py 'harry'` is listed first this time, that value is assigned to the parameter `animal_type`.  Likewise, `#!py 'hamster'` is assigned to `pet_name`.  Now we have a "harry" named "Hamster":
 ```
 I have a harry.
 My harry's name is Hamster.
@@ -111,7 +111,7 @@ def describe_pet(animal_type, pet_name):
 
 describe_pet(animal_type='hamster', pet_name='harry')
 ```
-The function `describe_pet()` hasn't changed, but when we call the function, we explicitly tell Python which parameter each argument should be matched with.  When Python reads the function call, it knows to assign the argument `'hamster'` to the parameter `animal_type` and the argument `'harry'` to `pet_name`.  The output correctly shows that we have a hamster named Harry.  
+The function `describe_pet()` hasn't changed, but when we call the function, we explicitly tell Python which parameter each argument should be matched with.  When Python reads the function call, it knows to assign the argument `#!py 'hamster'` to the parameter `animal_type` and the argument `#!py 'harry'` to `pet_name`.  The output correctly shows that we have a hamster named Harry.  
 
 The order of keyword arguments doesn't matter because Python knows where each value should go.  The following two function calls are equivalent:  
 ```py linenums="1"
@@ -121,7 +121,7 @@ describe_pet(pet_name='harry', animal_type='hamster')
 ### Default Values
 When writing a function, you can define a *default value* for each parameter.  If an argument for a parameter is proivided in the function call, Python uses the argument value.  If not, it uses the parameter's default value.  So when you define a default value for a parameter, you can exclude the corresponding argument you'd usually write in the function call.  Using default values can simplify your function calls and clarify the ways in which your functions are typically used.  
 
-For example, if you notice that most of the calls to `describe_pet()` are being used to describe dogs, you can set the default value of `animal_type` to `'dog'`.  Now anyone calling `describe_pet()` for a dog can omit that information:  
+For example, if you notice that most of the calls to `describe_pet()` are being used to describe dogs, you can set the default value of `animal_type` to `#!py 'dog'`.  Now anyone calling `describe_pet()` for a dog can omit that information:  
 ```py linenums="1"
 def describe_pet(pet_name, animal_type='dog'):
 	"""Display information about a pet."""
@@ -130,7 +130,7 @@ def describe_pet(pet_name, animal_type='dog'):
 
 describe_pet(pet_name='willie')
 ```
-We changed the definition of `describe_pet()` to include a default value, `'dog'`, for `animal_type`.  Now when the function is called with no `animal_type` specified, Python knows to use the value `'dog'` for this parameter:  
+We changed the definition of `describe_pet()` to include a default value, `#!py 'dog'`, for `animal_type`.  Now when the function is called with no `animal_type` specified, Python knows to use the value `#!py 'dog'` for this parameter:  
 ```
 I have a dog.
 My dog's name is Willie.
@@ -141,7 +141,7 @@ The simplest way to use this function now is to provide just a dog's name in the
 ```py
 describe_pet('willie')
 ```
-This function call would have the same output as the previous example.  The only argument provided is `'willie'`, so it is matched up with the first parameter in the definition, `pet_name`.  Because no argument is provided for `animal_type`, Python uses the default value `'dog'`.  
+This function call would have the same output as the previous example.  The only argument provided is `#!py 'willie'`, so it is matched up with the first parameter in the definition, `pet_name`.  Because no argument is provided for `animal_type`, Python uses the default value `#!py 'dog'`.  
 
 To describe an animal other than a dog, you could use a function call like this:  
 ```py
@@ -259,7 +259,7 @@ print(musician)
 ```
 In this example, the name is built from three possible parts.  Because there's always a first and last name, these parameters are listed first in the function's definition.  The middle name is optional, so it's listed last in the definition, and its default value is an empty string (line 1).  
 
-In the body of the function, we check to see if a middle name has been provided.  Python interprets non-empty strings as `True`, so `if middle_name` evaluates to `True` if a middle name argument is in the function call (line 3).  If a middle name is provided, the first, middle, and last names are combined to form a full name.  This name is then changed to title case and returned to the function call line where it's assigned to the variable `musician` and printed.  If no middle name is provided, the empty string fails the `if` test and the `else` block runs (line 5).  The full name is made with just a dirst and last name, and the formatted name is returned to the calling line where it's assigned to `musician` and printed.  
+In the body of the function, we check to see if a middle name has been provided.  Python interprets non-empty strings as `True`, so `#!py if middle_name` evaluates to `True` if a middle name argument is in the function call (line 3).  If a middle name is provided, the first, middle, and last names are combined to form a full name.  This name is then changed to title case and returned to the function call line where it's assigned to the variable `musician` and printed.  If no middle name is provided, the empty string fails the `if` test and the `else` block runs (line 5).  The full name is made with just a dirst and last name, and the formatted name is returned to the calling line where it's assigned to `musician` and printed.  
 
 Calling this function with a first and last name is straightforward.  If we're using a middle name, however, we have to make sure the middle name is the last argument passed so Python will match up the positional arguments correctly (line 12).  
 
@@ -281,11 +281,11 @@ def build_person(first_name, last_name):
 musician = build_person('jimi', 'hendrix')
 print(musician)
 ```
-The function `build_person()` takes in a first and last name, and puts these values into a dictionary (line 3).  The value of `first_name` is stored with the key `'first'`, and the value of `last_name` is stored with the key `'last'`.  The entire dictionary representing the person is returned at line 4.  The return value is printed on the final line with the original two pieces of textual information now stored in a dictionary:  
+The function `build_person()` takes in a first and last name, and puts these values into a dictionary (line 3).  The value of `first_name` is stored with the key `#!py 'first'`, and the value of `last_name` is stored with the key `#!py 'last'`.  The entire dictionary representing the person is returned at line 4.  The return value is printed on the final line with the original two pieces of textual information now stored in a dictionary:  
 ```
 {'first': 'jimi', 'last': 'hendrix'}
 ```
-This function takes in a simple textual information and puts it into a more meaningful data structure that lets you work with the information beyond just printing it.  The strings `'jimi'` and `'hendrix'` are now labeled as a first name and last name.  You can easily extend this function to accept optional values like a middle name, an age, an occupation, or any other information you want to store about a person.  For example, the following change allows you to store a person's age as well:  
+This function takes in a simple textual information and puts it into a more meaningful data structure that lets you work with the information beyond just printing it.  The strings `#!py 'jimi'` and `#!py 'hendrix'` are now labeled as a first name and last name.  You can easily extend this function to accept optional values like a middle name, an age, an occupation, or any other information you want to store about a person.  For example, the following change allows you to store a person's age as well:  
 ```py linenums="1"
 def build_person(first_name, last_name, age=None):
 	"""Return a dictionary of information about a person."""
@@ -297,10 +297,10 @@ def build_person(first_name, last_name, age=None):
 musician = build_person('jimi', 'hendrix', age=27)
 print(musician)
 ```
-We add a new optional parameter `age` to the function definition and assign the parameter the special value `None`, which is used when a variable has no specific value assigned to it.  You can think of `None` as a placeholder value.  In conditional tests, `None` evaluates to `False`.  If the function call includes a value fo `age`, that value is stored in the dictionary.  This function always stores a person's name, but it can also be modified to store any other information you want about a person.  
+We add a new optional parameter `age` to the function definition and assign the parameter the special value `None`, which is used when a variable has no specific value assigned to it.  You can think of `#!py None` as a placeholder value.  In conditional tests, `#!py None` evaluates to `False`.  If the function call includes a value fo `age`, that value is stored in the dictionary.  This function always stores a person's name, but it can also be modified to store any other information you want about a person.  
 
-### Using a Function with a `while` Loop
-You can use functions with all the Python structures you've learned about so far.  For example, let's use the `get_formatted_name()` function with a `while` loop to greet users more formally.  Here's a first attempt at greeting people using their first and last names: 
+### Using a Function with a `#!py while` Loop
+You can use functions with all the Python structures you've learned about so far.  For example, let's use the `get_formatted_name()` function with a `#!py while` loop to greet users more formally.  Here's a first attempt at greeting people using their first and last names: 
 ```py linenums="1"
 def get_formatted_name(first_name, last_name):
 	"""Return a full name, neatly formatted."""
@@ -316,9 +316,9 @@ while True:
 	formatted_name = get_formatted_name(f_name, l_name)
 	print(f"\nHello, {formatted_name}!")
 ``` 
-For this example, we use a simple version of `get_formatted_name()` that doesn't involve middle names.  The `while` loop asks the user to enter their name, and we prompt for their first and last name separately (line 8).  
+For this example, we use a simple version of `get_formatted_name()` that doesn't involve middle names.  The `#!py while` loop asks the user to enter their name, and we prompt for their first and last name separately (line 8).  
 
-But there's one problem with this `while` loop: We haven't defined a quit condition.  Where do you put a quit condition when you ask for a series of input?  We want the user to be able to quit as easily as possible, so each prompt should offer a way to quit.  The `break` statement offers a straightforward way to exit the loop at either prompt: 
+But there's one problem with this `#!py while` loop: We haven't defined a quit condition.  Where do you put a quit condition when you ask for a series of input?  We want the user to be able to quit as easily as possible, so each prompt should offer a way to quit.  The `#!py break` statement offers a straightforward way to exit the loop at either prompt: 
 ```py linenums="1"
 def get_formatted_name(first_name, last_name):
 	"""Return a full name, neatly formatted."""
@@ -340,7 +340,7 @@ while True:
 	formatted_name = get_formatted_name(f_name, l_name)
 	print(f"\nHello, {formatted_name}!")
 ```
-We add a message that informs the user how to quit, and then we break out of the loop if the user enters the quit value at either prompt.  Now the program will continue greeting people until someone enters `'q'` for either name:
+We add a message that informs the user how to quit, and then we break out of the loop if the user enters the quit value at either prompt.  Now the program will continue greeting people until someone enters `#!py 'q'` for either name:
 ```
 Please tell me your name:
 (enter 'q' at any time to quit)
@@ -474,7 +474,7 @@ def make_pizza(*toppings):
 make_pizza('pepperoni')
 make_pizza('mushrooms', 'green peppers', 'extra cheese')
 ```
-The asterisk (`*`) in the parameter name `*toppings` tells Python to make an empty tuple called `toppings` and pack whatever values it receives into this tuple.  The `print()` call in the function body produces output showing that Python can handle a function call with one value and a call with three values.  It treats the different calls similarly.  Note that Python packs the arguments into a tuple, even if the function receives only one value:
+The asterisk (`*`) in the parameter name `*toppings` tells Python to make an empty tuple called `toppings` and pack whatever values it receives into this tuple.  The `#!py print()` call in the function body produces output showing that Python can handle a function call with one value and a call with three values.  It treats the different calls similarly.  Note that Python packs the arguments into a tuple, even if the function receives only one value:
 ```
 ('pepperoni',)
 ('mushrooms', 'green peppers', 'extra cheese')
@@ -540,11 +540,11 @@ def build_profile(first, last, **user_info):
 user_profile = build_profile('albert', 'einstein', location='princeton', field='physics')
 print(user_profile)
 ```
-The definition of `build_profile()` expects a first and last name, and then it allows the user to pass in as many name-value pairs as they want.  The double asterisks (`**`) before the parameter `**user_info` cause Python to create an empty dictionary called `user_info` and pack whatever name-value pairs it receives into this dictionary.  Within the function, you can access the key-value pairs in `user_info` just as you would for any dictionary.  
+The definition of `build_profile()` expects a first and last name, and then it allows the user to pass in as many name-value pairs as they want.  The double asterisks (`#!py **`) before the parameter `**user_info` cause Python to create an empty dictionary called `user_info` and pack whatever name-value pairs it receives into this dictionary.  Within the function, you can access the key-value pairs in `user_info` just as you would for any dictionary.  
 
 In the body of `build_profile()`, we add the first and last names to the `user_info` dictionary because we'll always receive these two pieces of information from the user (line 3/4), and they haven't been placed into the dictionary yet.  Then we return the `user_info` dictionary to the function call line.  
 
-We call `build_profile()`, passing it the first name `'albert'`, the last name `'einstein'`, and the two key-value pairs `location='princeton'` and `field='physics'`.  We assign the returned `profile` to `user_profile` and print `user_profile`:
+We call `build_profile()`, passing it the first name `#!py 'albert'`, the last name `#!py 'einstein'`, and the two key-value pairs `#!py location='princeton'` and `#!py field='physics'`.  We assign the returned `profile` to `user_profile` and print `user_profile`:
 ```
 {'location': 'princeton', 'field': 'physics', 'first_name': 'albert', 'last_name': 'einstein'}
 ```
@@ -553,7 +553,7 @@ The returned dictionary contains the user's first and last names and, in this ca
 You can mix positional, keyword, and arbitrary values in many different ways when writing your own functions.  It's useful to know that all these argument types exist because you'll see them often when you start reading other people's code.  It takes practice to learn to use the different types correctly and to know when to use each type.  
 
 ## Storing Your Functions in Modules
-One advantage of functions is the way they separate blocks of code from your main program.  By using descriptive names for your functions, your program will be much easier to follow.  You can go a step further by storing your function in a separate file called a *module* and then *importing* that module into your main program.  An `import` statement tells Python to make the code in a module available in the currently running program file.  
+One advantage of functions is the way they separate blocks of code from your main program.  By using descriptive names for your functions, your program will be much easier to follow.  You can go a step further by storing your function in a separate file called a *module* and then *importing* that module into your main program.  An `#!py import` statement tells Python to make the code in a module available in the currently running program file.  
 
 Storing your functions in a separate file allows you to hide the details of your program's code and focus on its higher-level logic.  It also allows you to reuse functions in many different programs.  When you store your functions in separate files, you can share those files with other programmers without having to share your entire program.  Knowing how to import functions also allows you to use libraries of functions that other programmers have written.  
 
@@ -579,7 +579,7 @@ import pizza
 pizza.make_pizza(16, 'pepperoni')
 pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 ```
-When Python reads this file, the line `import pizza` tells Python to open the file `pizza.py` and copy all the functions from it into this program.  You don't actually see code being copied between files because Python copies the code behind the scenes just before the program runs.  All you need to know is that any function defined in `pizza.py` will now be available in `making_pizzas.py`.  
+When Python reads this file, the line `#!py import pizza` tells Python to open the file `pizza.py` and copy all the functions from it into this program.  You don't actually see code being copied between files because Python copies the code behind the scenes just before the program runs.  All you need to know is that any function defined in `pizza.py` will now be available in `making_pizzas.py`.  
 
 To call a function from an imported module, enter the name of the module you imported, `pizza`, followed by the name of the function, `make_pizza()`, separated by a dot (line 3).  This code produces the same output as the original program that didn't import a module:
 ```
@@ -611,19 +611,19 @@ from pizza import make_pizza
 make_pizza(16, 'pepperoni')
 make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 ```
-With this syntax, you don't need to use the dot notation when you call a function.  Because we've explicitly imported the function `make_pizza()` in the `import` statement, we can call it by name when we use the function.  
+With this syntax, you don't need to use the dot notation when you call a function.  Because we've explicitly imported the function `make_pizza()` in the `#!py import` statement, we can call it by name when we use the function.  
 
-### Using `as` to Give a Function an Alias
+### Using `#!py as` to Give a Function an Alias
 If the name of a function you're importing might conflict with an existing name in your program or if the function name is long, you can use a short, unique *alias* - an alternate name similar to a nickname for a function.  You'll give the function this special nickname when you import the function.  
 
-Here we give the function `make_pizza()` an alias, `mp()` by importing `make_pizza` as `mp`.  The `as` keyword renames a function using the alias you provide:
+Here we give the function `make_pizza()` an alias, `mp()` by importing `make_pizza` as `mp`.  The `#!py as` keyword renames a function using the alias you provide:
 ```py linenums="1"
 from pizza import make_pizza as mp
 
 mp(16, 'pepperoni')
 mp(12, 'mushrooms', 'green peppers', 'extra cheese')
 ```
-The `import` statement shown here renames the function `make_pizza()` to `mp()` in this program.  Any time we want to call `make_pizza()` we can simply write `mp()` instead, and Python will run the code in `make_pizza()` while avoiding any confusion with another `make_pizza()` function you might have written in this program file.  
+The `#!py import` statement shown here renames the function `make_pizza()` to `mp()` in this program.  Any time we want to call `make_pizza()` we can simply write `mp()` instead, and Python will run the code in `make_pizza()` while avoiding any confusion with another `make_pizza()` function you might have written in this program file.  
 
 The general syntax for providing an alias is:
 ```py
@@ -637,9 +637,9 @@ from pizza import *
 make_pizza(16, 'pepperoni')
 make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 ```
-The asterisk in the `import` statement tells Python to copy every function from the module `pizza` (`pizza.py`) into this program file.  Because every function is imported, you can call each function by name without using the dot notation.  However, it is best not to use this approach when you're working with larger modules that you didn't write: if the module has a function name that matches an existing name in your project, you can get some unexpected results.  Python may see several functions or variables with the same name, and instead of importing all the functions separately, it will overwrite the functions.  
+The asterisk in the `#!py import` statement tells Python to copy every function from the module `pizza` (`pizza.py`) into this program file.  Because every function is imported, you can call each function by name without using the dot notation.  However, it is best not to use this approach when you're working with larger modules that you didn't write: if the module has a function name that matches an existing name in your project, you can get some unexpected results.  Python may see several functions or variables with the same name, and instead of importing all the functions separately, it will overwrite the functions.  
 
-The best approach is to import the function or functions you want, or import the entire module and use the dot notation.  This leads to clear code that's easy to read and understand.  I include this section so you'll recognize `import` statements like the following when you see them in other people's code:
+The best approach is to import the function or functions you want, or import the entire module and use the dot notation.  This leads to clear code that's easy to read and understand.  I include this section so you'll recognize `#!py import` statements like the following when you see them in other people's code:
 ```py
 from module_name import *
 ```
@@ -667,4 +667,4 @@ def function_name(
 ```
 If your program or module has more than one function, you can separate each by two blank lines to make it easier to see where one function ends and the next one begins.  
 
-All `import` statements should be written at the beginning of a file.  The only exception is if you use comments at the beginning of your file to describe the overall program.  
+All `#!py import` statements should be written at the beginning of a file.  The only exception is if you use comments at the beginning of your file to describe the overall program.  

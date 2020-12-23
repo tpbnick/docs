@@ -10,7 +10,7 @@ Understanding object-oriented programming will help us see the world as a progra
 You can model almost anything using classes.  Let's start by writing a simple class, `Dog`, that represents a dog - not one dog in particular, but any dog.  What do we know about pet dogs?  Well, they all have a name and age.  We also know that most dogs sit and roll over.  Those two pieces of information (name and age) and those two behaviors (sit and roll over) will go in our `Dog` class because they're common to most dogs. This class will tell Python how to make an object representing a dog.  After our class is written, we'll use  it to make individual instances, each of which represent one specific dog.  
 
 ### Creating the Dog Class
-Each instance created from the `Dog` class will store a `name` and an `age`, and we'll give each dog the ability to `sit()` and `roll_over()`:
+Each instance created from the `Dog` class will store a `name` and an `age`, and we'll give each dog the ability to `#!py sit()` and `#!py roll_over()`:
 ```py linenums="1"
 class Dog:
 	"""A simple attempt to model a dog."""
@@ -31,11 +31,11 @@ class Dog:
 There's a lot to notice here, but don't worry.  You'll see this structure throughout this page and have lot's of time to get used to it.  On line 1, we define a classed called `Dog`.  By convention, capitalized names refer to classes in Python.  There are no parenthesis in the class deinition because we're creating this class from scratch.  On line 2, we write a docstring describing what this class does.  
 
 #### The `__init__()` Method
-A function that's part of a class is a *method*.  Everything you learned about [functions](py-functions.md) applies to methods as well; the only practical difference for now is the way we'll call methods.  The `__init__()` method on line 4 is a special method that Python runs automatically whenever we create a new instance based on the `Dog` class.  This method has two leading underscores and two trailing underscores, a convention that helps prevent Python's default method names from conflicting with your method names.  Make sure to use two underscores on each side of `__init__()`.  If you use just one on each side, the method won't be called automatically when you use your class, which can result in errors that are difficult to identify.  
+A function that's part of a class is a *method*.  Everything you learned about [functions](py-functions.md) applies to methods as well; the only practical difference for now is the way we'll call methods.  The `#!py __init__()` method on line 4 is a special method that Python runs automatically whenever we create a new instance based on the `Dog` class.  This method has two leading underscores and two trailing underscores, a convention that helps prevent Python's default method names from conflicting with your method names.  Make sure to use two underscores on each side of `#!py __init__()`.  If you use just one on each side, the method won't be called automatically when you use your class, which can result in errors that are difficult to identify.  
 
 We define the `__init__()` method to have three parameters: `self`, `name`, and `age`.  The `self` parameter is required in the method definition, and it must come first before the other parameters.  It must be included in the definition because when Python cals this method later (to create an instance of `Dog`), the method call will automatically pass the `self` argument.  Every method call associated with an instance automatically passes `self`, which is a reference to the instance itself; it gives the individual instance access to the attributes and methods in the class.  When we make an instance of `Dog`, Python will call the `__init__()` method from the `Dog` class.  We'll pass `Dog()` a name and an age as arguments; self is passed automatically, so we don't need to pass it.  Whenever we want to make an instance from the `Dog` class, we'll provide values for only the last two parameters, `name` and `age`.  
 
-The two variables defined on line 6/7 each have the prefix `self`.  Any varibale prefixed with `self` is available to every method in the class, and we'll also be able to access these variables through any instance created from the class.  The line `self.name = name` takes the value associated with the parameter `name` and assigns it to the variable `name`, which is then attached to the instance being created.  The same process happens with `self.age = age`.  Variables that are accessible through instances like this are called *attributes*.  
+The two variables defined on line 6/7 each have the prefix `self`.  Any varibale prefixed with `self` is available to every method in the class, and we'll also be able to access these variables through any instance created from the class.  The line `#!py self.name = name` takes the value associated with the parameter `name` and assigns it to the variable `name`, which is then attached to the instance being created.  The same process happens with `#!py self.age = age`.  Variables that are accessible through instances like this are called *attributes*.  
 
 The `Dog` class has two other methods defined: `sit()` and `roll_over()` (line 9 & 13).  Because these methods don't need additional information to run, we just define them to have one parameter, `self`.  The instances we create later will have access to these methods.  In other words, they'll be able to sit and roll over.  For now, `sit()` and `roll_over()` don't do much.  They simply print a message saying the dog is sitting or rolling over.  But the concept can be extended to realistic situations: if this class were part of an actual computer game, these messages would contain code to make an animated dog sit and roll over.  If this class was written to control a robot, these methods would direct movements that cause a robotic doc to sit and roll over.  
 
@@ -72,7 +72,7 @@ To acces the attributes of an instance, you use dot notation.  On line 19, we ac
 ```py
 my_dog.name
 ```
-Dot notaion is used often in Python.  This syntax demonstrates how Python finds an attribute's value.  Here Python looks at the instance `my_dog` and then finds the attribute `name` associated with `my_dog`.  This is the same attribute referred to as `self.name` in the class `Dog`.  On line 20 we use the same approach to work with the attribute `age`.  
+Dot notaion is used often in Python.  This syntax demonstrates how Python finds an attribute's value.  Here Python looks at the instance `my_dog` and then finds the attribute `name` associated with `my_dog`.  This is the same attribute referred to as `#!py self.name` in the class `Dog`.  On line 20 we use the same approach to work with the attribute `age`.  
 
 The output is a summary of what we know about `my_dog`:
 ```
@@ -103,7 +103,7 @@ my_dog = Dog('Willie', 6)
 my_dog.sit()
 my_dog.roll_over()
 ```
-To call a method, give the name of the instance (in this case, `my_dog`) and the method you want to call, separated by a dot.  When Python reads `my_dog.sit()`, it looks for the method `sit()` in the class `Dog` and runs that code.  Python interprets the line `my_dog.roll_over()` in the same way.  
+To call a method, give the name of the instance (in this case, `my_dog`) and the method you want to call, separated by a dot.  When Python reads `#!py my_dog.sit()`, it looks for the method `sit()` in the class `Dog` and runs that code.  Python interprets the line `#!py my_dog.roll_over()` in the same way.  
 
 Now Willie does what we tell him to:
 ```
@@ -179,7 +179,7 @@ print(my_new_car.get_descriptive_name())
 ```
 On line 4 in the `Car` class, we define the `__init__()` method with the `self` parameter first, just like we did before with our `Dog` class.  We also give in three other parameters: `make`, `model`, and `year`.  The `__init__()` method takes in these parameters and assigns them to the attributes that will be associated with instances made from this class.  When we make a new `Car` instance, we'll need to specify a make, model, and year for our instance.  
 
-On line 10 we define a method called `get_descriptive_name()` that puts a car's `year`, `make`, and `model` into one string neatly describing the car.  This will spare us from having to print each attribute's value individually.  To work with the attribute values in this method, we use `self.make`, `self.model` and `self.year`.  On line 15 we make an instance from the `Car` class and assign it to the variable `my_new_car`.  Then we call `get_descriptive_name()` to show what kind of car we have:
+On line 10 we define a method called `#!py get_descriptive_name()` that puts a car's `year`, `make`, and `model` into one string neatly describing the car.  This will spare us from having to print each attribute's value individually.  To work with the attribute values in this method, we use `#!py self.make`, `#!py self.model` and `#!py self.year`.  On line 15 we make an instance from the `Car` class and assign it to the variable `my_new_car`.  Then we call `get_descriptive_name()` to show what kind of car we have:
 ```
 2020 Audi A4
 ```
@@ -268,7 +268,7 @@ print(my_new_car.get_descriptive_name())
 my_new_car.update_odometer(23)
 my_new_car.read_odometer()
 ```
-The only modification to `Car` is the addition of `update_odometer()` on line 4.  This method takes in a mileage value and assigns it to `self.odometer_reading`.  On line 11 we call `update_odometer()` and give it 23 as an argument (corresponding to the `mileage` parameter in the method definition).  It sets the odometer reading to `23`, and `read_odometer()` prints the reading:  
+The only modification to `Car` is the addition of `update_odometer()` on line 4.  This method takes in a mileage value and assigns it to `#!py self.odometer_reading`.  On line 11 we call `update_odometer()` and give it 23 as an argument (corresponding to the `mileage` parameter in the method definition).  It sets the odometer reading to `23`, and `read_odometer()` prints the reading:  
 ```
 2020 Audi A4
 This car has 23 miles on it.
@@ -288,7 +288,7 @@ class Car:
 		else:
 			print("You can't roll back an odometer!")
 ```
-Now `update_odometer()` checks that the new reading makes sense before modifying the attribute.  If the new mileage, `mileage`, is greater than or equal to the existing mileage, `self.odometer_reading`, you can update the odometer reading to the new mileage (line 9).  If the new mileage is less than the existing mileage, you'll get a warning that you can't roll back an odometer (line 12).
+Now `update_odometer()` checks that the new reading makes sense before modifying the attribute.  If the new mileage, `mileage`, is greater than or equal to the existing mileage, `#!py self.odometer_reading`, you can update the odometer reading to the new mileage (line 9).  If the new mileage is less than the existing mileage, you'll get a warning that you can't roll back an odometer (line 12).
 
 #### Incrementing an Attribute's Value Through a Method
 Sometimes you'll want to increment an attribute's value by a certain amount rather than set an entirely new value.  Say we buy a used car and put 100 miles on it between the time we buy it and the time we register it.  Here's a method that allows us to pass this incremental amount and add that value to the odometer reading:  
@@ -312,7 +312,7 @@ my_used_car.read_odometer()
 my_used_car.update_odometer(100)
 my_used_car.read_odometer()
 ```
-This new method `increment_odometer()` at line 7 takes in a number of miles and adds this value to `self.odometer_reading`.  On line 11 we create a used car, `my_used_car`.  We set its odomoer to `23,500` by calling `update_odometer()` and passing it `23_500` on line 14.  On line 16 we call `increment_odometer()` and pass it `100` to add the 100 miles that we drove between buying the car and registering it:
+This new method `increment_odometer()` at line 7 takes in a number of miles and adds this value to `#!py self.odometer_reading`.  On line 11 we create a used car, `my_used_car`.  We set its odomoer to `23,500` by calling `update_odometer()` and passing it `23_500` on line 14.  On line 16 we call `increment_odometer()` and pass it `100` to add the 100 miles that we drove between buying the car and registering it:
 ```
 2015 Subaru Outback
 This car has 23500 miles on it.
@@ -403,7 +403,7 @@ my_tesla = ElectricCar('tesla', 'model s', 2019)
 print(my_tesla.get_descriptive_name())
 my_tesla.describe_battery()
 ```
-On line 13 we add a new attribute `self.battery_size` and set its initial value to `75`.  This attribute will be associated with all instances created from the `ElectricCar` class but won't be associated with any instances of `Car`.  We also add a method called `describe_battery()` that prints information about the battery on line 15.  When we call this method, we get a description that is clearly specific to an electric car:
+On line 13 we add a new attribute `#!py self.battery_size` and set its initial value to `75`.  This attribute will be associated with all instances created from the `ElectricCar` class but won't be associated with any instances of `Car`.  We also add a method called `describe_battery()` that prints information about the battery on line 15.  When we call this method, we get a description that is clearly specific to an electric car:
 ```
 2019 Tesla Model S
 This car has a 75-kWh battery.

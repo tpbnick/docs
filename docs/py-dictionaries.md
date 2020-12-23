@@ -29,7 +29,7 @@ The simplest dictionary has exactly one key-value pair, as shown in this modifie
 ```py
 alien_0 = {'color': 'green'}
 ```
-This dictionary stores one piece of information about `alien_0`, namely the alien's color.  The string `'color'` is a key in this dictionary, and its associated value is `'green'`.  
+This dictionary stores one piece of information about `alien_0`, namely the alien's color.  The string `#!py 'color'` is a key in this dictionary, and its associated value is `#!py 'green'`.  
 
 ### Accessing Values in a Dictionary
 To get the value associated with a key, give the name of the dictionary and then place the key inside a set of square brackets, as shown here:  
@@ -37,7 +37,7 @@ To get the value associated with a key, give the name of the dictionary and then
 alien_0 = {'color': 'green'}
 print(alien_0['color'])
 ```
-This returns the value associated with the key `'color'` from the dictionary `alien_0`:
+This returns the value associated with the key `#!py 'color'` from the dictionary `alien_0`:
 ```
 green
 ```
@@ -52,7 +52,7 @@ alien_0 = {'color': 'green', 'points': 5}
 new_points = alien_0['points']
 print(f"You just earned {new_points} points!")
 ```
-Once the dictionary has been defined, the code on line 3 pulls the value associated with the key `'points'` from the dictionary.  This value is then assigned to the variable `'new_points'`.  The code on line 4 then prints a statement about how many points the player just earned.  
+Once the dictionary has been defined, the code on line 3 pulls the value associated with the key `#!py 'points'` from the dictionary.  This value is then assigned to the variable `#!py 'new_points'`.  The code on line 4 then prints a statement about how many points the player just earned.  
 
 ### Adding New Key-Value Pairs
 Dictionaries are dynamic structures, and you can add new key-value pairs to a dictionary at any time.  For example, to add a new key-value pair, you would give the name of the dictionary followed by the new key in square brackets along with the new value.  
@@ -66,7 +66,7 @@ alien_0['x_position'] = 0
 alien_0['y_position'] = 25
 print(alien_0)
 ```
-We start by defining the same dictionary that we have been working with.  We then print this dictionary, displaying a snapshot of its information.  On line 4, we add a new key-value pair to the dictionary: key `'x_position'` and a value of `0`.  We do the same for key `'y_position'` on the next line.  Finally, when we print the modified dictionary, we see the two additional key-value pairs:  
+We start by defining the same dictionary that we have been working with.  We then print this dictionary, displaying a snapshot of its information.  On line 4, we add a new key-value pair to the dictionary: key `#!py 'x_position'` and a value of `0`.  We do the same for key `#!py 'y_position'` on the next line.  Finally, when we print the modified dictionary, we see the two additional key-value pairs:  
 ```
 {'color': 'green', 'points': '5'}
 {'color': 'green', 'points': '5', 'x_position': 0, 'y_position': 25}
@@ -98,7 +98,7 @@ print(f"The alien is {alien_0['color']}.")
 alien_0['color'] = 'yellow'
 print(f"The alien is now {alien_0['color']}.")
 ```
-We first define a dictionary for `alien_0` that contains only the aliens color; then we change the value associated with the key `'color'` to `'yellow'`.  The output shows that the alien has indeed changed from green to yellow:  
+We first define a dictionary for `alien_0` that contains only the aliens color; then we change the value associated with the key `#!py 'color'` to `#!py 'yellow'`.  The output shows that the alien has indeed changed from green to yellow:  
 ```
 The alien is green.
 The alien is now yellow.
@@ -120,9 +120,9 @@ else:
 alien_0['x_position'] = alien_0['x_position'] + x_increment
 print(f"New position: {alien_0['x_position']}")
 ```
-We start by defining an alien with an initial *x* and *y* position, and a speed of `'medium'`.  We also print the original value of `x_position` to see how far the alien moves to the right.  
+We start by defining an alien with an initial *x* and *y* position, and a speed of `#!py 'medium'`.  We also print the original value of `x_position` to see how far the alien moves to the right.  
 
-On line 5, an `if-elif-else` chain determins how far the alien should move to the right and assigns this value to the variable `x_increment`.  If the alien's speed is `'slow'`, it moves one unit, if it is `'medium'`, it moves two, and if it is `'fast'`, it moves three.  Once the increment has been calculated, it is added to the value of `x_position` on line 13 and the result is stored in the dictionary's `x_position`.  
+On line 5, an `#!py if-elif-else` chain determins how far the alien should move to the right and assigns this value to the variable `x_increment`.  If the alien's speed is `#!py 'slow'`, it moves one unit, if it is `#!py 'medium'`, it moves two, and if it is `#!py 'fast'`, it moves three.  Once the increment has been calculated, it is added to the value of `x_position` on line 13 and the result is stored in the dictionary's `x_position`.  
 
 Because this is a medium-speed alien, its position shifts two units to the right:
 ```
@@ -137,9 +137,9 @@ The `if-elif-else block` would then assign a larger value to `x_increment`
 the next time the code runs.
 
 ### Removing Key-Value Pairs
-When you no longer need a piece of information that is stored ina  dictionary, you can you the `del` statement to completely remove a key-value pair.  All `del` needs is the name of the dictionary and the key  that you want to remove.  
+When you no longer need a piece of information that is stored ina  dictionary, you can you the `#!py del` statement to completely remove a key-value pair.  All `#!py del` needs is the name of the dictionary and the key  that you want to remove.  
 
-For example, let's remove the key `'points'` from the `alien_0` dictionary along with its value: 
+For example, let's remove the key `#!py 'points'` from the `alien_0` dictionary along with its value: 
 ```py linenums="1"
 alien_0 = {'color': 'green', 'points': 5}
 print(alien_0)
@@ -147,7 +147,7 @@ print(alien_0)
 del alien_0['points']
 print(alien_0)
 ```
-The code on line 4 tells Python to delete the key `'points'` from the dictionary `alien_0` and to remove the value associated with that key as well.  The output shows that the key `'points'` and its value of 5 are deleted from the dictionary, and the rest is unaffected:  
+The code on line 4 tells Python to delete the key `#!py 'points'` from the dictionary `alien_0` and to remove the value associated with that key as well.  The output shows that the key `#!py 'points'` and its value of 5 are deleted from the dictionary, and the rest is unaffected:  
 ```
 {'color': 'green', 'points': 5}
 {'color': 'green'}
@@ -182,11 +182,13 @@ To see which language Sarah chose, we ask for the value at:
 ```py
 favorite_languages['sarah']
 ```
-We use this syntax to pull Sarah's favorite language from the dictionary (line 8) and assign it to the variable `language`.  Creating a new variable here makes for a much cleaner `print()` call.  The output shows Sarah's favorite Language:
+We use this syntax to pull Sarah's favorite language from the dictionary (line 8) and assign it to the variable `language`.  Creating a new variable here makes for a much cleaner `#!py print()` call.  The output shows Sarah's favorite Language:
 ```
 Sarah's favorite langugage is C.
 ```
-### Using `get()` to Access Values
+
+### Using `#!py get()` to Access Values  
+
 Using keys in square brackets to retrieve the value you're interested in from a dictionary might cause one potential problem: if the key you ask for doesn't exist, you'll get an error.  
 
 Let's see what happens when you ask for the point value of an alien that doesn't have a point value set:
@@ -203,20 +205,20 @@ KeyError                                  Traceback (most recent call last)
 
 KeyError: 'points'
 ```
-For dictionaries, we can use the `get()` method to set a default value that will be returned if the requested key doesn't exist.  
+For dictionaries, we can use the `#!py get()` method to set a default value that will be returned if the requested key doesn't exist.  
 
-The `get()` method requires a key as a first argument.  As a second optional argument, you can pass the value to be returned if the key doesn't exist: 
+The `#!py get()` method requires a key as a first argument.  As a second optional argument, you can pass the value to be returned if the key doesn't exist: 
 ```py linenums="1"
 alien_0 = {'color': 'green', 'speed': 'slow'}
 
 point_value = alien_0.get('points', 'No point value assigned.')
 print(point_value)
 ```
-If the key `'points'` exists in the dictionary, you'll get corresponding value.  If it doesn't, you get the default value.  In this case, `points` doesn't exist, and we get a clean message instead of an error: 
+If the key `#!py 'points'` exists in the dictionary, you'll get corresponding value.  If it doesn't, you get the default value.  In this case, `points` doesn't exist, and we get a clean message instead of an error: 
 ```
 No point value assigned.
 ```
-If there's a chance the key you're asking for might not exist, consider using the `get()` method instead of the square bracket notation.  
+If there's a chance the key you're asking for might not exist, consider using the `#!py get()` method instead of the square bracket notation.  
 
 ## Looping Through a Dictionary
 A single Python dictionary can contain just a few key-value pairs or millions of pairs.  Because a dictionary can contain large amounts of data, Python lets you loop through a dictionary.  Dictionaries can be used to store information in a variety of ways; therefore, several different ways exist to loop through them.  You can loop through all of a dictionary's key-value pairs, through its keys, or its values.  
@@ -230,7 +232,7 @@ user_0 = {
 	'last': 'fermi'
 }
 ```
-You can access any single piece of information about `user_0` based on what you've already learned in this chapter.  But what if you wanted to see everything stored in this user's dictionary?  To do so, you could loop through the dictionary using a `for` loop.
+You can access any single piece of information about `user_0` based on what you've already learned in this chapter.  But what if you wanted to see everything stored in this user's dictionary?  To do so, you could loop through the dictionary using a `#!py for` loop.
 ```py linenums="1"
 user_0 = {
 	'username': 'efermi',
@@ -242,11 +244,11 @@ for key, value in user_0.items():
 	print(f"\nKey: {key}")
 	print(f"Value: {value}")
 ```
-As shown on line 7, to write a `for` loop for a dictionary, you create names for the two variables that will hold the key and value in each key-value pair.  You can choose any names you want for these two variables.  This code would work just as well if you had used abbreviated for the variable names, like this:
+As shown on line 7, to write a `#!py for` loop for a dictionary, you create names for the two variables that will hold the key and value in each key-value pair.  You can choose any names you want for these two variables.  This code would work just as well if you had used abbreviated for the variable names, like this:
 ```py
 for k, v in user_0.items()
 ```
-The second half of the `for` statement on line 7 includes the name of the dictionary followed by the method `items()`, which returns a list of key-value pairs.  The `for` loop then assigns each of these pairs to the two vairbales provided.  In the preceding example, we use the variables to print each key (line 8), followed by the associated value (line 9).  The "\n" in the first `print()` call ensures that a blank line is inserted bfore each key-value pair in the output:  
+The second half of the `#!py for` statement on line 7 includes the name of the dictionary followed by the method `items()`, which returns a list of key-value pairs.  The `#!py for` loop then assigns each of these pairs to the two vairbales provided.  In the preceding example, we use the variables to print each key (line 8), followed by the associated value (line 9).  The "\n" in the first `#!py print()` call ensures that a blank line is inserted bfore each key-value pair in the output:  
 ```
 Key: username
 Value: efermi
@@ -269,7 +271,7 @@ favorite_languages = {
 for name, language in favorite_languages.items():
 	print(f"{name.title()}'s favorite language is {language.title()}!")
 ```
-The code on line 8 tells Python to loop through each key-value pair in the dictionary.  As it works through each pair the key is assigned to the variable `name`, and the value is assigned to the variable `language`.  These descriptive names make it much easier to see what the `print()` call on line 9 is doing.  
+The code on line 8 tells Python to loop through each key-value pair in the dictionary.  As it works through each pair the key is assigned to the variable `name`, and the value is assigned to the variable `language`.  These descriptive names make it much easier to see what the `#!py print()` call on line 9 is doing.  
 
 Now, in just a few lines of code, we can display all the information from the poll:  
 ```
@@ -350,12 +352,12 @@ favorite_languages = {
 if 'erin' not in favorite_languages.keys():
 	print("Erin, please take our poll!")
 ```
-The `keys()` method isn't just for looping: it actually returns a list of all the keys, and the code on line 8 simply checks if `'erin'` is in the list.  Because she is not, a message is printed inviting her to take the poll.
+The `keys()` method isn't just for looping: it actually returns a list of all the keys, and the code on line 8 simply checks if `#!py 'erin'` is in the list.  Because she is not, a message is printed inviting her to take the poll.
 
 ### Looping Through a Dictionary's Keys in a Particular Order
 Starting in Python 3.7, looping through a dictionary returns the items in the same order they were inserted.  Sometimes, though, you'll want to loop through a dictionary in a different order.  
 
-One way to do this is to sort the keys as they're retunred in the `for` loop.  You can use the `sorted()` function to get a copy of the keys in order:  
+One way to do this is to sort the keys as they're retunred in the `#!py for` loop.  You can use the `#!py sorted()` function to get a copy of the keys in order:  
 ```py linenums="1"
 favorite_languages = {
 	'jen': 'python',
@@ -367,7 +369,7 @@ favorite_languages = {
 for name in sorted(favorite_languages.keys()):
 	print(f"{name.title()}, thank you for taking the poll.")
 ```
-This `for` statement is like other `for` statements except that we've wrapped the `sorted()` function around the `dictionary.keys()` method.  This tells Python to list all keys in the dictionary and sort that list before looping through it.  The output shows everyone who took the poll, with the names displayed in order:  
+This `#!py for` statement is like other `#!py for` statements except that we've wrapped the `#!py sorted()` function around the `#!py dictionary.keys()` method.  This tells Python to list all keys in the dictionary and sort that list before looping through it.  The output shows everyone who took the poll, with the names displayed in order:  
 ```
 Edward, thank you for taking the poll.
 Jen, thank you for taking the poll.
@@ -375,7 +377,7 @@ Phil, thank you for taking the poll.
 Sarah, thank you for taking the poll.
 ```
 ### Looping Through All Values in a Dictionary
-If you are primarily interested in the values that a dictionary contains, you can use the `values()` method to return a list of values without any keys.  For example, say we simply want a list of all languages chosen in our programming language poll without the name of the person who chose each language:
+If you are primarily interested in the values that a dictionary contains, you can use the `#!py values()` method to return a list of values without any keys.  For example, say we simply want a list of all languages chosen in our programming language poll without the name of the person who chose each language:
 ```py linenums="1"
 favorite_languages = {
 	'jen': 'python',
@@ -388,7 +390,7 @@ print("The following languages have been mentioned:")
 for language in favorite_languages.values():
 	print(language.title())
 ```
-The `for` statement here pulls each value from the dictionary and assigns it to the variable `language`.  When these values are printed, we get a list of all chosen languages:
+The `#!py for` statement here pulls each value from the dictionary and assigns it to the variable `language`.  When these values are printed, we get a list of all chosen languages:
 ```
 The following languages have been mentioned:
 Python
@@ -396,11 +398,11 @@ C
 Ruby
 Python
 ```
-This approach pulls all the values from the dictionary without checking for repeats.  That might work fine with a small number of values, but in a poll with a large number of respondents, this would result in a very repetitive list.  To see each language chosen without repitionm we can use a set.  A *set* is a collection in which each item must be unique.  We can use the following `for` loop in place of the one used above:  
+This approach pulls all the values from the dictionary without checking for repeats.  That might work fine with a small number of values, but in a poll with a large number of respondents, this would result in a very repetitive list.  To see each language chosen without repitionm we can use a set.  A *set* is a collection in which each item must be unique.  We can use the following `#!py for` loop in place of the one used above:  
 ```py
 for language in set(favorite_languages.values()):
 ```
-When you wrap `set()` around a list that contains duplicate items, Python identifies the unique items in the list and build a set from those items.  The result is a nonrepetitive list of languages that have been menetioned:  
+When you wrap `#!py set()` around a list that contains duplicate items, Python identifies the unique items in the list and build a set from those items.  The result is a nonrepetitive list of languages that have been menetioned:  
 ```
 The following languages have been mentioned:
 C
@@ -428,7 +430,7 @@ We first create three dictionaries, each representing a different alien.  On lin
 {'color': 'yellow', 'points': 10}
 {'color': 'red', 'points': 15}
 ```
-A more realistic example would involve more than three alies with code that automatically generates each alien.  In the following example we use `range()` to create a fleet of 30 aliens:
+A more realistic example would involve more than three alies with code that automatically generates each alien.  In the following example we use `#!py range()` to create a fleet of 30 aliens:
 ```py linenums="1"
 # Make an empty list for storing aliens
 aliens = []
@@ -446,7 +448,7 @@ print("...")
 # Show how many aliens have been created.
 print(f"Total number of aliens: {len(aliens)}")
 ```	
-This example befins with an empty list to hold all of the aliens that will created.  At line 5 `range()` returns a series of numbers, which just tells Python how many times we want the loop to repeat.  Each time the loop runs we create a new alien (line 6) and then append each new alien to the list `aliens` (line 7).  On line 10 we us a slice to print the first five aliens, and then on line 15 we print the length of the list to prove we've actually generated the full fleet of 30 aliens:
+This example befins with an empty list to hold all of the aliens that will created.  At line 5 `#!py range()` returns a series of numbers, which just tells Python how many times we want the loop to repeat.  Each time the loop runs we create a new alien (line 6) and then append each new alien to the list `aliens` (line 7).  On line 10 we us a slice to print the first five aliens, and then on line 15 we print the length of the list to prove we've actually generated the full fleet of 30 aliens:
 ```
 {'color': 'green', 'points': 5, 'speed': 'slow'}
 {'color': 'green', 'points': 5, 'speed': 'slow'}
@@ -458,7 +460,7 @@ Total number of aliens: 30
 ```
 These aliens all have the same characteristics, but Python considers each one a separate object, which allows us to modify each alien individually.  
 
-How might you work with a group of aliens like this?  Imagine that one aspect of a game has some aliens changing color and moving faster as the game progress.  When it's time to change colors, we can use a `for` loop and an `if` statement to change the color of the aliens.  For example, to change the first three aliens to yellow, medium-speed aliens worth 10 points each, we could do this:  
+How might you work with a group of aliens like this?  Imagine that one aspect of a game has some aliens changing color and moving faster as the game progress.  When it's time to change colors, we can use a `#!py for` loop and an `#!py if` statement to change the color of the aliens.  For example, to change the first three aliens to yellow, medium-speed aliens worth 10 points each, we could do this:  
 ```py linenums="1"
 # Make an empty list for storing aliens
 aliens = []
@@ -479,7 +481,7 @@ for alien in aliens[:5]:
 	print(alien)
 print("...")
 ```
-Because we want to modify the first three aliens, we loop through a slice that includes only the first three aliens.  All of the aliens are green now but that won't always be the case, so we write an `if` statement to make sure we're only modifying green aliens.  If the alien is green, we change the color to `'yellow'`, the speed to `'medium'`, and the point value to `10`, as shown in the following output:
+Because we want to modify the first three aliens, we loop through a slice that includes only the first three aliens.  All of the aliens are green now but that won't always be the case, so we write an `#!py if` statement to make sure we're only modifying green aliens.  If the alien is green, we change the color to `#!py 'yellow'`, the speed to `#!py 'medium'`, and the point value to `10`, as shown in the following output:
 ```
 {'color': 'yellow', 'points': '10', 'speed': 'medium'}
 {'color': 'yellow', 'points': '10', 'speed': 'medium'}
@@ -488,7 +490,7 @@ Because we want to modify the first three aliens, we loop through a slice that i
 {'color': 'green', 'points': 5, 'speed': 'slow'}
 ...
 ```
-You could expand this loop by adding an `elif` block that turns yellow aliens into red, fast-moving ones worth 15 points each.  Without showing the entire program again, that loop would look like this:
+You could expand this loop by adding an `#!py elif` block that turns yellow aliens into red, fast-moving ones worth 15 points each.  Without showing the entire program again, that loop would look like this:
 ```py linenums="1"
 for alien in aliens[:3]:
 	if alien['color'] == 'green':
@@ -505,7 +507,7 @@ It's common to store a number of dictionaries in a list when each dictionary con
 ### A List in a Dictionary
 Rather than putting a dictionary inside a list, it's sometimes useful to put a list inside a dictionary.  For example, consider how you might describe a pizza that someone is ordering.  If you were to use only a list, all you could really store is a list of the pizza's toppings.  With a dictionary, a list of toppings can be just one aspect of the pizza you're describing.  
 
-In the following example, two kinds of information are stored for each pizza: a type of crust and a list of toppings.  The list of toppings is a value associated with the key `'toppings'`.  To use the items in the list, we give the name of the dictionary and the key `'toppings'`, as we would any value in the dictionary.  Instead of returning a single value, we get a list of toppings:  
+In the following example, two kinds of information are stored for each pizza: a type of crust and a list of toppings.  The list of toppings is a value associated with the key `#!py 'toppings'`.  To use the items in the list, we give the name of the dictionary and the key `#!py 'toppings'`, as we would any value in the dictionary.  Instead of returning a single value, we get a list of toppings:  
 ```py linenums="1"
 # Store information about a pizza being ordered.  
 pizza = {
@@ -520,7 +522,7 @@ print(f"You ordered a {pizza['crust']}-crust pizza "
 for topping in pizza['toppings']:
 	print("\t" + topping)
 ```
-We begin on line 2 with a dictionary that holds information about a pizza that has been ordered.  One key in the dictionary is `'crust'`, and the associated value is the string `'thick'`.  The next key, `'toppings'`, has a list as its value that stores all the requested toppings.  On line 8 we summarize the order before building the pizza.  When you need to break up a long ling in a `print()` call, choose an appropriate point at which to break the line being printed and quotation mark.  Indent the next line, add an opening quotation mark, and continue the string.  Python will automatically combine all of the strings it finds inside the parentheses.  To print the toppings, we write a `for` loop on line 10.  To access the list of toppings, we use the key `'toppings'`, and Python grabs the list of toppings from the dictionary.  
+We begin on line 2 with a dictionary that holds information about a pizza that has been ordered.  One key in the dictionary is `#!py 'crust'`, and the associated value is the string `#!py 'thick'`.  The next key, `#!py 'toppings'`, has a list as its value that stores all the requested toppings.  On line 8 we summarize the order before building the pizza.  When you need to break up a long ling in a `#!py print()` call, choose an appropriate point at which to break the line being printed and quotation mark.  Indent the next line, add an opening quotation mark, and continue the string.  Python will automatically combine all of the strings it finds inside the parentheses.  To print the toppings, we write a `#!py for` loop on line 10.  To access the list of toppings, we use the key `#!py 'toppings'`, and Python grabs the list of toppings from the dictionary.  
 
 The following output summarizes the pizza that we plan to build:  
 ```
@@ -542,7 +544,7 @@ for name, languages in favorite_languages.items():
 	for language in languages:
 		print(f"\t{language.title()}")
 ```
-As you can see on line 1, the value associated with each name is now a list.  Notice that some people have one favorite language and others have multiple favorites.  When we loop through the dictionary on line 8, we use the variable name `languages` to hold each value from the dictionary, because we know that each value will be a list.  Inside the main dictionary loop, we use another `for` loop (line 10) to run through each persons list of favorite languages.  
+As you can see on line 1, the value associated with each name is now a list.  Notice that some people have one favorite language and others have multiple favorites.  When we loop through the dictionary on line 8, we use the variable name `languages` to hold each value from the dictionary, because we know that each value will be a list.  Inside the main dictionary loop, we use another `#!py for` loop (line 10) to run through each persons list of favorite languages.  
 
 Now each person can list as many favorite languages as they like:  
 ```
@@ -561,7 +563,7 @@ Phil's favorite languages are:
 	Python
 	Haskell
 ```
-To refine this program even further, you can ad an `if` statement at the beginning of the dictionary's `for` loop to see whether each person has more than one favorite language by examining the value of `len(languages)`.  If a person has more than one favoriem the output would stay the same.  If the person has only one favorite language, you could change the wording to reflect that.  For example, you could say "Sarah's favorite language is C."
+To refine this program even further, you can ad an `#!py if` statement at the beginning of the dictionary's `#!py for` loop to see whether each person has more than one favorite language by examining the value of `#!py len(languages)`.  If a person has more than one favoriem the output would stay the same.  If the person has only one favorite language, you could change the wording to reflect that.  For example, you could say "Sarah's favorite language is C."
 
 ### A Dictionary in a Dictionary
 You can nest a dictionary inside another dictionary, b ut your code can get complicated quickly when you do.  For example, if you have several users for a website, each with a unique username, you can use the usernames as the keys in a dictionary.  You can then store information about each user by using a dictionary as the value associated with their username.  In the following listing, we store three pieces of information about each user: their first name, last name, and location.  We'll access this information by looping through the usernames and the dictionary of information associated with each username:  
@@ -587,9 +589,9 @@ for username, user_info in users.items():
 	print(f"\tFull name: {full_name.title()}")
 	print(f"\tLocation: {location.title()}")
 ```
-We first define a dictionary called `users` with two keys: one each for the usernames `'aeinstein'` and `'mcurie'`.  The value associated with each key is a dictionary that includes each user's first name, last name, and location.  On line 14 we loop through the `users` dictionary.  Python assigns each key to the variable `username`, and the dictionary associated with each username is assigned to the variable `user_info`.  Once inside the main dictionary loop, we print the user-name at line 15.  
+We first define a dictionary called `users` with two keys: one each for the usernames `#!py 'aeinstein'` and `#!py 'mcurie'`.  The value associated with each key is a dictionary that includes each user's first name, last name, and location.  On line 14 we loop through the `users` dictionary.  Python assigns each key to the variable `username`, and the dictionary associated with each username is assigned to the variable `user_info`.  Once inside the main dictionary loop, we print the user-name at line 15.  
 
-On line 16 we start accessing the inner dictionary.  The variable `user_info`, which contains the dictionary of user information, has three keys: `'first'`, `'last'`, and `'location'`.  We use each key to generate a neatly formated full name and location for each person, and then print a summary of what we know about each user:
+On line 16 we start accessing the inner dictionary.  The variable `user_info`, which contains the dictionary of user information, has three keys: `#!py 'first'`, `#!py 'last'`, and `#!py 'location'`.  We use each key to generate a neatly formated full name and location for each person, and then print a summary of what we know about each user:
 ```
 Username: aeinstein
 	Full name: Albert Einstein
@@ -599,4 +601,4 @@ Username: mcurie
 	Full name: Marie Curie
 	Location: Paris
 ```
-Notice that the structure of each user's dictionary is identical.  Although not required by Python, this structure makes nested dictionaries easier to work with.  If each user's dictionary had different keys, the code inside the `for` loop would be more complicated.  
+Notice that the structure of each user's dictionary is identical.  Although not required by Python, this structure makes nested dictionaries easier to work with.  If each user's dictionary had different keys, the code inside the `#!py for` loop would be more complicated.  

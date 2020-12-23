@@ -10,7 +10,7 @@ print(message)
 ```
 We have now created a *variable* named `message`.  Every variable is connected to a *value*, which is the information associated with that variable.  In this case the value is the `Hello Python World!` text.  
 
-Adding a variable makes a little more work for the Python interpreter.  When it processes the first line, it associates the variable `message` with the `Hello Puthon World!` text. When it reaches the second line, it prints the value associated with `message` to the screen.  
+Adding a variable makes a little more work for the Python interpreter.  When it processes the first line, it associates the variable `message` with the `Hello Python World!` text. When it reaches the second line, it prints the value associated with `message` to the screen.  
 
 ### Naming and Using Variables 
 
@@ -52,9 +52,9 @@ name = "ada lovelace"
 print(name.title())
 ```
 
-In the above example, the variable `name` refers to the lowercase string `ada lovelace`/  The method `title()` appears after the variable in the `print()` call.  A *method* is an action that Python can perform on a piece of data.  The dot (.) after `name` in `name.title()` tells Python to make the `title()` method act on the variable `name`.  
+In the above example, the variable `name` refers to the lowercase string `ada lovelace`/  The method `#!py title()` appears after the variable in the `#!py print()` call.  A *method* is an action that Python can perform on a piece of data.  The dot (.) after `name` in `#!py name.title()` tells Python to make the `title()` method act on the variable `name`.  
 
-The `title()` method changes each word to title case, where each word begins with a capital letter.  This is useful because you'll often want to think of a name as a piece of information.  For example, you might want to program the input values of `Ada`. `ADA`, and `ada` as the same name, and display them all as `Ada`.  
+The `#!py title()` method changes each word to title case, where each word begins with a capital letter.  This is useful because you'll often want to think of a name as a piece of information.  For example, you might want to program the input values of `Ada`. `ADA`, and `ada` as the same name, and display them all as `Ada`.  
 
 Several other useful methods are available for dealing with case as well.  For example, you can change a string to all uppercase or all lowercase letters like this:  
 
@@ -82,7 +82,7 @@ full_name = f"{first_name} {last_name}"
 print(full_name)
 ``` 
 
-To insert a variable's value into a string, place the letter `f` immediately before the opening quoatation mark. Put braces around the name or names of any variable you want to use inside the string.  Python will replace each variable with its value when the string is displayed.  
+To insert a variable's value into a string, place the letter `#!py f` immediately before the opening quoatation mark. Put braces around the name or names of any variable you want to use inside the string.  Python will replace each variable with its value when the string is displayed.  
 
 These strings are called *f-strings*.  The *f* is for *format*, because Python formats the string by replaceing the name of any variable in braces with its value.  
 
@@ -112,7 +112,7 @@ print(message)
 The final `print()` call is much simpler in this case.  
 
 ??? warning "f-string compatibility"
-	f-strings were first introduced in Python 3.6.  If you are using Python 3.5 or earlier, you must use the `format()` method rather than the above `f` syntax. To use format(), list the variables you want to use in the string inside the parentheses following format.  Each variable is referred to by a set of braces; the braces will be filled by the values listed in parentheses in the order provided: 
+	f-strings were first introduced in Python 3.6.  If you are using Python 3.5 or earlier, you must use the `#!py format()` method rather than the above `f` syntax. To use `#!py format()`, list the variables you want to use in the string inside the parentheses following format.  Each variable is referred to by a set of braces; the braces will be filled by the values listed in parentheses in the order provided: 
 
 	```py linenums="1"
 	full_name = "{} {}".format(first_name, last_name)
@@ -130,11 +130,11 @@ In programming, *whitespace* refers to any nonprinting character, such as spaces
 
 ### Stripping Whitespace  
 
-Extra whitespace can be confusing in your programs.  To programmers, `'python'` and `'python '` look pretty much the same, but to a program, they are two different strings.  Puthon detects the extra space in `'python '` and considers it significant unless you tell it otherwise.  
+Extra whitespace can be confusing in your programs.  To programmers, `#!py 'python'` and `#!py 'python '` look pretty much the same, but to a program, they are two different strings.  Puthon detects the extra space in `#!py 'python '` and considers it significant unless you tell it otherwise.  
 
 It is important to think about whitespace, because often you'll want to compare two strings to determine whether they are the same.  For example, one important instance might involve checking people's usernames when they login to a website.  Extra whitespace can be confusing in much simpler situations as well.  Fortunately, Python makes it simple to eliminate extraneous whitespace from data that people enter.  
 
-Python can look for extra whitespace on the right and left sides of a string.  To ensure that no whitespace exists at the right end of a string, use the `rstrip()` method.  
+Python can look for extra whitespace on the right and left sides of a string.  To ensure that no whitespace exists at the right end of a string, use the `#!py rstrip()` method.  
 
 ```py linenums="1"
 favorite_language = 'python '
@@ -146,7 +146,7 @@ favorite_language.rstrip()
 >>>'python'
 ```
 
-Running the above code with the `rstrip()` method does not permanently remove the whitespace at the end of the string.  If the code was run again without the `rstrip()`, the extra whitespace would appear again.  
+Running the above code with the `#!py rstrip()` method does not permanently remove the whitespace at the end of the string.  If the code was run again without the `#!py rstrip()`, the extra whitespace would appear again.  
 
 ### Avoiding Syntax Errors with Strings  
 
