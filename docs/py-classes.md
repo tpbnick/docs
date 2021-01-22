@@ -411,3 +411,98 @@ This car has a 75-kWh battery.
 There's no limit to how much you can specialize the `ElectricCar` class.  You can add as many attributes and methods as you need to model an electric car to whatever degree of accuracy you need.  An attribute or method that could belong to any car, rather than one that's specific to an electric car, should be added to the `Car` class instead of the `ElectricCar` class.  Then anyone who uses the `Car` class will have that functionality available as well, and the `ElectricCar` class wil only contain code for the information and behavior specific to electric vehicles.  
 
 ### Overriding Methods from the Parent Class
+You can override any method from the parent class that doesn't fit what you're trying to model with the child class.  To do this, you define a method in the child class with the same name as the method you want to override in the parent class.  Python will disregard the parent class method and only pay attention to the method you define in the child class.  
+
+Say the class `Car` had a method called `#!py fill_gas_tank()`.  This method is meaningless for an all-electric vehicle, so you might want to override this method.  Here is one way to do that:
+
+```py linenums="1"
+class ElectricCar(Car):
+	--snip--
+
+	def fill_gas_tank(self):
+		"""Electric cars don't have gas tanks."""
+		print("This car doesn't need a gas tank!")
+```
+
+Now if someone tries to call `fill_gas_tank()` with an electric car, Python will ignore the method `fill_gas_tank()` in `Car` and run this code instead.  When you use inheritence, you can make your child classes retain what you need and override anything you don't need from the parent class.
+
+### Instances as Attributes
+When modeling something from the real world in code, you may find that you're adding more and more detail to a class.  You'll find that you have a growing list of attributes and methods and that your files are becoming lengthy.  In these situations, you might recognize that part of one class can be written as a separate class.  You can break your large class into smaller classes that work together.  
+
+For example, if we continue adding detail to the `ElectricCar` class, we might notice that we're adding many attributes and methods specific to the car's battery.  When we see this happening, we can stop and move those attributes and methods to a separate class called `Battery`.  Then we can use a `Battery` instance as an attribute in the `ElectricCar` class:
+
+```py linenums="1"
+class Car:
+	--snip--
+
+class Battery:
+	"""A simple attempt to model a battery for an electric car."""
+
+	def __init__(self, battery_size=75):
+		"""Initialize the battery's attributes."""
+		self.battery_size = battery_size
+	
+	def describe_battery(self):
+		"Print a statement describing the battery size."""
+		print(f"This car has a {self.battery_size}-kWh battery.")
+
+class ElectricCar(Car):
+	"represents aspects of a car, specific to electric vehicles."""
+
+	def __init__(self, make, model, year):
+		"""
+		Initialize attributes of the parent class.
+		Then initialize attributes specific to an electric car.
+		"""
+		super().__init__(make, model, year)
+		self.battery = Battery()
+
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+```
+On line 4 we define a new class called `#!py class Battery` that doesn't inherit from any other class.  The `#!py __init__()` method on line 7 has one parameter `battery_size`, in addition to `#!py self`.  This is an optional parameter that sets the battery's size to `75` if no value is provided.  The method `#!py describe_battery()` has been moved to this class as well (line 11).  
+
+In the `ElectricCar` class, we now add an attribute called `#!py self.battery` (line 24).  This line tells Python to create a new instance of `Battery` (with a default size of `75` because we're not specifying a value) and assign that instance to the attribute `self.battery`.  This will happen every time the `#!py __init__()` method is called; and `ElectricCar` instance will now have a `Battery` instance created automatically.  
+
+We create an electric car and assign it to the variable `my_tesla`.  When we want to describe the battery, we need to work through the car's `battery` attribute:
+```py linenums="1"
+my_tesla.batter.describe_battery()
+```
+This line tells Python to look at the instance of `my_tesla`, find its `battery` attribute, and call the method `describe_battery()` that's associated with the `Battery` instance stored in the attribute.
+
+The output is identical to what we saw previously:
+```py linenums="1"
+class Car:
+	--snip--
+
+class Battery:
+	--snip--
+
+	def get_range(self):
+		"""Print a statement about the range this battery provides."""
+		if self.battery_size == 75:
+			range = 260
+		elif self.battery_size == 100:
+			range = 315
+
+class ElectricCar(Car):
+	--snip--
+
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
+```
+The new method `get_range()` on line 7, performs some simple analysis.  If the battery's capacity is `75` kWh, `get_range()` sets the range to `260` miles, and if the capacity is `100` kWh, it sets the range to `315` miles.  It then reports this value.  When we want to use this method, we again have to call it through the car's `battery` attribute on line 21.  
+
+The output tells us the range of the car based on its battery size:
+```
+2019 Tesla Model S
+This car has a 75-kWh battery.
+This car can go about 260 mile son a full charge.
+```
+
+### Modeling Real-World Objects
