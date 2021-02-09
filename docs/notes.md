@@ -39,3 +39,5 @@
 * [APIs](api.md)
 
 * [Django](django.md)
+
+* [Azure](azure.md)

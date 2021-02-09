@@ -46,6 +46,7 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
 ??? homepage "Misc. Notes"
     - [APIs Overview](api.md)
     - [Django](django.md)
+    - [Azure](azure.md)
 
 ??? homepage2 "C++"
 	- Coming Soon!

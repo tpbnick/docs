@@ -106,4 +106,5 @@ nav:
     - 'Random':
       - API Overview : api.md
       - Django : django.md
+      - Azure : azure.md
   - About : about.md
