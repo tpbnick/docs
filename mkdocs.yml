@@ -49,6 +49,10 @@ markdown_extensions:
   - pymdownx.tilde
 extra:
   social:
+    - icon: fontawesome/solid/images
+      link: https://nicklyss.com
+    - icon: fontawesome/solid/blog
+      link: https://blog.nicklyss.com
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/nicholas-platt/
     - icon: fontawesome/brands/github
