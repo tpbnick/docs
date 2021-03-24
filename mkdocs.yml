@@ -4,17 +4,15 @@ theme:
   logo: 'https://nicklyss.com/media/uploads/2020/12/nord2.png'
   favicon: 'https://nicklyss.com/media/uploads/2020/12/nord.png'
   features:
-    - tabs
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    
   static_templates:
     - 404.html
   font:
     text: Roboto
-    code: Roboto Mono
-  features:
-    - navigation.tabs
-    - navigation.instant
-    - navigation.sections
-    - navigation.tabs.sticky
+    code: Source Code Pro
 extra_css:
   - stylesheets/extra.css
 plugins:
@@ -47,6 +45,8 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tabbed
   - pymdownx.tilde
+  - toc:
+      permalink: false
 extra:
   social:
     - icon: fontawesome/solid/images
@@ -70,6 +70,7 @@ nav:
     - 'Google Chrome User Guide':
       - What is Google Chrome? : chrome.md
       - Google Chrome Install : chromeinstall.md
+      - Google Chrome Extensions/Themes: chrome-extensions.md
       - Google Chrome Media : chromemedia.md
       - Glossary : glossary.md
   - 'Programming Notes':
