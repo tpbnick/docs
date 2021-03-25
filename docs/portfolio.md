@@ -18,7 +18,7 @@
 
 * Instruction Example ![!](https://nicklyss.com/wp-content/uploads/2020/08/arrow.png){: style="width:700px"}  
 
-* Graphic Example ![!](https://nicklyss.com/media/uploads/2021/03/topscorers.png){: style="width:700px"}
+* Graphic Example ![!](https://nicklyss.com/media/uploads/2021/03/lewy.png){: style="width:700px"}
 
 ## About Me
 [Click Here](https://docs.nicklyss.com/about)  
