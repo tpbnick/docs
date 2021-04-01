@@ -7,7 +7,7 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
-    
+    - navigation.top
   static_templates:
     - 404.html
   font:
