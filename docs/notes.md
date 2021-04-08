@@ -24,6 +24,9 @@
     - [Classes](py-classes.md)
     - [Random Programs](py-random.md)
 
+??? homepage "Java"
+    - [Java Basics](java.md)
+
 ??? homepage "SQL"
     - [SQL Basics](sql.md)
     - [Joins and Other Query Types](sql-joins-and-other-queries.md)
@@ -39,5 +42,3 @@
 * [APIs](api.md)
 
 * [Django](django.md)
-
-* [Azure](azure.md)

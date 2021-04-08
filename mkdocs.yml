@@ -101,6 +101,8 @@ nav:
       - Functions : py-functions.md
       - Classes : py-classes.md
       - Random Programs : py-random.md
+    - 'Java':
+      - Java Basics : java.md
     - 'SQL':
       - SQL Basics : sql.md
       - Joins and Other Query Types : sql-joins-and-other-queries.md
@@ -111,5 +113,4 @@ nav:
     - 'Random':
       - API Overview : api.md
       - Django : django.md
-      - Azure : azure.md
   - About : about.md

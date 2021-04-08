@@ -35,6 +35,9 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
     - [Classes](py-classes.md)
     - [Random Programs](py-random.md)
 
+??? homepage "Java"
+    - [Java Basics](java.md)
+
 ??? homepage "SQL"
     - [SQL Basics](sql.md)
     - [Joins and Other Query Types](sql-joins-and-other-queries.md)
@@ -46,7 +49,6 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
 ??? homepage "Misc. Notes"
     - [APIs Overview](api.md)
     - [Django](django.md)
-    - [Azure](azure.md)
 
 ??? homepage2 "C++"
 	- Coming Soon!
