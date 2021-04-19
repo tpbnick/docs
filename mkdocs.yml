@@ -102,7 +102,9 @@ nav:
       - Classes : py-classes.md
       - Random Programs : py-random.md
     - 'Java':
-      - Java Basics : java.md
+      - Java Overview : java.md
+      - Java Basics : java-basics.md
+      - Variables : java-variables.md
     - 'SQL':
       - SQL Basics : sql.md
       - Joins and Other Query Types : sql-joins-and-other-queries.md

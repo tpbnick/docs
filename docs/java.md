@@ -146,7 +146,7 @@ public class Main {
 Simple "Hello World" program:
 
 ```java linenums="1"
-public class Main {
+public class HelloWorld {
   public static void main(String[] args) {
     System.out.println("Hello World");
   }

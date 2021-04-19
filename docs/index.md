@@ -36,7 +36,9 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
     - [Random Programs](py-random.md)
 
 ??? homepage "Java"
-    - [Java Basics](java.md)
+    - [Java Overview](java.md)
+    - [Java Basics](java-basics.md)
+    - [Variables](java-variables.md)
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)
