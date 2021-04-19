@@ -39,6 +39,7 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
     - [Java Overview](java.md)
     - [Java Basics](java-basics.md)
     - [Variables](java-variables.md)
+    - [Classes](java-classes.md)
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)
