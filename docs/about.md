@@ -45,7 +45,11 @@ Below are some keyboards I have built!
 
 	<p id="lightgallery" class="center">**K75 - Gateron Ink Blacks**</p><img src="https://nicklyss.com/media/uploads/2020/12/k75-e1609337474695.png" style ="border-radius: 10px;">  
 
+	<p id="lightgallery" class="center">**Canon Keys Devastating TKL - Tealios**</p><img src="https://nicklyss.com/media/uploads/2021/04/imageedit_3_6470813349.png" style ="border-radius: 10px;">
+	
 	<p id="lightgallery" class="center">**Mysterium - Kailh Purple Pro**</p><img src="https://nicklyss.com/media/uploads/2020/12/mysterium.png" style ="border-radius: 10px;">
+
+	
 
 ## Contact  
 Nicholas Platt  
