@@ -402,3 +402,112 @@ Code generally runs in a top-down order where code execution starts at the top o
 
 When a method is called, the compiler executes every statement contained within the method.  Once all method instructions are executed, the top-down order of execution continues.  This is why `Starting the car!` and `Vroom!` are outputted before `That was one fast car!`.  
 
+### Scope
+A method is a task that an object of a class performs.  
+
+We mark the domain of this task using curly braces `{` and `}`.  Everything inside the curly braces is part of the task.  This domain is called the *scope* of a method.  We can't access variables that are declared inside a method in code that is outside the scope of that method.  
+
+Looking at the `Car` class again:
+```java linenums="1"
+class Car {
+  String color;
+  int milesDriven;
+
+  public Car(String carColor) {
+    color = carColor;
+    milesDriven = 0;
+  }
+
+  public void drive() {
+    String message = "Miles driven: " + milesDriven;
+    System.out.println(message);
+  }
+
+  public static void main(String[] args){
+    Car myFastCar = new Car("Red");
+    myFastCar.drive();
+  }
+}
+```
+The variable `message`, which is declared and initialized inside of `drive`, cannot be used inside of `#!java main()`!  It only exists within the *scope* of the `#!java drive()` method.  
+
+However, `milesDriven`, which is declared at the top of the class, can be used inside all methods in the class, since it is in the scope of the whole class.  
+
+### Adding Parameters
+We saw how a method's scope prevents us from using variables declared in one method in another method.  What if we had some information in one method that we needed to pass into another method?  
+
+Similar to how we added parameters to *constructors*, we can customize all other methods to accept parameters.  For example, in the following code, we create a `#!java startRadio()` method that accepts a `#!java Double` parameter, `stationNum`, and a `#!java String` parameter called `stationName`:
+
+```java linenums="1"
+class Car {
+  String color;
+
+  public Car(String carColor){
+    color = carColor;
+  }
+
+  public void startRadio(double stationNum, String stationName) {
+    System.out.println("Turning on the radio to " + stationNum + ", " + stationName + "!");
+    System.out.println("Enjoy!");
+  }
+
+  public static void main(String[] args){
+    Car myCar = new Car("red");
+    myCar.startRadio(103.7, "Meditation Station");
+  }
+}
+```
+Adding parameter values impacts our method's signature.  Like constructor signatures, the method signature includes the method name as well as the parameter types of the method.  The signature of the above method is `#!java startRadio(double, String)`.  
+
+In the `#!java main()` method, we call the `#!java startRadio()` method on the `myCar` object and probide a `#!java double` argument of `103.7` and `#!java String` argument of `Meditation Station`, resulting in the following output:
+```
+Turning on the radio to 103.7, Meditation Station!
+Enjoy!
+```
+Note that when we call on a method with multiple parameters, the arguments given in the call **must** be placed in the same order as the parameters appear in the signature.  If the argument types do not match the parameter types, we'll receive an error.  
+
+### Reassigning Instance Fields
+Earlier, we thought about a Savings Account as a type of object wer could represent in Java.  
+
+Two of the methods we need are depositing and withdrawing:
+```java linenums="1"
+public SavingsAccount{
+  double balance;
+  public SavingsAccount(double startingBalance){
+    balance = startingBalance;
+  }
+
+  public void deposit(double amountToDeposit){
+    // Add amountToDeposit to the balance
+  }
+
+  public void withdraw(double amountToWithdraw){
+    // Subtract amountToWithdraw from the balance
+  }
+
+  public static void main(String[] args){
+
+  }
+}
+```
+These methods would change the valuie of the variable `balance`.  We can reassign balance to be a new value by using our assignment operator, `=`, again.  
+
+```java linenums="1"
+public void deposit(double amountToDeposit){
+  double updatedBalance = balance + amountToDeposit;
+  balance = updatedBalance;
+}
+```
+nNow, when we call `#!java deposit()`, it should change the value of the instance field `balance`:
+```java linenums="1"
+public static void main(String[] args){
+  SavingsAccount myAccount = new SavingsAccount(2000);
+  System.out.println(myAccount.balance);
+  myAccount.deposit(100);
+  System.out.println(myAccount.balance);
+}
+```
+The code first prints `2000`, the initial value of `#!java myAccount.balance`, and then prints `2100`, which is the value of `#!java myAccount.balance` after the `#!java deposit()` method has run.  
+
+Change instance fields is how we change the state of an object and make our objects more flexible and realistic.  
+
