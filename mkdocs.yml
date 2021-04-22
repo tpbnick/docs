@@ -106,6 +106,7 @@ nav:
       - Java Basics : java-basics.md
       - Variables : java-variables.md
       - Classes : java-classes.md
+      - Conditionals/Control Flow: java-conditionals.md
     - 'SQL':
       - SQL Basics : sql.md
       - Joins and Other Query Types : sql-joins-and-other-queries.md

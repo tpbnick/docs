@@ -511,3 +511,114 @@ The code first prints `2000`, the initial value of `#!java myAccount.balance`, a
 
 Change instance fields is how we change the state of an object and make our objects more flexible and realistic.  
 
+### Returns
+Remeber, variables only exist in the *scope* that they were declared in.  We can use a value outside of the method it was created in if we *return* it from the method.  
+
+We return a value by using the keyword `#!java return`:
+```java linenums="1"
+public int numberOfTires() {
+  int tires = 4;
+  // return statement
+  return tires;
+}
+```
+This method, called `#!java numberOfTires()`, returns `4`.  Once the return statement is executed, the compiler exits the function.  Any code that exists after the return statement in a function is ignored.  
+
+In past exercises, when creating new methods, we use the keyword `#!java void`.  Here, we are replacing `#!java void` with `#!java int`, to signify that the *return type* is an `#!java int`.  
+
+The `#!java void` keyword (which means "completely empty") indicates that no value is returned after calling that method.  
+
+A non-void method, like `#!java numberOfTires()` returns a value when it is called.  We can use datatype keywords (such as `#!java int`, `#!java char`, etc.) to specify the type of value the method should return.  The return value's type must match the return type of the method.  If the return expression is compatible with the return type, a copy of that value gets returned in a process known as *return by value*.  
+
+Unlike void mehods, non-void methods can be used as either a variable value or as part of an expression like so:
+
+```java linenums="1"
+public static void main(String[] args){
+  Car myCar = new Car("Red");
+  int numTires = myCar.numberOfTires();
+}
+```
+Within `#!java main()`, we called the `#!java numberOfTires()` method on `myCar`.  Since the method returns an `#!java int` value of `4`, we store the value in an integer value called `numTires`.  If we printed `numTires`, we would see `4`.  
+
+### The `#!java toString()` method
+When we print out Objects, we often see a `#!java String` that is not very helpful in determining what the object represents.  In earlier notes, we saw that printing our `Store` object would output something like:
+```
+Store@6bc7c123
+```
+Where `Store` is the name of the object and `@6bc7c123` is its position in memory.  
+
+This doesn't tell us anything about what the `Store` sells, the price, or the other instance fields we've defined.  We can add a method to our classes that makes this printout more descriptive.  
+
+When we define a *`#!java toString()`* method for a class, we can return a `#!java String` that will print when we print the object:
+```java linenums="1"
+class Car{
+
+  String color;
+
+  public Car(String carColor){
+    color = carColor;
+  }
+
+  public static void main(String[] args){
+    Car myCar = new Car("red");
+    System.out.println(myCar);
+  }
+
+  public String toString(){
+    return "This is a " + color + " car!";
+  }
+}
+```
+When this runs the command `#!java System.out.println(myCar)` will print `This is a red car!`, which tells us about the Object `myCar`.  
+
+### Methods Review
+Methods are a powerful way to abstract tasks away and make them repeatable.  They allow us to define behavior for classes, so that the Objects we create can do the things we expect them to.  Let's review everything we have learned about methods so far:
+
+- *Defining a method*: Methods have a method signature that declares their return type, name, and parameters.
+
+- *Calling a method*: Methods are invoked with a `.` and `()`.  
+
+- *Parameters*: Inputs to the method and their types are declared in parentheses in the method signature.  
+
+- *Changing Instance Fields*: Methods can be used to change the value of an instance field.  
+
+- *Scope*: Variables only exist within the domain that they are created in.  
+
+- *Return*: The type of the variables that are output are declared in the method signature.  
+
+## Basic Calculator 
+```java linenums="1"
+public class Calculator{
+
+  public Calculator(){
+
+  }
+
+  public int add(int a, int b){
+    return a + b;
+  }
+
+  public int subtract(int a, int b){
+    return a - b;
+  }
+
+  public int multiply(int a, int b){
+    return a * b;
+  }
+
+  public int divide(int a, int b){
+    return a / b;
+  }
+
+  public int modulo(int a, int b){
+    return a % b;
+  }
+
+  public static void main(String[] args){
+    Calculator myCalculator = new Calculator();
+    System.out.println(myCalculator.add(5, 7));
+    System.out.println(myCalculator.subtract(45, 11));
+
+  }
+}
+```
