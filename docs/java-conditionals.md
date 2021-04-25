@@ -249,3 +249,177 @@ Specific conditional statements have the following behavior:
 
     - Switch block runs if condition matches the `#!java case` value.  
 
+## Introduction to Conditional Operators
+Java includes operators that only use boolean values.  These *conditional operators* help simplify expressions containing complex boolean relationships by reducing multiple boolean values to a single use: `#!java true` or `#!java false`.  
+
+For example, what if we want to run a code block only if *multiple* conditions are true.  We could use the *AND* operator: `#!java &&`.  
+
+Or, we want to run a code block if *at least one* of two conditions are `#!java true`.  We could use the *OR* operator: `#!java ||`.  
+
+Finally, we can produce the opposite value, where `#!java true` becomes `#!java false` and `#!java false` becomes `#!java true`, with the *NOT* operator: `#!java !`.  
+
+In the following notes, we'll go over each of these conditional operators to see how they can be implemented into our conditional statements.  
+
+**AND**
+
+| A     | B     | A&&B  |
+|-------|-------|-------|
+| true  | true  | true  |
+| true  | false | false |
+| false | true  | false |
+| false | false | false |  
+
+**OR**  
+
+| A     | B     | A\|\|B |
+|-------|-------|--------|
+| true  | true  | true   |
+| true  | false | true   |
+| false | true  | true   |
+| false | false | false  |  
+
+**NOT**  
+
+| A     | !A    |
+|-------|-------|
+| true  | false |
+| false | true  |  
+
+### Conditional-AND: `#!java &&`  
+Let's return to our student enrollment program.  We've added an additional requirement: not only must students have the prerequisite, but their tuition must be paid up as well.  We have *two* conditionals that must be `#!java true` before we enroll the student.  
+
+Here is one way we can write the code:  
+
+```java linenums="1"
+if (tuitionPaid) {
+    if (hasPrerequisite){
+        // enroll student
+    }
+}
+```
+We've nested two `#!java if-then` statements.  This does the job but we can be more concise with the *AND* operator:
+```java linenums="1"
+if (tuitionPaid && hasPrerequisite){
+    // enroll student
+}
+```
+The AND operator, `#!java &&`, is used between two boolean values and evaluates to a single boolean value.  If the values **on both sides** are `#!java true`, then the resulting value is `#!java true`, otherwise the resulting value is `#!java false`.  
+
+This code illustrates every combination:
+```java
+true && true
+// true
+false && true
+// false
+true && false
+// false
+false && false
+// false
+```
+
+### Conditional-OR: `#!java ||`
+The requirements of our enrollment program have changed again.  Certain courses have prerequisites that are satisfied by multiple courses.  As long as students have taken **at least one** prerequisite, they should be allowed to enroll.  
+
+Here's one way we could write the code:
+```java linenums="1"
+if (hasAlgebraPrerequisite){
+    // enroll student
+}
+
+if (hasGeometryPrerequisite){
+    // enroll student
+}
+```
+We're using two `#!java if-then` statements with **the same code block**.  We can be more concise with the *OR* operator:
+```java linenums="1"
+if (hasAlgebraPrerequisite || hasGeometryPrerequisite){
+    // enroll student
+}
+```
+The OR operator, `#!java ||`, is used between two boolean values and evaluates to a single boolean value.  If **either of the two values** are `#!java true`, then the resulting value is `#!java true`, otherwise the resulting value is `#!java false`.  
+
+This code illustrates every combination:
+```java
+true || false
+// true
+true || false
+// true
+false || true
+// true
+false || false
+// false
+```
+### Logical NOT: `#!java !`
+The *unary* operator NOT, `#!java !`, works on a **single** value.  This operator evaluates to the opposite boolean to which it is applied:
+```java
+!false
+// true
+!true
+// false
+```
+NOT is useful for expressing our intent clearly in programs.  For example sometimes we need the opposite behavior of an `#!java if-then`: run a code block **only if** the condition is `#!java false`.  
+
+```java linenums="1"
+boolean hasPrerequisite = false;
+
+if (hasPrerequisite) {
+    // do nothing
+} else {
+    System.out.println("Must complete prerequisite course!");
+}
+```
+This code does what we want but it's strange to have a code block that does nothing!  
+
+The logical NOT operator cleans up our example:
+```java linenums="1"
+boolean hasPrerequisite = false;
+
+if (!hasPrerequisite){
+    System.out.println("Must complete prerequisite course!");
+}
+```
+We can write a succint conditional statement without an empty code block.  
+
+### Combining Conditional Operators
+We have the ability to expand our boolean expressions by using multiple conditional operators in a single expression.  
+
+For example:
+```java 
+boolean foo = true && !(false || !true)
+```
+How does an expression like this get evaluated by the compiler?  The order of evaluation when it comes to conditional operators is as follows:
+
+1. Conditions placed in parentheses - `#!java {}`  
+
+2. NOT - `#!java !`  
+
+3. AND - `#!java &&`  
+
+4. OR - `#!java ||`  
+
+Using this information, let's dissect the expression above to find the value of `foo`:
+```java 
+true && !(false || !true)
+```
+First, we'll evaluate the `#!java (false || !true)` because it is enclosed within parentheses.  Following the order of evaluation, we will evaluate `#!java !true`, which equals `#!java false`:  
+```java
+true && !(false || false)
+```
+Then, we'll evaluate `#!java (false || false)` which equals `#!java false`.  Now our expression looks like this:
+```
+true && !false
+```
+Next, we'll evaluate `#!java !false` because it uses the NOT operator.  This expression equals `#!java true` making our expression the following:  
+```java 
+true && true
+```
+`#!java true && true` evaluates to `#!java true`; therefore, the value of `foo` is `#!java true`.  
+
+## Conditional Operators Review
+Conditional Operators work on boolean values to simplify our code.  They're often combined with conditional statements to consolidate the branching logic.  
+
+Conditional-AND, `#!java &&`, evaluates to `#!java true` if the booleans on *both sides* are `#!java true`.  
+
+Conditional-OR, `#!java ||`, evaluates to `#!java true` if one or both oif the booleans on either side is `#!java true`.  
+
+Conditional-NOT, `#!java !`, evaluates to the opposite boolean value to which it is applied.  

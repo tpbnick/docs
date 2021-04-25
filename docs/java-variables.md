@@ -1,6 +1,6 @@
 # Variables
 
-## Overview
+## Introduction to Variables
 Let's say we need a program that connects a user with new jobs.  We need the user's name, their salary, and they current employment status.  All of these pieces of information are stored in our program.  
 
 We store information in *variables*, which are named locations in memory.  
