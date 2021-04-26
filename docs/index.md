@@ -42,6 +42,7 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
     - [Classes](java-classes.md)
     - [Conditionals/Control Flow](java-conditionals.md)
     - [Arrays](java-arrays.md)
+    - [Loops](java-loops.md)
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)
