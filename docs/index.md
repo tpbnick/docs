@@ -43,6 +43,7 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
     - [Conditionals/Control Flow](java-conditionals.md)
     - [Arrays](java-arrays.md)
     - [Loops](java-loops.md)
+    - [String Methods](java-string-methods.md)
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)
@@ -56,14 +57,6 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
     - [APIs Overview](api.md)
     - [Django](django.md)
 
-??? homepage2 "C++"
-	- Coming Soon!
-
-??? homepage2 "Go"
-	- Coming Soon!
-
-??? homepage2 "R"
-	- Coming Soon!
 
 ## Quick Links
 

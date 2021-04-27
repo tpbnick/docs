@@ -109,6 +109,7 @@ nav:
       - Conditionals/Control Flow: java-conditionals.md
       - Arrays: java-arrays.md
       - Loops : java-loops.md
+      - String Methods : java-string-methods.md
     - 'SQL':
       - SQL Basics : sql.md
       - Joins and Other Query Types : sql-joins-and-other-queries.md
