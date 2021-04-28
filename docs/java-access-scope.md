@@ -33,3 +33,18 @@ public class DogSchool{
 Notice that the `DogSchool` class and the `#!java makeADog()` method are also public.  This means that if some other class created a `DogSchool`, they would have access to these methods as well!  We have public methods calling public methods!  
 
 One final thing to note is that for the purposes of this lesson, we'll almost always make our classes and constructors `public`.  While you can set them to `private`, it's fairly uncommon to do so.  Instead, we'll focus on why you might make your instance variables and methods `private`.
+
+## The `private` Keyword and Encapsulation  
+When a Class' instance variable or method is marked as `private`, that means that you can only access those structures from elsewhere inside that same class.  Let's look back at our `DogSchool` example:  
+```java linenums="1"
+public class DogSchool{
+ 
+  public void makeADog(){
+    Dog cujo = new Dog("Cujo", 7);
+    System.out.println(cujo.age);
+    cujo.speak();
+  }
+}
+```  
+`makeADog` is trying to directly access `Dog`'s `.age` variable.  It's also trying to use the `.speak()` method.  If those are marked as `private` in the `Dog` class, the `DogSchool` class won't be able to do that.  Other methods within the `Dog` class would be able to us `.age` or `.speak()` (for example, we could use `cujo.age` within the `Dog` class), but other classes won't have access.  
+
