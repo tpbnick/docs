@@ -188,3 +188,14 @@ String lower = input.toLowerCase();
 ```  
 A good use of this functionality is to ensure consistency of the data you store in a database. Making sure all of the data you get from a user is lowercase before you store it in your database will make your database easier to search through later.  
 
+### String Methods Review  
+| String Method   | Value                                   |
+|-----------------|-----------------------------------------|
+| `length()`      | returns the length                      |
+| `concat()`      | concatenates two strings                |
+| `equals()`      | checks for equality between two strings |
+| `indexOf()`     | returns the index of a substring        |
+| `charAt()`      | returns a character                     |
+| `substring()`   | returns a substring                     |
+| `toUpperCase()` | returns the upper case version          |
+| `toLowerCase()` | returns the lower case version          |

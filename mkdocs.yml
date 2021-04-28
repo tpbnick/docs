@@ -110,6 +110,7 @@ nav:
       - Arrays: java-arrays.md
       - Loops : java-loops.md
       - String Methods : java-string-methods.md
+      - Access, Encapsulation, & Scope: java-access-scope.md
     - 'SQL':
       - SQL Basics : sql.md
       - Joins and Other Query Types : sql-joins-and-other-queries.md
