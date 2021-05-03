@@ -25,7 +25,18 @@
     - [Random Programs](py-random.md)
 
 ??? homepage "Java"
-    - [Java Basics](java.md)
+    - [Java Overview](java.md)
+    - [Java Basics](java-basics.md)
+    - [Variables](java-variables.md)
+    - [Classes](java-classes.md)
+    - [Conditionals/Control Flow](java-conditionals.md)
+    - [Arrays](java-arrays.md)
+    - [Loops](java-loops.md)
+    - [String Methods](java-string-methods.md)
+    - [Access, Encapsulation, & Scope](java-access-scope.md)
+    - [Inheritance & Polymorphism](java-inheritance-polymorphism.md)
+    - [Debugging](java-debugging.md)
+    - [2D Arrays](java-2d-arrays.md)
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)

@@ -45,6 +45,9 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
     - [Loops](java-loops.md)
     - [String Methods](java-string-methods.md)
     - [Access, Encapsulation, & Scope](java-access-scope.md)
+    - [Inheritance & Polymorphism](java-inheritance-polymorphism.md)
+    - [Debugging](java-debugging.md)
+    - [2D Arrays](java-2d-arrays.md)
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)

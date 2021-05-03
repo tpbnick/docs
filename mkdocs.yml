@@ -111,6 +111,9 @@ nav:
       - Loops : java-loops.md
       - String Methods : java-string-methods.md
       - Access, Encapsulation, & Scope: java-access-scope.md
+      - Inheritance & Polymorphism: java-inheritance-polymorphism.md
+      - Debugging : java-debugging.md
+      - 2D Arrays : java-2d-arrays.md
     - 'SQL':
       - SQL Basics : sql.md
       - Joins and Other Query Types : sql-joins-and-other-queries.md
