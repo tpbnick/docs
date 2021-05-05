@@ -49,3 +49,111 @@ Nick is 25 years old.He has a 3.8 GPA.
 Remember to **use descriptive variable names**!  Think of a variable as a moving box.  When you fill up the box it is common to write on the outside of the box what it contains.  Use similar logic when it comes to naming variables.
 
 ## Strings
+Strings are any grouping of characters on your keyboard (letters, numbers, space, symbolsm etc.) surrounded by single quotes `#!js ' ... '` or double quotes `#!js " ... "`.  Though we prefer single quotes.  Some people like to think of string as a fancy word for text.  
+```js linenums="1"
+"This is Nick's Docs!"
+'Single quotes work too!'
+"JS is fun!"
+```
+Strings cannot be divided, multiplied, or subtracted, but the + operator *can* be used on them.  It does not add, but it *concatenates* - it glues two strings together.  
+
+The following line will produced the string "`concatenate`":
+```js
+"con" + "cat" + "e" + "nate"
+```
+
+## Booleans
+Booleans have only two possible values - either `#!js true` or `#!js false`.  It is helpful to think of booleans as on and off switches or as the answers to a "yes" or "no" question.  
+
+Here is one way to produce Boolean values:
+```js linenums="1"
+console.log(3>2);
+// true
+console.log(3<2);
+// false
+```
+Strings can be compared in the same way:
+```js linenums="1"
+console.log("Aardvark" < "Zoroaster");
+// true
+```
+The way strings are ordered is roughly alphabetic but not really what you'd expect to see in a dictionary: uppercase letters are always "less" than lowercase ones, so "Z" < "a", and nonalphabetic characters (!, -, and so on) are also include in the ordering.  When comparing strings, JavaScript goves over the characters from left to right, comparing the Unicode codes one by one.  
+
+Other similar operators are `>=` (greater than or equal to), `<=` (less than or equal to), `==` (equal to), and `!=` (not equal to).
+```js linenums="1"
+console.log("Itchy" != "Scratchy")
+// true
+console.log("Apple" == "Orange")
+// false
+```
+## Numbers  
+Values of the *number* type are, unsurprisingly, numeric values.  In a JavaScript program, they are written as follow:
+```js
+44;
+12.34;
+```
+JavaScript uses a fixed number of bits, 64 of them, to store a single number value.  There are only so many patterns you can make with 64 bits, which means that the number of different numbers that can be represented is limited.  With *N* decimal digits, you can represent 10<sup>N</sup> numbers.  Similarly, given 64 binary digits, you can represent 2<sup>64</sup> number, which is about 18 quintillion.  That's a lot.  
+
+Fractional numbers are simply written by using a dot (`12.34`).  For very big or very small numbers, you may also use scientific notation by adding an *e* (for exponent), followed by the exponent of the number:
+```js
+2.998e8 // this is 2.998 x 10^8 = 299,800,000
+```
+
+## Arithmetic Operators
+Basic arithmetic operators often come in handy when programming.  
+
+An *operator* is a character that performs a task in our code.  JavaScript has several built-in *arithmetic operators*, that allow us to perform mathematical calculations on numbers.  These include the following operators and their corresponding symbols:
+
+1. Add: `+`  
+
+2. Subtract: `-`  
+
+3. Multiply: `*`  
+
+4. Divide: `/`  
+
+5. Remainder: `%`  
+
+The first four might work how you guess:
+```js linenums="1"
+console.log(3+4); // prints 7
+console.log(5-1); // prints 4
+console.log(4*2); // prints 8
+console.log(9/3); // prints 3 
+```
+Not that when we `#!js console.log()` the computer will evaluate the expression inside the parentheses and print that result to the console.  If we wanted to print the characters `#!js 3+4`, we would wrap them in quotes and print them as a string.  
+
+The remainder operator, sometimes known as *modulo*, returns the number that remains after the right-hand number divides into the left-hand number as many times as it can. 
+```js linenums="1"
+console.log(11%3); // prints 2
+console.log(12%3); // prints 0
+```
+`#!js 11 % 3` equals 2 because 3 fits into 11 three times, leaving two as the remainder.  
+
+## Properties
+When you introduce a new piece of data into a JavaScript program, the browser saves it as an instance of the data type.  Every string instance has a property called `length` that stores the number of characters in that string.  You can retrieve property information by appending the string with a period and the property name:
+```js
+console.log("Hello".length); // prints 5
+```
+The `.` is another operator!  We call it the *dot operator*.  
+
+In the example above, the value saved to the `length` property is retrieved from the instance of the string, `#!js "Hello"`.  The program prints `5` to the console, because `Hello` has five characters in it.  
+
+## Methods
+Remember that methods are actions we can perfrom.  JavaScript provides a number of string methods.  We *call*, or use, these methods by appending an instance with:
+
+- a period `.` (the dot operator)  
+
+- the name of the method  
+
+- opening and closing parentheses  
+
+E.g. `#!js 'example string'.methodName();`.  
+
+Does that syntax look a little familiar?  When we use `#!js console.log();` we're calling the `#!js .log()` method on the `console` object.  Let's see `#!js console.log()` and some real string methods in action!  
+```js linenums="1"
+console.log('hello'.toUpperCase()); // prints HELLO
+console.log('Hey'.startsWith('H')); // prints true
+```
+
+
