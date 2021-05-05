@@ -100,6 +100,7 @@ const unknown3 = true;
 console.log(typeof unknown3); // prints boolean 
 ```
 ## Strings
+<<<<<<< HEAD
 Strings are any grouping of characters on your keyboard (letters, numbers, space, symbolsm etc.) surrounded by single quotes `#!js ' ... '` or double quotes `#!js " ... "`.  Though we prefer single quotes.  Some people like to think of string as a fancy word for text.  
 ```js linenums="1"
 "This is Nick's Docs!"
@@ -224,3 +225,5 @@ Does that syntax look a little familiar?  When we use `#!js console.log();` we'r
 console.log('hello'.toUpperCase()); // prints HELLO
 console.log('Hey'.startsWith('H')); // prints true
 ```
+=======
+>>>>>>> parent of 26d8374 (Commit 5/4)
