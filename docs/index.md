@@ -1,4 +1,4 @@
-# Welcome to Nick's Docs <img class="books" src="https://nicklyss.com/media/uploads/2020/12/books1.png" height="50 !important">
+# Welcome to Nick's Docs <img class="books" src="https://nicklyss.com/media/uploads/2021/05/books2.png" height="50 !important">
 
 This is a place for documentation examples, programming notes, and projects.  
   
@@ -56,6 +56,8 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
 
 ??? homepage "JavaScript"
     - [JavaScript Basics](js.md)
+    - [Variables and Simple Data Types](js-data-types.md)
+    - [Conditional Statements](js-conditionals.md)
 
 ??? homepage "Misc. Notes"
     - [APIs Overview](api.md)

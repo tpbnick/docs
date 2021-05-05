@@ -54,7 +54,7 @@ html {
 }
 .md-typeset .homepage > .admonition-title,
 .md-typeset .homepage > summary {
-	background-color: rgba(231, 99%, 66%, 0.1));
+	background-color: rgba(231, 99%, 66%, 0.1);
 }
 
 .md-typeset .homepage > .admonition-title::before,
@@ -68,10 +68,10 @@ html {
 .md-typeset details.homepage2 {
 	border-color: #BF616A;
 }
-.md-typeset .homepage2 > .admonition-title,
-.md-typeset .homepage2 > summary {
-	background-color: rgba(191, 97, 106, 0.1));
+.md-typeset .homepage2 > .admonition-title, .md-typeset .homepage2 > summary {
+	background-color: rgba(191, 97, 106, 0.1);
 }
+
 .md-typeset .homepage2 > .admonition-title::before,
 .md-typeset .homepage2 > summary::before {
 	background-color: #BF616A;
@@ -80,11 +80,11 @@ html {
 }
 
 .md-footer-meta__inner,.md-footer-meta, .md-footer{
-	background-color: #2E3440;
+	background-color: #3B4252;
 }
 
 .md-footer-nav{
-	background-color: #434C5E;
+	background-color: #3B4252;
 }
 
 .md-footer-social__link svg{
@@ -97,8 +97,8 @@ html {
 
 }
 
-.md-typeset code, .codehilitetable .linenos, .highlighttable .linenos{
-	background-color: #E5E9F0 !important;
+.md-typeset code, .linenos, .highlighttable{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px !important;
 }
 
 .md-tabs{
@@ -117,5 +117,6 @@ html {
 .md-tabs__link--active, .md-tabs__link:hover {
     color: inherit;
     opacity: 1;
-    border-bottom: 2px solid #5E81AC;
+    border-bottom: 4px solid #5E81AC;
+
 }

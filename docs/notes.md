@@ -46,7 +46,7 @@
 ??? homepage "JavaScript"
     - [JavaScript Basics](js.md)
     - [Variables and Simple Data Types](js-data-types.md)
-
+    - [Conditional Statements](js-conditionals.md)
 
 ## Random Notes
 

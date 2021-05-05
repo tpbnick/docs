@@ -1,5 +1,4 @@
 # Variables and Simple Data Types  
-
 ## Variables 
 
 Variables are a JavaScript developer's bread and butter. They make it really easy to write complex programs with lots and lots of instructions, and keep everything organized and straight.  Often times when you're writing a program in JavaScript, there will be several pieces of data that you need to keep track of.  Think for example of Facebook. Facebook keeps track of tons of information and displays it on their websites and apps. Things like names, birthdays, status', etc. In order for us to write more complex programs like these, that do more than print text out onto the screen, we'll need to learn how to manage all of the information in our programs and use variables.  
@@ -46,8 +45,60 @@ Nick is 25 years old.He has a 3.8 GPA.
 ```
 `#!js null` and `#!js undefined` are different because when you use `#!js null`, you are saying that there is no value, but `#!js undefined` says that there is no value *yet*.  You will probably not use `#!js null` or `#!js undefined` much as a developer, but they are still good to know/understand.
 
+The `$` used above is called *interpolation*.  This allows us to insert, or *interpolate*, variables into strings using *template literals*.  
+
+Notice that:  
+
+- A template literal is wrapped by backticks ``` (this key is usually located on the top of your keyboard, left of the 1 key).  
+
+- Inside the template literal, you’ll see a placeholder, `#!js ${myPet}`. The value of `myPet` is inserted into the template literal.  
+
+- When we interpolate `#!js I own a pet ${myPet}.`, the output we print is the string: `'I own a pet armadillo.'`  
+
+One of the biggest benefits to using template literals is the readability of the code. Using template literals, you can more easily tell what the new string will be. You also don't have to worry about escaping double quotes or single quotes.
+
 Remember to **use descriptive variable names**!  Think of a variable as a moving box.  When you fill up the box it is common to write on the outside of the box what it contains.  Use similar logic when it comes to naming variables.
 
+### Create a Variable: `#!js let`
+The `#!js let` keyword signlas that the variable can be reassigned a different value.  Take a look at the example:
+```js linenums="1"
+let meal = "Enchiladas";
+console.log(meal); // prints Enchiladas
+meal = "Burrito";
+console.log(meal); // prints Burrito
+```
+Another concept that we should be aware of when using `#!js let` (and even `#!js var`) is that we can declare a variable without assigning the vairable a value.  In such a case, the variable will be automatically initialized with a value of `undefined`:  
+```js linenums="1"
+let price;
+console.log(price); // prints undefined
+price = 350;
+console.log(price); // prints 350
+```
+### Create a Variable: `#!js const`
+The `#!js const` keyword is short for the word constant, which means that it cannot be reassigned.  Just like `#!js var` and `#!js let`, you can store any value in a `#!js const` variable (it also follows the same structure!).  Take a look at the following example:
+```js linenums="1"
+const myName = "Nick";
+console.log(myName); // prints Nick
+```
+As you can see, we created a `#!js const` variable named `myName`, which should never have to change.  If you try to reassign a `#!js const` variable, you'll get a `TypeError`.  
+
+Constant variables *must* be assigned a value when declared.  If you try to declare a `#!js const` variable without a value, you'll get a `TypeError`.  
+
+If you're trying to decide between which keyword to use, `#!js let` or `#!js const`, think about whether you'll need to reassign the variable later on.
+### `#!js typeof` Operator
+While writing code, it can be useful to keep track of the data types of the variables in your program.  If you need to check the data type of a variable's value, you can use the `#!js typeof` operator.  
+
+The `#!js typeof` operator checks the value to its right and *returns*, or passes back, a string of the data type.  
+```js linenums="1"
+const unknown1 = "foo";
+console.log(typeof unknown1); // prints string
+
+const unknown2 = 10;
+console.log(typeof unknown2); // prints number
+
+const unknown3 = true;
+console.log(typeof unknown3); // prints boolean 
+```
 ## Strings
 Strings are any grouping of characters on your keyboard (letters, numbers, space, symbolsm etc.) surrounded by single quotes `#!js ' ... '` or double quotes `#!js " ... "`.  Though we prefer single quotes.  Some people like to think of string as a fancy word for text.  
 ```js linenums="1"
@@ -61,7 +112,12 @@ The following line will produced the string "`concatenate`":
 ```js
 "con" + "cat" + "e" + "nate"
 ```
-
+We cab also concatenate variables with additional strings:
+```js linenums="1"
+let myName = "Nick";
+console.log("Hello, my name is " + myName + "!");
+// prints Hello, my name is Nick!
+```
 ## Booleans
 Booleans have only two possible values - either `#!js true` or `#!js false`.  It is helpful to think of booleans as on and off switches or as the answers to a "yes" or "no" question.  
 
@@ -98,7 +154,6 @@ Fractional numbers are simply written by using a dot (`12.34`).  For very big or
 ```js
 2.998e8 // this is 2.998 x 10^8 = 299,800,000
 ```
-
 ## Arithmetic Operators
 Basic arithmetic operators often come in handy when programming.  
 
@@ -121,7 +176,7 @@ console.log(5-1); // prints 4
 console.log(4*2); // prints 8
 console.log(9/3); // prints 3 
 ```
-Not that when we `#!js console.log()` the computer will evaluate the expression inside the parentheses and print that result to the console.  If we wanted to print the characters `#!js 3+4`, we would wrap them in quotes and print them as a string.  
+Note that when we `#!js console.log()` the computer will evaluate the expression inside the parentheses and print that result to the console.  If we wanted to print the characters `#!js 3+4`, we would wrap them in quotes and print them as a string.  
 
 The remainder operator, sometimes known as *modulo*, returns the number that remains after the right-hand number divides into the left-hand number as many times as it can. 
 ```js linenums="1"
@@ -130,6 +185,21 @@ console.log(12%3); // prints 0
 ```
 `#!js 11 % 3` equals 2 because 3 fits into 11 three times, leaving two as the remainder.  
 
+### The Increment and Decrement Operator
+Other mathematical assignment operators include the *increment operator* (`++`) and *decrement operator* (`--`).  
+
+The increment operator will increase the value of the variable by 1.  The decrement operator will decrease the value of the variable by 1.  For example:
+```js linenums="1"
+let a = 10;
+a++;
+console.log(a); // prints 11
+```
+```js linenums="1"
+let b = 20;
+b--;
+console.log(b); // prints 19
+```
+Just like the other simple operators (`+=`, `-=`, `*=`, `/=`), the variable's value is updated and *assigned* as the new value of that variable.  
 ## Properties
 When you introduce a new piece of data into a JavaScript program, the browser saves it as an instance of the data type.  Every string instance has a property called `length` that stores the number of characters in that string.  You can retrieve property information by appending the string with a period and the property name:
 ```js
@@ -138,7 +208,6 @@ console.log("Hello".length); // prints 5
 The `.` is another operator!  We call it the *dot operator*.  
 
 In the example above, the value saved to the `length` property is retrieved from the instance of the string, `#!js "Hello"`.  The program prints `5` to the console, because `Hello` has five characters in it.  
-
 ## Methods
 Remember that methods are actions we can perfrom.  JavaScript provides a number of string methods.  We *call*, or use, these methods by appending an instance with:
 
@@ -155,5 +224,3 @@ Does that syntax look a little familiar?  When we use `#!js console.log();` we'r
 console.log('hello'.toUpperCase()); // prints HELLO
 console.log('Hey'.startsWith('H')); // prints true
 ```
-
-
