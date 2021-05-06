@@ -169,3 +169,136 @@ if (numberOfApples){
 ```
 
 The condition evaluates to `#!js false` because the value of the `numberOfApples` is `0`. Since `0` is a falsy value, the code block in the `else` statement will run.
+
+### Truthy and Falsy Assignment
+Truthy and falsy evaluations open a world of short-hand possibilities!  
+
+Say you have a website and want to take a user's username to make a personalized greeting.  Sometimes, the user does not have an account, making the `username` variable falsy.  The code below checks if `username` is defined and assigns a default string if it is not:  
+```js linenums="1"
+let defaultName;
+if (username) {
+	defaultName = username;
+} else {
+	defaultName = 'Stranger';
+}
+```
+If you compine your knowledge of logical operators you can use a short-hand for the code above.  In a boolean condition, JavaScript assigns the truthy value to a variable if you use the `||` operator in your assignment:
+```js
+let defaultName = username || 'Stranger';
+```
+Because `||` or statements check the left-hand condition first, te variable `defaultName` will be assigned the value of `username` if it is truthy, and it will be assigned the value of `"Stranger"` if it is falsy.  This concept is also referred to as *short-circuit evaluation*.  
+
+## Ternary Operator
+In the spirit of using short-hand syntax, we can use a *ternary operator* to simplify an `if-else` statement.  
+
+Take a look at the `if-else` example below:
+```js linenums="1"
+let isNightTime = true;
+ 
+if (isNightTime) {
+  console.log('Turn on the lights!');
+} else {
+  console.log('Turn off the lights!');
+}
+```
+We can use a *ternary operator* to perform the same functionality:
+```js
+isNightTime ? console.log("Turn on the lights!") : console.log("Turn off the lights!");
+```  
+In the example above:  
+
+- The condition, `isNightTime`, is provided before the `?`  
+
+- Two expressions follow the `?` and are separated by a colon `:`  
+
+- If the condition evaluates to `#!js true`, the first expression executes  
+
+- If the condition evaluates to `#!js false`, the second expression executes  
+
+Like `if-else` statements, ternary operators can be used for conditions which evaluate to `#!js true` or `#!js false`.  
+
+## Else If Statements
+We can add more conditionals to our `if-else` with an `else if` statement.  The `else if` statement allows for more than two possible outcomes.  You can add as many `else if` statements as you'd like, to make more complex conditionals.  
+
+The `else if` statement always comes after the `if` statement and before the `else` statement.  The `else if` statement also takes a condition.  Let's look at the syntax:
+```js linenums="1"
+let stopLight = 'yellow';
+ 
+if (stopLight === 'red') {
+  console.log('Stop!');
+} else if (stopLight === 'yellow') {
+  console.log('Slow down.');
+} else if (stopLight === 'green') {
+  console.log('Go!');
+} else {
+  console.log('Caution, unknown!');
+}
+```
+The `else-if` statements allow you to have multiple possible outcomes.  `if`/`else if`/`else` statements are read from top to bottom, so the first condition that evaluates to `true` from the top to bottom is the block that gets executed.  
+
+In the example above, since `#!js stopLight === 'red'` evaluates to `false` and `#!js stopLight === 'yellow'` evaluates to `true`, the code inside the first `else if` statement is executed. The rest of the conditions are not evaluated. If none of the conditions evaluated to `true`, then the code in the `else` statement would have executed.  
+
+## The `#!js switch` Keyword
+`else-if` statements are a great tool if we need to check multiple conditions.  In programming, we often find ourselves needing to check multiple values and handling each of them differently.  For example:
+```js linenums="1"
+let groceryItem = 'papaya';
+ 
+if (groceryItem === 'tomato') {
+  console.log('Tomatoes are $0.49');
+} else if (groceryItem === 'papaya'){
+  console.log('Papayas are $1.29');
+} else {
+  console.log('Invalid item');
+}
+```  
+In the code above, we have a series of conditions checking or a value that matches a `groceryItem` variable.  The code works fine, but imagine if we needed to check 100 different values!  Having to write that many `else if` statements sounds like a pain!  
+
+A `switch` statement provides an alternative syntax that is easier to read and write.  A `switch` statement looks like this:
+```js linenums="1"
+let groceryItem = 'papaya';
+ 
+switch (groceryItem) {
+  case 'tomato':
+    console.log('Tomatoes are $0.49');
+    break;
+  case 'lime':
+    console.log('Limes are $1.49');
+    break;
+  case 'papaya':
+    console.log('Papayas are $1.29');
+    break;
+  default:
+    console.log('Invalid item');
+    break;
+}
+ 
+// prints 'Papayas are $1.29'
+```  
+- The `switch` keyword initiates the statement and is followed by `(...)`, which contains the value that each `case` will compare.  In the example, the value or expression of the `switch` statement is `groceryItem`.  
+
+- Inside the block, `{...}`, there are multiple `case` keyword checks if the expression matches the specified value that comes after it.  The value following the first `case` is `'tomato'`.  If the value of `groceryItem` equalled `'tomato'`, that `case`'s `console.log()` would run.  
+
+- The value of `groceryItem` is `'papaya'`, so the third `case` runs - `Papayas are $1.29` is logged to the console.  
+
+- The `break` keyword tells the computer to exit the block and not execute any more code or check any other cases inside the code block.  Note: without `break` keywords, the first matching case will run, but so will every other subsequent case regardless of whether or not it matches - including the default.  This behavior is different from `if`/`else` conditional statements that execute only one block of code.  
+
+- At the end of each `switch` statement, there is a `default` statement.  If none of the `case`s are true, then the code in the `default` statement will run.  
+
+## Conditional Statements Review  
+- An `if` statement checks a condition and will execute a task if that condition evaluates to `true`.  
+
+- `if-else` statements make binary decisions and execute different code blocks based on a provided condition.  
+
+- We can add more conditions using `else if` statements.  
+
+- Comparison operators, including `<`, `>`, `<=`, `>=`, `===`, and `!==` can compare two values.  
+
+- The logical and operator, `&&`, or “and”, checks if both provided expressions are truthy.  
+
+- The logical operator `||`, or “or”, checks if either provided expression is truthy.  
+
+- The bang operator, `!`, switches the truthiness and falsiness of a value.  
+
+- The ternary operator is shorthand to simplify concise `if-else` statements.  
+
+- A `switch` statement can be used to simplify the process of writing multiple `else if` statements. The `break` keyword stops the remaining `case`s from being checked and executed in a `switch` statement.  
