@@ -1,5 +1,4 @@
 # About
-
 ## About Me
 <div id="lightgallery" class="center">
     <a href="https://nicklyss.com/wp-content/uploads/2020/05/nicklyss.jpg">
@@ -35,7 +34,7 @@ Creating robust and easy-to-understand documentation is what I do best.  While t
 Below are some keyboards I have built!  
 
 ??? tip "Custom Keyboards"
-	<p id="lightgallery" class="center">**Canoe PC - Gateron Ink Yellow**<p><img src="https://nicklyss.com/media/uploads/2020/12/canoe.png" style ="border-radius: 10px;">  
+	<p id="lightgallery" class="center">**Canoe PC - Gateron Ink Yellow**</p><img src="https://nicklyss.com/media/uploads/2020/12/canoe.png" style ="border-radius: 10px;">  
 
 	<p id="lightgallery" class="center">**Custom Acrylic - Gateron Ink Blacks</p>**<img src="https://nicklyss.com/media/uploads/2020/12/acrylic.png" style ="border-radius: 10px;">  
 
@@ -48,8 +47,6 @@ Below are some keyboards I have built!
 	<p id="lightgallery" class="center">**Canon Keys Devastating TKL - Tealios**</p><img src="https://nicklyss.com/media/uploads/2021/04/imageedit_3_6470813349.png" style ="border-radius: 10px;">
 	
 	<p id="lightgallery" class="center">**Mysterium - Kailh Purple Pro**</p><img src="https://nicklyss.com/media/uploads/2020/12/mysterium.png" style ="border-radius: 10px;">
-
-	
 
 ## Contact  
 Nicholas Platt  
