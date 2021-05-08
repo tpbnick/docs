@@ -38,15 +38,17 @@
     - [Debugging](java-debugging.md)
     - [2D Arrays](java-2d-arrays.md)
 
+??? homepage "JavaScript"
+    - [JavaScript Basics](js.md)
+    - [Variables and Simple Data Types](js-data-types.md)
+    - [Conditional Statements](js-conditionals.md)
+    - [Functions](js-functions.md)
+
 ??? homepage "SQL"
     - [SQL Basics](sql.md)
     - [Joins and Other Query Types](sql-joins-and-other-queries.md)
     - [SQL Random Problems](sql-random.md)
 
-??? homepage "JavaScript"
-    - [JavaScript Basics](js.md)
-    - [Variables and Simple Data Types](js-data-types.md)
-    - [Conditional Statements](js-conditionals.md)
 
 ## Random Notes
 
