@@ -145,5 +145,5 @@ html {
 }
 
 .md-nav--primary .md-nav__item--active>.md-nav__link {
-    color: white;
+    font-weight: bolder;
 }
