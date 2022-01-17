@@ -1,0 +1,686 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=https://nicklyss.com/media/uploads/2020/12/nord.png><meta name=generator content="mkdocs-1.2.3, mkdocs-material-8.1.7"><title>Classes - Nick's Docs</title><link rel=stylesheet href=../assets/stylesheets/main.cd566b2a.min.css><link rel=stylesheet href=../assets/stylesheets/palette.e6a45f82.min.css><link rel=stylesheet href=../css/lightgallery.min.css><script src=../js/lightgallery.min.js></script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=../stylesheets/extra.css><script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary data-md-color-accent> <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#object-oriented-java class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=.. title="Nick's Docs" class="md-header__button md-logo" aria-label="Nick's Docs" data-md-component=logo> <img src=https://nicklyss.com/media/uploads/2020/12/nord2.png alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Nick's Docs </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Classes </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme=default data-md-color-primary data-md-color-accent aria-label="Switch to dark mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_2 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme=slate data-md-color-primary data-md-color-accent aria-label="Switch to light mode" type=radio name=__palette id=__palette_2> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg> </label> </form> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg> </button> </nav> <div class=md-search__suggest data-md-component=search-suggest></div> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/tpbnick/docs title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> tpbnick/docs </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class="md-tabs__inner md-grid"> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../portfolio/ class=md-tabs__link> Nick's Portfolio </a> </li> <li class=md-tabs__item> <a href=../notes/ class="md-tabs__link md-tabs__link--active"> Programming Notes </a> </li> <li class=md-tabs__item> <a href=../about/ class=md-tabs__link> About </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=.. title="Nick's Docs" class="md-nav__button md-logo" aria-label="Nick's Docs" data-md-component=logo> <img src=https://nicklyss.com/media/uploads/2020/12/nord2.png alt=logo> </a> Nick's Docs </label> <div class=md-nav__source> <a href=https://github.com/tpbnick/docs title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> tpbnick/docs </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=.. class=md-nav__link> Home </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_2 type=checkbox id=__nav_2> <label class=md-nav__link for=__nav_2> Nick's Portfolio <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Nick's Portfolio" data-md-level=1> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> Nick's Portfolio </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../portfolio/ class=md-nav__link> Main Portfolio </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_2_2 type=checkbox id=__nav_2_2> <label class=md-nav__link for=__nav_2_2> Google Chrome User Guide <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Google Chrome User Guide" data-md-level=2> <label class=md-nav__title for=__nav_2_2> <span class="md-nav__icon md-icon"></span> Google Chrome User Guide </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../chrome/ class=md-nav__link> What is Google Chrome? </a> </li> <li class=md-nav__item> <a href=../chromeinstall/ class=md-nav__link> Google Chrome Install </a> </li> <li class=md-nav__item> <a href=../chrome-extensions/ class=md-nav__link> Google Chrome Extensions/Themes </a> </li> <li class=md-nav__item> <a href=../chromemedia/ class=md-nav__link> Google Chrome Media </a> </li> <li class=md-nav__item> <a href=../glossary/ class=md-nav__link> Glossary </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3 type=checkbox id=__nav_3 checked> <label class=md-nav__link for=__nav_3> Programming Notes <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Programming Notes" data-md-level=1> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Programming Notes </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../notes/ class=md-nav__link> Notes Overview </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_2 type=checkbox id=__nav_3_2> <label class=md-nav__link for=__nav_3_2> C <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=C data-md-level=2> <label class=md-nav__title for=__nav_3_2> <span class="md-nav__icon md-icon"></span> C </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c/ class=md-nav__link> C Basics </a> </li> <li class=md-nav__item> <a href=../c-arrays/ class=md-nav__link> Arrays </a> </li> <li class=md-nav__item> <a href=../c-functions/ class=md-nav__link> Functions </a> </li> <li class=md-nav__item> <a href=../c-cl-arguments/ class=md-nav__link> Command Line Arguments </a> </li> <li class=md-nav__item> <a href=../c-variable-scope/ class=md-nav__link> Variables and Scope </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_2_6 type=checkbox id=__nav_3_2_6> <label class=md-nav__link for=__nav_3_2_6> Algorithms <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Algorithms data-md-level=3> <label class=md-nav__title for=__nav_3_2_6> <span class="md-nav__icon md-icon"></span> Algorithms </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-algorithms/ class=md-nav__link> Algorithm Overview </a> </li> <li class=md-nav__item> <a href=../c-algorithms-problems/ class=md-nav__link> Algorithm Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_2_7 type=checkbox id=__nav_3_2_7> <label class=md-nav__link for=__nav_3_2_7> Memory <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Memory data-md-level=3> <label class=md-nav__title for=__nav_3_2_7> <span class="md-nav__icon md-icon"></span> Memory </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-memory/ class=md-nav__link> Memory Overview </a> </li> <li class=md-nav__item> <a href=../c-memory-problems/ class=md-nav__link> Memory Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_2_8 type=checkbox id=__nav_3_2_8> <label class=md-nav__link for=__nav_3_2_8> Data Structures <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label="Data Structures" data-md-level=3> <label class=md-nav__title for=__nav_3_2_8> <span class="md-nav__icon md-icon"></span> Data Structures </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-data-structures/ class=md-nav__link> Data Structures Overview </a> </li> <li class=md-nav__item> <a href=../c-data-structures-problems/ class=md-nav__link> Data Structures Problem </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_3 type=checkbox id=__nav_3_3> <label class=md-nav__link for=__nav_3_3> Python <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Python data-md-level=2> <label class=md-nav__title for=__nav_3_3> <span class="md-nav__icon md-icon"></span> Python </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../py/ class=md-nav__link> Python Basics </a> </li> <li class=md-nav__item> <a href=../py-data-types/ class=md-nav__link> Variables and Simple Data Types </a> </li> <li class=md-nav__item> <a href=../py-lists/ class=md-nav__link> Lists </a> </li> <li class=md-nav__item> <a href=../py-working-with-lists/ class=md-nav__link> Working with Lists </a> </li> <li class=md-nav__item> <a href=../py-if-statements/ class=md-nav__link> If Statements </a> </li> <li class=md-nav__item> <a href=../py-dictionaries/ class=md-nav__link> Dictionaries </a> </li> <li class=md-nav__item> <a href=../py-user-input-while-loops/ class=md-nav__link> User Input and while Loops </a> </li> <li class=md-nav__item> <a href=../py-functions/ class=md-nav__link> Functions </a> </li> <li class=md-nav__item> <a href=../py-classes/ class=md-nav__link> Classes </a> </li> <li class=md-nav__item> <a href=../py-random/ class=md-nav__link> Random Programs </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_4 type=checkbox id=__nav_3_4 checked> <label class=md-nav__link for=__nav_3_4> Java <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Java data-md-level=2> <label class=md-nav__title for=__nav_3_4> <span class="md-nav__icon md-icon"></span> Java </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../java/ class=md-nav__link> Java Overview </a> </li> <li class=md-nav__item> <a href=../java-basics/ class=md-nav__link> Java Basics </a> </li> <li class=md-nav__item> <a href=../java-variables/ class=md-nav__link> Variables </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> Classes <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> Classes </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#introduction-to-classes class=md-nav__link> Introduction to Classes </a> <nav class=md-nav aria-label="Introduction to Classes"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#class-syntax class=md-nav__link> Class Syntax </a> </li> <li class=md-nav__item> <a href=#constructors class=md-nav__link> Constructors </a> </li> <li class=md-nav__item> <a href=#instance-fields class=md-nav__link> Instance Fields </a> </li> <li class=md-nav__item> <a href=#contructor-parameters class=md-nav__link> Contructor Parameters </a> </li> <li class=md-nav__item> <a href=#assigning-values-to-instance-fields class=md-nav__link> Assigning Values to Instance Fields </a> </li> <li class=md-nav__item> <a href=#using-multiple-fields class=md-nav__link> Using Multiple Fields </a> </li> <li class=md-nav__item> <a href=#classes-review class=md-nav__link> Classes Review </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#introduction-to-methods class=md-nav__link> Introduction to Methods </a> <nav class=md-nav aria-label="Introduction to Methods"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#defining-methods class=md-nav__link> Defining Methods </a> </li> <li class=md-nav__item> <a href=#calling-methods class=md-nav__link> Calling Methods </a> </li> <li class=md-nav__item> <a href=#scope class=md-nav__link> Scope </a> </li> <li class=md-nav__item> <a href=#adding-parameters class=md-nav__link> Adding Parameters </a> </li> <li class=md-nav__item> <a href=#reassigning-instance-fields class=md-nav__link> Reassigning Instance Fields </a> </li> <li class=md-nav__item> <a href=#returns class=md-nav__link> Returns </a> </li> <li class=md-nav__item> <a href=#the-tostring-method class=md-nav__link> The toString() method </a> </li> <li class=md-nav__item> <a href=#methods-review class=md-nav__link> Methods Review </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#basic-calculator class=md-nav__link> Basic Calculator </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../java-conditionals/ class=md-nav__link> Conditionals/Control Flow </a> </li> <li class=md-nav__item> <a href=../java-arrays/ class=md-nav__link> Arrays </a> </li> <li class=md-nav__item> <a href=../java-loops/ class=md-nav__link> Loops </a> </li> <li class=md-nav__item> <a href=../java-string-methods/ class=md-nav__link> String Methods </a> </li> <li class=md-nav__item> <a href=../java-access-scope/ class=md-nav__link> Access, Encapsulation, & Scope </a> </li> <li class=md-nav__item> <a href=../java-inheritance-polymorphism/ class=md-nav__link> Inheritance & Polymorphism </a> </li> <li class=md-nav__item> <a href=../java-debugging/ class=md-nav__link> Debugging </a> </li> <li class=md-nav__item> <a href=../java-2d-arrays/ class=md-nav__link> 2D Arrays </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_5 type=checkbox id=__nav_3_5> <label class=md-nav__link for=__nav_3_5> JavaScript <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=JavaScript data-md-level=2> <label class=md-nav__title for=__nav_3_5> <span class="md-nav__icon md-icon"></span> JavaScript </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../js/ class=md-nav__link> JavaScript Basics </a> </li> <li class=md-nav__item> <a href=../js-data-types/ class=md-nav__link> Variables and Simple Data Types </a> </li> <li class=md-nav__item> <a href=../js-conditionals/ class=md-nav__link> Conditional Statements </a> </li> <li class=md-nav__item> <a href=../js-functions/ class=md-nav__link> Functions </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_6 type=checkbox id=__nav_3_6> <label class=md-nav__link for=__nav_3_6> SQL <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=SQL data-md-level=2> <label class=md-nav__title for=__nav_3_6> <span class="md-nav__icon md-icon"></span> SQL </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../sql/ class=md-nav__link> SQL Basics </a> </li> <li class=md-nav__item> <a href=../sql-joins-and-other-queries/ class=md-nav__link> Joins and Other Query Types </a> </li> <li class=md-nav__item> <a href=../sql-random/ class=md-nav__link> Random Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_7 type=checkbox id=__nav_3_7> <label class=md-nav__link for=__nav_3_7> Random <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Random data-md-level=2> <label class=md-nav__title for=__nav_3_7> <span class="md-nav__icon md-icon"></span> Random </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../api/ class=md-nav__link> API Overview </a> </li> <li class=md-nav__item> <a href=../django/ class=md-nav__link> Django </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../about/ class=md-nav__link> About </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#introduction-to-classes class=md-nav__link> Introduction to Classes </a> <nav class=md-nav aria-label="Introduction to Classes"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#class-syntax class=md-nav__link> Class Syntax </a> </li> <li class=md-nav__item> <a href=#constructors class=md-nav__link> Constructors </a> </li> <li class=md-nav__item> <a href=#instance-fields class=md-nav__link> Instance Fields </a> </li> <li class=md-nav__item> <a href=#contructor-parameters class=md-nav__link> Contructor Parameters </a> </li> <li class=md-nav__item> <a href=#assigning-values-to-instance-fields class=md-nav__link> Assigning Values to Instance Fields </a> </li> <li class=md-nav__item> <a href=#using-multiple-fields class=md-nav__link> Using Multiple Fields </a> </li> <li class=md-nav__item> <a href=#classes-review class=md-nav__link> Classes Review </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#introduction-to-methods class=md-nav__link> Introduction to Methods </a> <nav class=md-nav aria-label="Introduction to Methods"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#defining-methods class=md-nav__link> Defining Methods </a> </li> <li class=md-nav__item> <a href=#calling-methods class=md-nav__link> Calling Methods </a> </li> <li class=md-nav__item> <a href=#scope class=md-nav__link> Scope </a> </li> <li class=md-nav__item> <a href=#adding-parameters class=md-nav__link> Adding Parameters </a> </li> <li class=md-nav__item> <a href=#reassigning-instance-fields class=md-nav__link> Reassigning Instance Fields </a> </li> <li class=md-nav__item> <a href=#returns class=md-nav__link> Returns </a> </li> <li class=md-nav__item> <a href=#the-tostring-method class=md-nav__link> The toString() method </a> </li> <li class=md-nav__item> <a href=#methods-review class=md-nav__link> Methods Review </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#basic-calculator class=md-nav__link> Basic Calculator </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <h1 id=object-oriented-java>Object Oriented Java</h1> <h2 id=introduction-to-classes>Introduction to Classes</h2> <p>All programs require one or more classes that act as a model for the world. </p> <p>For example, a program to track student test scores might have <code>Student</code>, <code>Course</code>, and <code>Grade</code> classes. Our real-world concerns, students and their grades, are inside the program as classes. </p> <p>We represent each student as an <em>instance</em>, or <em>object</em>, of the <code>Student</code> class. This is <em>object-oriented programming (OOP)</em> because programs are built around objects and their interactions. An object contains a state and behavior. </p> <p><strong>Classes are a blueprint for objects</strong>. Blueprints detail the general structure. For example, all students have an ID, all courses can enroll a student, etc. </p> <p>An instance is the thing itself. <em>This</em> student has an ID of <code>42</code>, <em>this</em> course enrolled <em>that</em> student, etc. </p> <p>Let's review with another example, a savings account at a bank. </p> <p>What should a savings account know? </p> <ul> <li>The balance of money available. </li> </ul> <p>What should a savings account do? </p> <ul> <li> <p>Deposit money. </p> </li> <li> <p>Withdraw money. </p> </li> </ul> <p>Imagine that two people have accounts that are instances of the <code>SavingsAccount</code> class. They share behavior (the ability to deposit/withdraw) but have an individual state (their balances), and even with the same balance these accounts are separate entities. </p> <p>Let's put that same concept into a store class:</p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Store</span> <span class=p>{</span>
+  <span class=c1>// instance fields</span>
+  <span class=n>String</span> <span class=n>productType</span><span class=p>;</span>
+  <span class=kt>int</span> <span class=n>inventoryCount</span><span class=p>;</span>
+  <span class=kt>double</span> <span class=n>inventoryPrice</span><span class=p>;</span>
+
+  <span class=c1>// constructor method</span>
+  <span class=kd>public</span> <span class=nf>Store</span><span class=p>(</span><span class=n>String</span> <span class=n>product</span><span class=p>,</span> <span class=kt>int</span> <span class=n>count</span><span class=p>,</span> <span class=kt>double</span> <span class=n>price</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>productType</span> <span class=o>=</span> <span class=n>product</span><span class=p>;</span>
+    <span class=n>inventoryCount</span> <span class=o>=</span> <span class=n>count</span><span class=p>;</span>
+    <span class=n>inventoryPrice</span> <span class=o>=</span> <span class=n>price</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=c1>// main method</span>
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>Store</span> <span class=n>lemonadeStand</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Store</span><span class=p>(</span><span class=s>&quot;lemonade&quot;</span><span class=p>,</span> <span class=mi>42</span><span class=p>,</span> <span class=mf>.99</span><span class=p>);</span>
+    <span class=n>Store</span> <span class=n>cookieShop</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Store</span><span class=p>(</span><span class=s>&quot;cookies&quot;</span><span class=p>,</span> <span class=mi>12</span><span class=p>,</span> <span class=mf>3.75</span><span class=p>);</span>
+
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Our first shop sells &quot;</span> <span class=o>+</span> <span class=n>lemonadeStand</span><span class=p>.</span><span class=na>productType</span> <span class=o>+</span> <span class=s>&quot; at &quot;</span> <span class=o>+</span> <span class=n>lemonadeStand</span><span class=p>.</span><span class=na>inventoryPrice</span> <span class=o>+</span> <span class=s>&quot; per unit.&quot;</span><span class=p>);</span>
+
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Our second shop has &quot;</span> <span class=o>+</span> <span class=n>cookieShop</span><span class=p>.</span><span class=na>inventoryCount</span> <span class=o>+</span> <span class=s>&quot; units remaining.&quot;</span><span class=p>);</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> Running the above code should give the following output: <div class=highlight><pre><span></span><code>Our first shop sells lemonade at 0.99 per unit.
+Our second shop has 12 units remaining.
+</code></pre></div></p> <h3 id=class-syntax>Class Syntax</h3> <p>The fundamental concept of object-oriented programming is the class. A <em>class</em> is the set of instructions that describe how an instance can behave and what information it contains. Java has pre-defined classes such as <code class=highlight><span class=n>System</span></code>, which we have used previously to log text to our screen, but we also need to write our own classes for the custom needs of a program. </p> <p>Here is a definition of a Java class: </p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+<span class=c1>// scope of Car class starts after curly brace</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c1>// scope of main() starts after curly brace</span>
+
+    <span class=c1>// program tasks</span>
+
+  <span class=p>}</span>
+  <span class=c1>// scope of main() ends after curly brace</span>
+
+<span class=p>}</span>
+<span class=c1>// scope of Car class ends after curly brace</span>
+</code></pre></div> </td></tr></table> This example defines a <code class=highlight><span class=kd>class</span></code> named <code>Car</code>. <code class=highlight><span class=kd>public</span></code> is an <em>access level modifier</em> that allows <strong>other</strong> classes to interact with this class. For now, all classes will be <code class=highlight><span class=kd>public</span></code>. </p> <p>This class has a <code class=highlight><span class=n>main</span><span class=p>()</span></code> method, which lists the tasks performed by the program. <code class=highlight><span class=n>main</span><span class=p>()</span></code> runs when we execute the compiled <strong>Car.class</strong> file. </p> <h3 id=constructors>Constructors</h3> <p>In order to create an object (an instance of a class), we need a constructor method. The constructor is defined within the class. </p> <p>Let's take a look at the <code>Car</code> class with a constructor. The constructor, <code class=highlight><span class=n>Car</span><span class=p>()</span></code>, shares the same name as the class:</p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+  <span class=c1>// Constructor method</span>
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>()</span> <span class=p>{</span>
+    <span class=c1>// instructions for creating a Car instance</span>
+  <span class=p>}</span>  
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c1>// body of main method</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> To create an <em>instance</em>, we need to <em>call</em> or <em>invoke</em> the constructor within <code class=highlight><span class=n>main</span><span class=p>()</span></code>. The following example assigns a <code>Car</code> instance to the variable <code>ferrari</code>:</p> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>()</span> <span class=p>{</span>
+    <span class=c1>// instructions for creating a Car instance</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c1>// Invoke the constructor</span>
+    <span class=n>Car</span> <span class=n>ferrari</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>();</span> 
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> <h3 id=instance-fields>Instance Fields</h3> <p>In our first example, we ended with printing an instance of <code>Store</code>, which looked something like <code>Store@6bc7c054</code>. The first part, <code>Store</code>, refers to the class, and the second part, <code>@6bc7c054</code> refers to the instance's location in the computer's memory. </p> <p>We don't care about memory location, but our instances have no other characteristics! When an object is created, the constructor sets the initial state of the obkect. The <em>state</em> is made up of associated data that represents the characteristics of an object. </p> <p>We'll add data to an object by introducing <em>instance variables</em>, or <em>instance fields</em>. </p> <p>We want <code>Car</code> instances of different colors, so we declare a <code class=highlight><span class=n>String</span> <span class=n>color</span></code> instance field. Often times, instance variables are described as a "has-a" relationship with the object. For example, a <code>Car</code> "has-a" <code>color</code>. Another way to think of that is that instance variables are nouns and adjectives associated with an object. What qualities other than <code>color</code> might a car <em>have</em>? </p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+  <span class=cm>/*</span>
+<span class=cm>  declare fields inside the class</span>
+<span class=cm>  by specifying the type and name</span>
+<span class=cm>  */</span>
+  <span class=n>String</span> <span class=n>color</span><span class=p>;</span>
+
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>()</span> <span class=p>{</span>
+    <span class=cm>/* </span>
+<span class=cm>    instance fields available in</span>
+<span class=cm>    scope of constructor method</span>
+<span class=cm>    */</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c1>// body of main method</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> The declaration is <strong>within</strong> the class and the instance variable will be available for assignment inside the constructor. </p> <p>Fields are a type of state each instance will possess. One instance may have <code>"red"</code> as its <code>color</code>, another <code>"blue"</code>, etc. It's the job of the constructor to give these instance fields initial value. </p> <h3 id=contructor-parameters>Contructor Parameters</h3> <p>To create objects with dynamic, individual states, we'll use a combination of the constructor method and instance fields. </p> <p>In order to assign a value to an instance variable, we need to alter our constructor method to include parameters so that it can access the data we want to assign to an instance. We've already seen a parameter in the <code class=highlight><span class=n>main</span><span class=p>()</span></code> method: <code class=highlight><span class=n>String</span><span class=o>[]</span> <span class=n>args</span></code>, but this is the first time we're using the parameter value within a method body. </p> <p>The <code>Car</code> constructor now has a parameter: <code class=highlight><span class=n>String</span> <span class=n>carColor</span><span class=p>:</span></code>:</p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+  <span class=n>String</span> <span class=n>color</span><span class=p>;</span>
+  <span class=c1>//constructor method with a parameter</span>
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>(</span><span class=n>String</span> <span class=n>carColor</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c1>// parameter value assigned to the field</span>
+    <span class=n>color</span> <span class=o>=</span> <span class=n>carColor</span><span class=p>;</span>
+  <span class=p>}</span>
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+    <span class=c1>// program tasks</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> When a <code class=highlight><span class=n>String</span></code> value gets passed into <code>Car</code>, it is assigned to the parameter <code>carColor</code>. Then, inside the constructor, <code>carColor</code> will be assigned as the value to the instance variable <code>color</code>. </p> <p>Our method also has a <em>signature</em> which defines the name and parameters of the method. In the above example, the signature is <code class=highlight><span class=n>Car</span><span class=p>(</span><span class=n>String</span> <span class=n>carColor</span><span class=p>)</span></code>.</p> <h3 id=assigning-values-to-instance-fields>Assigning Values to Instance Fields</h3> <p>Now that the constructor has a parameter, we must pass values into the method call. These values are referred to as <em>arguments</em>; once they are passed in, they will be used to give the instance fields intial value. </p> <p>Here we create an instance, <code>ferrari</code>, in the <code class=highlight><span class=n>main</span><span class=p>()</span></code> method with <code>"red"</code> as its <code>color</code> field: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+  <span class=n>String</span> <span class=n>color</span><span class=p>;</span>
+
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>(</span><span class=n>String</span> <span class=n>carColor</span><span class=p>){</span>
+    <span class=c1>// assign parameter value to instance field</span>
+    <span class=n>color</span> <span class=o>=</span> <span class=n>carColor</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c1>// parameter value supplied when calling the constructor</span>
+    <span class=n>Car</span> <span class=n>ferrari</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;red&quot;</span><span class=p>);</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> We pass the String value <code>"red"</code> to our constructor method call: <code class=highlight><span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;red&quot;</span><span class=p>);</span></code>. </p> <p>The type of value given to the invocation <strong>must match</strong> the type declared by the parameter. </p> <p>Inside the constructor, the parameter <code>carColor</code> refers to the value passed in during the invocation <code>"red"</code>. This value is assigned to the instance field <code>color</code>. </p> <p><code>color</code> has already been declared, so we don't specify the type during assignment. </p> <p>The object, <code>ferrari</code>, holds the state of <code>color</code> as an instance field referencing the value <code>"red"</code>. </p> <p>We access the value of this field with the <em>dot operator</em> (<code>.</code>): <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span>
+<span class=normal>7</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=cm>/*</span>
+<span class=cm>accessing a field:</span>
+<span class=cm>objectName.fieldName</span>
+<span class=cm>*/</span>
+
+<span class=n>ferrari</span><span class=p>.</span><span class=na>color</span><span class=p>;</span>
+<span class=c1>// &quot;red&quot;</span>
+</code></pre></div> </td></tr></table></p> <h3 id=using-multiple-fields>Using Multiple Fields</h3> <p>Objects are not limited to a single instance field. We can declare as many fields as are necessary for the requirements of our program. </p> <p>Let's change <code>Car</code> instances so they have multiple fields. </p> <p>We'll add a <code class=highlight><span class=kt>boolean</span> <span class=n>isRunning</span></code>, that indicates if the car engine is on and an <code class=highlight><span class=kt>int</span> <span class=n>velocity</span></code>, that indicates the speed at which the car is travelling.</p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+  <span class=n>String</span> <span class=n>color</span><span class=p>;</span>
+  <span class=kt>boolean</span> <span class=n>isRunning</span><span class=p>;</span>
+  <span class=kt>int</span> <span class=n>velocity</span><span class=p>;</span>
+
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>(</span><span class=n>String</span> <span class=n>carColor</span><span class=p>,</span> <span class=kt>boolean</span> <span class=n>carRunning</span><span class=p>,</span> <span class=kt>int</span> <span class=n>milesPerHour</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>color</span> <span class=o>=</span> <span class=n>carColor</span><span class=p>;</span>
+    <span class=n>isRunning</span> <span class=o>=</span> <span class=n>carRunning</span><span class=p>;</span>
+    <span class=n>velocity</span> <span class=o>=</span> <span class=n>milesPerHour</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>Car</span> <span class=n>ferrari</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;red&quot;</span><span class=p>,</span> <span class=kc>true</span><span class=p>,</span> <span class=mi>27</span><span class=p>);</span>
+    <span class=n>Car</span> <span class=n>renault</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;blue&quot;</span><span class=p>,</span> <span class=kc>false</span><span class=p>,</span> <span class=mi>70</span><span class=p>);</span>
+
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>renault</span><span class=p>.</span><span class=na>isRunning</span><span class=p>);</span>
+    <span class=c1>// will print false</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>ferrari</span><span class=p>.</span><span class=na>velocity</span><span class=p>);</span>
+    <span class=c1>// will print 27</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> The constructor now has multiple parameters to receive values for the new fields. We still specify the type as well as the name for each parameter. </p> <p><strong>Ordering matters!</strong> We must pass values into the constructor invocation in the same order that they're listed in the parameters. </p> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=c1>// values match types, no error</span>
+<span class=n>Car</span> <span class=n>honda</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;green&quot;</span><span class=p>,</span> <span class=kc>false</span><span class=p>,</span> <span class=mi>0</span><span class=p>);</span>
+
+<span class=c1>// values do not match types, error!</span>
+<span class=n>Car</span> <span class=n>junker</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=kc>true</span><span class=p>,</span> <span class=mi>42</span><span class=p>,</span> <span class=s>&quot;brown&quot;</span><span class=p>);</span>
+</code></pre></div> </td></tr></table> <h3 id=classes-review>Classes Review</h3> <p>Java is an object-orriented programming language where every program has at least one class. Programs are often built from many classes and objects, which are the instances of a class. </p> <p>Classes define the state and behavior of their instances. Behavior comes from methods defined in the class. State comes from instance fields declared inside the class. </p> <p>Classes are modeled on the real-world things we want to represent in our program. Later we will explore how a program can be made from multiple classes. For now, our programs are a single class. </p> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Dog</span> <span class=p>{</span>
+  <span class=c1>// instance field</span>
+  <span class=n>String</span> <span class=n>breed</span><span class=p>;</span>
+  <span class=c1>//constructor method</span>
+  <span class=kd>public</span> <span class=nf>Dog</span><span class=p>(</span><span class=n>String</span> <span class=n>dogBreed</span><span class=p>)</span> <span class=p>{</span>
+    <span class=cm>/*</span>
+<span class=cm>    value of parameter dogBreed assigned to instance field breed</span>
+<span class=cm>    */</span>
+    <span class=n>breed</span> <span class=o>=</span> <span class=n>dogBreed</span><span class=p>;</span>
+  <span class=p>}</span>
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>)</span> <span class=p>{</span>
+    <span class=cm>/*</span>
+<span class=cm>    create instance:</span>
+<span class=cm>    use &#39;new&#39; operator and invoke constructor</span>
+<span class=cm>    */</span>
+    <span class=n>Dog</span> <span class=n>dani</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Dog</span><span class=p>(</span><span class=s>&quot;border collie&quot;</span><span class=p>);</span>
+    <span class=cm>/*</span>
+<span class=cm>    fields are accessed using:</span>
+<span class=cm>    the instance name, &#39;.&#39; operator, and the field name</span>
+<span class=cm>    */</span>
+    <span class=n>dani</span><span class=p>.</span><span class=na>breed</span><span class=p>;</span>
+    <span class=c1>// &quot;border collie&quot;</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> <h2 id=introduction-to-methods>Introduction to Methods</h2> <p>A <strong>method</strong> is a block of code which only runs when it is called. You can pass data, known as <em>parameters</em> into a method. Methods are used to perform certain actions, and they are also known as <strong>functions</strong>. </p> <p>Methods are repeatable, modular blocks of code, used to accomplish specific tasks. We have the ability to define our own methods that will take input, do something with it, and return the kind of output we want. </p> <p><em>Method decomposition</em> is a way we can use methods to break fown a large problem into smaller, more manageable problems. </p> <p>Methods are very reusable. Imagine we wrote a sandwich-making program that used 20 lines of code to make a single sandwich. Our program would become very long very quickly if we were making multiple sandwiches. By creating a <code class=highlight><span class=n>makeSandwich</span><span class=p>()</span></code> method, we can make a sandwich anytime simply by calling it. </p> <p>We will be using the following code to build a method later on: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>SavingsAccount</span> <span class=p>{</span>
+
+  <span class=kt>int</span> <span class=n>balance</span><span class=p>;</span>
+
+  <span class=kd>public</span> <span class=nf>SavingsAccount</span><span class=p>(</span><span class=kt>int</span> <span class=n>initialBalance</span><span class=p>){</span>
+    <span class=n>balance</span> <span class=o>=</span> <span class=n>initialBalance</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+    <span class=n>SavingsAccount</span> <span class=n>savings</span> <span class=o>=</span> <span class=k>new</span> <span class=n>SavingsAccount</span><span class=p>(</span><span class=mi>2000</span><span class=p>);</span>
+
+    <span class=c1>//Check balance:</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Hello!&quot;</span><span class=p>);</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Your balance is &quot;</span><span class=o>+</span><span class=n>savings</span><span class=p>.</span><span class=na>balance</span><span class=p>);</span>
+
+    <span class=c1>//Withdrawing:</span>
+    <span class=kt>int</span> <span class=n>afterWithdraw</span> <span class=o>=</span> <span class=n>savings</span><span class=p>.</span><span class=na>balance</span> <span class=o>-</span> <span class=mi>300</span><span class=p>;</span>
+    <span class=n>savings</span><span class=p>.</span><span class=na>balance</span> <span class=o>=</span> <span class=n>afterWithdraw</span><span class=p>;</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;You just withdrew &quot;</span><span class=o>+</span><span class=mi>300</span><span class=p>);</span>
+
+    <span class=c1>//Check balance:</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Hello!&quot;</span><span class=p>);</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Your balance is &quot;</span><span class=o>+</span><span class=n>savings</span><span class=p>.</span><span class=na>balance</span><span class=p>);</span>
+
+    <span class=c1>//Deposit:</span>
+    <span class=kt>int</span> <span class=n>afterDeposit</span> <span class=o>=</span> <span class=n>savings</span><span class=p>.</span><span class=na>balance</span> <span class=o>+</span> <span class=mi>600</span><span class=p>;</span>
+    <span class=n>savings</span><span class=p>.</span><span class=na>balance</span> <span class=o>=</span> <span class=n>afterDeposit</span><span class=p>;</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;You just deposited &quot;</span><span class=o>+</span><span class=mi>600</span><span class=p>);</span>
+
+    <span class=c1>//Check balance:</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Hello!&quot;</span><span class=p>);</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Your balance is &quot;</span><span class=o>+</span><span class=n>savings</span><span class=p>.</span><span class=na>balance</span><span class=p>);</span>
+
+    <span class=c1>//Deposit:</span>
+    <span class=kt>int</span> <span class=n>afterDeposit2</span> <span class=o>=</span> <span class=n>savings</span><span class=p>.</span><span class=na>balance</span> <span class=o>+</span> <span class=mi>600</span><span class=p>;</span>
+    <span class=n>savings</span><span class=p>.</span><span class=na>balance</span> <span class=o>=</span> <span class=n>afterDeposit2</span><span class=p>;</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;You just deposited &quot;</span><span class=o>+</span><span class=mi>600</span><span class=p>);</span>
+
+    <span class=c1>//Check balance:</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Hello!&quot;</span><span class=p>);</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Your balance is &quot;</span><span class=o>+</span><span class=n>savings</span><span class=p>.</span><span class=na>balance</span><span class=p>);</span>
+
+  <span class=p>}</span>       
+<span class=p>}</span>
+</code></pre></div> </td></tr></table></p> <h3 id=defining-methods>Defining Methods</h3> <p>If we were to define a <code class=highlight><span class=n>checkBalance</span><span class=p>()</span></code> method for the Savings Account example above, it would look like the following: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kt>void</span> <span class=nf>checkBalance</span><span class=p>(){</span>
+  <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Hello!&quot;</span><span class=p>);</span>
+  <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Your balance is &quot;</span> <span class=o>+</span> <span class=n>balance</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> The first line, <code class=highlight><span class=kd>public</span> <span class=kt>void</span> <span class=nf>checkBalance</span><span class=p>()</span></code>, is the method declaration. It gives the program some information about the method:</p> <ul> <li> <p><code class=highlight><span class=kd>public</span></code> means that other classes can access this method. </p> </li> <li> <p>The <code class=highlight><span class=kt>void</span></code> keyword means that there is no specific output from the method. We will see methods that are not <code class=highlight><span class=kt>void</span></code> later in these notes, but for now, all of our methods will be <code class=highlight><span class=kt>void</span></code>. </p> </li> <li> <p><code class=highlight><span class=n>checkBalance</span><span class=p>()</span></code> is the name of the method. </p> </li> </ul> <p>Every method has its own unique <em>method signature</em> which is comprised of the method's name and its parameter type. In this example, the method signature <code class=highlight><span class=n>checkBalance</span><span class=p>()</span></code>. </p> <p>The two print statements are inside the <em>body</em> of the method, which is defined by the curly braces: <code>{</code> and <code>}</code>. </p> <p>Anything we can do in our <code class=highlight><span class=n>main</span><span class=p>()</span></code> method, we can do in other methods! All of the java tools we have learned, like the math and comparison operators, can be used to make interesting and useful methods. </p> <h3 id=calling-methods>Calling Methods</h3> <p>When we add a non-static method to a class, it becomes available to use on an object of that class. In order to have our methods get executed, we must <em>call</em> the method on the object we created. </p> <p>Let's add a non-static <code class=highlight><span class=n>startEngine</span><span class=p>()</span></code> method to our <code>Car</code> class from <a href=#using-multiple-fields>earlier notes</a>. Inside the <code class=highlight><span class=n>main</span><span class=p>()</span></code> method, we'll call <code class=highlight><span class=n>startEngine</span><span class=p>()</span></code> on the <code>myFastCar</code> object:</p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+
+  <span class=n>String</span> <span class=n>color</span><span class=p>;</span>
+
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>(</span><span class=n>String</span> <span class=n>carColor</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>color</span> <span class=o>=</span> <span class=n>carColor</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>void</span> <span class=nf>startEngine</span><span class=p>()</span> <span class=p>{</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Starting the car!&quot;</span><span class=p>);</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Vroom!&quot;</span><span class=p>);</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+    <span class=n>Car</span> <span class=n>myFastCar</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;red&quot;</span><span class=p>);</span>
+    <span class=c1>// Call a method on an object </span>
+    <span class=n>myFastCar</span><span class=p>.</span><span class=na>startEngine</span><span class=p>();</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;That was one fast car!&quot;</span><span class=p>);</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> Let's take a closer look at the method call: <div class=highlight><pre><span></span><code><span class=n>myFastCar</span><span class=p>.</span><span class=na>startEngine</span><span class=p>();</span>
+</code></pre></div> First, we reference our object <code>myFastCar</code>. Then, we use the <em>dot operator</em> (<code>.</code>) to call the method <code class=highlight><span class=n>startEngine</span><span class=p>()</span></code>. Noter that we must include parentheses <code>()</code> after our method name in order to call it. </p> <p>If we run the above program, we get the following output: <div class=highlight><pre><span></span><code>Starting the car!
+Vroom!
+That was one fast car!
+</code></pre></div> Code generally runs in a top-down order where code execution starts at the top of a program and ends at the bottom; however, methods are ignored by the compiler unless they are being called. </p> <p>When a method is called, the compiler executes every statement contained within the method. Once all method instructions are executed, the top-down order of execution continues. This is why <code>Starting the car!</code> and <code>Vroom!</code> are outputted before <code>That was one fast car!</code>. </p> <h3 id=scope>Scope</h3> <p>A method is a task that an object of a class performs. </p> <p>We mark the domain of this task using curly braces <code>{</code> and <code>}</code>. Everything inside the curly braces is part of the task. This domain is called the <em>scope</em> of a method. We can't access variables that are declared inside a method in code that is outside the scope of that method. </p> <p>Looking at the <code>Car</code> class again: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+  <span class=n>String</span> <span class=n>color</span><span class=p>;</span>
+  <span class=kt>int</span> <span class=n>milesDriven</span><span class=p>;</span>
+
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>(</span><span class=n>String</span> <span class=n>carColor</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>color</span> <span class=o>=</span> <span class=n>carColor</span><span class=p>;</span>
+    <span class=n>milesDriven</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>void</span> <span class=nf>drive</span><span class=p>()</span> <span class=p>{</span>
+    <span class=n>String</span> <span class=n>message</span> <span class=o>=</span> <span class=s>&quot;Miles driven: &quot;</span> <span class=o>+</span> <span class=n>milesDriven</span><span class=p>;</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>message</span><span class=p>);</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+    <span class=n>Car</span> <span class=n>myFastCar</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;Red&quot;</span><span class=p>);</span>
+    <span class=n>myFastCar</span><span class=p>.</span><span class=na>drive</span><span class=p>();</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> The variable <code>message</code>, which is declared and initialized inside of <code>drive</code>, cannot be used inside of <code class=highlight><span class=n>main</span><span class=p>()</span></code>! It only exists within the <em>scope</em> of the <code class=highlight><span class=n>drive</span><span class=p>()</span></code> method. </p> <p>However, <code>milesDriven</code>, which is declared at the top of the class, can be used inside all methods in the class, since it is in the scope of the whole class. </p> <h3 id=adding-parameters>Adding Parameters</h3> <p>We saw how a method's scope prevents us from using variables declared in one method in another method. What if we had some information in one method that we needed to pass into another method? </p> <p>Similar to how we added parameters to <em>constructors</em>, we can customize all other methods to accept parameters. For example, in the following code, we create a <code class=highlight><span class=n>startRadio</span><span class=p>()</span></code> method that accepts a <code class=highlight><span class=n>Double</span></code> parameter, <code>stationNum</code>, and a <code class=highlight><span class=n>String</span></code> parameter called <code>stationName</code>:</p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>class</span> <span class=nc>Car</span> <span class=p>{</span>
+  <span class=n>String</span> <span class=n>color</span><span class=p>;</span>
+
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>(</span><span class=n>String</span> <span class=n>carColor</span><span class=p>){</span>
+    <span class=n>color</span> <span class=o>=</span> <span class=n>carColor</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>void</span> <span class=nf>startRadio</span><span class=p>(</span><span class=kt>double</span> <span class=n>stationNum</span><span class=p>,</span> <span class=n>String</span> <span class=n>stationName</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Turning on the radio to &quot;</span> <span class=o>+</span> <span class=n>stationNum</span> <span class=o>+</span> <span class=s>&quot;, &quot;</span> <span class=o>+</span> <span class=n>stationName</span> <span class=o>+</span> <span class=s>&quot;!&quot;</span><span class=p>);</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&quot;Enjoy!&quot;</span><span class=p>);</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+    <span class=n>Car</span> <span class=n>myCar</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;red&quot;</span><span class=p>);</span>
+    <span class=n>myCar</span><span class=p>.</span><span class=na>startRadio</span><span class=p>(</span><span class=mf>103.7</span><span class=p>,</span> <span class=s>&quot;Meditation Station&quot;</span><span class=p>);</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> Adding parameter values impacts our method's signature. Like constructor signatures, the method signature includes the method name as well as the parameter types of the method. The signature of the above method is <code class=highlight><span class=n>startRadio</span><span class=p>(</span><span class=kt>double</span><span class=p>,</span> <span class=n>String</span><span class=p>)</span></code>. </p> <p>In the <code class=highlight><span class=n>main</span><span class=p>()</span></code> method, we call the <code class=highlight><span class=n>startRadio</span><span class=p>()</span></code> method on the <code>myCar</code> object and probide a <code class=highlight><span class=kt>double</span></code> argument of <code>103.7</code> and <code class=highlight><span class=n>String</span></code> argument of <code>Meditation Station</code>, resulting in the following output: <div class=highlight><pre><span></span><code>Turning on the radio to 103.7, Meditation Station!
+Enjoy!
+</code></pre></div> Note that when we call on a method with multiple parameters, the arguments given in the call <strong>must</strong> be placed in the same order as the parameters appear in the signature. If the argument types do not match the parameter types, we'll receive an error. </p> <h3 id=reassigning-instance-fields>Reassigning Instance Fields</h3> <p>Earlier, we thought about a Savings Account as a type of object wer could represent in Java. </p> <p>Two of the methods we need are depositing and withdrawing: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=n>SavingsAccount</span><span class=p>{</span>
+  <span class=kt>double</span> <span class=n>balance</span><span class=p>;</span>
+  <span class=kd>public</span> <span class=nf>SavingsAccount</span><span class=p>(</span><span class=kt>double</span> <span class=n>startingBalance</span><span class=p>){</span>
+    <span class=n>balance</span> <span class=o>=</span> <span class=n>startingBalance</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>void</span> <span class=nf>deposit</span><span class=p>(</span><span class=kt>double</span> <span class=n>amountToDeposit</span><span class=p>){</span>
+    <span class=c1>// Add amountToDeposit to the balance</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>void</span> <span class=nf>withdraw</span><span class=p>(</span><span class=kt>double</span> <span class=n>amountToWithdraw</span><span class=p>){</span>
+    <span class=c1>// Subtract amountToWithdraw from the balance</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> These methods would change the valuie of the variable <code>balance</code>. We can reassign balance to be a new value by using our assignment operator, <code>=</code>, again. </p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kt>void</span> <span class=nf>deposit</span><span class=p>(</span><span class=kt>double</span> <span class=n>amountToDeposit</span><span class=p>){</span>
+  <span class=kt>double</span> <span class=n>updatedBalance</span> <span class=o>=</span> <span class=n>balance</span> <span class=o>+</span> <span class=n>amountToDeposit</span><span class=p>;</span>
+  <span class=n>balance</span> <span class=o>=</span> <span class=n>updatedBalance</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> nNow, when we call <code class=highlight><span class=n>deposit</span><span class=p>()</span></code>, it should change the value of the instance field <code>balance</code>: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+  <span class=n>SavingsAccount</span> <span class=n>myAccount</span> <span class=o>=</span> <span class=k>new</span> <span class=n>SavingsAccount</span><span class=p>(</span><span class=mi>2000</span><span class=p>);</span>
+  <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>myAccount</span><span class=p>.</span><span class=na>balance</span><span class=p>);</span>
+  <span class=n>myAccount</span><span class=p>.</span><span class=na>deposit</span><span class=p>(</span><span class=mi>100</span><span class=p>);</span>
+  <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>myAccount</span><span class=p>.</span><span class=na>balance</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> The code first prints <code>2000</code>, the initial value of <code class=highlight><span class=n>myAccount</span><span class=p>.</span><span class=na>balance</span></code>, and then prints <code>2100</code>, which is the value of <code class=highlight><span class=n>myAccount</span><span class=p>.</span><span class=na>balance</span></code> after the <code class=highlight><span class=n>deposit</span><span class=p>()</span></code> method has run. </p> <p>Change instance fields is how we change the state of an object and make our objects more flexible and realistic. </p> <h3 id=returns>Returns</h3> <p>Remeber, variables only exist in the <em>scope</em> that they were declared in. We can use a value outside of the method it was created in if we <em>return</em> it from the method. </p> <p>We return a value by using the keyword <code class=highlight><span class=k>return</span></code>: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kt>int</span> <span class=nf>numberOfTires</span><span class=p>()</span> <span class=p>{</span>
+  <span class=kt>int</span> <span class=n>tires</span> <span class=o>=</span> <span class=mi>4</span><span class=p>;</span>
+  <span class=c1>// return statement</span>
+  <span class=k>return</span> <span class=n>tires</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> This method, called <code class=highlight><span class=n>numberOfTires</span><span class=p>()</span></code>, returns <code>4</code>. Once the return statement is executed, the compiler exits the function. Any code that exists after the return statement in a function is ignored. </p> <p>In past exercises, when creating new methods, we use the keyword <code class=highlight><span class=kt>void</span></code>. Here, we are replacing <code class=highlight><span class=kt>void</span></code> with <code class=highlight><span class=kt>int</span></code>, to signify that the <em>return type</em> is an <code class=highlight><span class=kt>int</span></code>. </p> <p>The <code class=highlight><span class=kt>void</span></code> keyword (which means "completely empty") indicates that no value is returned after calling that method. </p> <p>A non-void method, like <code class=highlight><span class=n>numberOfTires</span><span class=p>()</span></code> returns a value when it is called. We can use datatype keywords (such as <code class=highlight><span class=kt>int</span></code>, <code class=highlight><span class=kt>char</span></code>, etc.) to specify the type of value the method should return. The return value's type must match the return type of the method. If the return expression is compatible with the return type, a copy of that value gets returned in a process known as <em>return by value</em>. </p> <p>Unlike void mehods, non-void methods can be used as either a variable value or as part of an expression like so:</p> <p><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+  <span class=n>Car</span> <span class=n>myCar</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;Red&quot;</span><span class=p>);</span>
+  <span class=kt>int</span> <span class=n>numTires</span> <span class=o>=</span> <span class=n>myCar</span><span class=p>.</span><span class=na>numberOfTires</span><span class=p>();</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> Within <code class=highlight><span class=n>main</span><span class=p>()</span></code>, we called the <code class=highlight><span class=n>numberOfTires</span><span class=p>()</span></code> method on <code>myCar</code>. Since the method returns an <code class=highlight><span class=kt>int</span></code> value of <code>4</code>, we store the value in an integer value called <code>numTires</code>. If we printed <code>numTires</code>, we would see <code>4</code>. </p> <h3 id=the-tostring-method>The <code class=highlight><span class=n>toString</span><span class=p>()</span></code> method</h3> <p>When we print out Objects, we often see a <code class=highlight><span class=n>String</span></code> that is not very helpful in determining what the object represents. In earlier notes, we saw that printing our <code>Store</code> object would output something like: <div class=highlight><pre><span></span><code>Store@6bc7c123
+</code></pre></div> Where <code>Store</code> is the name of the object and <code>@6bc7c123</code> is its position in memory. </p> <p>This doesn't tell us anything about what the <code>Store</code> sells, the price, or the other instance fields we've defined. We can add a method to our classes that makes this printout more descriptive. </p> <p>When we define a <em><code class=highlight><span class=n>toString</span><span class=p>()</span></code></em> method for a class, we can return a <code class=highlight><span class=n>String</span></code> that will print when we print the object: <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>class</span> <span class=nc>Car</span><span class=p>{</span>
+
+  <span class=n>String</span> <span class=n>color</span><span class=p>;</span>
+
+  <span class=kd>public</span> <span class=nf>Car</span><span class=p>(</span><span class=n>String</span> <span class=n>carColor</span><span class=p>){</span>
+    <span class=n>color</span> <span class=o>=</span> <span class=n>carColor</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+    <span class=n>Car</span> <span class=n>myCar</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Car</span><span class=p>(</span><span class=s>&quot;red&quot;</span><span class=p>);</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>myCar</span><span class=p>);</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=n>String</span> <span class=nf>toString</span><span class=p>(){</span>
+    <span class=k>return</span> <span class=s>&quot;This is a &quot;</span> <span class=o>+</span> <span class=n>color</span> <span class=o>+</span> <span class=s>&quot; car!&quot;</span><span class=p>;</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> When this runs the command <code class=highlight><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>myCar</span><span class=p>)</span></code> will print <code>This is a red car!</code>, which tells us about the Object <code>myCar</code>. </p> <h3 id=methods-review>Methods Review</h3> <p>Methods are a powerful way to abstract tasks away and make them repeatable. They allow us to define behavior for classes, so that the Objects we create can do the things we expect them to. Let's review everything we have learned about methods so far:</p> <ul> <li> <p><em>Defining a method</em>: Methods have a method signature that declares their return type, name, and parameters.</p> </li> <li> <p><em>Calling a method</em>: Methods are invoked with a <code>.</code> and <code>()</code>. </p> </li> <li> <p><em>Parameters</em>: Inputs to the method and their types are declared in parentheses in the method signature. </p> </li> <li> <p><em>Changing Instance Fields</em>: Methods can be used to change the value of an instance field. </p> </li> <li> <p><em>Scope</em>: Variables only exist within the domain that they are created in. </p> </li> <li> <p><em>Return</em>: The type of the variables that are output are declared in the method signature. </p> </li> </ul> <h2 id=basic-calculator>Basic Calculator</h2> <table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span></pre></div></td><td class=code><div class=highlight><pre><span></span><code><span class=kd>public</span> <span class=kd>class</span> <span class=nc>Calculator</span><span class=p>{</span>
+
+  <span class=kd>public</span> <span class=nf>Calculator</span><span class=p>(){</span>
+
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>int</span> <span class=nf>add</span><span class=p>(</span><span class=kt>int</span> <span class=n>a</span><span class=p>,</span> <span class=kt>int</span> <span class=n>b</span><span class=p>){</span>
+    <span class=k>return</span> <span class=n>a</span> <span class=o>+</span> <span class=n>b</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>int</span> <span class=nf>subtract</span><span class=p>(</span><span class=kt>int</span> <span class=n>a</span><span class=p>,</span> <span class=kt>int</span> <span class=n>b</span><span class=p>){</span>
+    <span class=k>return</span> <span class=n>a</span> <span class=o>-</span> <span class=n>b</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>int</span> <span class=nf>multiply</span><span class=p>(</span><span class=kt>int</span> <span class=n>a</span><span class=p>,</span> <span class=kt>int</span> <span class=n>b</span><span class=p>){</span>
+    <span class=k>return</span> <span class=n>a</span> <span class=o>*</span> <span class=n>b</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>int</span> <span class=nf>divide</span><span class=p>(</span><span class=kt>int</span> <span class=n>a</span><span class=p>,</span> <span class=kt>int</span> <span class=n>b</span><span class=p>){</span>
+    <span class=k>return</span> <span class=n>a</span> <span class=o>/</span> <span class=n>b</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kt>int</span> <span class=nf>modulo</span><span class=p>(</span><span class=kt>int</span> <span class=n>a</span><span class=p>,</span> <span class=kt>int</span> <span class=n>b</span><span class=p>){</span>
+    <span class=k>return</span> <span class=n>a</span> <span class=o>%</span> <span class=n>b</span><span class=p>;</span>
+  <span class=p>}</span>
+
+  <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=p>){</span>
+    <span class=n>Calculator</span> <span class=n>myCalculator</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Calculator</span><span class=p>();</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>myCalculator</span><span class=p>.</span><span class=na>add</span><span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=mi>7</span><span class=p>));</span>
+    <span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=n>myCalculator</span><span class=p>.</span><span class=na>subtract</span><span class=p>(</span><span class=mi>45</span><span class=p>,</span> <span class=mi>11</span><span class=p>));</span>
+
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div> </td></tr></table> </article> </div> </div> <a href=# class="md-top md-icon" data-md-component=top data-md-state=hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg> Back to top </a> </main> <footer class=md-footer> <nav class="md-footer__inner md-grid" aria-label=Footer> <a href=../java-variables/ class="md-footer__link md-footer__link--prev" aria-label="Previous: Variables" rel=prev> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer__title> <div class=md-ellipsis> <span class=md-footer__direction> Previous </span> Variables </div> </div> </a> <a href=../java-conditionals/ class="md-footer__link md-footer__link--next" aria-label="Next: Conditionals/Control Flow" rel=next> <div class=md-footer__title> <div class=md-ellipsis> <span class=md-footer__direction> Next </span> Conditionals/Control Flow </div> </div> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg> </div> </a> </nav> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> </div> <div class=md-social> <a href=https://nicklyss.com target=_blank rel=noopener title=nicklyss.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 576 512"><path d="M480 416v16c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V176c0-26.51 21.49-48 48-48h16v208c0 44.112 35.888 80 80 80h336zm96-80V80c0-26.51-21.49-48-48-48H144c-26.51 0-48 21.49-48 48v256c0 26.51 21.49 48 48 48h384c26.51 0 48-21.49 48-48zM256 128c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-96 144 55.515-55.515c4.686-4.686 12.284-4.686 16.971 0L272 256l135.515-135.515c4.686-4.686 12.284-4.686 16.971 0L512 208v112H160v-48z"/></svg> </a> <a href=https://blog.nicklyss.com target=_blank rel=noopener title=blog.nicklyss.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><path d="M172.2 226.8c-14.6-2.9-28.2 8.9-28.2 23.8V301c0 10.2 7.1 18.4 16.7 22 18.2 6.8 31.3 24.4 31.3 45 0 26.5-21.5 48-48 48s-48-21.5-48-48V120c0-13.3-10.7-24-24-24H24c-13.3 0-24 10.7-24 24v248c0 89.5 82.1 160.2 175 140.7 54.4-11.4 98.3-55.4 109.7-109.7 17.4-82.9-37-157.2-112.5-172.2zM209 0c-9.2-.5-17 6.8-17 16v31.6c0 8.5 6.6 15.5 15 15.9 129.4 7 233.4 112 240.9 241.5.5 8.4 7.5 15 15.9 15h32.1c9.2 0 16.5-7.8 16-17C503.4 139.8 372.2 8.6 209 0zm.3 96c-9.3-.7-17.3 6.7-17.3 16.1v32.1c0 8.4 6.5 15.3 14.8 15.9 76.8 6.3 138 68.2 144.9 145.2.8 8.3 7.6 14.7 15.9 14.7h32.2c9.3 0 16.8-8 16.1-17.3-8.4-110.1-96.5-198.2-206.6-206.7z"/></svg> </a> <a href=https://www.linkedin.com/in/nicholas-platt/ target=_blank rel=noopener title=www.linkedin.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg> </a> <a href=https://github.com/tpbnick target=_blank rel=noopener title=github.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> </a> <a href=https://www.instagram.com/nickplattfour/ target=_blank rel=noopener title=www.instagram.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg> </a> <a href=mailto:nick@nickplatt.dev target=_blank rel=noopener title class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg> </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script> <script src=../assets/javascripts/bundle.01de222e.min.js></script> <script src=../javascripts/extra.js></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+       lightGallery(elements[i]);
+    }
+    </script> </body> </html>
