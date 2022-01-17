@@ -68,7 +68,7 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
 
 ## Quick Links
 
-* [IDE](https://ide.cs50.io)
+* [IDE](https://vscode.dev/)
 * [Sandbox](https://sandbox.cs50.io)
 * [LinkedIn](https://www.linkedin.com/in/nicholas-platt/)
 * [GitHub](https://github.com/tpbnick)
