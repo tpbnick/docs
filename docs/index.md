@@ -9,7 +9,7 @@ This is a place for documentation examples, programming notes, and projects.
   
 If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u>.
 
-## Portfolio Quick Links:
+## Portfolio Quick Links
 
  - [Google Chrome User Guide](chrome.md)
  - [Release Notes Example - Firefox (2020)](https://nicklyss.com/wp-content/uploads/2020/04/Firefox-75.0-Release-Notes.pdf)

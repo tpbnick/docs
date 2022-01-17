@@ -147,3 +147,11 @@ html {
 .md-nav--primary .md-nav__item--active>.md-nav__link {
     font-weight: bolder;
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6a798a;
+}
