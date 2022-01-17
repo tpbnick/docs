@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # About
 ## About Me
 <div id="lightgallery" class="center">

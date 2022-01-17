@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Welcome to Nick's Docs <img class="books" src="https://nicklyss.com/media/uploads/2021/05/books2.png" height="50 !important">
 
 This is a place for documentation examples, programming notes, and projects.  

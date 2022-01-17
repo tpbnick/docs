@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # Nicholas Platt's Portfolio
 
 ## Resume
