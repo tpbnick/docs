@@ -28,7 +28,7 @@ theme:
         name: Switch to light mode
   font:
     text: Roboto
-    code: Cousine
+    code: Roboto Mono
   icon:
     repo: fontawesome/brands/git-alt
 extra_css:
