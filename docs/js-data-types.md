@@ -225,5 +225,3 @@ Does that syntax look a little familiar?  When we use `#!js console.log();` we'r
 console.log('hello'.toUpperCase()); // prints HELLO
 console.log('Hey'.startsWith('H')); // prints true
 ```
-=======
->>>>>>> parent of 26d8374 (Commit 5/4)

@@ -59,6 +59,7 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
     - [Variables and Simple Data Types](js-data-types.md)
     - [Conditional Statements](js-conditionals.md)
     - [Functions](js-functions.md)
+    - [Scope](js-scope.md)
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)

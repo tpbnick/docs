@@ -150,6 +150,7 @@ html {
 
 ::-webkit-scrollbar {
     width: 15px;
+    border-radius: 0px !important;
 }
 
 ::-webkit-scrollbar-thumb {
