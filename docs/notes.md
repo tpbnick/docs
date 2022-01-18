@@ -45,7 +45,7 @@
     - [Functions](js-functions.md)
     - [Scope](js-scope.md)
     - [Arrays](js-arrays.md)
-
+    - [Loops](js-loops.md)
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)

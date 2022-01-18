@@ -137,6 +137,7 @@ nav:
       - Functions : js-functions.md
       - Scope : js-scope.md
       - Arrays: js-arrays.md
+      - Loops: js-loops.md
     - 'SQL':
       - SQL Basics : sql.md
       - Joins and Other Query Types : sql-joins-and-other-queries.md
