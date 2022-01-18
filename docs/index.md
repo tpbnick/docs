@@ -60,6 +60,7 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
     - [Conditional Statements](js-conditionals.md)
     - [Functions](js-functions.md)
     - [Scope](js-scope.md)
+    - [Arrays](js-arrays.md)
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)

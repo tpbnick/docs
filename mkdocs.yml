@@ -136,6 +136,7 @@ nav:
       - Conditional Statements : js-conditionals.md
       - Functions : js-functions.md
       - Scope : js-scope.md
+      - Arrays: js-arrays.md
     - 'SQL':
       - SQL Basics : sql.md
       - Joins and Other Query Types : sql-joins-and-other-queries.md

@@ -44,6 +44,8 @@
     - [Conditional Statements](js-conditionals.md)
     - [Functions](js-functions.md)
     - [Scope](js-scope.md)
+    - [Arrays](js-arrays.md)
+
 
 ??? homepage "SQL"
     - [SQL Basics](sql.md)
