@@ -16,7 +16,7 @@ hide:
     </a>
 </div>
 
-Hi, my name is Nick Platt.  I am currently a technical writer for Boeing Intelligence & Analytics and work with multiple development teams.  I recently graduated from the University of Maryland with a Bachelor's in Computer Networking and Cybersecurity.  I began my Master's in Software Engineering in January 2021 (WOO!).  I have basic knowledge in HTML, CSS, JavaScript, Python, SQL, Markdown, and C (hopefully more to come in the near future).  Outside of work, I love watching European soccer (Go Bayern!), building keyboards, and spending time with my wife and pup.  If you have any questions, please feel free to reach out to me through the contact info below.  
+Hi, my name is Nick Platt.  I am currently a technical writer for Boeing Intelligence & Analytics and work with multiple development teams.  I recently graduated from the University of Maryland with a Bachelor's in Computer Networking and Cybersecurity.  I began my Master's in Software Engineering in January 2021 (WOO!).  I have basic knowledge in HTML, CSS, JavaScript, Python, Java, MongoDB, SQL, Markdown, and C (hopefully more to come in the near future).  Outside of work, I love watching European soccer (Go Bayern!), building keyboards, and spending time with my wife and pup.  If you have any questions, please feel free to reach out to me through the contact info below.  
 
 Creating robust and easy-to-understand documentation is what I do best.  While teaching myself to program, along with my daily work as a technical writer, I have learned how important well written documentation is!  Being able to convey a message to a wide-range of people is more difficult than you would think.  Making sure you are writing at a level and tone that makes it so the most basic users can understand, while not insulting the advanced users' intelligence, can be quite the challenge.  I created this docs website for my programming notes and random projects.  I also have a blog that I update sporadically, which can be found [here](https://blog.nicklyss.com).
 
@@ -30,7 +30,7 @@ Creating robust and easy-to-understand documentation is what I do best.  While t
 
 ###Soccerfront.io  
 
-<a href="https://soccerfront.io">Soccerfront.io</a> is a soccer live score web application built using Nodejs, Expressjs, HTML, CSS, and JavaScript.  Soccerfront pulls data from the API-FOOTBALL API and displays the information in a easy to use live score table and league table (standings) view.  This is an ongoing project and new features will be added sporadically.  
+<a href="https://soccerfront.io">Soccerfront.io</a> is a soccer live score web application built using Nodejs, ExpressJS, HTML, CSS, and JavaScript.  Soccerfront pulls data from the API-FOOTBALL API and displays the information in an easy-to-use live score table and league table (standings) view.  Currently, over 20 leagues/cups are supported!  This is an ongoing project and new features will be added sporadically.  Hosted on a DigitalOcean droplet running Linux and NGINX.  
 
 
 ### Custom Keyboard Builds  
