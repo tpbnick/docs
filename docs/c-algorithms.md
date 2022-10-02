@@ -49,7 +49,7 @@ Else if 50 > middle item
 
 Computer scientists have created a way to describe algorithms (how well it is designed), and it's generally called **big O**.  
 
-![!Running Time](https://nicklyss.com/wp-content/uploads/2020/05/running_time.png)  
+![!Running Time](https://cdn.nickplatt.dev/files/Docs/running_time.png)  
 
 The more formal way to describe this is with big O notation, which we can think of as “on the order of”. For example, if our algorithm is linear search, it will take approximately O(*n*) steps, “on the order of *n*”. In fact, even an algorithm that looks at two items at a time and takes *n*/2 steps has O(*n*). This is because, as n gets bigger and bigger, only the largest term, *n*, matters.  
 

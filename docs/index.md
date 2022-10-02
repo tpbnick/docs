@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# Welcome to Nick's Docs <img class="books" src="https://nicklyss.com/media/uploads/2021/05/books2.png" height="50 !important">
+# Welcome to Nick's Docs <img class="books" src="https://cdn.nickplatt.dev/files/Docs/books2.png" height="50 !important">
 
 This is a place for documentation examples, programming notes, and projects.  
   
@@ -12,8 +12,7 @@ If you are looking for Nick's Portfolio, please click <u>[here](portfolio.md)</u
 ## Portfolio Quick Links
 
  - [Google Chrome User Guide](chrome.md)
- - [Release Notes Example - Firefox (2020)](https://nicklyss.com/wp-content/uploads/2020/04/Firefox-75.0-Release-Notes.pdf)
- - [Installation Guide Example - Firefox (2018)](https://nicklyss.com/wp-content/uploads/2020/04/Firefox-Instructional-Guide-Nick-Platt.pdf)
+ - [Installation Guide Example - Firefox (2018)](https://cdn.nickplatt.dev/files/Misc/Firefox%20Instructional%20Guide%20-%20Nick%20Platt.pdf)
  - [SoccerFront.io - Web Application Project (2020)](https://soccerfront.io)
 
 ## Programming Notes

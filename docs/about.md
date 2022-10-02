@@ -5,14 +5,14 @@ hide:
 # About
 ## About Me
 <div id="lightgallery" class="center">
-    <a href="https://nicklyss.com/wp-content/uploads/2020/05/nicklyss.jpg">
-        <img src="https://nicklyss.com/wp-content/uploads/2020/05/nicklyss.jpg" title="Monterey, CA 2019" alt="Nick & Alyssa" width="25%" height ="25%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <a href="https://cdn.nickplatt.dev/files/Misc/nicklyss.jpg">
+        <img src="https://cdn.nickplatt.dev/files/Misc/nicklyss.jpg" title="Monterey, CA 2019" alt="Nick & Alyssa" width="25%" height ="25%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
     </a>
-	<a href="https://nicklyss.com/wp-content/uploads/2020/08/nicklyss.jpg">
-        <img src="https://nicklyss.com/wp-content/uploads/2020/08/nicklyss.jpg" title="Juneau, AK 2018" alt="Nick & Alyssa" width="28%" height ="28%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+	<a href="https://cdn.nickplatt.dev/files/Misc/alaska.jpg">
+        <img src="https://cdn.nickplatt.dev/files/Misc/alaska.jpg" title="Juneau, AK 2018" alt="Nick & Alyssa" width="28%" height ="28%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
     </a>
-	<a href="https://nicklyss.com/wp-content/uploads/2020/08/pup.jpg">
-        <img src="https://nicklyss.com/wp-content/uploads/2020/08/pup.jpg" title="Dani!" alt="Nick & Alyssa" width="36.5%" height ="36.5%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">  
+	<a href="https://cdn.nickplatt.dev/files/Misc/pup.jpg">
+        <img src="https://cdn.nickplatt.dev/files/Misc/pup.jpg" title="Dani!" alt="Nick & Alyssa" width="36.5%" height ="36.5%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">  
     </a>
 </div>
 
@@ -38,19 +38,19 @@ Creating robust and easy-to-understand documentation is what I do best.  While t
 Below are some keyboards I have built!  
 
 ??? tip "Custom Keyboards"
-	<p id="lightgallery" class="center">**Canoe PC - Gateron Ink Yellow**</p><img src="https://nicklyss.com/media/uploads/2020/12/canoe.png" style ="border-radius: 10px;">  
+	<p id="lightgallery" class="center">**Canoe PC - Gateron Ink Yellow**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canoe.png" style ="border-radius: 10px;">  
 
-	<p id="lightgallery" class="center">**Custom Acrylic - Gateron Ink Blacks</p>**<img src="https://nicklyss.com/media/uploads/2020/12/acrylic.png" style ="border-radius: 10px;">  
+	<p id="lightgallery" class="center">**Custom Acrylic - Gateron Ink Blacks</p>**<img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/acrylic.png" style ="border-radius: 10px;">  
 
-	<p id="lightgallery" class="center">**TX-87 - C³Equalz X TKC Banana Splits</p>**<img src="https://nicklyss.com/media/uploads/2020/12/tx-1.png" style ="border-radius: 10px;">   
+	<p id="lightgallery" class="center">**TX-87 - C³Equalz X TKC Banana Splits</p>**<img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/tx-1.png" style ="border-radius: 10px;">   
 
-	<p id="lightgallery" class="center">**Satisfaction 75 - Zealios V2**</p><img src="https://nicklyss.com/media/uploads/2020/12/satisfaction.png" style ="border-radius: 10px;">  
+	<p id="lightgallery" class="center">**Satisfaction 75 - Zealios V2**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/satisfaction.png" style ="border-radius: 10px;">  
 
-	<p id="lightgallery" class="center">**K75 - Gateron Ink Blacks**</p><img src="https://nicklyss.com/media/uploads/2020/12/k75-e1609337474695.png" style ="border-radius: 10px;">  
+	<p id="lightgallery" class="center">**K75 - Gateron Ink Blacks**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/k75.jpg" style ="border-radius: 10px;">  
 
-	<p id="lightgallery" class="center">**Canon Keys Devastating TKL - Tealios**</p><img src="https://nicklyss.com/media/uploads/2021/04/imageedit_3_6470813349.png" style ="border-radius: 10px;">
+	<p id="lightgallery" class="center">**Canon Keys Devastating TKL - Tealios**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/imageedit_3_6470813349.png" style ="border-radius: 10px;">
 	
-	<p id="lightgallery" class="center">**Mysterium - Kailh Purple Pro**</p><img src="https://nicklyss.com/media/uploads/2020/12/mysterium.png" style ="border-radius: 10px;">
+	<p id="lightgallery" class="center">**Mysterium - Kailh Purple Pro**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/mysterium.png" style ="border-radius: 10px;">
 
 ## Contact  
 Nicholas Platt  

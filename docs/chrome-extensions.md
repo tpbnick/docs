@@ -20,11 +20,11 @@ Installing extensions is as simple as a few clicks:
 
 3.  Click the **Add to Chrome** button.  
 
-    ![!add_to_chrome](https://nicklyss.com/media/uploads/2021/03/add_to_chrome.png)  
+    ![!add_to_chrome](https://cdn.nickplatt.dev/files/Docs/add_to_chrome.png)  
 
 4. The extension should now either be added to your browser or ask for approval if the extension requires additional permissions. **Make sure you only approve extensions that you trust.**  
 
-5.  The extension will now be accessible to the right of the main address bar at the top of your browser.  If your extension is not visible, you can access the extensions page by clicking on the three dots ![threedots](https://nicklyss.com/media/uploads/2021/03/threedots.png) > More tools > Extensions or by putting `chrome://extensions/` in the top address bar.
+5.  The extension will now be accessible to the right of the main address bar at the top of your browser.  If your extension is not visible, you can access the extensions page by clicking on the three dots ![threedots](https://cdn.nickplatt.dev/files/Docs/threedots.png) > More tools > Extensions or by putting `chrome://extensions/` in the top address bar.
 
 Most extensions will require additional setup before you see the results you are expecting.  You can manage the extension by clicking on the extension and changing options within the GUI.  You are also able to manage extensions in the `chrome://extensions/` area.
 
@@ -38,8 +38,8 @@ Customizing the look of your browser has never been easier.  Google Chrome theme
 
 3. Click the **Add to Chrome** button.  
 
-    ![!add_to_chrome](https://nicklyss.com/media/uploads/2021/03/add_to_chrome.png) 
+    ![!add_to_chrome](https://cdn.nickplatt.dev/files/Docs/add_to_chrome.png) 
 
 4. Your theme should now be applied immediately to your browser!  
 
-To access your downloaded themes, click on the three dots ![threedots](https://nicklyss.com/media/uploads/2021/03/threedots.png) > Settings > Appearance or by putting `chrome://settings/appearance` in the top address bar.
+To access your downloaded themes, click on the three dots ![threedots](https://cdn.nickplatt.dev/files/Docs/threedots.png) > Settings > Appearance or by putting `chrome://settings/appearance` in the top address bar.

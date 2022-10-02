@@ -10,7 +10,7 @@
 
 * [Interactive JS CheatSheet](https://htmlcheatsheet.com/js/)  
 
-* [JavaScript and JQuery - Interactive Front-End Web Development (PDF)](https://nicklyss.com/wp-content/uploads/2020/09/JavaScript-and-JQuery-Interactive-Front-End-Web-Development.pdf)
+* [JavaScript and JQuery - Interactive Front-End Web Development (PDF)](https://cdn.nickplatt.dev/files/Docs/JavaScript-and-JQuery-Interactive-Front-End-Web-Development.pdf)
 
 ## Introduction  
 

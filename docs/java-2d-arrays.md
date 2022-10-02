@@ -115,7 +115,7 @@ There are two ways of thinking when accessing a specific element in a 2D array:
 
 The above example of the 2D array called `data` can be visualized like so.  The indices are labeled outside the matrix:
 
-![! Accessing a specific element in a 2D Array](https://nicklyss.com/media/uploads/2021/05/2d-array-access.png)
+![! Accessing a specific element in a 2D Array](https://cdn.nickplatt.dev/files/Docs/2d-array-access.png)
 
 Using this knowledge, we now know that the result of `#!java int stored = data[0][2];` would store the integer `6`.  This is because the value of `6` is located on the first row (index `0`) and the third column (index `2`).  Here is a template which cal be used for accessing elements in 2D arrays:
 ```java
@@ -148,7 +148,7 @@ intTwoD[1][1] = 8;
 ```  
 
 Here is a before and after image showing when the 2D array was first initialized compared to when the four elements were accessed and modified:
-![! Modifying a 2D array](https://nicklyss.com/media/uploads/2021/05/2d-array-modify.png)  
+![! Modifying a 2D array](https://cdn.nickplatt.dev/files/Docs/2d-array-modify.png)  
 
 ## Review of Nested Loops
 Nested loops consist of two or more loops placed within each other.  We will be looking at one loop nested within another for 2D traversal.  
@@ -321,7 +321,7 @@ Within the nested **for** loop, we can see that each of the subarray elements ar
 
 Here is a diagram to help visualize how the 2D array is traversed using nested loops:
 
-![! 2D Array Traversal](https://nicklyss.com/media/uploads/2021/05/2d-array-traversal.png)
+![! 2D Array Traversal](https://cdn.nickplatt.dev/files/Docs/2d-array-traversal.png)
 
 We don't have to only use regular for loops **for** traversing 2D arrays. We can use enhanced **for** loops if we do not need to keep track of the indices. Since enhanced **for** loops only use the element of the arrays, it is a bit more cumbersome to keep track of which index we are at. This same idea applies to while and do-while loops as well. This is why we usually use regular **for** loops except for when we want to do something simple like printing.
 
@@ -375,7 +375,7 @@ Although we have already looked at how 2D array objects are stored in Java, this
 
 Here is a diagram which shows the path through the 2D array:  
 
-![! Row-Major Order](https://nicklyss.com/media/uploads/2021/05/row-major-order.png)
+![! Row-Major Order](https://cdn.nickplatt.dev/files/Docs/row-major-order.png)
 
 This path is created by the way we set up our nested loops. In the previous exercise, we looked at how we can traverse the 2D array by having nested loops in a variety of formats, but if we want to control the indices, we typically use standard for loops.
 
@@ -422,7 +422,7 @@ This is because in our **for** loop, we are using the number of rows as the term
 
 Here is a diagram showing which loop accesses which part of the 2D array for row-major order:  
 
-![! Loop Accesses](https://nicklyss.com/media/uploads/2021/05/loop-accesses.png)
+![! Loop Accesses](https://cdn.nickplatt.dev/files/Docs/loop-accesses.png)
 
 ### Why Use Row-Major Order?
 Row-major order is important when we need to process data in our 2D array by row. You can be provided data in a variety of formats and you may need to perform calculations of rows of data at a time instead of individual elements. Let's take one of our previous checkpoint exercises as an example. You were asked to calculate the sum of the entire 2D array of integers by traversing and accessing each element. Now, if we wanted to calculate the sum of each row, or take the average of each row, we can use row-major order to access the data in the order that we need. Let's look at an example!  
@@ -469,7 +469,7 @@ Column-major order for 2D arrays refers to a traversal path which moves vertical
 This ordering system also conceptualizes the 2D array into a rectangular matrix and starts the traversal at the top left element and ends at the bottom right element. Column-major order has the same starting and finishing point as row-major order, but it’s traversal is completely different
 
 Here is a diagram which shows the path through the 2D array:
-![! Column-Major Order](https://nicklyss.com/media/uploads/2021/05/Column-Major-order.png)
+![! Column-Major Order](https://cdn.nickplatt.dev/files/Docs/Column-Major-order.png)
 
 In order to perform column-major traversal, we need to set up our nested loops in a different way. We need to change the outer loop from depending on the number of rows, to depending on the number of columns. Likewise we need the inner loop to depend on the number of rows in its termination condition.
 
@@ -514,7 +514,7 @@ Step: 11, Element: [3][2]
 As you can see in the code above, the way we accessed the elements from our 2D array of strings called `matrix` is different from the way we accessed them when using row-major order. Let’s remember that the way we get the number of columns is by using `#!java matrix[0].length` and the way we get the number of rows is by using `#!java matrix.length`. Because of these changes to our for loops, our iterator `a` now iterates through every column while our iterator `b` iterates through every row. Since our iterators now represent the opposite values, whenever we access an element from our 2D array, we need to keep in mind what indices we are passing to our accessor. Remember the format we use for accessing the elements `#!java matrix[row][column]`? Since `a` now iterates through our column indices, we place it in the right set of brackets, and the `b` is now placed in the left set of brackets.
 
 Here is a diagram showing which loop accesses which part of the 2D array for column-major order:
-![! Loop Access - Column-Major](https://nicklyss.com/media/uploads/2021/05/loop-accesses-columnmajor.png)
+![! Loop Access - Column-Major](https://cdn.nickplatt.dev/files/Docs/loop-accesses-columnmajor.png)
 
 ### Why Use Column-Major Order?
 
@@ -574,7 +574,7 @@ First, let’s think about a situation where you have some string data inside a 
 
 Here is a visualization of what our calendar data looks like after a user has entered in some event information:
 
-![! Calendar Data](https://nicklyss.com/media/uploads/2021/05/Calendar-data.png)
+![! Calendar Data](https://cdn.nickplatt.dev/files/Docs/Calendar-data.png)
 Here’s what our calendar data looks like in our application:
 ```java linenums="1"
 String[][] calendar = {{"volunteer", "delivery", null, null, "doctor", null, "soccer"}, {null, "exam 1", null, "mechanic", null, null, "soccer"}, {"volunteer", "off work", null, "birthday", null, "concert", null}, {null, "exam 2", null, null, "doctor", null, "soccer"}, {"visit family", null, null, null, null, null, null}};

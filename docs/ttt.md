@@ -3,11 +3,11 @@
 
 Tic-Tac-Toe is a classic two-player game where the object is to get three of your marks in a row.  Both players need to choose their mark - either an ‘X’ or an ‘O’ before the game begins.  Players can win the game by getting three of their marks in a row horizontally, vertically, or diagonally.  The game grid is created by drawing two vertical lines intersected by two horizontal lines, roughly of equal spacing, which should create a 3x3 grid.  The game grid should resemble the following image:
 
-![!Game Grid & Play Marks](https://nicklyss.com/media/uploads/2021/03/grid.png)
+![!Game Grid & Play Marks](https://cdn.nickplatt.dev/files/Docs/grid.png)
 
 Players will alternate turns, starting with ‘X’, by putting their mark in any open square.  If no player is able to get three of their marks in a row and no spaces are left, the game is considered a tie.  Below is an example of a winning game and a tie game:
 
-![!Game Examples](https://nicklyss.com/media/uploads/2021/03/game-examples.png)
+![!Game Examples](https://cdn.nickplatt.dev/files/Docs/game-examples.png)
 
 As you can see above in the game on the left, ‘X’ was able to put three of their marks in a row horizontally (marked with yellow line), which resulted in a win.  On the right, no player was able to get three of their marks in a row, which resulted in a tie game.
 
@@ -21,5 +21,5 @@ If you do not start the game, the main goal is to force a tie.  If the starting 
 
 Tic-Tac-Toe is a timeless, simple, and quick game that can be played by children as young as three years old.  If both players are knowledgeable in the game, it will almost always result in a tie.  One great advantage of Tic-Tac-Toe is that it can be played almost anywhere, from pencil and paper, sand at the beach, computer, and mobile applications, etc.  Google offers a quick and easy way to play Tic-Tac-Toe by simply searching, “[tic tac toe](https://www.google.com/search?q=tic+tac+toe)”.  You can choose your difficulty (East, Medium, Impossible, or Play against a friend) and play against a computer or someone that also has access to your device.  Have fun!
 
-![!Google Tic-Tac-Toe!](https://nicklyss.com/media/uploads/2021/03/google.png)
+![!Google Tic-Tac-Toe!](https://cdn.nickplatt.dev/files/Docs/google.png)
 

@@ -4,8 +4,8 @@ repo_name: tpbnick/docs
 edit_uri: ""
 theme:
   name: material
-  logo: 'https://nicklyss.com/media/uploads/2020/12/nord2.png'
-  favicon: 'https://nicklyss.com/media/uploads/2020/12/nord.png'
+  logo: 'https://cdn.nickplatt.dev/files/Misc/nord2.png'
+  favicon: 'https://cdn.nickplatt.dev/files/Misc/nord2.png'
   features:
     - navigation.instant
     - navigation.tabs
