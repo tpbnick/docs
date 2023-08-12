@@ -410,9 +410,11 @@ Please enter the name of a city you have visited:
 (Enter 'quit' when you are finished.) quit
 ```
 
-??? warning "Note on `#!py break`" You can use the `#!py break` statement in any
-of Python's loops. For example, you could use `#!py break` to quite a `#!py for`
-loop that's working through a list or a dictionary.
+??? warning "Note on `#!py break`"
+
+    You can use the `#!py break` statement in any of Python's loops. For example,
+    you could use `#!py break` to quite a `#!py for` loop that's working through
+    a list or a dictionary.
 
 ### Using `#!py continue` in a Loop
 

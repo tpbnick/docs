@@ -303,10 +303,12 @@ describe_pet(pet_name='harry', animal_type='hamster')
 Because an explicit argument for `animal_type` is provoided, Python will ignore
 the parameter's default value.
 
-??? tip "Note on default values" When you use default values, any parameter with
-a default value needs to be listed after all the parameters that don't have
-default values. This allows Python to continue interpreting positional arguments
-correctly.
+??? tip "Note on default values"
+
+    When you use default values, any parameter with
+    a default value needs to be listed after all the parameters that don't have
+    default values. This allows Python to continue interpreting positional arguments
+    correctly.
 
 ### Equivalent Function Calls
 

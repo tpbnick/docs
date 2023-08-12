@@ -42,11 +42,13 @@ bicylces = ['trek', 'cannondale', 'redline', 'specialized']
 print(bicylces[0])
 ```
 
-??? warning "Index Positions" Just like in C, and most other programming
-languages, **index positions start at 0, not 1**. This is usually something that
-takes some time for beginner programmers to commit to memory. It is also useful
-to remember that you can count backwards in a list as well, with the last
-element in a list being located at position [-1].
+??? warning "Index Positions"
+
+      Just like in C, and most other programming
+      languages, **index positions start at 0, not 1**. This is usually something that
+      takes some time for beginner programmers to commit to memory. It is also useful
+      to remember that you can count backwards in a list as well, with the last
+      element in a list being located at position [-1].
 
 When you print out a single item from a list, Python will return just that
 element without square brackets:
@@ -314,9 +316,11 @@ The first motorcycle I owned was a Honda
 Remember that each time we use `#!py pop()`, the item we were working with is no
 longer stored in the list.
 
-??? tip "When to use `#!py del` or `#!py pop()`" When you want to delete an item
-from a list and not use that item in any way, use the `#!py del` statement; if
-you want to use an item as you remove it, use the `#!py pop()` method.
+??? tip "When to use `#!py del` or `#!py pop()`"
+
+      When you want to delete an item
+      from a list and not use that item in any way, use the `#!py del` statement; if
+      you want to use an item as you remove it, use the `#!py pop()` method.
 
 #### Removing an Item by Value
 
@@ -372,10 +376,12 @@ The code above would have the following output:
 A Ducati is too expensive for me.
 ```
 
-??? warning "Note on `#!py remove()`" The `remove()` method deletes only the
-first occurrence of the value you specify. If there’s a possibility the value
-appears more than once in the list, you’ll need to use a loop to make sure all
-occurrences of the value are removed.
+??? warning "Note on `#!py remove()`"
+
+      The `remove()` method deletes only the
+      first occurrence of the value you specify. If there’s a possibility the value
+      appears more than once in the list, you’ll need to use a loop to make sure all
+      occurrences of the value are removed.
 
 ### Organizing a List
 
@@ -451,10 +457,12 @@ Here is the original list again:
 ['bmw', 'audi', 'toyota', 'subaru']
 ```
 
-??? warning "Note on Sorting" Sorting a list alphabetically is a bit more
-complicated when all the values are not in lowercase. There are several ways to
-interpret capital letters when determining a sort order, and specifying the
-exact order can be more complex than we want to deal with at this time.
+??? warning "Note on Sorting"
+
+      Sorting a list alphabetically is a bit more
+      complicated when all the values are not in lowercase. There are several ways to
+      interpret capital letters when determining a sort order, and specifying the
+      exact order can be more complex than we want to deal with at this time.
 
 #### Printing a List in Reverse Order
 
@@ -518,9 +526,11 @@ Python attempts to give you the item at index _3_, but when it searches the
 list, there is no item in index 3 in `motorcycles`. You must remember that
 indexing starts at 0 in Python.
 
-??? warning "Note on Index Errors" If an index error occurs and you can’t figure
-out how to resolve it, try printing your list or just printing the length of
-your list. Your list might look much different than you thought it did,
-especially if it has been managed dynamically by your program. Seeing the actual
-list, or the exact number of items in your list, can help you sort out such
-logical errors.
+??? warning "Note on Index Errors"
+
+      If an index error occurs and you can’t figure
+      out how to resolve it, try printing your list or just printing the length of
+      your list. Your list might look much different than you thought it did,
+      especially if it has been managed dynamically by your program. Seeing the actual
+      list, or the exact number of items in your list, can help you sort out such
+      logical errors.

@@ -10,8 +10,10 @@ perform tasks utilizing an HTTP GET, POST, PUT, or DELETE request. REST-based
 web services can also return data in Command Seperated Value (CSV), JavaScript
 Object Notation (JSON), and Really Simple Syndication (RSS) data formats.
 
-???+ tip When APIs embrace the styles and constraints of REST, they are said to
-be RESTful.
+??? tip RESTful
+
+    When APIs embrace the styles and constraints of REST, they are said to
+    be RESTful.
 
 REST has guiding architectural constraints for an API to be considered RESTful:
 

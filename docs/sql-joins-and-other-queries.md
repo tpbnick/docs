@@ -32,10 +32,12 @@ second table which have the same key (as defined by the **`ON`** constraint) to
 create a result row with the combined columns from both tables. After the tables
 are joined, the other clauses we learned previously are then applied.
 
-??? tip "`JOIN` vs. `INNER JOIN`" You may see queries where the `INNER JOIN` is
-written simply as a `JOIN`. These two are equivalent, but we will continue to
-refer to these joins as inner-joins because they make the query easier to read
-once you start using other types of joins.
+??? tip "`JOIN` vs. `INNER JOIN`"
+
+    You may see queries where the `INNER JOIN` is
+    written simply as a `JOIN`. These two are equivalent, but we will continue to
+    refer to these joins as inner-joins because they make the query easier to read
+    once you start using other types of joins.
 
 Let's do some exercises where we look at multiple tables. We will use the
 [Movies.csv](https://cdn.nickplatt.dev/files/Docs/Movies.csv) file from previous
@@ -106,10 +108,12 @@ regardless of whether a matching row exists in the other table.
 When using any of these new joins, you will likely have to write additional
 logic to deal with `NULL`s in the result and constraints.
 
-??? tip "JOINS" You might see queries with these joins written as
-`LEFT OUTER JOIN`, `RIGHT OUTER JOIN`, or `FULL OUTER JOIN`, but the `OUTER`
-keyword is really kept for SQL-92 compatibility and these queries are simply
-equivalent to `LEFT JOIN`, `RIGHT JOIN`, and `FULL JOIN` respectively.
+??? tip "JOINS"
+
+    You might see queries with these joins written as
+    `LEFT OUTER JOIN`, `RIGHT OUTER JOIN`, or `FULL OUTER JOIN`, but the `OUTER`
+    keyword is really kept for SQL-92 compatibility and these queries are simply
+    equivalent to `LEFT JOIN`, `RIGHT JOIN`, and `FULL JOIN` respectively.
 
 For the following exercises we will be using new tables. We will use a table
 which stores fictional data about
@@ -261,11 +265,13 @@ FROM movies
 WHERE year % 2 = 0;
 ```
 
-??? tip "Odd Vs. Even" Remember that to determine if a SQL value is even or odd,
-we use the module operator (`%`), which returns the remainder after division of
-its operands. Since the remainder of an even number divided by 2 is always 0,
-and the remainder of an odd number divided by 2 is always 1 - this makes modulo
-an easy way to find even/odd numbers.
+??? tip "Odd Vs. Even"
+
+    Remember that to determine if a SQL value is even or odd,
+    we use the module operator (`%`), which returns the remainder after division of
+    its operands. Since the remainder of an even number divided by 2 is always 0,
+    and the remainder of an odd number divided by 2 is always 1 - this makes modulo
+    an easy way to find even/odd numbers.
 
 ### Queries with Aggregates
 

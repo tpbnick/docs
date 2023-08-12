@@ -731,11 +731,13 @@ TypeError                                 Traceback (most recent call last)
 TypeError: 'tuple' object does not support item assignment
 ```
 
-??? warning "Note on Tuples" Tuples are technically defined by the presence of a
-comma; the parenthes make them look neater and more readable. If you want to
-define a tuple with one element, you need to include a trailing comma:
-`py linenums="1" 	my_t = (3,) 	` It doesn't often make sense to build a tuple with
-one element, but this can happen when tuples are generated automatically.
+??? warning "Note on Tuples"
+
+    Tuples are technically defined by the presence of a
+    comma; the parenthes make them look neater and more readable. If you want to
+    define a tuple with one element, you need to include a trailing comma:
+    `py linenums="1" 	my_t = (3,) 	` It doesn't often make sense to build a tuple with
+    one element, but this can happen when tuples are generated automatically.
 
 ### Looping Through All Values in a Tuple
 
