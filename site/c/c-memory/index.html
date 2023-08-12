@@ -1,0 +1,481 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link href=../c-algorithms-problems/ rel=prev><link href=../c-memory-problems/ rel=next><link rel=icon href=https://cdn.nickplatt.dev/files/Misc/logo-dracula.png><meta name=generator content="mkdocs-1.5.2, mkdocs-material-9.1.21"><title>Memory Overview - Nick's Docs</title><link rel=stylesheet href=../../assets/stylesheets/main.eebd395e.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.ecc896b0.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=../../stylesheets/extra.css><script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><link href=../../assets/stylesheets/glightbox.min.css rel=stylesheet><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style><script src=../../assets/javascripts/glightbox.min.js></script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=indigo data-md-color-accent=indigo> <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#memory class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../.. title="Nick's Docs" class="md-header__button md-logo" aria-label="Nick's Docs" data-md-component=logo> <img src=https://cdn.nickplatt.dev/files/Misc/logo-dracula.png alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Nick's Docs </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Memory Overview </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme=default data-md-color-primary=indigo data-md-color-accent=indigo aria-label="Switch to dark mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_2 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme=slate data-md-color-primary=indigo data-md-color-accent=indigo aria-label="Switch to light mode" type=radio name=__palette id=__palette_2> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg> </label> </form> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg> </button> </nav> <div class=md-search__suggest data-md-component=search-suggest></div> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/tpbnick/docs title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> tpbnick/docs </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class=md-grid> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../../portfolio/ class=md-tabs__link> Nick's Portfolio </a> </li> <li class=md-tabs__item> <a href=../../notes/ class="md-tabs__link md-tabs__link--active"> Programming Notes </a> </li> <li class=md-tabs__item> <a href=../../about/ class=md-tabs__link> About </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=../.. title="Nick's Docs" class="md-nav__button md-logo" aria-label="Nick's Docs" data-md-component=logo> <img src=https://cdn.nickplatt.dev/files/Misc/logo-dracula.png alt=logo> </a> Nick's Docs </label> <div class=md-nav__source> <a href=https://github.com/tpbnick/docs title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> tpbnick/docs </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../.. class=md-nav__link> Home </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_2> <label class=md-nav__link for=__nav_2 id=__nav_2_label tabindex=0> Nick's Portfolio <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_2_label aria-expanded=false> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> Nick's Portfolio </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../portfolio/ class=md-nav__link> Main Portfolio </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3 checked> <label class=md-nav__link for=__nav_3 id=__nav_3_label tabindex=0> Programming Notes <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_3_label aria-expanded=true> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Programming Notes </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../notes/ class=md-nav__link> Notes Overview </a> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_2 checked> <label class=md-nav__link for=__nav_3_2 id=__nav_3_2_label tabindex=0> C <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_2_label aria-expanded=true> <label class=md-nav__title for=__nav_3_2> <span class="md-nav__icon md-icon"></span> C </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c/ class=md-nav__link> C Basics </a> </li> <li class=md-nav__item> <a href=../c-arrays/ class=md-nav__link> Arrays </a> </li> <li class=md-nav__item> <a href=../c-functions/ class=md-nav__link> Functions </a> </li> <li class=md-nav__item> <a href=../c-cl-arguments/ class=md-nav__link> Command Line Arguments </a> </li> <li class=md-nav__item> <a href=../c-variable-scope/ class=md-nav__link> Variables and Scope </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_2_6> <label class=md-nav__link for=__nav_3_2_6 id=__nav_3_2_6_label tabindex=0> Algorithms <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=3 aria-labelledby=__nav_3_2_6_label aria-expanded=false> <label class=md-nav__title for=__nav_3_2_6> <span class="md-nav__icon md-icon"></span> Algorithms </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-algorithms/ class=md-nav__link> Algorithm Overview </a> </li> <li class=md-nav__item> <a href=../c-algorithms-problems/ class=md-nav__link> Algorithm Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_2_7 checked> <label class=md-nav__link for=__nav_3_2_7 id=__nav_3_2_7_label tabindex=0> Memory <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=3 aria-labelledby=__nav_3_2_7_label aria-expanded=true> <label class=md-nav__title for=__nav_3_2_7> <span class="md-nav__icon md-icon"></span> Memory </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> Memory Overview <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> Memory Overview </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#pointers class=md-nav__link> Pointers </a> </li> <li class=md-nav__item> <a href=#string class=md-nav__link> string </a> </li> <li class=md-nav__item> <a href=#compare-and-copy class=md-nav__link> Compare and Copy </a> </li> <li class=md-nav__item> <a href=#valgrind class=md-nav__link> valgrind </a> </li> <li class=md-nav__item> <a href=#swap class=md-nav__link> Swap </a> </li> <li class=md-nav__item> <a href=#memory-layout class=md-nav__link> Memory Layout </a> </li> <li class=md-nav__item> <a href=#get_int class=md-nav__link> get_int </a> </li> <li class=md-nav__item> <a href=#file-pointers class=md-nav__link> File Pointers </a> </li> <li class=md-nav__item> <a href=#jpeg class=md-nav__link> JPEG </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../c-memory-problems/ class=md-nav__link> Memory Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_2_8> <label class=md-nav__link for=__nav_3_2_8 id=__nav_3_2_8_label tabindex=0> Data Structures <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=3 aria-labelledby=__nav_3_2_8_label aria-expanded=false> <label class=md-nav__title for=__nav_3_2_8> <span class="md-nav__icon md-icon"></span> Data Structures </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c-data-structures/ class=md-nav__link> Data Structures Overview </a> </li> <li class=md-nav__item> <a href=../c-data-structures-problems/ class=md-nav__link> Data Structures Problem </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_3> <label class=md-nav__link for=__nav_3_3 id=__nav_3_3_label tabindex=0> Python <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_3_label aria-expanded=false> <label class=md-nav__title for=__nav_3_3> <span class="md-nav__icon md-icon"></span> Python </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../python/py/ class=md-nav__link> Python Basics </a> </li> <li class=md-nav__item> <a href=../../python/py-data-types/ class=md-nav__link> Variables and Simple Data Types </a> </li> <li class=md-nav__item> <a href=../../python/py-lists/ class=md-nav__link> Lists </a> </li> <li class=md-nav__item> <a href=../../python/py-working-with-lists/ class=md-nav__link> Working with Lists </a> </li> <li class=md-nav__item> <a href=../../python/py-if-statements/ class=md-nav__link> If Statements </a> </li> <li class=md-nav__item> <a href=../../python/py-dictionaries/ class=md-nav__link> Dictionaries </a> </li> <li class=md-nav__item> <a href=../../python/py-user-input-while-loops/ class=md-nav__link> User Input and while Loops </a> </li> <li class=md-nav__item> <a href=../../python/py-functions/ class=md-nav__link> Functions </a> </li> <li class=md-nav__item> <a href=../../python/py-classes/ class=md-nav__link> Classes </a> </li> <li class=md-nav__item> <a href=../../python/py-random/ class=md-nav__link> Random Programs </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_4> <label class=md-nav__link for=__nav_3_4 id=__nav_3_4_label tabindex=0> Java <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_4_label aria-expanded=false> <label class=md-nav__title for=__nav_3_4> <span class="md-nav__icon md-icon"></span> Java </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../java/java/ class=md-nav__link> Java Overview </a> </li> <li class=md-nav__item> <a href=../../java/java-basics/ class=md-nav__link> Java Basics </a> </li> <li class=md-nav__item> <a href=../../java/java-variables/ class=md-nav__link> Variables </a> </li> <li class=md-nav__item> <a href=../../java/java-classes/ class=md-nav__link> Classes </a> </li> <li class=md-nav__item> <a href=../../java/java-conditionals/ class=md-nav__link> Conditionals/Control Flow </a> </li> <li class=md-nav__item> <a href=../../java/java-arrays/ class=md-nav__link> Arrays </a> </li> <li class=md-nav__item> <a href=../../java/java-loops/ class=md-nav__link> Loops </a> </li> <li class=md-nav__item> <a href=../../java/java-string-methods/ class=md-nav__link> String Methods </a> </li> <li class=md-nav__item> <a href=../../java/java-access-scope/ class=md-nav__link> Access, Encapsulation, & Scope </a> </li> <li class=md-nav__item> <a href=../../java/java-inheritance-polymorphism/ class=md-nav__link> Inheritance & Polymorphism </a> </li> <li class=md-nav__item> <a href=../../java/java-debugging/ class=md-nav__link> Debugging </a> </li> <li class=md-nav__item> <a href=../../java/java-2d-arrays/ class=md-nav__link> 2D Arrays </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_5> <label class=md-nav__link for=__nav_3_5 id=__nav_3_5_label tabindex=0> JavaScript <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_5_label aria-expanded=false> <label class=md-nav__title for=__nav_3_5> <span class="md-nav__icon md-icon"></span> JavaScript </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../js/js/ class=md-nav__link> JavaScript Basics </a> </li> <li class=md-nav__item> <a href=../../js/js-data-types/ class=md-nav__link> Variables and Simple Data Types </a> </li> <li class=md-nav__item> <a href=../../js/js-conditionals/ class=md-nav__link> Conditional Statements </a> </li> <li class=md-nav__item> <a href=../../js/js-functions/ class=md-nav__link> Functions </a> </li> <li class=md-nav__item> <a href=../../js/js-scope/ class=md-nav__link> Scope </a> </li> <li class=md-nav__item> <a href=../../js/js-arrays/ class=md-nav__link> Arrays </a> </li> <li class=md-nav__item> <a href=../../js/js-loops/ class=md-nav__link> Loops </a> </li> <li class=md-nav__item> <a href=../../js/js-ho-functions/ class=md-nav__link> Higher-Order Functions </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_6> <label class=md-nav__link for=__nav_3_6 id=__nav_3_6_label tabindex=0> SQL <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_6_label aria-expanded=false> <label class=md-nav__title for=__nav_3_6> <span class="md-nav__icon md-icon"></span> SQL </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../sql/sql/ class=md-nav__link> SQL Basics </a> </li> <li class=md-nav__item> <a href=../../sql/sql-joins-and-other-queries/ class=md-nav__link> Joins and Other Query Types </a> </li> <li class=md-nav__item> <a href=../../sql/sql-random/ class=md-nav__link> Random Problems </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3_7> <label class=md-nav__link for=__nav_3_7 id=__nav_3_7_label tabindex=0> Random <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=2 aria-labelledby=__nav_3_7_label aria-expanded=false> <label class=md-nav__title for=__nav_3_7> <span class="md-nav__icon md-icon"></span> Random </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../random/api/ class=md-nav__link> API Overview </a> </li> <li class=md-nav__item> <a href=../../random/django/ class=md-nav__link> Django </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../../about/ class=md-nav__link> About </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#pointers class=md-nav__link> Pointers </a> </li> <li class=md-nav__item> <a href=#string class=md-nav__link> string </a> </li> <li class=md-nav__item> <a href=#compare-and-copy class=md-nav__link> Compare and Copy </a> </li> <li class=md-nav__item> <a href=#valgrind class=md-nav__link> valgrind </a> </li> <li class=md-nav__item> <a href=#swap class=md-nav__link> Swap </a> </li> <li class=md-nav__item> <a href=#memory-layout class=md-nav__link> Memory Layout </a> </li> <li class=md-nav__item> <a href=#get_int class=md-nav__link> get_int </a> </li> <li class=md-nav__item> <a href=#file-pointers class=md-nav__link> File Pointers </a> </li> <li class=md-nav__item> <a href=#jpeg class=md-nav__link> JPEG </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <h1 id=memory>Memory</h1> <p>In previous weeks, we have discussed binary. We have also covered how each byte has an address, or identifier, so we can refer to where our variables are actually stored. It turns out, by convention, the addresses for memory use the counting system <strong>hexadecimal</strong>, where there are 16 digits (0-9 and A-F).</p> <p>In binary (<em>base-2</em>), each digit stood for a power of 2:</p> <table> <thead> <tr> <th>128</th> <th>64</th> <th>32</th> <th>16</th> <th>8</th> <th>4</th> <th>2</th> <th>1</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> <td>1</td> </tr> </tbody> </table> <p>With 8 bits, we can count up to 255.</p> <p>Hexadecimal (<em>base-16</em>) is a much more concise way to express the data on a computer's system. Hexadecimal is displayed as follows: <code>0 1 2 3 4 5 6 7 8 9 A B C D E F</code>.</p> <p>Just like binary has place values (1, 2, 4, 8...) and decimal has place values (1, 10, 100, 1000...), hexadecimal does too. Hexadecimal's place values are by the power of 16. For example, if we were to look at the hex number 0x397, it would be as follows:</p> <table> <thead> <tr> <th></th> <th>256 (16<sup>2</sup>)</th> <th>16 (16<sup>1</sup>)</th> <th>1 (16<sup>0</sup>)</th> </tr> </thead> <tbody> <tr> <td>0x</td> <td>3</td> <td>9</td> <td>7</td> </tr> </tbody> </table> <p>So the above number would be (3 x 256) + (9 x 16) + 7 = 919.</p> <p>Another example that uses alphanumeric hex characters:</p> <table> <thead> <tr> <th></th> <th>256 (16<sup>2</sup>)</th> <th>16 (16<sup>1</sup>)</th> <th>1 (16<sup>0</sup>)</th> </tr> </thead> <tbody> <tr> <td>0x</td> <td>A</td> <td>D</td> <td>C</td> </tr> </tbody> </table> <p>This would look like (10 x 256) + (13 x 16) + 12 = 2780 in decimal form.</p> <p>Here, the <code>F</code> is a value of 15 in decimal, and each place is a power of 16, so the first <code>F</code> is 16^1 _ 15 = 240, plus the second <code>F</code> with the value of 16^0 _ 15 = 15, for a total of 255.</p> <p>Here is a quick chart to compare decimal, hexadecimal, and binary:</p> <p><a class=glightbox href=https://cdn.nickplatt.dev/files/Docs/numbertable.png data-type=image data-width=100% data-height=auto data-desc-position=bottom><img alt="!number table" src=https://cdn.nickplatt.dev/files/Docs/numbertable.png></a></p> <p>The RGB color system also conventionally uses hexadecimal to describe the amount of each color. For example, <code>000000</code> in hexadecimal means 0 of each red, green, and blue, for a color of black. And <code>FF0000</code> would be 255, or the highest possible, amount of red. With different values for each color, we can represent millions of different colors.</p> <p>In writing, we can also indicate a value is in hexadecimal by prefixing it with <code>0x</code>, as in <code>0x10</code>, where the value is equal to 16 in decimal, as opposed to 10. <code>0x</code> means nothing to a computer, this is simply to help humans see when hexadecimal will be used.</p> <h2 id=pointers>Pointers</h2> <p><strong>Pointers</strong> provide an alternative way to pass data between functions.</p> <ul> <li>Up until this point we have passed all data by value, which means we have only passed a copy of that data.</li> </ul> <p>If we use pointers instead, we have the power to pass the actual variable itself. That means that if a change is made in one function, it can impact what happens in other functions.</p> <p>Let's create a small program that prints out a value of <code>n</code>:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span>
+<span class=normal>7</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>n</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>50</span><span class=p>;</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;%i</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>n</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <p>In our computer's memory, there are now 4 bytes somewhere that have the binary value of 50, labeled <code>n</code>.</p> <p>The bytes for the variable <code>n</code> will start at a unique address and may look something like <code>0x12345678</code>. In C, we can actually see the address with the <code>&amp;</code> operator, which means "get the address of this variable":</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span>
+<span class=normal>7</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>n</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>50</span><span class=p>;</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;%p</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=n>n</span><span class=p>);</span><span class=w> </span><span class=c1>// notice the %p and &amp; here</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <p>When this program was run, I received the result <code>0x7ffe5878a42c</code>.</p> <p>The address of a variable is called a <strong>pointer</strong>, which we can think of as a value that "points" to a location in the memory. The <code>*</code> operator lets us "go to" the location that a pointer is point to. For example, we can print <code>*&amp;n</code>, where we "go to" the address of <code>n</code> and print out the value of <code>n</code>, <code>50</code>.</p> <p>The <code>*</code> is known as the <strong>deference operator</strong>. It "goes to the reference" and access that data at that location, allowing you to manipulate it at will.</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span>
+<span class=normal>7</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>n</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>50</span><span class=p>;</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;%i</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=o>*&amp;</span><span class=n>n</span><span class=p>);</span><span class=w> </span><span class=c1>// notice the *&amp;n here</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <p>We also have to use the <code>*</code> operator (in an unfortunately confusing way) to declare a variable that we want to be a pointer:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span>
+<span class=normal>7</span>
+<span class=normal>8</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>   </span><span class=kt>int</span><span class=w> </span><span class=n>n</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>50</span><span class=p>;</span>
+<span class=w>   </span><span class=kt>int</span><span class=w> </span><span class=o>*</span><span class=n>p</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>&amp;</span><span class=n>n</span><span class=p>;</span><span class=w> </span><span class=c1>// declaring the pointer variable</span>
+<span class=w>   </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;%p</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>p</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <p>Here, we use int <code>*p</code> to declare a variable, <code>p</code>, that has the type of <code>*</code>, a pointer, to a value of type <code>int</code>, an integer. Then, we can print its value (something like <code>0x12345678</code>), or print the value at its location with <code>printf("%i\n", *p);</code>.</p> <p>In our computer’s memory, the variables might look like this (each square representing a byte of memory):</p> <p><a class=glightbox href=https://cdn.nickplatt.dev/files/Docs/memory.png data-type=image data-width=100% data-height=auto data-desc-position=bottom><img alt=!memory src=https://cdn.nickplatt.dev/files/Docs/memory.png></a></p> <p>We have a pointer, <code>p</code>, with the address of some variable.</p> <p>We can abstract away the actual value of the addresses now, since they’ll be different as we declare variables in our programs, and simply think of <code>p</code> as “pointing at” some value:</p> <p><a class=glightbox href=https://cdn.nickplatt.dev/files/Docs/pointing.png data-type=image data-width=100% data-height=auto data-desc-position=bottom><img alt=!pointing src=https://cdn.nickplatt.dev/files/Docs/pointing.png></a></p> <p>An easier way to look at this is if we have a mailbox labeled "123", with the number "50" inside it. The mailbox would be <code>int n</code>, since it stores an integer. We might have another mailbox with the address “456”, inside of which is the value “123”, which is the address of our other mailbox. This would be <code>int *p</code>, since it’s a pointer to an integer.<br> A <strong>pointer</strong>, then, is a data item whose</p> <ul> <li> <p><em>value</em> is a memory address</p> </li> <li> <p><em>type</em> describes the data located at that memory address</p> </li> </ul> <p>The simplest pointer available to us in C is the NULL pointer. As you might expect, this pointer points to nothing (a fact which can actually come in handy). When you create a pointer and you don't set its value immediately, you should <strong>always</strong> set the value of the pointer to NULL.</p> <h2 id=string>string</h2> <p>Let's use a variable <code>string s</code> for a name like <code>EMMA</code> for an example. We should be able to access each character in <code>EMMA</code> with <code>s[0] - s[4]</code>:</p> <p><a class=glightbox href=https://cdn.nickplatt.dev/files/Docs/s_array.png data-type=image data-width=100% data-height=auto data-desc-position=bottom><img alt=!array src=https://cdn.nickplatt.dev/files/Docs/s_array.png></a></p> <p>It actually turns out that each character is stored in memory at a byte with some address, and <code>s</code> is actually just a pointer with the address of the first character:</p> <p><a class=glightbox href=https://cdn.nickplatt.dev/files/Docs/s_pointer.png data-type=image data-width=100% data-height=auto data-desc-position=bottom><img alt=!pointer src=https://cdn.nickplatt.dev/files/Docs/s_pointer.png></a></p> <p>Because <code>s</code> is just a pointer to the beginning, only the <code>\0</code> indicates the end of the string.</p> <p>In fact, the CS50 Library defines a <code>string</code> with <code>typedef char *string</code>, which just says that we want to name a new type, <code>string</code>, as a <code>char *</code>, or a pointer to a character.</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span>
+<span class=normal>7</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>char</span><span class=w> </span><span class=o>*</span><span class=n>s</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&quot;EMMA&quot;</span><span class=p>;</span><span class=w> </span><span class=c1>// notice how we are no longer using string, we are using char *s</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;%s</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>s</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <h2 id=compare-and-copy>Compare and Copy</h2> <p>Let's create a quick program to compare integers:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;cs50.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=c1>// Get two integers</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>get_int</span><span class=p>(</span><span class=s>&quot;i: &quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>j</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>get_int</span><span class=p>(</span><span class=s>&quot;j: &quot;</span><span class=p>);</span>
+
+<span class=w>    </span><span class=c1>// Compare integers</span>
+<span class=w>    </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>i</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=n>j</span><span class=p>)</span>
+<span class=w>    </span><span class=p>{</span>
+<span class=w>        </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;Same</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=p>}</span>
+<span class=w>    </span><span class=k>else</span>
+<span class=w>    </span><span class=p>{</span>
+<span class=w>        </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;Different</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <p>We can compile and run this, and our program works as we’d expect, with the same values of the two integers giving us “Same” and different values “Different”.</p> <p>Now let's try the same thing, but using strings instead of integers:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;cs50.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=c1>// Get two strings</span>
+<span class=w>    </span><span class=n>string</span><span class=w> </span><span class=n>s</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>get_string</span><span class=p>(</span><span class=s>&quot;s: &quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=n>string</span><span class=w> </span><span class=n>t</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>get_string</span><span class=p>(</span><span class=s>&quot;t: &quot;</span><span class=p>);</span>
+
+<span class=w>    </span><span class=c1>// Compare strings&#39; addresses</span>
+<span class=w>    </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>s</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=n>t</span><span class=p>)</span>
+<span class=w>    </span><span class=p>{</span>
+<span class=w>        </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;Same</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=p>}</span>
+<span class=w>    </span><span class=k>else</span>
+<span class=w>    </span><span class=p>{</span>
+<span class=w>        </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;Different</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <p>If we run the above program we will see that it will give us the result "Different" each time, even when the strings are identical. Why does this happen? Simply, this is caused by how C stores strings in memory. When these are compared, C looks at the addresses of the stings, not the user input data. The strings are stored in different places of memory (pointers), which will return different hexadecimal results when compared.</p> <p>Now let's look at how we can copy strings. Let's make a simple program:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;cs50.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;ctype.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=n>string</span><span class=w> </span><span class=n>s</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>get_string</span><span class=p>(</span><span class=s>&quot;s: &quot;</span><span class=p>);</span>
+
+<span class=w>    </span><span class=n>string</span><span class=w> </span><span class=n>t</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>s</span><span class=p>;</span><span class=w> </span><span class=c1>// copies string s to string t (but only as an address)</span>
+
+<span class=w>    </span><span class=n>t</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>toupper</span><span class=p>(</span><span class=n>t</span><span class=p>[</span><span class=mi>0</span><span class=p>]);</span><span class=w> </span><span class=c1>// capitalizes string t</span>
+
+<span class=w>    </span><span class=c1>// Print string twice</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;s: %s</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>s</span><span class=p>);</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;t: %s</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>t</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <ul> <li> <p>We get a string <code>s</code>, and copy the value of <code>s</code> into <code>t</code>. Then, we capitalize the first letter in <code>t</code>.</p> </li> <li> <p>But when we run our program, we see that both <code>s</code> and <code>t</code> are now capitalized.</p> </li> <li> <p>Since we set <code>s</code> and <code>t</code> to the same values, they’re actually pointers to the same character, and so we capitalized the same character!</p> </li> </ul> <p>To actually make a copy of a string, we have to do a little more work:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;cs50.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;ctype.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;string.h&gt;</span><span class=c1> // needed for strlen (string length)</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>char</span><span class=w> </span><span class=o>*</span><span class=n>s</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>get_string</span><span class=p>(</span><span class=s>&quot;s: &quot;</span><span class=p>);</span>
+
+<span class=w>    </span><span class=kt>char</span><span class=w> </span><span class=o>*</span><span class=n>t</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>malloc</span><span class=p>(</span><span class=n>strlen</span><span class=p>(</span><span class=n>s</span><span class=p>)</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>1</span><span class=p>);</span><span class=w> </span><span class=c1>// malloc is &quot;memory allocate&quot; to store the copy</span>
+
+<span class=w>    </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>,</span><span class=w> </span><span class=n>n</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>strlen</span><span class=p>(</span><span class=n>s</span><span class=p>);</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>&lt;</span><span class=w> </span><span class=n>n</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>1</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=o>++</span><span class=p>)</span><span class=w> </span><span class=c1>// we need n+1 for the null character in a string</span>
+<span class=w>    </span><span class=p>{</span>
+<span class=w>        </span><span class=n>t</span><span class=p>[</span><span class=n>i</span><span class=p>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>s</span><span class=p>[</span><span class=n>i</span><span class=p>];</span><span class=w> </span><span class=c1>// copies strings</span>
+<span class=w>    </span><span class=p>}</span>
+
+<span class=w>    </span><span class=n>t</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>toupper</span><span class=p>(</span><span class=n>t</span><span class=p>[</span><span class=mi>0</span><span class=p>]);</span><span class=w> </span><span class=c1>// capitalizes the first character of the string</span>
+
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;s: %s</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>s</span><span class=p>);</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;t: %s</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>t</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <ul> <li> <p>We create a new variable, <code>t</code>, of the type <code>char *</code>, with <code>char *t</code>. Now, we want to point it to a new chunk of memory that’s large enough to store the copy of the string. With <code>malloc</code>, we can allocate some number of bytes in memory (that aren’t already used to store other values), and we pass in the number of bytes we’d like. We already know the length of <code>s</code>, so we add 1 to that for the terminating null character. So, our final line of code is <code>char *t = malloc(strlen(s) + 1);</code>.</p> </li> <li> <p>Then, we copy each character, one at a time, and now we can capitalize just the first letter of <code>t</code>. And we use <code>i &lt; n + 1</code>, since we actually want to go up to <code>n</code>, to ensure we copy the terminating character in the string.</p> </li> <li> <p>We can actually also use the <code>strcpy</code> library function with <code>strcpy(t, s)</code> instead of our loop, to copy the string <code>s</code> into <code>t</code>. To be clear, the concept of a “string” is from the C language and well-supported; the only training wheels from CS50 are the type string instead of <code>char *</code>, and the <code>get_string</code> function.</p> </li> </ul> <p>If we didn’t copy the null terminating character, <code>\0</code>, and tried to print out our string <code>t</code>, printf will continue and print out the unknown, or garbage, values that we have in memory, until it happens to reach a <code>\0</code>, or crashes entirely, since our program might end up trying to read memory that doesn’t belong to it!</p> <h2 id=valgrind>valgrind</h2> <p>It turns out that, after we’re done with memory that we’ve allocated with <code>malloc</code>, we should call <code>free</code> (as in <code>free(t)</code>), which tells our computer that those bytes are no longer useful to our program, so those bytes in memory can be reused again.</p> <p>If we kept running our program and allocating memory with <code>malloc</code>, but never freed the memory after we were done using it, we would have a <strong>memory leak</strong>, which will slow down our computer and use up more and more memory until our computer runs out.</p> <p><code>valgrind</code> is a command-line tool that we can use to run our program and see if it has any memory leaks. We can run valgrind on our program above with <code>help50 valgrind ./*program*</code> and see, from the error message, that line 10, we allocated memory that we never freed (or “lost”).</p> <p>So at the end, we can add a line <code>free(t)</code>, which won’t change how our program runs, but no errors from valgrind.</p> <p>Let's look at an example program provided from valgrind's official documentation:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span></pre></div></td><td class=code><div><pre><span></span><code><span class=c1>// http://valgrind.org/docs/manual/quick-start.html#quick-start.prepare</span>
+
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdlib.h&gt;</span>
+
+<span class=kt>void</span><span class=w> </span><span class=nf>f</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=o>*</span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>malloc</span><span class=p>(</span><span class=mi>10</span><span class=w> </span><span class=o>*</span><span class=w> </span><span class=k>sizeof</span><span class=p>(</span><span class=kt>int</span><span class=p>));</span>
+<span class=w>    </span><span class=n>x</span><span class=p>[</span><span class=mi>10</span><span class=p>]</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>;</span><span class=w> </span><span class=c1>// this int [10] is not in the correct range (0-9) and will result in a buffer overflow</span>
+<span class=p>}</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=n>f</span><span class=p>();</span>
+<span class=w>    </span><span class=k>return</span><span class=w> </span><span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <ul> <li> <p>The function <code>f</code> allocates enough memory for 10 integers, and stores the address in a pointer called <code>x</code>. Then we try to set the 11<sup>th</sup> value of <code>x</code> with <code>x[10]</code> to <code>0</code>, which goes past the array of memory we’ve allocated for our program. This is called <strong>buffer overflow</strong>, where we go past the boundaries of our buffer, or array, and into unknown memory.</p> </li> <li> <p>valgrind will also tell us there’s an “Invalid write of size 4” for line 8, where we are indeed trying to change the value of an integer (of size 4 bytes).</p> </li> </ul> <h2 id=swap>Swap</h2> <p>We have two colored drinks, purple and green, each of which is in a cup. We want to swap the drinks between the two cups, but we can’t do that without a third cup (temporary variable) to pour one of the drink into first.</p> <p>Now, let’s say we wanted to swap the values of two integers.</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span></pre></div></td><td class=code><div><pre><span></span><code><span class=kt>void</span><span class=w> </span><span class=nf>swap</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>a</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>b</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>tmp</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>a</span><span class=p>;</span>
+<span class=w>    </span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>b</span><span class=p>;</span>
+<span class=w>    </span><span class=n>b</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>tmp</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <ul> <li>With a third variable to use as temporary storage space, we can do this pretty easily, by putting <code>a</code> into <code>tmp</code>, and then <code>b</code> to <code>a</code>, and finally the original value of <code>a</code>, now in <code>tmp</code>, into <code>b</code>.</li> </ul> <p>But, if we tried to use that function in a program, we don’t see any changes:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>void</span><span class=w> </span><span class=nf>swap</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>a</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>b</span><span class=p>);</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>1</span><span class=p>;</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>y</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>2</span><span class=p>;</span>
+
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;x is %i, y is %i</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>,</span><span class=w> </span><span class=n>y</span><span class=p>);</span>
+<span class=w>    </span><span class=n>swap</span><span class=p>(</span><span class=n>x</span><span class=p>,</span><span class=w> </span><span class=n>y</span><span class=p>);</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;x is %i, y is %i</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>,</span><span class=w> </span><span class=n>y</span><span class=p>);</span>
+<span class=p>}</span>
+
+<span class=kt>void</span><span class=w> </span><span class=nf>swap</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>a</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=n>b</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>tmp</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>a</span><span class=p>;</span>
+<span class=w>    </span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>b</span><span class=p>;</span>
+<span class=w>    </span><span class=n>b</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>tmp</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <p>This does not work because the <code>swap</code> function successfully swaps <code>int a</code> and <code>int b</code>, but these are simply copies of <code>int x</code> and <code>int y</code>. When <code>x</code> and <code>y</code> are printed, the copies used by the <code>swap</code> funciton do not alter the actual <code>x</code> and <code>y</code> integers in the <code>main</code> function.</p> <h2 id=memory-layout>Memory Layout</h2> <p>Within our computer’s memory, the different types of data that need to be stored for our program are organized into different sections:</p> <p><a class=glightbox href=https://cdn.nickplatt.dev/files/Docs/memory_layout.png data-type=image data-width=100% data-height=auto data-desc-position=bottom><img alt="!memory layout" src=https://cdn.nickplatt.dev/files/Docs/memory_layout.png></a></p> <ul> <li> <p>The ** <em>machine code</em> ** section is our compiled program’s binary code. When we run our program, that code is loaded into the “top” of memory.</p> </li> <li> <p>** <em>Globals</em> ** are global variables we declare in our program or other shared variables that our entire program can access.</p> </li> <li> <p>The ** <em>heap</em> ** section is an empty area where <code>malloc</code> can get free memory from, for our program to use.</p> </li> <li> <p>The ** <em>stack</em> ** section is used by functions in our program as they are called. For example, our <code>main</code> function is at the very bottom of the stack, and has the local variables <code>x</code> and <code>y</code>. The <code>swap</code> function, when it’s called, has its own frame, or slice, of memory that’s on top of <code>main</code>’s, with the local variables <code>a</code>, <code>b</code>, and <code>tmp</code>:<br> <a class=glightbox href=https://cdn.nickplatt.dev/files/Docs/stack.png data-type=image data-width=100% data-height=auto data-desc-position=bottom><img alt=!stack src=https://cdn.nickplatt.dev/files/Docs/stack.png></a></p> </li> <li> <p>Once the function <code>swap</code> returns, the memory it was using is freed for the next function call, and we lose anything we did, other than the return values, and our program goes back to the function that called <code>swap</code>.</p> </li> <li> <p>So by passing in the addresses of <code>x</code> and <code>y</code> from <code>main</code> to <code>swap</code>, we can actually change the values of <code>x</code> and <code>y</code>:<br> <a class=glightbox href=https://cdn.nickplatt.dev/files/Docs/pointers.png data-type=image data-width=100% data-height=auto data-desc-position=bottom><img alt=!pointers src=https://cdn.nickplatt.dev/files/Docs/pointers.png></a></p> </li> </ul> <p>By passing in the address of <code>x</code> and <code>y</code>, our <code>swap</code> function from above can actually work:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>void</span><span class=w> </span><span class=nf>swap</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=o>*</span><span class=n>a</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=o>*</span><span class=n>b</span><span class=p>);</span><span class=w> </span><span class=c1>// we use * throughout to point to the real integer, not the copy</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>x</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>1</span><span class=p>;</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>y</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>2</span><span class=p>;</span>
+
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;x is %i, y is %i</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>,</span><span class=w> </span><span class=n>y</span><span class=p>);</span>
+<span class=w>    </span><span class=n>swap</span><span class=p>(</span><span class=o>&amp;</span><span class=n>x</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=n>y</span><span class=p>);</span><span class=w> </span><span class=c1>// address of x and y</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;x is %i, y is %i</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>,</span><span class=w> </span><span class=n>y</span><span class=p>);</span>
+<span class=p>}</span>
+
+<span class=kt>void</span><span class=w> </span><span class=nf>swap</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=o>*</span><span class=n>a</span><span class=p>,</span><span class=w> </span><span class=kt>int</span><span class=w> </span><span class=o>*</span><span class=n>b</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>tmp</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>*</span><span class=n>a</span><span class=p>;</span>
+<span class=w>    </span><span class=o>*</span><span class=n>a</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=o>*</span><span class=n>b</span><span class=p>;</span>
+<span class=w>    </span><span class=o>*</span><span class=n>b</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>tmp</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <ul> <li>The addresses of <code>x</code> and <code>y</code> are passed in from <code>main</code> to <code>swap</code>, and we use the <code>int *a</code> syntax to declare that our <code>swap</code> function takes in pointers. We save the value of <code>x</code> to <code>tmp</code> by following the pointer <code>a</code>, and then take the value of <code>y</code> by following the pointer <code>b</code>, and store that to the location <code>a</code> is pointing to (<code>x</code>). Finally, we store the value of <code>tmp</code> to the location pointed to by <code>b</code> (<code>y</code>), and we’re done.</li> </ul> <p>If we call <code>malloc</code> too many times, we will have a <strong>heap overflow</strong>, where we end up going past our heap. Or, if we have too many functions being called, we will have a <strong>stack overflow</strong>, where our stack has too many frames of memory allocated as well. And these two types of overflow are generally known as buffer overflows, after which our program (or entire computer) might crash.</p> <h2 id=get_int>get_int</h2> <p>We can implement <code>get_int</code> ourselve with a C library function, <code>scanf</code>:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span>
+<span class=normal>7</span>
+<span class=normal>8</span>
+<span class=normal>9</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>int</span><span class=w> </span><span class=n>x</span><span class=p>;</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;x: &quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=n>scanf</span><span class=p>(</span><span class=s>&quot;%i&quot;</span><span class=p>,</span><span class=w> </span><span class=o>&amp;</span><span class=n>x</span><span class=p>);</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;x: %i</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>x</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <ul> <li><code>scanf</code> takes a format, <code>%i</code>, so the input is “scanned” for that format, and the address in memory where we want that input to go. But <code>scanf</code> doesn’t have much error checking, so we might not get an integer.</li> </ul> <p>We can try to get a string the same way:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal>1</span>
+<span class=normal>2</span>
+<span class=normal>3</span>
+<span class=normal>4</span>
+<span class=normal>5</span>
+<span class=normal>6</span>
+<span class=normal>7</span>
+<span class=normal>8</span>
+<span class=normal>9</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=kt>char</span><span class=w> </span><span class=o>*</span><span class=n>s</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>NULL</span><span class=p>;</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;s: &quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=n>scanf</span><span class=p>(</span><span class=s>&quot;%s&quot;</span><span class=p>,</span><span class=w> </span><span class=n>s</span><span class=p>);</span>
+<span class=w>    </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;s: %s</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>s</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <ul> <li> <p>But we haven’t actually allocated any memory for <code>s</code> (<code>s</code> is <code>NULL</code>, or not pointing to anything), so we might want to call <code>char s[5]</code> to allocate an array of 5 characters for our string. Then, <code>s</code> will be treated as a pointer in <code>scanf</code> and <code>printf</code>.</p> </li> <li> <p>Now, if the user types in a string of length 4 or less, our program will work safely. But if the user types in a longer string, <code>scanf</code> might be trying to write past the end of our array into unknown memory, causing our program to crash.</p> </li> </ul> <h2 id=file-pointers>File Pointers</h2> <p>The ability to read data from and write data to files is the primary means of storing <strong>persistent data</strong>, data that does not disappear when your program stops running.</p> <p>The abstraction of files that C provides is implemented in a data structure known as a <code>FILE</code>. Almost universally when working with files, we will be using pointers to them, <code>FILE*</code>.</p> <p>Some of the most common file input/output (I/O) functions that we will be working with are: <code>fopen()</code>, <code>fclose()</code>, <code>fgetc()</code>, <code>fputc()</code>, <code>fread()</code>, and <code>fwrite()</code>.</p> <ul> <li> <p><strong><code>fopen()</code></strong> opens a file and returns a file pointer to it. It always checks the return value to make sure you don't get back NULL.</p> </li> <li> <p><strong><code>fclose()</code></strong> closes the file pointed to by the given file pointer.</p> </li> <li> <p><strong><code>fgetc()</code></strong> reads and returns the next character from the file pointed to. Note: the operation of the file pointer passed in as a parameter must be "r" for read, or you will have an error.</p> </li> <li> <p><strong><code>fputc()</code></strong> writes or appends the specified character to the pointed-to file. Note: the operation of the file pointer must be "w" for write or "a" for append, or you will have an error.</p> </li> <li> <p><strong><code>fread()</code></strong> reads <code>&lt;qty&gt;</code> units of size <code>&lt;size&gt;</code> from the file pointed to and stores them in memory in a buffer (usually an array) pointed to by <code>&lt;buffer&gt;</code>. Note: the operation of the file pointer passed in as a parameter must be "r" for read, or you will have an error.</p> </li> <li> <p><strong><code>fwrite()</code></strong> writes <code>&lt;qty&gt;</code> units of size <code>&lt;size&gt;</code> to the file pointed to by reading them from a buffer (usually an array) pointed to by <code>&lt;buffer&gt;</code>. Note: the operation of the file pointer passed in as a parameter must be "w" for write or "a" for append, or you will suffer an error.</p> </li> </ul> <p>With the ability to use pointers, we can also open files:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;cs50.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+<span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;string.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=c1>// Open file</span>
+<span class=w>    </span><span class=kt>FILE</span><span class=w> </span><span class=o>*</span><span class=n>file</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>fopen</span><span class=p>(</span><span class=s>&quot;phonebook.csv&quot;</span><span class=p>,</span><span class=w> </span><span class=s>&quot;a&quot;</span><span class=p>);</span>
+
+<span class=w>    </span><span class=c1>// Get strings from user</span>
+<span class=w>    </span><span class=kt>char</span><span class=w> </span><span class=o>*</span><span class=n>name</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>get_string</span><span class=p>(</span><span class=s>&quot;Name: &quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=kt>char</span><span class=w> </span><span class=o>*</span><span class=n>number</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>get_string</span><span class=p>(</span><span class=s>&quot;Number: &quot;</span><span class=p>);</span>
+
+<span class=w>    </span><span class=c1>// Print (write) strings to file</span>
+<span class=w>    </span><span class=n>fprintf</span><span class=p>(</span><span class=n>file</span><span class=p>,</span><span class=w> </span><span class=s>&quot;%s,%s</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>,</span><span class=w> </span><span class=n>name</span><span class=p>,</span><span class=w> </span><span class=n>number</span><span class=p>);</span>
+
+<span class=w>    </span><span class=c1>// Close file</span>
+<span class=w>    </span><span class=n>fclose</span><span class=p>(</span><span class=n>file</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <ul> <li> <p><code>fopen</code> is a new function we can use to open a file. It will return a pointer to a new type, <code>FILE</code>, that we can read from and write to. The first argument is the name of the file, and the second argument is the mode we want to open the file in (<code>r</code> for read, <code>w</code> for write, and <code>a</code> for append, or adding to).</p> </li> <li> <p>After we get some strings, we can use <code>fprintf</code> to print to a file.</p> </li> <li> <p>Finally, we close the file with <code>fclose</code>.</p> </li> </ul> <p>Now we can create our own CSV files, files of comma-separated values (like a mini-spreadsheet), programmatically.</p> <h2 id=jpeg>JPEG</h2> <p>We can also write a program that opens a file and tells us if it’s a JPEG (image) file:</p> <div class=highlight><table class=highlighttable><tr><td class=linenos><div class=linenodiv><pre><span></span><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span></pre></div></td><td class=code><div><pre><span></span><code><span class=cp>#include</span><span class=w> </span><span class=cpf>&lt;stdio.h&gt;</span>
+
+<span class=kt>int</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>argc</span><span class=p>,</span><span class=w> </span><span class=kt>char</span><span class=w> </span><span class=o>*</span><span class=n>argv</span><span class=p>[])</span>
+<span class=p>{</span>
+<span class=w>    </span><span class=c1>// Check usage</span>
+<span class=w>    </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>argc</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=mi>2</span><span class=p>)</span>
+<span class=w>    </span><span class=p>{</span>
+<span class=w>        </span><span class=k>return</span><span class=w> </span><span class=mi>1</span><span class=p>;</span>
+<span class=w>    </span><span class=p>}</span>
+
+<span class=w>    </span><span class=c1>// Open file</span>
+<span class=w>    </span><span class=kt>FILE</span><span class=w> </span><span class=o>*</span><span class=n>file</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>fopen</span><span class=p>(</span><span class=n>argv</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span><span class=w> </span><span class=s>&quot;r&quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=o>!</span><span class=n>file</span><span class=p>)</span>
+<span class=w>    </span><span class=p>{</span>
+<span class=w>        </span><span class=k>return</span><span class=w> </span><span class=mi>1</span><span class=p>;</span>
+<span class=w>    </span><span class=p>}</span>
+
+<span class=w>    </span><span class=c1>// Read first three bytes</span>
+<span class=w>    </span><span class=kt>unsigned</span><span class=w> </span><span class=kt>char</span><span class=w> </span><span class=n>bytes</span><span class=p>[</span><span class=mi>3</span><span class=p>];</span>
+<span class=w>    </span><span class=n>fread</span><span class=p>(</span><span class=n>bytes</span><span class=p>,</span><span class=w> </span><span class=mi>3</span><span class=p>,</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w> </span><span class=n>file</span><span class=p>);</span>
+
+<span class=w>    </span><span class=c1>// Check first three bytes</span>
+<span class=w>    </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>bytes</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=mh>0xff</span><span class=w> </span><span class=o>&amp;&amp;</span><span class=w> </span><span class=n>bytes</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=mh>0xd8</span><span class=w> </span><span class=o>&amp;&amp;</span><span class=w> </span><span class=n>bytes</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=mh>0xff</span><span class=p>)</span>
+<span class=w>    </span><span class=p>{</span>
+<span class=w>        </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;Maybe</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=p>}</span>
+<span class=w>    </span><span class=k>else</span>
+<span class=w>    </span><span class=p>{</span>
+<span class=w>        </span><span class=n>printf</span><span class=p>(</span><span class=s>&quot;No</span><span class=se>\n</span><span class=s>&quot;</span><span class=p>);</span>
+<span class=w>    </span><span class=p>}</span>
+
+<span class=w>    </span><span class=c1>// Close file</span>
+<span class=w>    </span><span class=n>fclose</span><span class=p>(</span><span class=n>file</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></div></td></tr></table></div> <ul> <li> <p>Now, if we run this program with <code>./jpeg brian.jpg</code>, our program will try to open the file we specify (checking that we indeed get a non-NULL file back), and read the first three bytes from the file with <code>fread</code>.</p> </li> <li> <p>We can compare the first three bytes (in hexadecimal) to the three bytes required to begin a JPEG file. If they’re the same, then our file is likely to be a JPEG file (though, other types of files may still begin with those bytes). But if they’re not the same, we know it’s definitely not a JPEG file.</p> </li> </ul> <p>We can use these abilities to read and write files, in particular images, and modify them by changing the bytes in them, in this week’s problem set!</p> </article> </div> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg> Back to top </button> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> </div> <div class=md-social> <a href=https://nicklyss.com target=_blank rel=noopener title=nicklyss.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 576 512"><!-- Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M160 32c-35.3 0-64 28.7-64 64v224c0 35.3 28.7 64 64 64h352c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160zm236 106.7 96 144c4.9 7.4 5.4 16.8 1.2 24.6S480.9 320 472 320H200c-9.2 0-17.6-5.3-21.6-13.6s-2.9-18.2 2.9-25.4l64-80c4.6-5.7 11.4-9 18.7-9s14.2 3.3 18.7 9l17.3 21.6 56-84c4.5-6.6 12-10.6 20-10.6s15.5 4 20 10.7zM192 128a32 32 0 1 1 64 0 32 32 0 1 1-64 0zm-144-8c0-13.3-10.7-24-24-24S0 106.7 0 120v224c0 75.1 60.9 136 136 136h320c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120z"/></svg> </a> <a href=https://blog.nicklyss.com target=_blank rel=noopener title=blog.nicklyss.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><!-- Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M192 32c0 17.7 14.3 32 32 32 123.7 0 224 100.3 224 224 0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32zm0 96c0 17.7 14.3 32 32 32 70.7 0 128 57.3 128 128 0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192-17.7 0-32 14.3-32 32zm-96 16c0-26.5-21.5-48-48-48S0 117.5 0 144v224c0 79.5 64.5 144 144 144s144-64.5 144-144-64.5-144-144-144h-16v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48V144z"/></svg> </a> <a href=https://www.linkedin.com/in/nicholas-platt/ target=_blank rel=noopener title=www.linkedin.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg> </a> <a href=https://github.com/tpbnick target=_blank rel=noopener title=github.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 496 512"><!-- Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> </a> <a href=https://www.instagram.com/nickplattfour/ target=_blank rel=noopener title=www.instagram.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg> </a> <a href=mailto:nick@nickplatt.dev target=_blank rel=noopener title class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><!-- Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg> </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script> <script src=../../assets/javascripts/bundle.220ee61c.min.js></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body> </html>
