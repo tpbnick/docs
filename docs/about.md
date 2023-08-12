@@ -1,24 +1,36 @@
 ---
 hide:
-  - navigation
+    - navigation
 ---
+
 # About
+
 ## About Me
-<div id="lightgallery" class="center">
-    <a href="https://cdn.nickplatt.dev/files/Misc/nicklyss.jpg">
-        <img src="https://cdn.nickplatt.dev/files/Misc/nicklyss.jpg" title="Monterey, CA 2019" alt="Nick & Alyssa" width="25%" height ="25%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-    </a>
-	<a href="https://cdn.nickplatt.dev/files/Misc/alaska.jpg">
-        <img src="https://cdn.nickplatt.dev/files/Misc/alaska.jpg" title="Juneau, AK 2018" alt="Nick & Alyssa" width="28%" height ="28%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-    </a>
-	<a href="https://cdn.nickplatt.dev/files/Misc/pup.jpg">
-        <img src="https://cdn.nickplatt.dev/files/Misc/pup.jpg" title="Dani!" alt="Nick & Alyssa" width="36.5%" height ="36.5%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">  
-    </a>
+
+<div class="center">
+	<img src="https://cdn.nickplatt.dev/files/Misc/nicklyss.jpg" title="Monterey, CA 2019" alt="Nick & Alyssa" width="25%" height ="25%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+	<img src="https://cdn.nickplatt.dev/files/Misc/alaska.jpg" title="Juneau, AK 2018" alt="Nick & Alyssa" width="28%" height ="28%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+	<img src="https://cdn.nickplatt.dev/files/Misc/pup.jpg" title="Dani!" alt="Nick & Alyssa" width="36.5%" height ="36.5%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">  
 </div>
 
-Hi, my name is Nick Platt.  I am currently a technical writer for Boeing Intelligence & Analytics and work with multiple development teams.  I recently graduated from the University of Maryland with a Bachelor's in Computer Networking and Cybersecurity.  I began my Master's in Software Engineering in January 2021 (WOO!).  I have basic knowledge in HTML, CSS, JavaScript, Python, Java, MongoDB, SQL, Markdown, and C (hopefully more to come in the near future).  Outside of work, I love watching European soccer (Go Bayern!), building keyboards, and spending time with my wife and pup.  If you have any questions, please feel free to reach out to me through the contact info below.  
+Hello! I am currently a software engineer with Erias Ventures. I have been
+working within the Intelligence Community for over 7 years and have a great
+amount of experience in intelligence analysis and national security systems. I
+was also in the Marine Corps as an ELINT/All Source Analyst! I received my
+Bachelor's degree in Computer Networking and Cybersecurity in 2020 and my
+Master's in Software Engineering in 2023, both from the University of Maryland.
+I enjoy frontend development, especially working with JavaScript and web
+application frameworks. If you have any questions, please ask!
 
-Creating robust and easy-to-understand documentation is what I do best.  While teaching myself to program, along with my daily work as a technical writer, I have learned how important well written documentation is!  Being able to convey a message to a wide-range of people is more difficult than you would think.  Making sure you are writing at a level and tone that makes it so the most basic users can understand, while not insulting the advanced users' intelligence, can be quite the challenge.  I created this docs website for my programming notes and random projects.  I also have a blog that I update sporadically, which can be found [here](https://blog.nicklyss.com).
+Creating robust and easy-to-understand documentation is what I do best. While
+teaching myself to program, along with my daily work as a technical writer, I
+have learned how important well written documentation is! Being able to convey a
+message to a wide-range of people is more difficult than you would think. Making
+sure you are writing at a level and tone that makes it so the most basic users
+can understand, while not insulting the advanced users' intelligence, can be
+quite the challenge. I created this docs website for my programming notes and
+random projects. I also have a blog that I update sporadically, which can be
+found [here](https://blog.nicklyss.com).
 
 ## Random Projects
 
@@ -28,31 +40,65 @@ Creating robust and easy-to-understand documentation is what I do best.  While t
 	}
 </style>
 
-###Soccerfront.io  
+###TriviaDart
 
-<a href="https://soccerfront.io">Soccerfront.io</a> is a soccer live score web application built using Nodejs, ExpressJS, HTML, CSS, and JavaScript.  Soccerfront pulls data from the API-FOOTBALL API and displays the information in an easy-to-use live score table and league table (standings) view.  Currently, over 20 leagues/cups are supported!  This is an ongoing project and new features will be added sporadically.  Hosted on a DigitalOcean droplet running Linux and NGINX.  
+<a href="https://triviadart.com">TriviaDart</a> is a simple Trivia web
+application that utilizes both the Open Trivia DB and The Trivia API, which both
+offer generous free API usage. TriviaDart also has an in-house API that has over
+45,000 trivia questions. Currently, there are no options available for these
+questions, but this will be added in the future. The in-house API utilizes
+Supabase.
 
+###Soccerfront.io
 
-### Custom Keyboard Builds  
+<a href="https://soccerfront.io">Soccerfront.io</a> is a soccer live score web
+application built using Nodejs, ExpressJS, HTML, CSS, and JavaScript.
+Soccerfront pulls data from the API-FOOTBALL API and displays the information in
+an easy-to-use live score table and league table (standings) view. Currently,
+over 20 leagues/cups are supported! This is an ongoing project and new features
+will be added sporadically. Hosted on a DigitalOcean droplet running Linux and
+NGINX.
 
-Below are some keyboards I have built!  
+### Custom Keyboard Builds
+
+Below are some keyboards I have built!
 
 ??? tip "Custom Keyboards"
-	<p id="lightgallery" class="center">**Canoe PC - Gateron Ink Yellow**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canoe.png" style ="border-radius: 10px;">  
 
-	<p id="lightgallery" class="center">**Custom Acrylic - Gateron Ink Blacks</p>**<img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/acrylic.png" style ="border-radius: 10px;">  
+    <p class="center">**KeyChron K2 Pro - Milky Yellows**</p>
+    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/keycron-milky-yellows.png" style="border-radius: 10px;">
 
-	<p id="lightgallery" class="center">**TX-87 - C³Equalz X TKC Banana Splits</p>**<img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/tx-1.png" style ="border-radius: 10px;">   
+    <p class="center">**Glorious Pro - Silks**</p>
+    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/glorious-pro-silks.png" style="border-radius: 10px;">
 
-	<p id="lightgallery" class="center">**Satisfaction 75 - Zealios V2**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/satisfaction.png" style ="border-radius: 10px;">  
+    <p class="center">**Akrylic - Black Inks**</p>
+    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/akrylic-blackinks.png" style="border-radius: 10px;">
 
-	<p id="lightgallery" class="center">**K75 - Gateron Ink Blacks**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/k75.jpg" style ="border-radius: 10px;">  
+    <p class="center">**Canon Keys Devastating TKL**</p>
+    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canonkeys-devastatingtkl.png" style="border-radius: 10px;">
 
-	<p id="lightgallery" class="center">**Canon Keys Devastating TKL - Tealios**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/imageedit_3_6470813349.png" style ="border-radius: 10px;">
-	
-	<p id="lightgallery" class="center">**Mysterium - Kailh Purple Pro**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/mysterium.png" style ="border-radius: 10px;">
+    <p class="center">**Canon Keys Satisfaction R2**</p>
+    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canonkeys-satisfaction-r2.png" style="border-radius: 10px;">
 
-## Contact  
+    <p class="center">**Canon Keys Obliterated**</p>
+    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canonkeys-obliterated.png" style="border-radius: 10px;">
+
+    <p class="center">**Canoe PC - Gateron Ink Yellow**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canoe.png" style ="border-radius: 10px;">
+
+    <p class="center">**Custom Acrylic - Gateron Ink Blacks</p>**<img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/acrylic.png" style ="border-radius: 10px;">
+
+    <p class="center">**TX-87 - C³Equalz X TKC Banana Splits</p>**<img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/tx-1.png" style ="border-radius: 10px;">
+
+    <p class="center">**Satisfaction 75 - Zealios V2**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/satisfaction.png" style ="border-radius: 10px;">
+
+    <p class="center">**K75 - Gateron Ink Blacks**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/k75.jpg" style ="border-radius: 10px;">
+
+    <p class="center">**Canon Keys Devastating TKL - Tealios**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/imageedit_3_6470813349.png" style ="border-radius: 10px;">
+
+    <p class="center">**Mysterium - Kailh Purple Pro**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/mysterium.png" style ="border-radius: 10px;">
+
+## Contact
+
 Nicholas Platt  
 nickplatt4@gmail.com  
 (909)224-4200  

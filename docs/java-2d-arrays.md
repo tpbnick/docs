@@ -14,13 +14,13 @@ In Java, arrays are considered Objects; therefore, we can also have an array of 
 ```
 These are called 2D arrays since we can logically view them as a two-dimensional matrix of values containing both rows and columns.  
 
-![! 2D Array](https://nicklyss.com/media/uploads/2021/05/2d-array.png)
+![! 2D Array](https://cdn.nickplatt.dev/files/Docs/2d-array.png)
 
 Additionally, we can have 2D arrays which are not rectangular in shape.  These are called jagged arrays:
 ```java
 [['a', 'b', 'c', 'd'], ['e', 'f'], ['g', 'h', 'i', 'j'], ['k']]
 ```
-![! 2D Jagged Array](https://nicklyss.com/media/uploads/2021/05/2d-array-jagged.png)
+![! 2D Jagged Array](https://cdn.nickplatt.dev/files/Docs/2d-array-jagged.png)
 
 Why use 2D arrays?
 
@@ -51,7 +51,7 @@ intArray2 = new int[3][5]
 ```
 This results in a matrix which looks like this:
 
-![! Initializing 2D Array](https://nicklyss.com/media/uploads/2021/05/2d-array-initialize.png)
+![! Initializing 2D Array](https://cdn.nickplatt.dev/files/Docs/2d-array-initialize.png)
 
 If you already know what values are going to be in the 2D array, you can initialize it and write all of the values into it at once.  We can accomplish this through initializer lists.  
 

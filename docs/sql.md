@@ -10,11 +10,11 @@ Often times, in order for us to build the most function website we can, we depen
 
 * [Free SQL Course](https://sqlbolt.com)  
 
-* [SQL for Dummies (PDF)](https://nicklyss.com/wp-content/uploads/2020/07/SQL-for-Dummies-A.-Taylor.pdf)  
+* [SQL for Dummies (PDF)](https://cdn.nickplatt.dev/files/Docs/SQL-for-Dummies-A.-Taylor.pdf)  
 
 * [Additional SQL Reference Material](https://www.w3schools.com/sql/)  
 
-For the following examples we will be using sqlite3, which is a SQL command line program, on the [CS50 IDE](https://ide.cs50.io/).  We will also be using the following [.csv file](https://nicklyss.com/wp-content/uploads/2020/07/Movies.csv) which contains a database with data about some of Pixar's classic movies.  Let's import this into the IDE.  First drag and drop the file into the left side of the IDE, preferably a folder.  Next, let's run the following commands:
+For the following examples we will be using sqlite3, which is a SQL command line program, on the [CS50 IDE](https://ide.cs50.io/).  We will also be using the following [.csv file](https://cdn.nickplatt.dev/files/Docs/Movies.csv) which contains a database with data about some of Pixar's classic movies.  Let's import this into the IDE.  First drag and drop the file into the left side of the IDE, preferably a folder.  Next, let's run the following commands:
 ```
 sqlite3 movies.db
 ```
@@ -210,7 +210,7 @@ SELECT title FROM movies ORDER BY title ASC LIMIT 5 OFFSET 5;
 ```
 
 ## Review Exercises
-Let's take a new [.csv file](https://nicklyss.com/wp-content/uploads/2020/07/Cities.csv) containing a few of the most populous cities in North America and do some review exercises from what has been learned above:
+Let's take a new [.csv file](https://cdn.nickplatt.dev/files/Docs/Cities.csv) containing a few of the most populous cities in North America and do some review exercises from what has been learned above:
 
 1. List all the Canadian cities and their populations:
 ```sql

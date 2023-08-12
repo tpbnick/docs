@@ -3,147 +3,141 @@ repo_url: https://github.com/tpbnick/docs
 repo_name: tpbnick/docs
 edit_uri: ""
 theme:
-  name: material
-  logo: 'https://cdn.nickplatt.dev/files/Misc/nord2.png'
-  favicon: 'https://cdn.nickplatt.dev/files/Misc/nord2.png'
-  features:
-    - navigation.instant
-    - navigation.tabs
-    - navigation.top
-    - navigation.tracking
-    - search.suggest
-    - search.highlight
-  static_templates:
-    - 404.html
-  palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/lightbulb
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/lightbulb-outline
-        name: Switch to light mode
-  font:
-    text: Roboto
-    code: Roboto Mono
-  icon:
-    repo: fontawesome/brands/git-alt
+ name: material
+ logo: "https://cdn.nickplatt.dev/files/Misc/logo-dracula.png"
+ favicon: "https://cdn.nickplatt.dev/files/Misc/logo-dracula.png"
+ features:
+  - navigation.instant
+  - navigation.tabs
+  - navigation.top
+  - navigation.tracking
+  - search.suggest
+  - search.highlight
+ static_templates:
+  - 404.html
+ palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    toggle:
+     icon: material/lightbulb
+     name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    toggle:
+     icon: material/lightbulb-outline
+     name: Switch to light mode
+ font:
+  text: Roboto
+  code: Roboto Mono
+ icon:
+  repo: fontawesome/brands/git-alt
 extra_css:
-  - stylesheets/extra.css
+ - stylesheets/extra.css
 plugins:
-  - search
-  - minify:
-      minify_html: true
+ - glightbox
+ - search
+ - minify:
+    minify_html: true
 extra_javascript:
-  - javascripts/extra.js
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+ - javascripts/extra.js
+ - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
 markdown_extensions:
-  - pymdownx.arithmatex
-  - attr_list
-  - codehilite:
-      guess_lang: false
-      linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.superfences
-  - admonition
-  - lightgallery
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tabbed
-  - pymdownx.tilde
-  - toc:
-      permalink: false
+ - pymdownx.arithmatex
+ - attr_list
+ - codehilite:
+    guess_lang: false
+    linenums: true
+ - pymdownx.inlinehilite
+ - pymdownx.superfences
+ - admonition
+ - pymdownx.details
+ - pymdownx.emoji:
+    emoji_index: !!python/name:materialx.emoji.twemoji
+    emoji_generator: !!python/name:materialx.emoji.to_svg
+ - pymdownx.magiclink
+ - pymdownx.mark
+ - pymdownx.smartsymbols
+ - pymdownx.superfences
+ - pymdownx.tasklist:
+    custom_checkbox: true
+ - pymdownx.tabbed
+ - pymdownx.tilde
+ - toc:
+    permalink: false
 extra:
-  social:
-    - icon: fontawesome/solid/images
-      link: https://nicklyss.com
-    - icon: fontawesome/solid/blog
-      link: https://blog.nicklyss.com
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/nicholas-platt/
-    - icon: fontawesome/brands/github
-      link: https://github.com/tpbnick
-    - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/nickplattfour/
-    - icon: fontawesome/regular/envelope
-      link: mailto:nick@nickplatt.dev
-  generator: false
+ social:
+  - icon: fontawesome/solid/images
+    link: https://nicklyss.com
+  - icon: fontawesome/solid/blog
+    link: https://blog.nicklyss.com
+  - icon: fontawesome/brands/linkedin
+    link: https://www.linkedin.com/in/nicholas-platt/
+  - icon: fontawesome/brands/github
+    link: https://github.com/tpbnick
+  - icon: fontawesome/brands/instagram
+    link: https://www.instagram.com/nickplattfour/
+  - icon: fontawesome/regular/envelope
+    link: mailto:nick@nickplatt.dev
+ generator: false
 nav:
-  - Home : index.md
-  - 'Nick''s Portfolio':
-    - Main Portfolio : portfolio.md
-    - 'Google Chrome User Guide':
-      - What is Google Chrome? : chrome.md
-      - Google Chrome Install : chromeinstall.md
-      - Google Chrome Extensions/Themes: chrome-extensions.md
-      - Google Chrome Media : chromemedia.md
-      - Glossary : glossary.md
-  - 'Programming Notes':
-    - 'Notes Overview' : notes.md
-    - 'C':
-      - C Basics : c.md
-      - Arrays : c-arrays.md
-      - Functions : c-functions.md
-      - Command Line Arguments : c-cl-arguments.md
-      - Variables and Scope : c-variable-scope.md
-      - 'Algorithms':
-        - Algorithm Overview : c-algorithms.md
-        - Algorithm Problems : c-algorithms-problems.md
-      - 'Memory' : 
-        - Memory Overview: c-memory.md
-        - Memory Problems: c-memory-problems.md
-      - 'Data Structures' :
-        - Data Structures Overview : c-data-structures.md
-        - Data Structures Problem : c-data-structures-problems.md
-    - 'Python':
-      - Python Basics : py.md
-      - Variables and Simple Data Types : py-data-types.md
-      - Lists : py-lists.md
-      - Working with Lists : py-working-with-lists.md
-      - If Statements : py-if-statements.md
-      - Dictionaries : py-dictionaries.md
-      - User Input and while Loops : py-user-input-while-loops.md
-      - Functions : py-functions.md
-      - Classes : py-classes.md
-      - Random Programs : py-random.md
-    - 'Java':
-      - Java Overview : java.md
-      - Java Basics : java-basics.md
-      - Variables : java-variables.md
-      - Classes : java-classes.md
-      - Conditionals/Control Flow: java-conditionals.md
-      - Arrays: java-arrays.md
-      - Loops : java-loops.md
-      - String Methods : java-string-methods.md
-      - Access, Encapsulation, & Scope: java-access-scope.md
-      - Inheritance & Polymorphism: java-inheritance-polymorphism.md
-      - Debugging : java-debugging.md
-      - 2D Arrays : java-2d-arrays.md
-    - 'JavaScript':
-      - JavaScript Basics : js.md
-      - Variables and Simple Data Types : js-data-types.md
-      - Conditional Statements : js-conditionals.md
-      - Functions : js-functions.md
-      - Scope : js-scope.md
-      - Arrays: js-arrays.md
-      - Loops: js-loops.md
-      - Higher-Order Functions: js-ho-functions.md
-    - 'SQL':
-      - SQL Basics : sql.md
-      - Joins and Other Query Types : sql-joins-and-other-queries.md
-      - Random Problems : sql-random.md
-    - 'Random':
-      - API Overview : api.md
-      - Django : django.md
-  - About : about.md
+ - Home: index.md
+ - "Nick's Portfolio":
+    - Main Portfolio: portfolio.md
+ - "Programming Notes":
+    - "Notes Overview": notes.md
+    - "C":
+       - C Basics: c.md
+       - Arrays: c-arrays.md
+       - Functions: c-functions.md
+       - Command Line Arguments: c-cl-arguments.md
+       - Variables and Scope: c-variable-scope.md
+       - "Algorithms":
+          - Algorithm Overview: c-algorithms.md
+          - Algorithm Problems: c-algorithms-problems.md
+       - "Memory":
+          - Memory Overview: c-memory.md
+          - Memory Problems: c-memory-problems.md
+       - "Data Structures":
+          - Data Structures Overview: c-data-structures.md
+          - Data Structures Problem: c-data-structures-problems.md
+    - "Python":
+       - Python Basics: py.md
+       - Variables and Simple Data Types: py-data-types.md
+       - Lists: py-lists.md
+       - Working with Lists: py-working-with-lists.md
+       - If Statements: py-if-statements.md
+       - Dictionaries: py-dictionaries.md
+       - User Input and while Loops: py-user-input-while-loops.md
+       - Functions: py-functions.md
+       - Classes: py-classes.md
+       - Random Programs: py-random.md
+    - "Java":
+       - Java Overview: java.md
+       - Java Basics: java-basics.md
+       - Variables: java-variables.md
+       - Classes: java-classes.md
+       - Conditionals/Control Flow: java-conditionals.md
+       - Arrays: java-arrays.md
+       - Loops: java-loops.md
+       - String Methods: java-string-methods.md
+       - Access, Encapsulation, & Scope: java-access-scope.md
+       - Inheritance & Polymorphism: java-inheritance-polymorphism.md
+       - Debugging: java-debugging.md
+       - 2D Arrays: java-2d-arrays.md
+    - "JavaScript":
+       - JavaScript Basics: js.md
+       - Variables and Simple Data Types: js-data-types.md
+       - Conditional Statements: js-conditionals.md
+       - Functions: js-functions.md
+       - Scope: js-scope.md
+       - Arrays: js-arrays.md
+       - Loops: js-loops.md
+       - Higher-Order Functions: js-ho-functions.md
+    - "SQL":
+       - SQL Basics: sql.md
+       - Joins and Other Query Types: sql-joins-and-other-queries.md
+       - Random Problems: sql-random.md
+    - "Random":
+       - API Overview: api.md
+       - Django: django.md
+ - About: about.md

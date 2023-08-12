@@ -152,7 +152,7 @@ Java is a *compiled* programming language, meaning the code we write in a **.jav
 
 A compiler is a program that translates "human-friendly" programming languages into other programming languages (machine code) that computers can execute.  
 
-![!Java Compiler Process](https://nicklyss.com/media/uploads/2021/04/javacompiler.png)  
+![!Java Compiler Process](https://cdn.nickplatt.dev/files/Docs/javacompiler.png)  
 
 The compiling process catches mistakes **before** the computer runs our code.  
 

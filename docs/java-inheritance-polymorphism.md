@@ -103,7 +103,7 @@ The main advantages of polymorphic programming:
 
 These benefits are particularly helpful when we want to develop our own Java packages for other developers to import and use.  
 
-![!Polymorphism](https://nicklyss.com/media/uploads/2021/05/polymorphism.png)
+![!Polymorphism](https://cdn.nickplatt.dev/files/Docs/polymorphism.png)
 
 For example, the built-in operator `#!java +` can be used for both `#!java double`s and `#!java int`s.  To the computer, the `#!java +` means something like `#!java addDouble()` for the other, but the creators of Java (and other languages) didn't want to burden us developers with recalling each individual method.  
 

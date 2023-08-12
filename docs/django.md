@@ -2,8 +2,6 @@
 
 ## Quick Links  
 
-* [Django 3: By Example (PDF)](https://nicklyss.com/wp-content/uploads/2020/09/Django-3-By-Example.pdf)
-
 * [Django 3 Documentation](https://docs.djangoproject.com/en/3.1/)
 
 * [Django Web Framework - Full Course](https://www.youtube.com/watch?v=F5mRW0jo-U4)

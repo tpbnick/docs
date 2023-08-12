@@ -8,10 +8,6 @@
 
 * [Java Cheat Sheet (PDF)](https://programmingwithmosh.com/wp-content/uploads/2019/07/Java-Cheat-Sheet.pdf)  
 
-* [Java in a Nutshell - A Desktop Quick Reference (2019) (PDF)](https://nicklyss.com/media/uploads/2021/04/Java-in-a-Nutshell-A-Desktop-Quick-Reference.pdf)
-
-* [The Java Workshop - A practical, no-nonsense guide to Java. (2019) (PDF)](https://nicklyss.com/media/uploads/2021/04/The-Java-Workshop-A-practical-no-nonsense-guide-to-Java.pdf)
-
 * [Java Basics Tutorial](https://www.tutorialspoint.com/java/index.htm)
 
 ## Introduction  

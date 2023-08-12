@@ -1,0 +1,16 @@
+{
+  "printWidth": 80,
+  "tabWidth": 4,
+  "useTabs": false,
+  "singleQuote": false,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": false,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "always",
+  "rangeStart": 0,
+  "parser": "markdown",
+  "proseWrap": "always",
+  "endOfLine": "auto"
+}

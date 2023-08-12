@@ -2,7 +2,8 @@
 
 ## Plurality Problem
 
-Now let's take our new knowledge of algorithms and create a program that runs a plurality election that will yield the following output:  
+Now let's take our new knowledge of algorithms and create a program that runs a
+plurality election that will yield the following output:
 
 ```
 $ ./plurality Alice Bob Charlie
@@ -14,15 +15,24 @@ Vote: Alice
 Alice
 ```
 
-**Background**  
+**Background**
 
-Elections come in all shapes and sizes. In the UK, the Prime Minister is officially appointed by the monarch, who generally chooses the leader of the political party that wins the most seats in the House of Commons. The United States uses a multi-step Electoral College process where citizens vote on how each state should allocate Electors who then elect the President.  
+Elections come in all shapes and sizes. In the UK, the Prime Minister is
+officially appointed by the monarch, who generally chooses the leader of the
+political party that wins the most seats in the House of Commons. The United
+States uses a multi-step Electoral College process where citizens vote on how
+each state should allocate Electors who then elect the President.
 
-Perhaps the simplest way to hold an election, though, is via a method commonly known as the “plurality vote” (also known as “first-past-the-post” or “winner take all”). In the plurality vote, every voter gets to vote for one candidate. At the end of the election, whichever candidate has the greatest number of votes is declared the winner of the election.  
+Perhaps the simplest way to hold an election, though, is via a method commonly
+known as the “plurality vote” (also known as “first-past-the-post” or “winner
+take all”). In the plurality vote, every voter gets to vote for one candidate.
+At the end of the election, whichever candidate has the greatest number of votes
+is declared the winner of the election.
 
-**Getting Started** 
+**Getting Started**
 
-We are going to take the following code and complete the `vote` and `print_winner` functions:  
+We are going to take the following code and complete the `vote` and
+`print_winner` functions:
 
 ```c linenums="1"
 #include <cs50.h>
@@ -103,9 +113,10 @@ void print_winner(void)
     // TODO
     return;
 }
-```  
+```
 
-We can make up the following code for the `vote` and `print_winner` functions that solves the problem:  
+We can make up the following code for the `vote` and `print_winner` functions
+that solves the problem:
 
 ```c linenums="1"
 #include <cs50.h>
@@ -179,7 +190,7 @@ int get_index(string name)
     {
         if (strcmp(name, candidates[i].name) == 0)
         return i;
-    }   
+    }
     return -1;
 }
 
@@ -201,7 +212,7 @@ int get_max(void)
     for (int i = 1; i < candidate_count; i++)
         if (candidates[i].votes > max_votes)
             max_votes = candidates[i].votes;
-            
+
     return max_votes;
 }
 
@@ -215,35 +226,52 @@ void print_winner(void)
             printf("%s\n", candidates[i].name);
     }
 }
-```  
+```
 
-## Runoff  
+## Runoff
 
-Now let's take the previous problem and make it a little more intricate.  
+Now let's take the previous problem and make it a little more intricate.
 
-You already know about plurality elections, which follow a very simple algorithm for determining the winner of an election: every voter gets one vote, and the candidate with the most votes wins.  
+You already know about plurality elections, which follow a very simple algorithm
+for determining the winner of an election: every voter gets one vote, and the
+candidate with the most votes wins.
 
-But the plurality vote does have some disadvantages. What happens, for instance, in an election with three candidates, and the ballots below are cast?  
+But the plurality vote does have some disadvantages. What happens, for instance,
+in an election with three candidates, and the ballots below are cast?
 
 | Ballot | Ballot | Ballot | Ballot | Ballot  |
-|--------|--------|--------|--------|---------|
-| Alice  | Alice  | Bob    | Bob    | Charlie |  
+| ------ | ------ | ------ | ------ | ------- |
+| Alice  | Alice  | Bob    | Bob    | Charlie |
 
-A plurality vote would here declare a tie between Alice and Bob, since each has two votes. But is that the right outcome?  
+A plurality vote would here declare a tie between Alice and Bob, since each has
+two votes. But is that the right outcome?
 
-There’s another kind of voting system known as a ranked-choice voting system. In a ranked-choice system, voters can vote for more than one candidate. Instead of just voting for their top choice, they can rank the candidates in order of preference. The resulting ballots might therefore look like the below.  
+There’s another kind of voting system known as a ranked-choice voting system. In
+a ranked-choice system, voters can vote for more than one candidate. Instead of
+just voting for their top choice, they can rank the candidates in order of
+preference. The resulting ballots might therefore look like the below.
 
 | Ballot    | Ballot    | Ballot    | Ballot    | Ballot    |
-|-----------|-----------|-----------|-----------|-----------|
+| --------- | --------- | --------- | --------- | --------- |
 | 1.Alice   | 1.Alice   | 1.Bob     | 1.Bob     | 1.Charlie |
 | 2.Bob     | 2.Charlie | 2.Alice   | 2.Alice   | 2.Alice   |
-| 3.Charlie | 3.Bob     | 3.Charlie | 3.Charlie | 3.Bob     |  
+| 3.Charlie | 3.Bob     | 3.Charlie | 3.Charlie | 3.Bob     |
 
-Here, each voter, in addition to specifying their first preference candidate, has also indicated their second and third choices. And now, what was previously a tied election could now have a winner. The race was originally tied between Alice and Bob, so Charlie was out of the running. But the voter who chose Charlie preferred Alice over Bob, so Alice could here be declared the winner.  
+Here, each voter, in addition to specifying their first preference candidate,
+has also indicated their second and third choices. And now, what was previously
+a tied election could now have a winner. The race was originally tied between
+Alice and Bob, so Charlie was out of the running. But the voter who chose
+Charlie preferred Alice over Bob, so Alice could here be declared the winner.
 
-One such ranked choice voting system is the instant runoff system. In an instant runoff election, voters can rank as many candidates as they wish. If any candidate has a majority (more than 50%) of the first preference votes, that candidate is declared the winner of the election.  
+One such ranked choice voting system is the instant runoff system. In an instant
+runoff election, voters can rank as many candidates as they wish. If any
+candidate has a majority (more than 50%) of the first preference votes, that
+candidate is declared the winner of the election.
 
-Let's look at the following code and see how we can implement this type of voting system.  We will need to fill in the correct code for the following functions: `vote`, `tabulate`, `print_winner`, `find_min`, `is_tie`, and `eliminate`.  
+Let's look at the following code and see how we can implement this type of
+voting system. We will need to fill in the correct code for the following
+functions: `vote`, `tabulate`, `print_winner`, `find_min`, `is_tie`, and
+`eliminate`.
 
 ```c linenums="1"
 #include <cs50.h>
@@ -413,47 +441,62 @@ void eliminate(int min)
     // TODO
     return;
 }
-```  
+```
 
-Let's take a look at the `vote`, `tabulate`, `print_winner`, `find_min`, `is_tie`, and `eliminate` functions to see what exactly we need to do.  
+Let's take a look at the `vote`, `tabulate`, `print_winner`, `find_min`,
+`is_tie`, and `eliminate` functions to see what exactly we need to do.
 
-**`vote`** 
+**`vote`**
 
-* The function takes arguments `voter`, `rank`, and `name`. If `name` is a match for the name of a valid candidate, then you should update the global preferences array to indicate that the voter `voter` has that candidate as their `rank` preference (where `0` is the first preference, `1` is the second preference, etc.).
+-   The function takes arguments `voter`, `rank`, and `name`. If `name` is a
+    match for the name of a valid candidate, then you should update the global
+    preferences array to indicate that the voter `voter` has that candidate as
+    their `rank` preference (where `0` is the first preference, `1` is the
+    second preference, etc.).
 
-* If the preference is successfully recorded, the function should return `true`; the function should return `false` otherwise (if, for instance, `name` is not the name of one of the candidates).
+-   If the preference is successfully recorded, the function should return
+    `true`; the function should return `false` otherwise (if, for instance,
+    `name` is not the name of one of the candidates).
 
-* You may assume that no two candidates will have the same name.  
+-   You may assume that no two candidates will have the same name.
 
-**`tabulate`**  
+**`tabulate`**
 
-* The function should update the number of `votes` each candidate has at this stage in the runoff.  
+-   The function should update the number of `votes` each candidate has at this
+    stage in the runoff.
 
-* Recall that at each stage in the runoff, every voter effectively votes for their top-preferred candidate who has not already been eliminated.
+-   Recall that at each stage in the runoff, every voter effectively votes for
+    their top-preferred candidate who has not already been eliminated.
 
-**`print_winner`**  
+**`print_winner`**
 
-* If any candidate has more than half of the vote, their name should be printed to `stdout` and the function should return `true`.
+-   If any candidate has more than half of the vote, their name should be
+    printed to `stdout` and the function should return `true`.
 
-* If nobody has won the election yet, the function should return `false`. 
+-   If nobody has won the election yet, the function should return `false`.
 
-**`find_min`**  
+**`find_min`**
 
-* The function should return the minimum vote total for any candidate who is still in the election.  
+-   The function should return the minimum vote total for any candidate who is
+    still in the election.
 
-**`is_tie`** 
+**`is_tie`**
 
-* The function takes an argument `min`, which will be the minimum number of votes that anyone in the election currently has.  
+-   The function takes an argument `min`, which will be the minimum number of
+    votes that anyone in the election currently has.
 
-* The function should return `true` if every candidate remaining in the election has the same number of votes, and should return `false` otherwise.  
+-   The function should return `true` if every candidate remaining in the
+    election has the same number of votes, and should return `false` otherwise.
 
-**`eliminate`**  
+**`eliminate`**
 
-* The function takes an argument `min`, which will be the minimum number of votes that anyone in the election currently has.
+-   The function takes an argument `min`, which will be the minimum number of
+    votes that anyone in the election currently has.
 
-* The function should eliminate the candidate (or candidates) who have `min` number of votes.  
+-   The function should eliminate the candidate (or candidates) who have `min`
+    number of votes.
 
-Your program should behave per the example below:  
+Your program should behave per the example below:
 
 ```
 ./runoff Alice Bob Charlie
@@ -481,7 +524,7 @@ Rank 3: Bob
 Alice
 ```
 
-The correct code looks as follows:  
+The correct code looks as follows:
 
 ```c linenums="1"
 #include <cs50.h>
