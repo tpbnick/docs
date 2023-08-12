@@ -5,6 +5,8 @@ hide:
 
 # Nicholas Platt's Portfolio
 
+You may also be looking for [my main website](https://nickplatt.dev).
+
 ## Resume
 
 <object data="https://cdn.nickplatt.dev/files/Misc/Nicholas%20Platt%20Resume%20-%202022%20.pdf" type="application/pdf" scrolling="no" width="100%" height="1000px" style="border-radius:10px; overflow: hidden; box-shadow: 3px 3px 3px #888;">
