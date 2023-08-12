@@ -103,7 +103,3 @@ Nicholas Platt
 nickplatt4@gmail.com  
 (909)224-4200  
 [LinkedIn](https://www.linkedin.com/in/nicholas-platt/)
-
-<script>
-    lightGallery(document.getElementById('lightgallery'));
-</script>
