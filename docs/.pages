@@ -1,0 +1,5 @@
+# Top nav: Welcome, Programming Notes, About only
+arrange:
+  - index.md
+  - programming-notes
+  - about.md

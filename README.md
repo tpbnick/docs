@@ -1,28 +1,40 @@
-# Welcome to Nick's Docs :books:
+# Nick's Docs
 
-This is a place for documentation examples, programming notes, and projects.
+Documentation, programming notes, and projects. Built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
-If you are looking for Nick's Portfolio, please click [here](https://docs.nicklyss.com/portfolio).
+## Setup
 
-This technical documentation site is built with [Material for MKDocs](https://squidfunk.github.io/mkdocs-material/).
+Install dependencies from the lockfile:
 
-## Getting Started
+```bash
+pip install -r requirements.txt
+```
 
-Install the following required packages:
+### What’s in `requirements.txt`
 
-1. `pip install mkdocs mkdocs-material mkdocs-minify-plugin mkdocs-glightbox`
+- **Core:** MkDocs, MkDocs Material, pymdown-extensions (for Material-recommended markdown features).
+- **Plugins:** awesome-pages (navigation from `.pages` files), minify, optional glightbox/git-revision-date/git-committers/redirects. Glightbox is installed but currently disabled in `mkdocs.yml` (was breaking image display; can be re-enabled in manual mode if needed).
 
-This installs:
+Navigation is **not** defined in `mkdocs.yml`. It’s driven by [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin): each section has a `.pages` file (e.g. `docs/.pages`, `docs/programming-notes/.pages`) that sets order and titles. Most content lives under `docs/programming-notes/` (portfolio, notes, and language docs).
 
-1. [MKDocs](https://pypi.org/project/mkdocs/)
-2. [MKDocs-Material](https://pypi.org/project/mkdocs-material/)
-3. [MKDocs-Minify-Plugin](https://pypi.org/project/mkdocs-minify-plugin/)
-4. [MKDocs-GLightbox](https://pypi.org/project/mkdocs-glightbox/)
+## Commands
 
-### How to Serve
+### Serve locally
 
-Run `mkdocs serve`. This should startup a local server that updates on any saved change.
+```bash
+mkdocs serve
+```
 
-### How to Build
+The site should reload in the browser when you save a file. If it doesn’t:
 
-Run `mkdocs Build`. This should create static HTML files inside the site directory.
+- Don’t run with `--no-livereload`.
+- Close extra browser tabs that have the docs open.
+- After saving, wait a few seconds or make a small edit and save again (some editors delay writing to disk).
+
+### Build static site
+
+```bash
+mkdocs build
+```
+
+Output goes into the `site/` directory.

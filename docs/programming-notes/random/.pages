@@ -1,0 +1,5 @@
+title: Random
+arrange:
+  - api.md
+  - django.md
+  - rest-soap.md

@@ -1,0 +1,10 @@
+title: JavaScript
+arrange:
+  - js.md
+  - js-data-types.md
+  - js-conditionals.md
+  - js-functions.md
+  - js-scope.md
+  - js-arrays.md
+  - js-loops.md
+  - js-ho-functions.md

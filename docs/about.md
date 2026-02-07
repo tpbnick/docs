@@ -8,9 +8,9 @@ hide:
 ## About Me
 
 <div class="center">
-	<img src="https://cdn.nickplatt.dev/files/Misc/nicklyss.jpg" title="Monterey, CA 2019" alt="Nick & Alyssa" width="25%" height ="25%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-	<img src="https://cdn.nickplatt.dev/files/Misc/alaska.jpg" title="Juneau, AK 2018" alt="Nick & Alyssa" width="28%" height ="28%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-	<img src="https://cdn.nickplatt.dev/files/Misc/pup.jpg" title="Dani!" alt="Nick & Alyssa" width="36.5%" height ="36.5%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">  
+	<img src="https://cdn.nickplatt.dev/Misc/nicklyss.jpg" title="Monterey, CA 2019" alt="Nick & Alyssa" width="25%" height ="25%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+	<img src="https://cdn.nickplatt.dev/Misc/alaska.jpg" title="Juneau, AK 2018" alt="Nick & Alyssa" width="28%" height ="28%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+	<img src="https://cdn.nickplatt.dev/Misc/pup.jpg" title="Dani!" alt="Nick & Alyssa" width="36.5%" height ="36.5%" style ="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 </div>
 
 Hello! I am currently a software engineer with Erias Ventures. I have been
@@ -66,40 +66,38 @@ Below are some keyboards I have built!
 ??? tip "Custom Keyboards"
 
     <p class="center">**KeyChron K2 Pro - Milky Yellows**</p>
-    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/keycron-milky-yellows.png" style="border-radius: 10px;">
+    <img src="https://cdn.nickplatt.dev/Misc/Keyboards/keycron-milky-yellows.png" style="border-radius: 10px;">
 
     <p class="center">**Glorious Pro - Silks**</p>
-    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/glorious-pro-silks.png" style="border-radius: 10px;">
+    <img src="https://cdn.nickplatt.dev/Misc/Keyboards/glorious-pro-silks.png" style="border-radius: 10px;">
 
     <p class="center">**Akrylic - Black Inks**</p>
-    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/akrylic-blackinks.png" style="border-radius: 10px;">
+    <img src="https://cdn.nickplatt.dev/Misc/Keyboards/akrylic-blackinks.png" style="border-radius: 10px;">
 
     <p class="center">**Canon Keys Devastating TKL**</p>
-    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canonkeys-devastatingtkl.png" style="border-radius: 10px;">
+    <img src="https://cdn.nickplatt.dev/Misc/Keyboards/canonkeys-devastatingtkl.png" style="border-radius: 10px;">
 
     <p class="center">**Canon Keys Satisfaction R2**</p>
-    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canonkeys-satisfaction-r2.png" style="border-radius: 10px;">
+    <img src="https://cdn.nickplatt.dev/Misc/Keyboards/canonkeys-satisfaction-r2.png" style="border-radius: 10px;">
 
     <p class="center">**Canon Keys Obliterated**</p>
-    <img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canonkeys-obliterated.png" style="border-radius: 10px;">
+    <img src="https://cdn.nickplatt.dev/Misc/Keyboards/canonkeys-obliterated.png" style="border-radius: 10px;">
 
-    <p class="center">**Canoe PC - Gateron Ink Yellow**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/canoe.png" style ="border-radius: 10px;">
+    <p class="center">**Canoe PC - Gateron Ink Yellow**</p><img src="https://cdn.nickplatt.dev/Misc/Keyboards/canoe.png" style ="border-radius: 10px;">
 
-    <p class="center">**Custom Acrylic - Gateron Ink Blacks</p>**<img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/acrylic.png" style ="border-radius: 10px;">
+    <p class="center">**Custom Acrylic - Gateron Ink Blacks</p>**<img src="https://cdn.nickplatt.dev/Misc/Keyboards/acrylic.png" style ="border-radius: 10px;">
 
-    <p class="center">**TX-87 - C³Equalz X TKC Banana Splits</p>**<img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/tx-1.png" style ="border-radius: 10px;">
+    <p class="center">**TX-87 - C³Equalz X TKC Banana Splits</p>**<img src="https://cdn.nickplatt.dev/Misc/Keyboards/tx-1.png" style ="border-radius: 10px;">
 
-    <p class="center">**Satisfaction 75 - Zealios V2**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/satisfaction.png" style ="border-radius: 10px;">
+    <p class="center">**Satisfaction 75 - Zealios V2**</p><img src="https://cdn.nickplatt.dev/Misc/Keyboards/satisfaction.png" style ="border-radius: 10px;">
 
-    <p class="center">**K75 - Gateron Ink Blacks**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/k75.jpg" style ="border-radius: 10px;">
+    <p class="center">**K75 - Gateron Ink Blacks**</p><img src="https://cdn.nickplatt.dev/Misc/Keyboards/k75.jpg" style ="border-radius: 10px;">
 
-    <p class="center">**Canon Keys Devastating TKL - Tealios**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/imageedit_3_6470813349.png" style ="border-radius: 10px;">
+    <p class="center">**Canon Keys Devastating TKL - Tealios**</p><img src="https://cdn.nickplatt.dev/Misc/Keyboards/imageedit_3_6470813349.png" style ="border-radius: 10px;">
 
-    <p class="center">**Mysterium - Kailh Purple Pro**</p><img src="https://cdn.nickplatt.dev/files/Misc/Keyboards/mysterium.png" style ="border-radius: 10px;">
+    <p class="center">**Mysterium - Kailh Purple Pro**</p><img src="https://cdn.nickplatt.dev/Misc/Keyboards/mysterium.png" style ="border-radius: 10px;">
 
 ## Contact
 
-Nicholas Platt  
-nickplatt4@gmail.com  
-(909)224-4200  
+Nicholas Platt nickplatt4@gmail.com (909)224-4200
 [LinkedIn](https://www.linkedin.com/in/nicholas-platt/)

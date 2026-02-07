@@ -1,0 +1,12 @@
+title: Python
+arrange:
+  - py.md
+  - py-data-types.md
+  - py-lists.md
+  - py-working-with-lists.md
+  - py-if-statements.md
+  - py-dictionaries.md
+  - py-user-input-while-loops.md
+  - py-functions.md
+  - py-classes.md
+  - py-random.md

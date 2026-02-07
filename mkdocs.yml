@@ -2,10 +2,11 @@ site_name: Nick's Docs
 repo_url: https://github.com/tpbnick/docs
 repo_name: tpbnick/docs
 edit_uri: ""
+
 theme:
  name: material
- logo: "https://cdn.nickplatt.dev/files/Misc/logo-dracula.png"
- favicon: "https://cdn.nickplatt.dev/files/Misc/logo-dracula.png"
+ logo: "https://cdn.nickplatt.dev/Misc/logo-dracula.png"
+ favicon: "https://cdn.nickplatt.dev/Misc/logo-dracula.png"
  features:
   - navigation.instant
   - navigation.tabs
@@ -31,38 +32,56 @@ theme:
   code: Roboto Mono
  icon:
   repo: fontawesome/brands/git-alt
+
 extra_css:
  - stylesheets/extra.css
+
 plugins:
- - glightbox
  - search
+ # glightbox disabled: was breaking all images; use manual mode to enable per-image
+ # - glightbox
+ - awesome-pages
  - minify:
     minify_html: true
+
 extra_javascript:
+ # NOTE: MathJax v2 is legacy but kept to preserve your current behavior.
  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+
 markdown_extensions:
  - pymdownx.arithmatex
  - attr_list
- - codehilite:
+
+ # Modern replacement for deprecated `codehilite`
+ - pymdownx.highlight:
     guess_lang: false
+    pygments_lang_class: true
     linenums: true
  - pymdownx.inlinehilite
  - pymdownx.superfences
+
  - admonition
  - pymdownx.details
+
+ # Updated module path for Material emoji integration
  - pymdownx.emoji:
-    emoji_index: !!python/name:materialx.emoji.twemoji
-    emoji_generator: !!python/name:materialx.emoji.to_svg
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
  - pymdownx.magiclink
  - pymdownx.mark
  - pymdownx.smartsymbols
- - pymdownx.superfences
  - pymdownx.tasklist:
     custom_checkbox: true
- - pymdownx.tabbed
+
+ # Modern recommended config for tabs
+ - pymdownx.tabbed:
+    alternate_style: true
+
  - pymdownx.tilde
  - toc:
     permalink: false
+
 extra:
  social:
   - icon: fontawesome/solid/images
@@ -78,65 +97,3 @@ extra:
   - icon: fontawesome/regular/envelope
     link: mailto:nick@nickplatt.dev
  generator: false
-nav:
- - Home: index.md
- - "Nick's Portfolio":
-    - Main Portfolio: portfolio.md
- - "Programming Notes":
-    - "Notes Overview": notes.md
-    - "C":
-       - C Basics: c/c.md
-       - Arrays: c/c-arrays.md
-       - Functions: c/c-functions.md
-       - Command Line Arguments: c/c-cl-arguments.md
-       - Variables and Scope: c/c-variable-scope.md
-       - "Algorithms":
-          - Algorithm Overview: c/c-algorithms.md
-          - Algorithm Problems: c/c-algorithms-problems.md
-       - "Memory":
-          - Memory Overview: c/c-memory.md
-          - Memory Problems: c/c-memory-problems.md
-       - "Data Structures":
-          - Data Structures Overview: c/c-data-structures.md
-          - Data Structures Problem: c/c-data-structures-problems.md
-    - "Python":
-       - Python Basics: python/py.md
-       - Variables and Simple Data Types: python/py-data-types.md
-       - Lists: python/py-lists.md
-       - Working with Lists: python/py-working-with-lists.md
-       - If Statements: python/py-if-statements.md
-       - Dictionaries: python/py-dictionaries.md
-       - User Input and while Loops: python/py-user-input-while-loops.md
-       - Functions: python/py-functions.md
-       - Classes: python/py-classes.md
-       - Random Programs: python/py-random.md
-    - "Java":
-       - Java Overview: java/java.md
-       - Java Basics: java/java-basics.md
-       - Variables: java/java-variables.md
-       - Classes: java/java-classes.md
-       - Conditionals/Control Flow: java/java-conditionals.md
-       - Arrays: java/java-arrays.md
-       - Loops: java/java-loops.md
-       - String Methods: java/java-string-methods.md
-       - Access, Encapsulation, & Scope: java/java-access-scope.md
-       - Inheritance & Polymorphism: java/java-inheritance-polymorphism.md
-       - Debugging: java/java-debugging.md
-       - 2D Arrays: java/java-2d-arrays.md
-    - "JavaScript":
-       - JavaScript Basics: js/js.md
-       - Variables and Simple Data Types: js/js-data-types.md
-       - Conditional Statements: js/js-conditionals.md
-       - Functions: js/js-functions.md
-       - Scope: js/js-scope.md
-       - Arrays: js/js-arrays.md
-       - Loops: js/js-loops.md
-       - Higher-Order Functions: js/js-ho-functions.md
-    - "SQL":
-       - SQL Basics: sql/sql.md
-       - Joins and Other Query Types: sql/sql-joins-and-other-queries.md
-       - Random Problems: sql/sql-random.md
-    - "Random":
-       - API Overview: random/api.md
-       - Django: random/django.md
- - About: about.md

@@ -1,0 +1,13 @@
+title: C
+arrange:
+  - c.md
+  - c-arrays.md
+  - c-functions.md
+  - c-cl-arguments.md
+  - c-variable-scope.md
+  - c-algorithms.md
+  - c-algorithms-problems.md
+  - c-memory.md
+  - c-memory-problems.md
+  - c-data-structures.md
+  - c-data-structures-problems.md
