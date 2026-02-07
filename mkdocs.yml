@@ -85,9 +85,9 @@ markdown_extensions:
 extra:
  social:
   - icon: fontawesome/solid/images
-    link: https://nicklyss.com
+    link: https://nickplatt.dev
   - icon: fontawesome/solid/blog
-    link: https://blog.nicklyss.com
+    link: https://blog.nickplatt.dev
   - icon: fontawesome/brands/linkedin
     link: https://www.linkedin.com/in/nicholas-platt/
   - icon: fontawesome/brands/github

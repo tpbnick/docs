@@ -569,7 +569,7 @@ int fact2(int n)
 ```
 
 In week 1, we
-[implemented a “pyramid” of blocks in the following shape](https://docs.nicklyss.com/c/#mario-problem-set):
+[implemented a “pyramid” of blocks in the following shape](https://docs.nickplatt.dev/programming-notes/c/c/#mario-problem-set):
 
 ```
 #

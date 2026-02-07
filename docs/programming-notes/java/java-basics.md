@@ -5,7 +5,7 @@
 Java runs on different platforms, but programmers write it the same way. Let's
 explore some rules for writing Java.
 
-On the [First Program](https://docs.nicklyss.com/java/#first-program) section on
+On the [First Program](https://docs.nickplatt.dev/programming-notes/java/java/#first-program) section on
 the Java Basics page, we saw the **HelloWorld.java** file. Java files have a
 **.java** extension. Some programs are one file, others have hundreds of files!
 
@@ -136,7 +136,7 @@ Expected input is the following: X and Y
 
 Another type of commenting option is the Javadoc comment which is represented by
 `/**` and `*/`. Javadoc comments are used to create documentation for
-[APIs](https://docs.nicklyss.com/api). When writing Javadoc comments, remember
+[APIs](https://docs.nickplatt.dev/programming-notes/random/api/). When writing Javadoc comments, remember
 that they will eventually be used in the documentation that your users might
 read, so make sure to be especially thoughtful when writing these comments.
 

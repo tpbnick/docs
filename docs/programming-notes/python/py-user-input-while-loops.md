@@ -558,7 +558,7 @@ Alice
 ### Removing All Instances of Specific Values from a List
 
 In previous notes
-([located here](https://docs.nicklyss.com/py-lists/#removing-elements-from-a-list))
+([located here](https://docs.nickplatt.dev/programming-notes/python/py-lists/#removing-elements-from-a-list))
 we used `#!py remove()` to remove a specific value from a list. The
 `#!py remove()` function worked because the value we were interested in appeared
 only once in the list. But what if you want to remove all instances of a value

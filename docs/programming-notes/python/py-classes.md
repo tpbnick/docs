@@ -381,11 +381,11 @@ change the value of this attribute.
 
 You can change an attribute's value in three ways:
 
--   [Change the value directly through an instance](https://docs.nicklyss.com/py-classes/#modifying-an-attributes-value-directly)
+-   [Change the value directly through an instance](https://docs.nickplatt.dev/programming-notes/python/py-classes/#modifying-an-attributes-value-directly)
 
--   [Set the value through a method](https://docs.nicklyss.com/py-classes/#modifying-an-attributes-value-through-a-method)
+-   [Set the value through a method](https://docs.nickplatt.dev/programming-notes/python/py-classes/#modifying-an-attributes-value-through-a-method)
 
--   [Increment the value through a method](https://docs.nicklyss.com/py-classes/#incrementing-an-attributes-value-through-a-method)
+-   [Increment the value through a method](https://docs.nickplatt.dev/programming-notes/python/py-classes/#incrementing-an-attributes-value-through-a-method)
 
 #### Modifying an Attribute's Value Directly
 

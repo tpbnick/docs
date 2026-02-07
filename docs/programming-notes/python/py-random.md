@@ -55,7 +55,7 @@ Grade 3
 ```
 
 This is a complete copy of
-[`readbility.c`](https://docs.nicklyss.com/c-arrays/#reading-levels-program),
+[`readbility.c`](https://docs.nickplatt.dev/programming-notes/c/c-arrays/#reading-levels-program),
 which uses the Coleman-Liau index to output grade level from text, but created
 using Python.
 

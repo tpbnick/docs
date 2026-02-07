@@ -2,7 +2,7 @@
 
 ## Variables
 
-Let's go back to the [first program](https://docs.nicklyss.com/py#first-program)
+Let's go back to the [first program](https://docs.nickplatt.dev/programming-notes/python/py/#first-program)
 and use a variable. To do this, we simply add a new line at the beginning of the
 file and modify the second line:
 
@@ -279,7 +279,7 @@ example:
 ### Floats
 
 Python calls any number with a decimal point a _float_. This term is used in
-most programming languages (like in [C](https://docs.nicklyss.com/c)), and it
+most programming languages (like in [C](https://docs.nickplatt.dev/programming-notes/c/c/)), and it
 refers to the fact that a decimal point can appear at any position in a number.
 Every programming language must be carefully designed to properly manage decimal
 numbers so numbers behave appropriately no matter where the decimal point

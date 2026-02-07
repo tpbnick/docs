@@ -450,7 +450,7 @@ Value: fermi
 
 Looping through all key-value pairs works particularly well for dictionaries
 like the _`favorite_languages`_ example from
-[above](https://docs.nicklyss.com/py-dictionaries/#a-dictionary-of-similar-objects),
+[above](https://docs.nickplatt.dev/programming-notes/python/py-dictionaries/#a-dictionary-of-similar-objects),
 which stores the same kind of information for many different keys. If you loop
 through the _`favorite_languages`_ dictionary, you get the name of each person
 in the dictionary and their favorite programming language. Because the keys

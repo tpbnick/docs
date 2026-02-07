@@ -58,7 +58,7 @@ trek
 ```
 
 We can also use the `#!py .title()` method, discussed in
-[variables and simple data types](https://docs.nicklyss/py-data-types/#using-variables-in-strings).
+[variables and simple data types](https://docs.nickplatt.dev/programming-notes/python/py-data-types/#using-variables-in-strings).
 This will capitalize the first letter of the element:
 
 ```py linenums="1"
@@ -106,7 +106,7 @@ in length throughout the course of the game.
 ### Modifying Elements in a List
 
 The syntax for modifying an element is similar to the syntax for
-[accessing an element in a list](https://docs.nicklyss.com/py-lists/#accessing-elements-in-a-list).
+[accessing an element in a list](https://docs.nickplatt.dev/programming-notes/python/py-lists/#accessing-elements-in-a-list).
 To change an element, use the name of the list followed by the index of the
 element you want to change, and then provide the new value you want that item to
 have.

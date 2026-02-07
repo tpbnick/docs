@@ -192,7 +192,7 @@ the way you intend for them to if you disregard styling!
 print("Hello Python World!")
 ```
 
-If you compare this to C's [first code](https://docs.nicklyss.com/c#first-code),
+If you compare this to C's [first code](https://docs.nickplatt.dev/programming-notes/c/c/#first-code),
 you will notice that we no longer need to create a `main` function or import the
 `<stdio.h>` library.
 

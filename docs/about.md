@@ -30,7 +30,7 @@ sure you are writing at a level and tone that makes it so the most basic users
 can understand, while not insulting the advanced users' intelligence, can be
 quite the challenge. I created this docs website for my programming notes and
 random projects. I also have a blog that I update sporadically, which can be
-found [here](https://blog.nicklyss.com).
+found [here](https://blog.nickplatt.dev).
 
 ## Random Projects
 

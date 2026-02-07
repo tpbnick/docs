@@ -97,7 +97,7 @@ to the function `greet_user()`, and the value was assigned to the parameter
 Because a function definition can have multiple parameters, a function call may
 need multiple arguments. You can pass arguments to your functions in a number of
 ways. You can use
-[_positional arguments_](https://docs.nicklyss.com/py-functions/#positional-arguements),
+[_positional arguments_](https://docs.nickplatt.dev/programming-notes/python/py-functions/#positional-arguements),
 which need to be in the same order as the parameters were written; _keyword
 arguements_, where each argument consists of a variable name and a value; and
 lists and dictionaries of values.

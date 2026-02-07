@@ -85,4 +85,4 @@ If you are looking for Nick's Portfolio, please click
 - [Sandbox](https://cs50.dev/)
 - [LinkedIn](https://www.linkedin.com/in/nicholas-platt/)
 - [GitHub](https://github.com/tpbnick)
-- [Nicklyss Homepage](https://nicklyss.com)
+- [Nick Platt Homepage](https://nickplatt.dev)

@@ -36,7 +36,7 @@ Resume is embedded below. If it doesn’t load (e.g. in some privacy-focused bro
   project and new features will be added sporadically. Hosted on a DigitalOcean
   droplet running Linux and NGINX.
 
-- [**Personal Documentation Website**](https://docs.nicklyss.com) - A fully
+- [**Personal Documentation Website**](https://docs.nickplatt.dev) - A fully
   searchable and robust documentation site built using Material for MKDocs and
   written in Markdown. Multiple additional JavaScript modules, such as an image
   light gallery and scroll-to-top button added. Created to help facilitate
@@ -65,7 +65,7 @@ Resume is embedded below. If it doesn’t load (e.g. in some privacy-focused bro
 
 ## About Me
 
-[Click Here](https://docs.nicklyss.com/about)
+[Click Here](https://docs.nickplatt.dev/about)
 
 ## Contact
 
